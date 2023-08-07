@@ -26,6 +26,7 @@ public class Plant {
     private String name;
     private Boolean isInvasive;
     private String color;
+    private Long plantID;
 
     public void setName(String name) {
         this.name = name;
@@ -39,6 +40,10 @@ public class Plant {
         this.color = color;
     }
 
+    public void setPlantID(Long ID) {
+        this.plantID = ID;
+    }
+
     public String getName() {
         return this.name;
     }
@@ -49,6 +54,10 @@ public class Plant {
 
     public String getColor() {
         return this.color;
+    }
+
+    public Long getPlantID() {
+        return this.plantID;
     }
 
 

@@ -20,9 +20,7 @@ function Main() {
           <Route
             path="/app4?/src?/main?/resources?/static?/index.html?"
             element={<Layout />}
-          >
-            <Route path="/" element={ />} />
-          </Route>
+          ></Route>
         </Routes>
       </BrowserRouter>
     </React.StrictMode>

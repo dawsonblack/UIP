@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 //import com.fasterxml.jackson.databind.ObjectMapper;
 
 import jakarta.annotation.Generated;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -17,6 +18,8 @@ import jakarta.persistence.InheritanceType;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Plant {
     private String name;
+    @Column(length = 1000)
+    private String description;
     private Boolean isInvasive;
     private Boolean isNative;
     private String color;
@@ -30,9 +33,11 @@ public class Plant {
     @GeneratedValue
     private long plantID;
 
-    public Plant(String name, Boolean isInvasive, Boolean isNative, String color, String FURL, String Fsource,
+    public Plant(String name, String description, Boolean isInvasive, Boolean isNative, String color, String FURL,
+            String Fsource,
             String LURL, String Lsource, String wiki) {
         this.name = name;
+        this.description = description;
         this.isInvasive = isInvasive;
         this.color = color;
         this.imageFruitURL = FURL;
@@ -48,6 +53,10 @@ public class Plant {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.name = description;
     }
 
     public void setIsInvasive(Boolean isInvasive) {
@@ -88,6 +97,10 @@ public class Plant {
 
     public String getName() {
         return this.name;
+    }
+
+    public String getDescription() {
+        return this.description;
     }
 
     public Boolean getIsInvasive() {

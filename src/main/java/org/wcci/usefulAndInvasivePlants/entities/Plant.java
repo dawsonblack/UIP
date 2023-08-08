@@ -20,19 +20,26 @@ public class Plant {
     private Boolean isInvasive;
     private Boolean isNative;
     private String color;
-    private String imageURL;
-    private String imageSource;
+    private String imageFruitURL;
+    private String imageLeafURL;
+    private String imageFruitSource;
+    private String imageLeafSource;
+    private String WikiLink;
 
     @Id
     @GeneratedValue
     private long plantID;
 
-    public Plant(String name, Boolean isInvasive, Boolean isNative, String color, String URL, String source) {
+    public Plant(String name, Boolean isInvasive, Boolean isNative, String color, String FURL, String Fsource,
+            String LURL, String Lsource, String wiki) {
         this.name = name;
         this.isInvasive = isInvasive;
         this.color = color;
-        this.imageURL = URL;
-        this.imageSource = source;
+        this.imageFruitURL = FURL;
+        this.imageFruitSource = Fsource;
+        this.imageLeafURL = LURL;
+        this.imageLeafSource = Lsource;
+        this.WikiLink = wiki;
     }
 
     public Plant() {
@@ -59,12 +66,24 @@ public class Plant {
         this.plantID = ID;
     }
 
-    public void setImageURL(String URL) {
-        this.imageURL = URL;
+    public void setImageFruitURL(String URL) {
+        this.imageFruitURL = URL;
     }
 
-    public void setImageSource(String source) {
-        this.imageURL = source;
+    public void setImageFruitSource(String source) {
+        this.imageFruitURL = source;
+    }
+
+    public void setImageLeafURL(String URL) {
+        this.imageLeafURL = URL;
+    }
+
+    public void setImageLeafSource(String source) {
+        this.imageLeafURL = source;
+    }
+
+    public void setWikiLink(String link) {
+        this.WikiLink = link;
     }
 
     public String getName() {
@@ -83,16 +102,28 @@ public class Plant {
         return this.plantID;
     }
 
-    public String getImageURL() {
-        return this.imageURL;
+    public String getImageFruitURL() {
+        return this.imageFruitURL;
     }
 
-    public String getImageSource() {
-        return this.imageSource;
+    public String getImageFruitSource() {
+        return this.imageFruitSource;
     }
 
     public Boolean getIsNative() {
         return this.isNative;
+    }
+
+    public String getImageLeafURL() {
+        return this.imageLeafURL;
+    }
+
+    public String getImageLeafSource() {
+        return this.imageLeafSource;
+    }
+
+    public String getWikiLink() {
+        return this.WikiLink;
     }
 
 }

@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import org.wcci.usefulAndInvasivePlants.entities.Plant;
+import org.wcci.usefulAndInvasivePlants.services.PlantService;
 
 @RestController
 public class PlantRestController {
@@ -43,15 +44,15 @@ public class PlantRestController {
     public EntityModel<Plant> getPlant(@PathVariable final Long plant_id) {
         final Plant plant = plantService.findPlant(plant_id);
         return EntityModel.of(plant,
-                linkTo(methodOn(PlantRestController.class).getPlants()).withRel(LIST_ALL_ORGANIC_DOGS),
+                linkTo(methodOn(PlantRestController.class).getPlants()).withRel(LIST_ALL_PLANTS),
                 linkTo(methodOn(PlantRestController.class).getPlant(plant_id)).withSelfRel());
     }
 
     @PostMapping("/api/plants")
     public EntityModel<Plant> newPlant(@RequestBody final Plant plant) {
         return EntityModel.of(plantService.writeToDatabase(plant),
-                linkTo(methodOn(PlantRestController.class).getPlant(plant.getPetID())).withSelfRel(),
-                linkTo(methodOn(PlantRestController.class).getPlants()).withRel(LIST_ALL_ORGANIC_DOGS));
+                linkTo(methodOn(PlantRestController.class).getPlant(plant.getPlantID())).withSelfRel(),
+                linkTo(methodOn(PlantRestController.class).getPlants()).withRel(LIST_ALL_PLANTS));
     }
 
     @DeleteMapping("/api/plants/{plant_id}")
@@ -76,6 +77,6 @@ public class PlantRestController {
 
         // Return the modified database plant
         return EntityModel.of(databasePlant,
-                linkTo(methodOn(PlantRestController.class).getPlant(plant.getPetID())).withSelfRel());
+                linkTo(methodOn(PlantRestController.class).getPlant(plant.getPlantID())).withSelfRel());
     }
 }

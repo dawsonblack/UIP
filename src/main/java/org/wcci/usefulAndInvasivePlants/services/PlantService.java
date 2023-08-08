@@ -66,7 +66,7 @@ public class PlantService {
 
         // Copy the non-ID info from the requestbody to the database object
         databasePlant.setName(plant.getName());
-        databasePlant.isInvasive(plant.isInvasive());
+        databasePlant.setIsInvasive(plant.getIsInvasive());
         databasePlant.setColor(plant.getColor());
 
         // Ask the repo to write the modified student to MySQL (or whatever)

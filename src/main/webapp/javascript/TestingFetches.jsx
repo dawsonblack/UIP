@@ -79,6 +79,37 @@ export default function TestingFetches() {
       });
   };
 
+  function displaySearchResult(activity) {
+    const searchResults = document.getElementById('search-results');
+    const activityData = document.createElement('ul');
+
+    for (const key in activity) {
+        const item = document.createElement('li');
+        item.textContent = `${key}: ${activity[key]}`;
+        activityData.appendChild(item);
+    }
+
+    const buttons = document.createElement('div');
+
+    const editLink = document.createElement('a');
+    editLink.onclick = () => makeActivityEditable(activity.activityID);
+    editLink.textContent = 'Edit';
+    buttons.appendChild(editLink);
+
+    const deleteLink = document.createElement('a');
+    deleteLink.onclick = () => promptDelete(activity.activityID);
+    deleteLink.textContent = 'Delete';
+    buttons.appendChild(deleteLink);
+
+    buttons.id = `activity-number-${activity.activityID}-buttons`;
+    activityData.appendChild(buttons);
+
+    activityData.onmouseover = () => mouseOverSearchResult(activity.activityID);
+    activityData.onmouseout = () => mouseLeavesSearchResult(activity.activityID);
+    activityData.id = `activity-number-${activity.activityID}`;
+    searchResults.appendChild(activityData);
+    }
+
   return (
     <div>
      <p>ID of plant you want to get:</p>

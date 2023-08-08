@@ -4249,6 +4249,45 @@ function TestingFetches() {
       console.error("Error deleting plant:", error);
     });
   };
+  var SearchData = function SearchData() {
+    var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState12 = _slicedToArray(_useState11, 2),
+      allPlants = _useState12[0],
+      setAllPlants = _useState12[1];
+    function getPlants() {
+      fetch("/api/plants", {
+        method: "GET",
+        cache: "default"
+      }).then(function (response) {
+        return response.json();
+      }).then(function (responseBody) {
+        setAllPlants(responseBody);
+      });
+      return function () {};
+    }
+    if (allPlants && allPlants._embedded) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        id: "search-results"
+      }, allPlants["_embedded"]["plantList"].map(function (onePlant) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(DisplaySearchResult, {
+          key: onePlant.plantID,
+          plant: onePlant
+        });
+      }));
+    } else {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        id: "search-results"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+        onClick: getPlants
+      }, "Show All Plants"));
+    }
+  };
+  function DisplaySearchResult(_ref6) {
+    var plant = _ref6.plant;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+      id: "plant-number-".concat(plant.plantID)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Name: ", plant.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Is Invasive: ", plant.isInvasive), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Is Native: ", plant.isNative), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Color: ", plant.color));
+  }
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "ID of plant you want to get:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "text",
     placeholder: "ID",
@@ -4290,7 +4329,7 @@ function TestingFetches() {
     onChange: handleNewPlantColorChange
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: newPlant
-  }, "Create New Plant"));
+  }, "Create New Plant"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(SearchData, null));
 }
 
 /***/ }),

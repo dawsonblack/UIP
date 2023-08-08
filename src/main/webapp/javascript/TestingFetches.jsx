@@ -80,30 +80,37 @@ export default function TestingFetches() {
     };
 
     const SearchData = () => {
-        const searchKeyword = document.getElementById('search-bar');
-
-        fetch('/api/plants', { method: "GET", cache: "default" })
-        .then((response) => response.json())
-        .then((responseBody) => {
-            const plantList = responseBody._embedded.plantList;
-            console.log(plantList);
-
-            for (let i = 0; i < plantList.length; i++) {
-                <DisplaySearchResult plant={plantList[i]}/>
-                //displaySearchResult(plantList[i]);
-            }
-        });
-
-        return (
-            <div id="search-results">
-
-            </div>
-        );
+        let [allPlants, setAllPlants] = useState([]);
+  
+        function getPlants() {
+            fetch(`/api/plants`, { method: "GET", cache: "default" })
+            .then((response) => response.json())
+            .then((responseBody) => {
+                setAllPlants(responseBody);
+            });
+            return () => {};
+        }
+  
+        if (allPlants && allPlants._embedded) {
+            return (
+                <div id="search-results">
+                    {allPlants["_embedded"][`plantList`].map((onePlant) => (
+                        <DisplaySearchResult key={onePlant.plantID} plant={onePlant} />
+                    ))}
+                </div>
+            );
+        } else {
+            return (
+                <div id="search-results">
+                    <button onClick={getPlants}>Show All Plants</button>
+                </div>
+            );
+        }
     };
 
     function DisplaySearchResult({ plant }) {
         return (
-            <ul id={`plant-number-${plant.plantID}`} onmouseover={() => mouseOverSearchResult(plant.plantID)} onmouseout={mouseLeavesSearchResult(plant.plantID)}>
+            <ul id={`plant-number-${plant.plantID}`}>
                 <li>Name: {plant.name}</li>
                 <li>Is Invasive: {plant.isInvasive}</li>
                 <li>Is Native: {plant.isNative}</li>
@@ -134,6 +141,13 @@ export default function TestingFetches() {
      </select>
      <input type="text" placeholder="color" value={newPlantColor} onChange={handleNewPlantColorChange}/>
      <button onClick={newPlant}>Create New Plant</button>
+
+     <br />
+     <br />
+     <br />
+     <br />
+
+     <SearchData />
     </div>
   );
 }

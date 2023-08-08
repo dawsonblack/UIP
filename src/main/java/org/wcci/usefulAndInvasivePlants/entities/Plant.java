@@ -5,9 +5,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 ////import com.fasterxml.jackson.core.type.TypeReference;
 //import com.fasterxml.jackson.databind.ObjectMapper;
 
+import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
-//import jakarta.persistence.GeneratedValue;
-//import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 
@@ -18,6 +19,9 @@ public class Plant {
     private String name;
     private Boolean isInvasive;
     private String color;
+
+    @Id
+    @GeneratedValue
     private Long plantID;
 
     public void setName(String name) {

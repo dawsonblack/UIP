@@ -4370,7 +4370,25 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.github {
   height: 50px;
   max-height: 50px;
 }
-`, "",{"version":3,"sources":["webpack://./src/main/webapp/css/style.css"],"names":[],"mappings":"AAAA;EACE,WAAW;EACX,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,gBAAgB;AAClB","sourcesContent":[".github {\r\n  width: auto;\r\n  height: 50px;\r\n  max-height: 50px;\r\n}\r\n\r\n.linkedin {\r\n  width: auto;\r\n  height: 50px;\r\n  max-height: 50px;\r\n}\r\n\r\n.gmail {\r\n  width: auto;\r\n  height: 50px;\r\n  max-height: 50px;\r\n}\r\n"],"sourceRoot":""}]);
+
+#search-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#search-results ul {
+    list-style: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#search-results ul:hover {
+    border-color: black;
+}
+
+`, "",{"version":3,"sources":["webpack://./src/main/webapp/css/style.css"],"names":[],"mappings":"AAAA;EACE,WAAW;EACX,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,gBAAgB;AAClB;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,gBAAgB;IAChB,sBAAsB;IACtB,aAAa;IACb,kBAAkB;AACtB;;AAEA;IACI,mBAAmB;AACvB","sourcesContent":[".github {\r\n  width: auto;\r\n  height: 50px;\r\n  max-height: 50px;\r\n}\r\n\r\n.linkedin {\r\n  width: auto;\r\n  height: 50px;\r\n  max-height: 50px;\r\n}\r\n\r\n.gmail {\r\n  width: auto;\r\n  height: 50px;\r\n  max-height: 50px;\r\n}\r\n\r\n#search-results {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n#search-results ul {\r\n    list-style: none;\r\n    border: 1px solid #ccc;\r\n    padding: 10px;\r\n    border-radius: 5px;\r\n}\r\n\r\n#search-results ul:hover {\r\n    border-color: black;\r\n}\r\n\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

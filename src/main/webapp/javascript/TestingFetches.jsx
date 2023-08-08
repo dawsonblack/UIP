@@ -62,11 +62,29 @@ export default function TestingFetches() {
     });
   }
 
+  const deletePlant = () => {
+    const ID = IDToFetch;
+  
+    fetch(`/api/plants/${ID}`, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        console.log("Plant deleted successfully!");
+      })
+      .catch((error) => {
+        console.error("Error deleting plant:", error);
+      });
+  };
+
   return (
     <div>
      <p>ID of plant you want to get:</p>
      <input type="text" placeholder="ID" value={IDToFetch} onChange={handleIDToFetchChange}/>
-     <button onClick={getPlant}>Submit</button>
+     <button onClick={getPlant}>Get Plant</button>
+     <button onClick={deletePlant}>Delete Plant</button>
 
      <br />
 

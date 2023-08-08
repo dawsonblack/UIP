@@ -4174,10 +4174,14 @@ function TestingFetches() {
     _useState6 = _slicedToArray(_useState5, 2),
     newPlantIsInvasive = _useState6[0],
     setNewPlantIsInvasive = _useState6[1];
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState8 = _slicedToArray(_useState7, 2),
-    newPlantColor = _useState8[0],
-    setNewPlantColor = _useState8[1];
+    newPlantIsNative = _useState8[0],
+    setNewPlantIsNative = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState10 = _slicedToArray(_useState9, 2),
+    newPlantColor = _useState10[0],
+    setNewPlantColor = _useState10[1];
   var handleIDToFetchChange = function handleIDToFetchChange(_ref) {
     var target = _ref.target;
     setIDToFetch(target.value);
@@ -4190,8 +4194,12 @@ function TestingFetches() {
     var target = _ref3.target;
     setNewPlantIsInvasive(target.value);
   };
-  var handleNewPlantColorChange = function handleNewPlantColorChange(_ref4) {
+  var handleNewPlantIsNativeChange = function handleNewPlantIsNativeChange(_ref4) {
     var target = _ref4.target;
+    setNewPlantIsNative(target.value);
+  };
+  var handleNewPlantColorChange = function handleNewPlantColorChange(_ref5) {
+    var target = _ref5.target;
     setNewPlantColor(target.value);
   };
   function getPlant() {
@@ -4210,6 +4218,7 @@ function TestingFetches() {
     var info = {
       name: newPlantName,
       isInvasive: newPlantIsInvasive,
+      isNative: newPlantIsNative,
       color: newPlantColor
     };
     fetch("/api/plants", {
@@ -4227,6 +4236,19 @@ function TestingFetches() {
       console.error("Error saving dog:", error);
     });
   }
+  var deletePlant = function deletePlant() {
+    var ID = IDToFetch;
+    fetch("/api/plants/".concat(ID), {
+      method: "DELETE"
+    }).then(function (response) {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      console.log("Plant deleted successfully!");
+    })["catch"](function (error) {
+      console.error("Error deleting plant:", error);
+    });
+  };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "ID of plant you want to get:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "text",
     placeholder: "ID",
@@ -4234,7 +4256,9 @@ function TestingFetches() {
     onChange: handleIDToFetchChange
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: getPlant
-  }, "Submit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+  }, "Get Plant"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: deletePlant
+  }, "Delete Plant"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "text",
     placeholder: "name",
     value: newPlantName,
@@ -4246,6 +4270,16 @@ function TestingFetches() {
     selected: true,
     value: ""
   }, "Is It Invasive?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: "true"
+  }, "Yes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: "false"
+  }, "No")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", {
+    onChange: handleNewPlantIsNativeChange
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    disabled: true,
+    selected: true,
+    value: ""
+  }, "Is It Native?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
     value: "true"
   }, "Yes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
     value: "false"

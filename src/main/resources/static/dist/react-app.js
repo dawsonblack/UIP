@@ -4249,11 +4249,11 @@ function TestingFetches() {
       console.error("Error deleting plant:", error);
     });
   };
-  var SearchData = function SearchData() {
+  function SearchData() {
     var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState12 = _slicedToArray(_useState11, 2),
-      allPlants = _useState12[0],
-      setAllPlants = _useState12[1];
+      searchResults = _useState12[0],
+      setSearchResults = _useState12[1];
     function getPlants() {
       fetch("/api/plants", {
         method: "GET",
@@ -4261,27 +4261,28 @@ function TestingFetches() {
       }).then(function (response) {
         return response.json();
       }).then(function (responseBody) {
-        setAllPlants(responseBody);
+        console.log("response body: " + responseBody);
+        setSearchResults(responseBody);
       });
-      return function () {};
     }
-    if (allPlants && allPlants._embedded) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        id: "search-results"
-      }, allPlants["_embedded"]["plantList"].map(function (onePlant) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(DisplaySearchResult, {
-          key: onePlant.plantID,
-          plant: onePlant
-        });
-      }));
-    } else {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        id: "search-results"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    console.log("search results: " + searchResults);
+    if (searchResults && searchResults._embedded) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
         onClick: getPlants
-      }, "Show All Plants"));
+      }, "Search!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        id: "search-results"
+      }, searchResults["_embedded"]["plantList"].map(function (oneResult) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(DisplaySearchResult, {
+          key: oneResult.plantID,
+          plant: oneResult
+        });
+      })));
+    } else {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+        onClick: getPlants
+      }, "Search!");
     }
-  };
+  }
   function DisplaySearchResult(_ref6) {
     var plant = _ref6.plant;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {

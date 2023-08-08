@@ -18,6 +18,7 @@ import jakarta.persistence.InheritanceType;
 public class Plant {
     private String name;
     private Boolean isInvasive;
+    private Boolean isNative;
     private String color;
     private String imageURL;
     private String imageSource;
@@ -26,7 +27,7 @@ public class Plant {
     @GeneratedValue
     private long plantID;
 
-    public Plant(String name, Boolean isInvasive, String color, String URL, String source) {
+    public Plant(String name, Boolean isInvasive, Boolean isNative, String color, String URL, String source) {
         this.name = name;
         this.isInvasive = isInvasive;
         this.color = color;
@@ -44,6 +45,10 @@ public class Plant {
 
     public void setIsInvasive(Boolean isInvasive) {
         this.isInvasive = isInvasive;
+    }
+
+    public void setIsNative(Boolean isNative) {
+        this.isNative = isNative;
     }
 
     public void setColor(String color) {
@@ -84,6 +89,10 @@ public class Plant {
 
     public String getImageSource() {
         return this.imageSource;
+    }
+
+    public Boolean getIsNative() {
+        return this.isNative;
     }
 
 }

@@ -39,6 +39,12 @@ export default function Home() {
             <a href="https://Siman-1.github.io">
               <img class="github" src="images/github-mark.png" />
             </a>
+            <a href="mailto:simanfaraa.h@gmail.com">
+              <img class="gmail" src="images\Gmail-Email-PNG-Pic.png" />
+            </a>
+            <a href="https://www.linkedin.com/in/siman-farah-101682282/">
+              <img class="linkedin" src="images\In-Blue-128.png" />
+            </a>
           </div>
         </div>
         <div>

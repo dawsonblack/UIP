@@ -1,17 +1,31 @@
 import React, { useState, useEffect } from "react";
 
 export default function TestingFetches() {
-  const [selectedID, setSelectedID] = useState(0);
-  const [showAdoptPrompt, setShowAdoptPrompt] = useState(false);
-  const [showPetMenu, setShowPetMenu] = useState(false);
+  const [IDToFetch, setIDToFetch] = useState(0);
 
-  const [selectedPetName, setSelectedPetName] = useState("");
+  const [newPlantName, setNewPlantName] = useState("");
+  const [newPlantIsInvasive, setNewPlantIsInvasive] = useState();
+  const [newPlantColor, setNewPlantColor] = useState("");
 
-  let [selectedPet, setSelectedPet] = useState([]);
+  const handleIDToFetchChange = ({ target }) => {
+    setIDToFetch(target.value);
+  }
+  
+  const handleNewPlantNameChange = ({ target }) => {
+    setNewPlantName(target.value);
+  }
+
+  const handleNewPlantIsInvasiveChange = ({ target }) => {
+    setNewPlantIsInvasive(target.value);
+  }
+
+  const handleNewPlantColorChange = ({ target }) => {
+    setNewPlantColor(target.value);
+  }
 
 
   function getPlant() {
-    const ID = document.getElementById("id-input").value;
+    const ID = IDToFetch;
     
     fetch(`/api/plants/${ID}`, { method: "GET", cache: "default" })
       .then((response) => response.json())
@@ -21,9 +35,9 @@ export default function TestingFetches() {
 
   function newPlant() {
     const info = {
-        name: "Test Plant",
-        isInvasive: false,
-        color: "All of them lawl",
+        name: newPlantName,
+        isInvasive: newPlantIsInvasive,
+        color: newPlantColor,
     }
 
     fetch("/api/plants", {
@@ -45,8 +59,18 @@ export default function TestingFetches() {
   return (
     <div>
      <p>ID of plant you want to get:</p>
-     <input type="text" onChange={} id="id-input"/>
+     <input type="text" placeholder="ID" value={IDToFetch} onChange={handleIDToFetchChange}/>
      <button onClick={getPlant}>Submit</button>
+
+     <br />
+
+     <input type="text" placeholder="name" value={newPlantName} onChange={handleNewPlantNameChange}/>
+     <p>Is It Invasive?</p>
+     <select onChange={handleNewPlantIsInvasiveChange}>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+     </select>
+     <input type="text" placeholder="color" value={newPlantColor} onChange={handleNewPlantColorChange}/>
      <button onClick={newPlant}>Create New Plant</button>
     </div>
   );

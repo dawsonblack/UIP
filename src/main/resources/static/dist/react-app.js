@@ -4154,26 +4154,38 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function TestingFetches() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
     _useState2 = _slicedToArray(_useState, 2),
-    selectedID = _useState2[0],
-    setSelectedID = _useState2[1];
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    IDToFetch = _useState2[0],
+    setIDToFetch = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState4 = _slicedToArray(_useState3, 2),
-    showAdoptPrompt = _useState4[0],
-    setShowAdoptPrompt = _useState4[1];
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    newPlantName = _useState4[0],
+    setNewPlantName = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
     _useState6 = _slicedToArray(_useState5, 2),
-    showPetMenu = _useState6[0],
-    setShowPetMenu = _useState6[1];
+    newPlantIsInvasive = _useState6[0],
+    setNewPlantIsInvasive = _useState6[1];
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState8 = _slicedToArray(_useState7, 2),
-    selectedPetName = _useState8[0],
-    setSelectedPetName = _useState8[1];
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
-    _useState10 = _slicedToArray(_useState9, 2),
-    selectedPet = _useState10[0],
-    setSelectedPet = _useState10[1];
+    newPlantColor = _useState8[0],
+    setNewPlantColor = _useState8[1];
+  var handleIDToFetchChange = function handleIDToFetchChange(_ref) {
+    var target = _ref.target;
+    setIDToFetch(target.value);
+  };
+  var handleNewPlantNameChange = function handleNewPlantNameChange(_ref2) {
+    var target = _ref2.target;
+    setNewPlantName(target.value);
+  };
+  var handleNewPlantIsInvasiveChange = function handleNewPlantIsInvasiveChange(_ref3) {
+    var target = _ref3.target;
+    setNewPlantIsInvasive(target.value);
+  };
+  var handleNewPlantColorChange = function handleNewPlantColorChange(_ref4) {
+    var target = _ref4.target;
+    setNewPlantColor(target.value);
+  };
   function getPlant() {
-    var ID = document.getElementById("id-input").value;
+    var ID = IDToFetch;
     fetch("/api/plants/".concat(ID), {
       method: "GET",
       cache: "default"
@@ -4186,9 +4198,9 @@ function TestingFetches() {
   }
   function newPlant() {
     var info = {
-      name: "Test Plant",
-      isInvasive: false,
-      color: "All of them lawl"
+      name: newPlantName,
+      isInvasive: newPlantIsInvasive,
+      color: newPlantColor
     };
     fetch("/api/plants", {
       method: "POST",
@@ -4207,10 +4219,28 @@ function TestingFetches() {
   }
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "ID of plant you want to get:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "text",
-    id: "id-input"
+    placeholder: "ID",
+    value: IDToFetch,
+    onChange: handleIDToFetchChange
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: getPlant
-  }, "Submit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  }, "Submit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "text",
+    placeholder: "name",
+    value: newPlantName,
+    onChange: handleNewPlantNameChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Is It Invasive?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", {
+    onChange: handleNewPlantIsInvasiveChange
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: "Yes"
+  }, "Yes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: "No"
+  }, "No")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "text",
+    placeholder: "color",
+    value: newPlantColor,
+    onChange: handleNewPlantColorChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: newPlant
   }, "Create New Plant"));
 }

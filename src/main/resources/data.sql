@@ -1,0 +1,1 @@
+INSERT INTO plant (name, isInvasive, color) VALUES ('Red Raspberry', 'false', 'Red');

@@ -5,6 +5,7 @@ export default function TestingFetches() {
 
   const [newPlantName, setNewPlantName] = useState("");
   const [newPlantIsInvasive, setNewPlantIsInvasive] = useState();
+  const [newPlantIsNative, setNewPlantIsNative] = useState();
   const [newPlantColor, setNewPlantColor] = useState("");
 
   const handleIDToFetchChange = ({ target }) => {
@@ -17,6 +18,10 @@ export default function TestingFetches() {
 
   const handleNewPlantIsInvasiveChange = ({ target }) => {
     setNewPlantIsInvasive(target.value);
+  }
+
+  const handleNewPlantIsNativeChange = ({ target }) => {
+    setNewPlantIsNative(target.value);
   }
 
   const handleNewPlantColorChange = ({ target }) => {
@@ -37,6 +42,7 @@ export default function TestingFetches() {
     const info = {
         name: newPlantName,
         isInvasive: newPlantIsInvasive,
+        isNative: newPlantIsNative,
         color: newPlantColor,
     }
 
@@ -65,10 +71,15 @@ export default function TestingFetches() {
      <br />
 
      <input type="text" placeholder="name" value={newPlantName} onChange={handleNewPlantNameChange}/>
-     <p>Is It Invasive?</p>
      <select onChange={handleNewPlantIsInvasiveChange}>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
+        <option disabled selected value="">Is It Invasive?</option>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+     </select>
+     <select onChange={handleNewPlantIsNativeChange}>
+        <option disabled selected value="">Is It Native?</option>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
      </select>
      <input type="text" placeholder="color" value={newPlantColor} onChange={handleNewPlantColorChange}/>
      <button onClick={newPlant}>Create New Plant</button>

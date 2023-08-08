@@ -62,52 +62,54 @@ export default function TestingFetches() {
     });
   }
 
-  const deletePlant = () => {
-    const ID = IDToFetch;
+    const deletePlant = () => {
+        const ID = IDToFetch;
   
-    fetch(`/api/plants/${ID}`, {
-      method: "DELETE",
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        console.log("Plant deleted successfully!");
-      })
-      .catch((error) => {
-        console.error("Error deleting plant:", error);
-      });
-  };
+        fetch(`/api/plants/${ID}`, {
+            method: "DELETE",
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            console.log("Plant deleted successfully!");
+        })
+        .catch((error) => {
+            console.error("Error deleting plant:", error);
+        });
+    };
 
-  function displaySearchResult(activity) {
-    const searchResults = document.getElementById('search-results');
-    const activityData = document.createElement('ul');
+    const SearchData = () => {
+        const searchKeyword = document.getElementById('search-bar');
 
-    for (const key in activity) {
-        const item = document.createElement('li');
-        item.textContent = `${key}: ${activity[key]}`;
-        activityData.appendChild(item);
-    }
+        fetch('/api/plants', { method: "GET", cache: "default" })
+        .then((response) => response.json())
+        .then((responseBody) => {
+            const plantList = responseBody._embedded.plantList;
+            console.log(plantList);
 
-    const buttons = document.createElement('div');
+            for (let i = 0; i < plantList.length; i++) {
+                <DisplaySearchResult plant={plantList[i]}/>
+                //displaySearchResult(plantList[i]);
+            }
+        });
 
-    const editLink = document.createElement('a');
-    editLink.onclick = () => makeActivityEditable(activity.activityID);
-    editLink.textContent = 'Edit';
-    buttons.appendChild(editLink);
+        return (
+            <div id="search-results">
 
-    const deleteLink = document.createElement('a');
-    deleteLink.onclick = () => promptDelete(activity.activityID);
-    deleteLink.textContent = 'Delete';
-    buttons.appendChild(deleteLink);
+            </div>
+        );
+    };
 
-    buttons.id = `activity-number-${activity.activityID}-buttons`;
-    activityData.appendChild(buttons);
-
-    activityData.onmouseover = () => mouseOverSearchResult(activity.activityID);
-    activityData.onmouseout = () => mouseLeavesSearchResult(activity.activityID);
-    activityData.id = `activity-number-${activity.activityID}`;
-    searchResults.appendChild(activityData);
+    function DisplaySearchResult({ plant }) {
+        return (
+            <ul id={`plant-number-${plant.plantID}`} onmouseover={() => mouseOverSearchResult(plant.plantID)} onmouseout={mouseLeavesSearchResult(plant.plantID)}>
+                <li>Name: {plant.name}</li>
+                <li>Is Invasive: {plant.isInvasive}</li>
+                <li>Is Native: {plant.isNative}</li>
+                <li>Color: {plant.color}</li>
+            </ul>
+        );
     }
 
   return (

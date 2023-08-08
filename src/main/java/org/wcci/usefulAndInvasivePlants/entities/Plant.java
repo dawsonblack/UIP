@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 //import com.fasterxml.jackson.databind.ObjectMapper;
 
 import jakarta.annotation.Generated;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -17,22 +18,33 @@ import jakarta.persistence.InheritanceType;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Plant {
     private String name;
+    @Column(length = 1000)
+    private String description;
     private Boolean isInvasive;
     private Boolean isNative;
     private String color;
-    private String imageURL;
-    private String imageSource;
+    private String imageFruitURL;
+    private String imageLeafURL;
+    private String imageFruitSource;
+    private String imageLeafSource;
+    private String WikiLink;
 
     @Id
     @GeneratedValue
     private long plantID;
 
-    public Plant(String name, Boolean isInvasive, Boolean isNative, String color, String URL, String source) {
+    public Plant(String name, String description, Boolean isInvasive, Boolean isNative, String color, String FURL,
+            String Fsource,
+            String LURL, String Lsource, String wiki) {
         this.name = name;
+        this.description = description;
         this.isInvasive = isInvasive;
         this.color = color;
-        this.imageURL = URL;
-        this.imageSource = source;
+        this.imageFruitURL = FURL;
+        this.imageFruitSource = Fsource;
+        this.imageLeafURL = LURL;
+        this.imageLeafSource = Lsource;
+        this.WikiLink = wiki;
     }
 
     public Plant() {
@@ -41,6 +53,10 @@ public class Plant {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.name = description;
     }
 
     public void setIsInvasive(Boolean isInvasive) {
@@ -59,16 +75,32 @@ public class Plant {
         this.plantID = ID;
     }
 
-    public void setImageURL(String URL) {
-        this.imageURL = URL;
+    public void setImageFruitURL(String URL) {
+        this.imageFruitURL = URL;
     }
 
-    public void setImageSource(String source) {
-        this.imageURL = source;
+    public void setImageFruitSource(String source) {
+        this.imageFruitURL = source;
+    }
+
+    public void setImageLeafURL(String URL) {
+        this.imageLeafURL = URL;
+    }
+
+    public void setImageLeafSource(String source) {
+        this.imageLeafURL = source;
+    }
+
+    public void setWikiLink(String link) {
+        this.WikiLink = link;
     }
 
     public String getName() {
         return this.name;
+    }
+
+    public String getDescription() {
+        return this.description;
     }
 
     public Boolean getIsInvasive() {
@@ -83,16 +115,28 @@ public class Plant {
         return this.plantID;
     }
 
-    public String getImageURL() {
-        return this.imageURL;
+    public String getImageFruitURL() {
+        return this.imageFruitURL;
     }
 
-    public String getImageSource() {
-        return this.imageSource;
+    public String getImageFruitSource() {
+        return this.imageFruitSource;
     }
 
     public Boolean getIsNative() {
         return this.isNative;
+    }
+
+    public String getImageLeafURL() {
+        return this.imageLeafURL;
+    }
+
+    public String getImageLeafSource() {
+        return this.imageLeafSource;
+    }
+
+    public String getWikiLink() {
+        return this.WikiLink;
     }
 
 }

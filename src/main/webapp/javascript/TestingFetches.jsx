@@ -62,22 +62,62 @@ export default function TestingFetches() {
     });
   }
 
-  const deletePlant = () => {
-    const ID = IDToFetch;
+    const deletePlant = () => {
+        const ID = IDToFetch;
   
-    fetch(`/api/plants/${ID}`, {
-      method: "DELETE",
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
+        fetch(`/api/plants/${ID}`, {
+            method: "DELETE",
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            console.log("Plant deleted successfully!");
+        })
+        .catch((error) => {
+            console.error("Error deleting plant:", error);
+        });
+    };
+
+    const SearchData = () => {
+        let [allPlants, setAllPlants] = useState([]);
+  
+        function getPlants() {
+            fetch(`/api/plants`, { method: "GET", cache: "default" })
+            .then((response) => response.json())
+            .then((responseBody) => {
+                setAllPlants(responseBody);
+            });
+            return () => {};
         }
-        console.log("Plant deleted successfully!");
-      })
-      .catch((error) => {
-        console.error("Error deleting plant:", error);
-      });
-  };
+  
+        if (allPlants && allPlants._embedded) {
+            return (
+                <div id="search-results">
+                    {allPlants["_embedded"][`plantList`].map((onePlant) => (
+                        <DisplaySearchResult key={onePlant.plantID} plant={onePlant} />
+                    ))}
+                </div>
+            );
+        } else {
+            return (
+                <div id="search-results">
+                    <button onClick={getPlants}>Show All Plants</button>
+                </div>
+            );
+        }
+    };
+
+    function DisplaySearchResult({ plant }) {
+        return (
+            <ul id={`plant-number-${plant.plantID}`}>
+                <li>Name: {plant.name}</li>
+                <li>Is Invasive: {plant.isInvasive}</li>
+                <li>Is Native: {plant.isNative}</li>
+                <li>Color: {plant.color}</li>
+            </ul>
+        );
+    }
 
   return (
     <div>
@@ -101,6 +141,13 @@ export default function TestingFetches() {
      </select>
      <input type="text" placeholder="color" value={newPlantColor} onChange={handleNewPlantColorChange}/>
      <button onClick={newPlant}>Create New Plant</button>
+
+     <br />
+     <br />
+     <br />
+     <br />
+
+     <SearchData />
     </div>
   );
 }

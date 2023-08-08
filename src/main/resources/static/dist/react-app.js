@@ -4249,6 +4249,45 @@ function TestingFetches() {
       console.error("Error deleting plant:", error);
     });
   };
+  var SearchData = function SearchData() {
+    var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState12 = _slicedToArray(_useState11, 2),
+      allPlants = _useState12[0],
+      setAllPlants = _useState12[1];
+    function getPlants() {
+      fetch("/api/plants", {
+        method: "GET",
+        cache: "default"
+      }).then(function (response) {
+        return response.json();
+      }).then(function (responseBody) {
+        setAllPlants(responseBody);
+      });
+      return function () {};
+    }
+    if (allPlants && allPlants._embedded) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        id: "search-results"
+      }, allPlants["_embedded"]["plantList"].map(function (onePlant) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(DisplaySearchResult, {
+          key: onePlant.plantID,
+          plant: onePlant
+        });
+      }));
+    } else {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        id: "search-results"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+        onClick: getPlants
+      }, "Show All Plants"));
+    }
+  };
+  function DisplaySearchResult(_ref6) {
+    var plant = _ref6.plant;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+      id: "plant-number-".concat(plant.plantID)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Name: ", plant.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Is Invasive: ", plant.isInvasive), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Is Native: ", plant.isNative), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Color: ", plant.color));
+  }
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "ID of plant you want to get:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "text",
     placeholder: "ID",
@@ -4290,7 +4329,7 @@ function TestingFetches() {
     onChange: handleNewPlantColorChange
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: newPlant
-  }, "Create New Plant"));
+  }, "Create New Plant"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(SearchData, null));
 }
 
 /***/ }),
@@ -4331,7 +4370,25 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.github {
   height: 50px;
   max-height: 50px;
 }
-`, "",{"version":3,"sources":["webpack://./src/main/webapp/css/style.css"],"names":[],"mappings":"AAAA;EACE,WAAW;EACX,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,gBAAgB;AAClB","sourcesContent":[".github {\r\n  width: auto;\r\n  height: 50px;\r\n  max-height: 50px;\r\n}\r\n\r\n.linkedin {\r\n  width: auto;\r\n  height: 50px;\r\n  max-height: 50px;\r\n}\r\n\r\n.gmail {\r\n  width: auto;\r\n  height: 50px;\r\n  max-height: 50px;\r\n}\r\n"],"sourceRoot":""}]);
+
+#search-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#search-results ul {
+    list-style: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#search-results ul:hover {
+    border-color: black;
+}
+
+`, "",{"version":3,"sources":["webpack://./src/main/webapp/css/style.css"],"names":[],"mappings":"AAAA;EACE,WAAW;EACX,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,gBAAgB;AAClB;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,gBAAgB;IAChB,sBAAsB;IACtB,aAAa;IACb,kBAAkB;AACtB;;AAEA;IACI,mBAAmB;AACvB","sourcesContent":[".github {\r\n  width: auto;\r\n  height: 50px;\r\n  max-height: 50px;\r\n}\r\n\r\n.linkedin {\r\n  width: auto;\r\n  height: 50px;\r\n  max-height: 50px;\r\n}\r\n\r\n.gmail {\r\n  width: auto;\r\n  height: 50px;\r\n  max-height: 50px;\r\n}\r\n\r\n#search-results {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n#search-results ul {\r\n    list-style: none;\r\n    border: 1px solid #ccc;\r\n    padding: 10px;\r\n    border-radius: 5px;\r\n}\r\n\r\n#search-results ul:hover {\r\n    border-color: black;\r\n}\r\n\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

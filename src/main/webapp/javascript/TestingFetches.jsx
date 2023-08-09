@@ -98,6 +98,11 @@ export default function TestingFetches() {
   function SearchData() {
     let [searchResults, setSearchResults] = useState([]);
     let [searchWasRun, setSearchWasRun] = useState(false);
+
+    let [searchKeywords, setSearchKeywords] = useState("");
+    const handleSearchBarTextChange = ({ target }) => {
+      setSearchKeywords(target.value);
+    }
     
     function getPlants() {
       fetch(`/api/plants`, { method: "GET", cache: "default" })
@@ -111,7 +116,8 @@ export default function TestingFetches() {
     
     console.log("search results: " + searchResults);
     return (
-      <div id="search-results">
+      <div>
+        <input type="text" placeholder='Search your plants' value={searchKeywords} onChange={setSearchKeywords}/>
         <button onClick={getPlants}>Search!</button>
         <div id="search-results">
           {searchResults && searchResults._embedded &&

@@ -4258,6 +4258,14 @@ function TestingFetches() {
       _useState14 = _slicedToArray(_useState13, 2),
       searchWasRun = _useState14[0],
       setSearchWasRun = _useState14[1];
+    var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+      _useState16 = _slicedToArray(_useState15, 2),
+      searchKeywords = _useState16[0],
+      setSearchKeywords = _useState16[1];
+    var handleSearchBarTextChange = function handleSearchBarTextChange(_ref6) {
+      var target = _ref6.target;
+      setSearchKeywords(target.value);
+    };
     function getPlants() {
       fetch("/api/plants", {
         method: "GET",
@@ -4271,9 +4279,12 @@ function TestingFetches() {
       });
     }
     console.log("search results: " + searchResults);
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      id: "search-results"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+      type: "text",
+      placeholder: "Search your plants",
+      value: searchKeywords,
+      onChange: setSearchKeywords
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
       onClick: getPlants
     }, "Search!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       id: "search-results"
@@ -4284,8 +4295,8 @@ function TestingFetches() {
       });
     })));
   }
-  function DisplaySearchResult(_ref6) {
-    var plant = _ref6.plant;
+  function DisplaySearchResult(_ref7) {
+    var plant = _ref7.plant;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
       id: "plant-number-".concat(plant.plantID)
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Name: ", plant.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Is Invasive: ", plant.isInvasive), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Is Native: ", plant.isNative), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Color: ", plant.color), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "ID: ", plant.plantID));

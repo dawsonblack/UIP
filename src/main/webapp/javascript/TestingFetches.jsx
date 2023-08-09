@@ -141,7 +141,7 @@ export default function TestingFetches() {
   }
 
     function DisplaySearchResult({ plant }) {
-      console.log(plant);
+      console.log(plant.imageFruitURL);
         return (
           <div id={`plant-number-${plant.plantID}`} className='plant-container'>
             <ul>

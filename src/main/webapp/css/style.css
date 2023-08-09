@@ -111,8 +111,8 @@ h1{
   height: 15px;
   width: 400px;
 
-  border: 2px solid #ccc; /* Add a border to the input */
-  border-radius: 5px; /* Round the input corners */
+  border: 2px solid #ccc;
+  border-radius: 5px;
   padding: 5px 10px;
   margin-bottom: 10px;
 }
@@ -178,7 +178,7 @@ h1{
     list-style: none;
     border: 1px solid #ccc;
     padding: 10px;
-    margin-top: 5px; /*maybe make this 10*/
+    margin-top: 10px;
     border-radius: 5px;
     background-color: rgba(150, 150, 150, 0.8);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -202,7 +202,7 @@ h1{
 }
 
 .plant-container ul li {
-  margin-bottom: 5px; /*This should fill the length of the box*/
+  margin-bottom: 5px;
 }
 
 .plant-container img {
@@ -211,8 +211,8 @@ h1{
   padding-left: 20px;
   padding-right: 20px;
 
-  border: 1px solid #ccc; /* Add border for image */
-  padding: 10px; /* Add padding around image*/
+  border: 1px solid #ccc;
+  padding: 10px;
 }
 
 .plant-container p {

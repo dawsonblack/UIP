@@ -97,6 +97,7 @@ export default function TestingFetches() {
 
   function SearchData() {
     let [searchResults, setSearchResults] = useState([]);
+    let [searchWasRun, setSearchWasRun] = useState(false);
     
     function getPlants() {
       fetch(`/api/plants`, { method: "GET", cache: "default" })
@@ -104,26 +105,22 @@ export default function TestingFetches() {
         .then((responseBody) => {
           console.log("response body: " + responseBody);
           setSearchResults(responseBody);
+          setSearchWasRun(true);
         });
     }
     
     console.log("search results: " + searchResults);
-    if (searchResults && searchResults._embedded) {
-      return (
-        <div>
-          <button onClick={getPlants}>Search!</button>
-          <div id="search-results">
-            {searchResults["_embedded"]["plantList"].map((oneResult) => (
+    return (
+      <div id="search-results">
+        <button onClick={getPlants}>Search!</button>
+        <div id="search-results">
+          {searchResults && searchResults._embedded &&
+            searchResults["_embedded"]["plantList"].map((oneResult) => (
               <DisplaySearchResult key={oneResult.plantID} plant={oneResult} />
             ))}
-          </div>
         </div>
-      );
-    } else {
-      return (
-          <button onClick={getPlants}>Search!</button>
-      );
-    }
+      </div>
+    );
   }
 
     function DisplaySearchResult({ plant }) {
@@ -133,6 +130,7 @@ export default function TestingFetches() {
                 <li>Is Invasive: {plant.isInvasive}</li>
                 <li>Is Native: {plant.isNative}</li>
                 <li>Color: {plant.color}</li>
+                <li>ID: {plant.plantID}</li>
             </ul>
         );
     }

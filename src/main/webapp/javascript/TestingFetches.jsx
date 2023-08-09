@@ -122,13 +122,17 @@ export default function TestingFetches() {
           <input type="text" id="search-bar" placeholder='Search your plants' value={searchKeywords} onChange={(e) => setSearchKeywords(e.target.value)}/>
           <button id="search-button" onClick={getPlants}>Search!</button>
         </div>
-        <select onChange={(e) => setSearchBy(e.target.value)}>
-          <option value="name">Name</option>
-          <option value="isInvasive">Is Invasive</option>
-          <option value="isInvasive">Is Native</option>
-          <option value="color">Color</option>
-          <option value="description">Description</option>
-        </select>
+        <label htmlFor="search-by">Search By:</label>
+        <div className="search-dropdown">
+          <select id="search-by" onChange={(e) => setSearchBy(e.target.value)}>
+            <option value="name">Name</option>
+            <option value="isInvasive">Is Invasive</option>
+            <option value="isInvasive">Is Native</option>
+            <option value="color">Color</option>
+            <option value="description">Description</option>
+          </select>
+          <div className="dropdown-arrow">&#9662;</div>
+        </div>
 
         <div id="search-results">
           {searchResults.length > 0 ? (

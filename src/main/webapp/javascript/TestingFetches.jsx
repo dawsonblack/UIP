@@ -124,6 +124,7 @@ export default function TestingFetches() {
           <option value="isInvasive">Is Invasive</option>
           <option value="isInvasive">Is Native</option>
           <option value="color">Color</option>
+          <option value="description">Description</option>
         </select>
         <button onClick={getPlants}>Search!</button>
 
@@ -141,7 +142,7 @@ export default function TestingFetches() {
   }
 
     function DisplaySearchResult({ plant }) {
-      console.log(plant);
+      console.log(plant.imageFruitURL);
         return (
           <div id={`plant-number-${plant.plantID}`} className='plant-container'>
             <ul>

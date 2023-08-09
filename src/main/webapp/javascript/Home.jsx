@@ -21,6 +21,15 @@ export default function Home() {
           </div>
           <div>
             <h4>Dawson Black</h4>
+            <a href="https://dawsonblack.github.io/">
+              <img class="github" src="images/github-mark.png" />
+            </a>
+            <a href="dawsonblack0816@gmail.com">
+              <img class="gmail" src="images\Gmail-Email-PNG-Pic.png" />
+            </a>
+            <a href="https://www.linkedin.com/in/ddablack/">
+              <img class="linkedin" src="images\In-Blue-128.png" />
+            </a>
           </div>
           <div>
             <h4>Robert Johnson</h4>
@@ -50,8 +59,8 @@ export default function Home() {
         <div>
           <h3>About</h3>
           <p>
-            UIP is an application that shows you common helpful as well as
-            invasive species of plants in Central Ohio. It displays images and
+            UIP is an informational application that shows you common helpful as well as
+            invasive species of plants in Central Ohio. Search for a plant, it displays images and
             some information and links to an external source.
           </p>
         </div>

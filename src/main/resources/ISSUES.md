@@ -1,0 +1,1 @@
+-make background one image that moves rather than multiple instances on the screen

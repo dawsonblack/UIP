@@ -100,13 +100,14 @@ export default function TestingFetches() {
     const [searchWasRun, setSearchWasRun] = useState(false);
 
     const [searchKeywords, setSearchKeywords] = useState("");
+    const [searchBy, setSearchBy] = useState("");
     
     function getPlants() {
       fetch(`/api/plants`, { method: "GET", cache: "default" })
         .then((response) => response.json())
         .then((responseBody) => {
           const filteredResults = responseBody["_embedded"]["plantList"].filter(item => {
-            return item.name.toLowerCase().includes(searchKeywords.toLowerCase());
+            return item[searchBy].toLowerCase().includes(searchKeywords.toLowerCase());
           });
           console.log("Here are the filtered search results: " + filteredResults);
           setSearchResults(filteredResults);
@@ -118,12 +119,12 @@ export default function TestingFetches() {
     return (
       <div>
         <input type="text" placeholder='Search your plants' value={searchKeywords} onChange={(e) => setSearchKeywords(e.target.value)}/>
-        <select onChange={handleNewPlantIsInvasiveChange}>
+        <select onChange={(e) => setSearchBy(e.target.value)}>
           <option disabled selected value="">Search By</option>
           <option value="name">Name</option>
           <option value="isInvasive">Is Invasive</option>
           <option value="isInvasive">Is Native</option>
-          <option value="isNative">Color</option>
+          <option value="color">Color</option>
         </select>
         <button onClick={getPlants}>Search!</button>
 

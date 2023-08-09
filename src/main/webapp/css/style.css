@@ -35,12 +35,12 @@
     border-radius: 5px;
 }
 
+.plant-container:hover {
+  border-color: black;
+}
+
 .plant-container p {
   max-width: 300px;
   padding-left: 20px;
-}
-
-#search-results ul:hover {
-    border-color: black;
 }
 

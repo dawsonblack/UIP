@@ -1,19 +1,105 @@
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: cadetblue;
+  margin-bottom: 2%;
+  padding: 0.75em;
+  background-color:darkgray;
+  width: 100%;
+}
+
+nav a{
+  text-decoration: none;
+  color: black;
+}
+
+body{
+  margin: 0px;
+  background-image: url(images/background-image.jpg);
+  background-position: 0px 0px;
+  height: 100%;
+  width: 100%;
+  color: white;
+}
+
+/* .bg{
+  background-image: url(images/background-image.jpg);
+  background-position: fixed;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+
+} */
+
+#header{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 21%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 35px 15px;
+    min-width: 750px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    background-color:cadetblue;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 1.0rem;
+    justify-content: space-between;
+}
+
+
+h1{
+  display: flex;
+    align-content: center;
+    justify-content:center;
+    top: 50%;
+    left: 50%;
+    
+}
+
+#about{
+  left: 0;
+  right: 0;
+}
+
+.creators{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size:70%;
+  background-color: darkgray;
+  margin-top: 2%;
+  padding: 0.01em;
+}
+
 .github {
   width: auto;
-  height: 50px;
-  max-height: 50px;
+  height: 30px;
+  max-height: 30px;
 }
 
 .linkedin {
   width: auto;
-  height: 50px;
-  max-height: 50px;
+  height: 30px;
+  max-height: 30px;
 }
 
 .gmail {
   width: auto;
-  height: 50px;
-  max-height: 50px;
+  height: 30px;
+  max-height: 30px;
 }
 
 /*.plant-container {
@@ -49,4 +135,3 @@
   padding-left: 20px;
   padding-right: 20px;
 }
-

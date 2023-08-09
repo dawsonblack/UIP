@@ -96,20 +96,20 @@ export default function TestingFetches() {
 
 
   function SearchData() {
-    let [searchResults, setSearchResults] = useState([]);
-    let [searchWasRun, setSearchWasRun] = useState(false);
+    const [searchResults, setSearchResults] = useState([]);
+    const [searchWasRun, setSearchWasRun] = useState(false);
 
-    let [searchKeywords, setSearchKeywords] = useState("");
-    const handleSearchBarTextChange = ({ target }) => {
-      setSearchKeywords(target.value);
-    }
+    const [searchKeywords, setSearchKeywords] = useState("");
     
     function getPlants() {
       fetch(`/api/plants`, { method: "GET", cache: "default" })
         .then((response) => response.json())
         .then((responseBody) => {
-          console.log("response body: " + responseBody);
-          setSearchResults(responseBody);
+          const filteredResults = responseBody["_embedded"]["plantList"].filter(item => {
+            return item.name.toLowerCase().includes(searchKeywords.toLowerCase());
+          });
+          console.log("Here are the filtered search results: " + filteredResults);
+          setSearchResults(filteredResults);
           setSearchWasRun(true);
         });
     }
@@ -117,12 +117,12 @@ export default function TestingFetches() {
     console.log("search results: " + searchResults);
     return (
       <div>
-        <input type="text" placeholder='Search your plants' value={searchKeywords} onChange={setSearchKeywords}/>
+        <input type="text" placeholder='Search your plants' value={searchKeywords} onChange={(e) => setSearchKeywords(e.target.value)}/>
         <button onClick={getPlants}>Search!</button>
         <div id="search-results">
-          {searchResults && searchResults._embedded &&
-            searchResults["_embedded"]["plantList"].map((oneResult) => (
-              <DisplaySearchResult key={oneResult.plantID} plant={oneResult} />
+          {searchResults &&
+            searchResults.map((oneResult) => (
+                <DisplaySearchResult key={oneResult.plantID} plant={oneResult} />
             ))}
         </div>
       </div>
@@ -133,8 +133,8 @@ export default function TestingFetches() {
         return (
             <ul id={`plant-number-${plant.plantID}`}>
                 <li>Name: {plant.name}</li>
-                <li>Is Invasive: {plant.isInvasive}</li>
-                <li>Is Native: {plant.isNative}</li>
+                <li>Is Invasive: {plant.is_Invasive}</li>
+                <li>Is Native: {plant.is_Native}</li>
                 <li>Color: {plant.color}</li>
                 <li>ID: {plant.plantID}</li>
             </ul>

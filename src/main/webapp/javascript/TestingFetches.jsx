@@ -114,11 +114,14 @@ export default function TestingFetches() {
           setSearchWasRun(true);
         });
     }
-    
+
     console.log("search results: " + searchResults);
     return (
-      <div>
-        <input type="text" placeholder='Search your plants' value={searchKeywords} onChange={(e) => setSearchKeywords(e.target.value)}/>
+      <div id="search-container">
+        <div>
+          <input type="text" id="search-bar" placeholder='Search your plants' value={searchKeywords} onChange={(e) => setSearchKeywords(e.target.value)}/>
+          <button id="search-button" onClick={getPlants}>Search!</button>
+        </div>
         <select onChange={(e) => setSearchBy(e.target.value)}>
           <option value="name">Name</option>
           <option value="isInvasive">Is Invasive</option>
@@ -126,7 +129,6 @@ export default function TestingFetches() {
           <option value="color">Color</option>
           <option value="description">Description</option>
         </select>
-        <button onClick={getPlants}>Search!</button>
 
         <div id="search-results">
           {searchResults.length > 0 ? (
@@ -142,7 +144,7 @@ export default function TestingFetches() {
   }
 
     function DisplaySearchResult({ plant }) {
-      console.log(plant.imageFruitURL);
+      console.log(plant);
         return (
           <div id={`plant-number-${plant.plantID}`} className='plant-container'>
             <ul>

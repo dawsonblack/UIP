@@ -2,7 +2,7 @@
 
 nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: cadetblue;
   margin-bottom: 2%;
   padding: 0.75em;

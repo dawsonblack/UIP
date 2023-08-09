@@ -100,7 +100,7 @@ export default function TestingFetches() {
     const [searchWasRun, setSearchWasRun] = useState(false);
 
     const [searchKeywords, setSearchKeywords] = useState("");
-    const [searchBy, setSearchBy] = useState("");
+    const [searchBy, setSearchBy] = useState("name");
     
     function getPlants() {
       fetch(`/api/plants`, { method: "GET", cache: "default" })
@@ -120,7 +120,6 @@ export default function TestingFetches() {
       <div>
         <input type="text" placeholder='Search your plants' value={searchKeywords} onChange={(e) => setSearchKeywords(e.target.value)}/>
         <select onChange={(e) => setSearchBy(e.target.value)}>
-          <option disabled selected value="">Search By</option>
           <option value="name">Name</option>
           <option value="isInvasive">Is Invasive</option>
           <option value="isInvasive">Is Native</option>
@@ -152,7 +151,9 @@ export default function TestingFetches() {
                 <li>Color: {plant.color}</li>
                 <li>ID: {plant.plantID}</li>
             </ul>
-            <p>{plant.description}</p>
+            <img src={plant.imageFruitURL} alt="fruit image" />
+            <img src={plant.imageLeafURL} alt="leaf image" />
+            <p>{plant.description} <a href={plant.wikiLink}>Learn More</a></p>
           </div>
         );
     }

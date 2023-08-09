@@ -118,26 +118,41 @@ export default function TestingFetches() {
     return (
       <div>
         <input type="text" placeholder='Search your plants' value={searchKeywords} onChange={(e) => setSearchKeywords(e.target.value)}/>
+        <select onChange={handleNewPlantIsInvasiveChange}>
+          <option disabled selected value="">Search By</option>
+          <option value="name">Name</option>
+          <option value="isInvasive">Is Invasive</option>
+          <option value="isInvasive">Is Native</option>
+          <option value="isNative">Color</option>
+        </select>
         <button onClick={getPlants}>Search!</button>
+
         <div id="search-results">
-          {searchResults &&
-            searchResults.map((oneResult) => (
+          {searchResults.length > 0 ? (
+              searchResults.map((oneResult) => (
                 <DisplaySearchResult key={oneResult.plantID} plant={oneResult} />
-            ))}
+              ))
+          ) : (
+              searchWasRun && <p>Hmmm, no results found!</p>
+          )}
         </div>
       </div>
     );
   }
 
     function DisplaySearchResult({ plant }) {
+      console.log(plant);
         return (
-            <ul id={`plant-number-${plant.plantID}`}>
+          <div id={`plant-number-${plant.plantID}`} className='plant-container'>
+            <ul>
                 <li>Name: {plant.name}</li>
-                <li>Is Invasive: {plant.is_Invasive}</li>
-                <li>Is Native: {plant.is_Native}</li>
+                <li>Is Invasive: {plant.isInvasive}</li>
+                <li>Is Native: {plant.isNative}</li>
                 <li>Color: {plant.color}</li>
                 <li>ID: {plant.plantID}</li>
             </ul>
+            <p>{plant.description}</p>
+          </div>
         );
     }
 

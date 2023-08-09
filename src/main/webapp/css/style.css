@@ -16,17 +16,28 @@
   max-height: 50px;
 }
 
+/*.plant-container {
+  display: flex;
+}*/
+
 #search-results {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#search-results ul {
+.plant-container {
+    display: flex;
+    flex-direction: row;
     list-style: none;
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
+}
+
+.plant-container p {
+  max-width: 300px;
+  padding-left: 20px;
 }
 
 #search-results ul:hover {

@@ -79,34 +79,49 @@ export default function TestingFetches() {
         });
     };
 
-    const SearchData = () => {
-        let [allPlants, setAllPlants] = useState([]);
-  
-        function getPlants() {
-            fetch(`/api/plants`, { method: "GET", cache: "default" })
-            .then((response) => response.json())
-            .then((responseBody) => {
-                setAllPlants(responseBody);
-            });
-            return () => {};
-        }
-  
-        if (allPlants && allPlants._embedded) {
-            return (
-                <div id="search-results">
-                    {allPlants["_embedded"][`plantList`].map((onePlant) => (
-                        <DisplaySearchResult key={onePlant.plantID} plant={onePlant} />
-                    ))}
-                </div>
-            );
-        } else {
-            return (
-                <div id="search-results">
-                    <button onClick={getPlants}>Show All Plants</button>
-                </div>
-            );
-        }
-    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function SearchData() {
+    let [searchResults, setSearchResults] = useState([]);
+    let [searchWasRun, setSearchWasRun] = useState(false);
+    
+    function getPlants() {
+      fetch(`/api/plants`, { method: "GET", cache: "default" })
+        .then((response) => response.json())
+        .then((responseBody) => {
+          console.log("response body: " + responseBody);
+          setSearchResults(responseBody);
+          setSearchWasRun(true);
+        });
+    }
+    
+    console.log("search results: " + searchResults);
+    return (
+      <div id="search-results">
+        <button onClick={getPlants}>Search!</button>
+        <div id="search-results">
+          {searchResults && searchResults._embedded &&
+            searchResults["_embedded"]["plantList"].map((oneResult) => (
+              <DisplaySearchResult key={oneResult.plantID} plant={oneResult} />
+            ))}
+        </div>
+      </div>
+    );
+  }
 
     function DisplaySearchResult({ plant }) {
         return (
@@ -115,39 +130,40 @@ export default function TestingFetches() {
                 <li>Is Invasive: {plant.isInvasive}</li>
                 <li>Is Native: {plant.isNative}</li>
                 <li>Color: {plant.color}</li>
+                <li>ID: {plant.plantID}</li>
             </ul>
         );
     }
 
   return (
     <div>
-     <p>ID of plant you want to get:</p>
-     <input type="text" placeholder="ID" value={IDToFetch} onChange={handleIDToFetchChange}/>
-     <button onClick={getPlant}>Get Plant</button>
-     <button onClick={deletePlant}>Delete Plant</button>
+      <p>ID of plant you want to get:</p>
+      <input type="text" placeholder="ID" value={IDToFetch} onChange={handleIDToFetchChange}/>
+      <button onClick={getPlant}>Get Plant</button>
+      <button onClick={deletePlant}>Delete Plant</button>
 
-     <br />
+      <br />
 
-     <input type="text" placeholder="name" value={newPlantName} onChange={handleNewPlantNameChange}/>
-     <select onChange={handleNewPlantIsInvasiveChange}>
+      <input type="text" placeholder="name" value={newPlantName} onChange={handleNewPlantNameChange}/>
+      <select onChange={handleNewPlantIsInvasiveChange}>
         <option disabled selected value="">Is It Invasive?</option>
         <option value="true">Yes</option>
         <option value="false">No</option>
-     </select>
-     <select onChange={handleNewPlantIsNativeChange}>
+      </select>
+      <select onChange={handleNewPlantIsNativeChange}>
         <option disabled selected value="">Is It Native?</option>
         <option value="true">Yes</option>
         <option value="false">No</option>
-     </select>
-     <input type="text" placeholder="color" value={newPlantColor} onChange={handleNewPlantColorChange}/>
-     <button onClick={newPlant}>Create New Plant</button>
+      </select>
+      <input type="text" placeholder="color" value={newPlantColor} onChange={handleNewPlantColorChange}/>
+      <button onClick={newPlant}>Create New Plant</button>
 
-     <br />
-     <br />
-     <br />
-     <br />
+      <br />
+      <br />
+      <br />
+      <br />
 
-     <SearchData />
+      <SearchData />
     </div>
   );
 }

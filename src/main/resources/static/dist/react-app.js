@@ -4249,11 +4249,15 @@ function TestingFetches() {
       console.error("Error deleting plant:", error);
     });
   };
-  var SearchData = function SearchData() {
+  function SearchData() {
     var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState12 = _slicedToArray(_useState11, 2),
-      allPlants = _useState12[0],
-      setAllPlants = _useState12[1];
+      searchResults = _useState12[0],
+      setSearchResults = _useState12[1];
+    var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState14 = _slicedToArray(_useState13, 2),
+      searchWasRun = _useState14[0],
+      setSearchWasRun = _useState14[1];
     function getPlants() {
       fetch("/api/plants", {
         method: "GET",
@@ -4261,32 +4265,30 @@ function TestingFetches() {
       }).then(function (response) {
         return response.json();
       }).then(function (responseBody) {
-        setAllPlants(responseBody);
+        console.log("response body: " + responseBody);
+        setSearchResults(responseBody);
+        setSearchWasRun(true);
       });
-      return function () {};
     }
-    if (allPlants && allPlants._embedded) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        id: "search-results"
-      }, allPlants["_embedded"]["plantList"].map(function (onePlant) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(DisplaySearchResult, {
-          key: onePlant.plantID,
-          plant: onePlant
-        });
-      }));
-    } else {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        id: "search-results"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-        onClick: getPlants
-      }, "Show All Plants"));
-    }
-  };
+    console.log("search results: " + searchResults);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      id: "search-results"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      onClick: getPlants
+    }, "Search!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      id: "search-results"
+    }, searchResults && searchResults._embedded && searchResults["_embedded"]["plantList"].map(function (oneResult) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(DisplaySearchResult, {
+        key: oneResult.plantID,
+        plant: oneResult
+      });
+    })));
+  }
   function DisplaySearchResult(_ref6) {
     var plant = _ref6.plant;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
       id: "plant-number-".concat(plant.plantID)
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Name: ", plant.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Is Invasive: ", plant.isInvasive), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Is Native: ", plant.isNative), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Color: ", plant.color));
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Name: ", plant.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Is Invasive: ", plant.isInvasive), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Is Native: ", plant.isNative), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Color: ", plant.color), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "ID: ", plant.plantID));
   }
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "ID of plant you want to get:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "text",

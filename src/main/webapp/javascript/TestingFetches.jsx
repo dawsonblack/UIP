@@ -140,7 +140,12 @@ export default function TestingFetches() {
                 <DisplaySearchResult key={oneResult.plantID} plant={oneResult} />
               ))
           ) : (
-              searchWasRun && <p>Hmmm, no results found!</p>
+              searchWasRun && (
+                <div id="no-results-message">
+                  <p id="no-results-message">Oops! We couldn't find any matching plants.</p>
+                  <img src="images/dead-plant.jpg" />
+                </div>
+              )
           )}
         </div>
       </div>

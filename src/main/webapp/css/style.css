@@ -180,9 +180,11 @@ h1{
     list-style: none;
     border: 1px solid #ccc;
     padding: 10px;
-    margin-top: 5px;
+    margin-top: 5px; /*maybe make this 10*/
     border-radius: 5px;
     background-color: rgba(150, 150, 150, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .plant-container:hover {
@@ -190,22 +192,61 @@ h1{
   background-color: rgba(100, 100, 100, 0.8);
 }
 
+.plant-container ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+.plant-container ul li {
+  margin-bottom: 5px; /*This should fill the length of the box*/
+}
+
+.plant-container img {
+  max-width: 200px;
+  max-height: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  border: 1px solid #ccc; /* Add border for image */
+  padding: 10px; /* Add padding around image*/
+}
+
 .plant-container p {
   max-width: 300px;
   padding-left: 20px;
 }
 
-.plant-container img {
-  max-width: 200px;
-  padding-left: 20px;
-  padding-right: 20px;
+.plant-container a {
+  text-decoration: none;
+}
+
+.plant-container a:hover {
+  text-decoration: underline;
+}
+
+#no-results-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
 #no-results-message p {
   font-size: 16px;
-  margin-top: 20px;
   margin-bottom: 10px;
 }
+
+#no-results-message img {
+  max-width: 100px;
+  opacity: 0.95;
+}
+
 
 
 
@@ -215,10 +256,6 @@ h1{
 
 
 
-.no-results-message img {
-  max-width: 100px;
-  opacity: 0.7;
-}
 
 
 */

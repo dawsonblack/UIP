@@ -1,33 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 export default function TestingFetches() {
-  const [IDToFetch, setIDToFetch] = useState(0);
-
-  const [newPlantName, setNewPlantName] = useState("");
-  const [newPlantIsInvasive, setNewPlantIsInvasive] = useState();
-  const [newPlantIsNative, setNewPlantIsNative] = useState();
-  const [newPlantColor, setNewPlantColor] = useState("");
-
-  const handleIDToFetchChange = ({ target }) => {
-    setIDToFetch(target.value);
-  }
-  
-  const handleNewPlantNameChange = ({ target }) => {
-    setNewPlantName(target.value);
-  }
-
-  const handleNewPlantIsInvasiveChange = ({ target }) => {
-    setNewPlantIsInvasive(target.value);
-  }
-
-  const handleNewPlantIsNativeChange = ({ target }) => {
-    setNewPlantIsNative(target.value);
-  }
-
-  const handleNewPlantColorChange = ({ target }) => {
-    setNewPlantColor(target.value);
-  }
-
 
   function getPlant() {
     const ID = IDToFetch;
@@ -143,7 +116,7 @@ export default function TestingFetches() {
               searchWasRun && (
                 <div id="no-results-message">
                   <p id="no-results-message">Oops! We couldn't find any matching plants.</p>
-                  <img src="images/dead-plant.jpg" />
+                  <img src="images/dead-plant.PNG" />
                 </div>
               )
           )}
@@ -172,32 +145,6 @@ export default function TestingFetches() {
 
   return (
     <div>
-      <p>ID of plant you want to get:</p>
-      <input type="text" placeholder="ID" value={IDToFetch} onChange={handleIDToFetchChange}/>
-      <button onClick={getPlant}>Get Plant</button>
-      <button onClick={deletePlant}>Delete Plant</button>
-
-      <br />
-
-      <input type="text" placeholder="name" value={newPlantName} onChange={handleNewPlantNameChange}/>
-      <select onChange={handleNewPlantIsInvasiveChange}>
-        <option disabled selected value="">Is It Invasive?</option>
-        <option value="true">Yes</option>
-        <option value="false">No</option>
-      </select>
-      <select onChange={handleNewPlantIsNativeChange}>
-        <option disabled selected value="">Is It Native?</option>
-        <option value="true">Yes</option>
-        <option value="false">No</option>
-      </select>
-      <input type="text" placeholder="color" value={newPlantColor} onChange={handleNewPlantColorChange}/>
-      <button onClick={newPlant}>Create New Plant</button>
-
-      <br />
-      <br />
-      <br />
-      <br />
-
       <SearchData />
     </div>
   );

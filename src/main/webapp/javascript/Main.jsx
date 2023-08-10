@@ -17,6 +17,10 @@ function Layout() {
         <Link to="TestingFetches">TestingFetches</Link>
       </nav>
       <Outlet />
+
+      <video autoplay muted loop id="myVideo">
+        <source src="leaves-swaying.mp4" type="video/mp4" />
+      </video>
     </>
   );
 }

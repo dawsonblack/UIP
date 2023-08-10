@@ -7,6 +7,7 @@ NOTES FROM DAWSON:
 -pictures could be formatted better
 -add some space between ul and img in results
 -consider adding a scientific and common name
+-need a fruiting image for mosquito-fern
 
 NOTES FROM ABDI:
 

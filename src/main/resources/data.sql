@@ -395,3 +395,111 @@ VALUES
         'https://en.wikipedia.org/wiki/Dipsacus_fullonum',
         -14
     );
+
+INSERT INTO
+    plant (
+        name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_Fruit_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Cutleaf Teasel',
+        'Dipsacus laciniatus, known as cutleaf teasel, is a perennial herb native to Europe and Asia, now invasive in North America. It features hollow, prickly stems, oppositely arranged leaves forming cups, and egg-shaped flower heads containing up to 1500 flowers. The plant is monocarpic, reproducing only by seed, and poses invasive threats in various habitats due to a lack of native predators.',
+        true,
+        false,
+        'White',
+        'fruitImages/Cutleaf-Teasel(F).jpg',
+        'By Simon Eugster -- Simon / ?! 07:03, 9 September 2007 (UTC) - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2707701',
+        'https://en.wikipedia.org/wiki/Dipsacus_laciniatus',
+        -15
+    );
+
+INSERT INTO
+    plant (
+        name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Brazilian Waterweed',
+        'Egeria densa is an aquatic plant with trailing stems that can reach 2 meters in length, producing leaves in whorls of 4-8, and dioecious flowers with three white petals on separate male and female plants. It forms dense surface canopies, inhibiting light penetration to lower plants.',
+        true,
+        false,
+        'Green',
+        'fruitImages/Brazilian-Waterweed(F).jpg',
+        'leafImages/Brazilian-Waterweed(L).jpg',
+        'By Lara Gudmundsdottir - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=35008391',
+        'CC BY-SA 2.5, https://commons.wikimedia.org/w/index.php?curid=3492981',
+        'https://en.wikipedia.org/wiki/Egeria_densa',
+        -16
+    );
+
+INSERT INTO
+    plant (
+        name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_Fruit_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Anchored Water Hyacinth',
+        'The anchored water hyacinth is a free-floating aquatic perennial with distinctive thick, waxy green leaves and lavender blue flowers resembling lilacs. It grows both underwater and above water on long stems, producing up to 5 flowers per stem, and can reach three feet above the waters surface while being rooted underwater.',
+        true,
+        false,
+        'White outer flower with reddish center',
+        'fruitImages/Anchored-Water-Hyacinth(F).jpg',
+        'By I, KENPEI, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=4456920',
+        'https://en.wikipedia.org/wiki/Pontederia_azurea',
+        -17
+    );
+
+INSERT INTO
+    plant (
+        name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Russian Olive',
+        'Elaeagnus angustifolia is a thorny tree reaching 35 feet in height, characterized by silvery to rusty scaled stems, lanceolate leaves, and aromatic clusters of creamy yellow flowers followed by small orange-red cherry-like fruit covered in silvery scales. The species reproduces mainly by seed, with thorny branches up to 7 cm long.',
+        true,
+        false,
+        'Yellow',
+        'fruitImages/Russian-Olive(F).jpg',
+        'leafImages/Russian-Olive(L).jpg',
+        'By Walter Siegmund (talk) - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=94274330',
+        'By Katrin Schneider, korina.info CC-BY-SA-4.0, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=100034738',
+        'https://en.wikipedia.org/wiki/Elaeagnus_angustifolia',
+        -18
+    );

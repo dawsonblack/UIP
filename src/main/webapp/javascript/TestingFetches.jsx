@@ -83,7 +83,7 @@ export default function TestingFetches() {
             console.log("The " +  searchBy + " is " + item[searchBy] + ", and its type is " + typeof item[searchBy]);
             return (
               (searchKeywords == "") ||
-              (item[searchBy] == searchKeywords.toLowerCase()) ||
+              (item[searchBy].toString() == searchKeywords.toLowerCase()) ||
               (typeof item[searchBy] !== 'boolean' && item[searchBy].toLowerCase().includes(searchKeywords.toLowerCase()))
             );
           });

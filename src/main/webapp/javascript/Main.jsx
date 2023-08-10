@@ -1,5 +1,6 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
+import React, { useEffect } from "react";
+
+import { createRoot} from "react-dom/client";
 import { BrowserRouter, Routes, Route, Outlet, Link } from "react-router-dom";
 
 import "../css/style.css";
@@ -9,6 +10,12 @@ import Test from "./Test";
 import TestingFetches from "./TestingFetches";
 
 function Layout() {
+
+  useEffect(() => {
+    let video = document.querySelector('video');
+    video.playbackRate = 0.5;
+  }, []);
+
   return (
     <>
       <nav>
@@ -18,7 +25,7 @@ function Layout() {
       </nav>
       <Outlet />
 
-      <video autoplay muted loop id="myVideo">
+      <video autoPlay muted loop id="background-video">
         <source src="leaves-swaying.mp4" type="video/mp4" />
       </video>
     </>

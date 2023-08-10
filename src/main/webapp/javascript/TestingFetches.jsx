@@ -1,33 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 export default function TestingFetches() {
-  const [IDToFetch, setIDToFetch] = useState(0);
-
-  const [newPlantName, setNewPlantName] = useState("");
-  const [newPlantIsInvasive, setNewPlantIsInvasive] = useState();
-  const [newPlantIsNative, setNewPlantIsNative] = useState();
-  const [newPlantColor, setNewPlantColor] = useState("");
-
-  const handleIDToFetchChange = ({ target }) => {
-    setIDToFetch(target.value);
-  }
-  
-  const handleNewPlantNameChange = ({ target }) => {
-    setNewPlantName(target.value);
-  }
-
-  const handleNewPlantIsInvasiveChange = ({ target }) => {
-    setNewPlantIsInvasive(target.value);
-  }
-
-  const handleNewPlantIsNativeChange = ({ target }) => {
-    setNewPlantIsNative(target.value);
-  }
-
-  const handleNewPlantColorChange = ({ target }) => {
-    setNewPlantColor(target.value);
-  }
-
 
   function getPlant() {
     const ID = IDToFetch;
@@ -114,19 +87,25 @@ export default function TestingFetches() {
           setSearchWasRun(true);
         });
     }
-    
+
     console.log("search results: " + searchResults);
     return (
-      <div>
-        <input type="text" placeholder='Search your plants' value={searchKeywords} onChange={(e) => setSearchKeywords(e.target.value)}/>
-        <select onChange={(e) => setSearchBy(e.target.value)}>
-          <option value="name">Name</option>
-          <option value="isInvasive">Is Invasive</option>
-          <option value="isInvasive">Is Native</option>
-          <option value="color">Color</option>
-          <option value="description">Description</option>
-        </select>
-        <button onClick={getPlants}>Search!</button>
+      <div id="search-container">
+        <div>
+          <input type="text" id="search-bar" placeholder='Search your plants' value={searchKeywords} onChange={(e) => setSearchKeywords(e.target.value)}/>
+          <button id="search-button" onClick={getPlants}>Search!</button>
+        </div>
+        <label htmlFor="search-by">Search By:</label>
+        <div className="search-dropdown">
+          <select id="search-by" onChange={(e) => setSearchBy(e.target.value)}>
+            <option value="name">Name</option>
+            <option value="isInvasive">Is Invasive</option>
+            <option value="isInvasive">Is Native</option>
+            <option value="color">Color</option>
+            <option value="description">Description</option>
+          </select>
+          <div className="dropdown-arrow">&#9662;</div>
+        </div>
 
         <div id="search-results">
           {searchResults.length > 0 ? (
@@ -134,7 +113,12 @@ export default function TestingFetches() {
                 <DisplaySearchResult key={oneResult.plantID} plant={oneResult} />
               ))
           ) : (
-              searchWasRun && <p>Hmmm, no results found!</p>
+              searchWasRun && (
+                <div id="no-results-message">
+                  <p id="no-results-message">Oops! We couldn't find any matching plants.</p>
+                  <img src="images/dead-plant.PNG" />
+                </div>
+              )
           )}
         </div>
       </div>
@@ -142,7 +126,7 @@ export default function TestingFetches() {
   }
 
     function DisplaySearchResult({ plant }) {
-      console.log(plant.imageFruitURL);
+      console.log(plant);
         return (
           <div id={`plant-number-${plant.plantID}`} className='plant-container'>
             <ul>
@@ -161,32 +145,6 @@ export default function TestingFetches() {
 
   return (
     <div>
-      <p>ID of plant you want to get:</p>
-      <input type="text" placeholder="ID" value={IDToFetch} onChange={handleIDToFetchChange}/>
-      <button onClick={getPlant}>Get Plant</button>
-      <button onClick={deletePlant}>Delete Plant</button>
-
-      <br />
-
-      <input type="text" placeholder="name" value={newPlantName} onChange={handleNewPlantNameChange}/>
-      <select onChange={handleNewPlantIsInvasiveChange}>
-        <option disabled selected value="">Is It Invasive?</option>
-        <option value="true">Yes</option>
-        <option value="false">No</option>
-      </select>
-      <select onChange={handleNewPlantIsNativeChange}>
-        <option disabled selected value="">Is It Native?</option>
-        <option value="true">Yes</option>
-        <option value="false">No</option>
-      </select>
-      <input type="text" placeholder="color" value={newPlantColor} onChange={handleNewPlantColorChange}/>
-      <button onClick={newPlant}>Create New Plant</button>
-
-      <br />
-      <br />
-      <br />
-      <br />
-
       <SearchData />
     </div>
   );

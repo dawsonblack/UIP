@@ -18,7 +18,7 @@ function Layout() {
       </nav>
       <Outlet />
 
-      <video autoplay muted loop id="myVideo">
+      <video autoPlay muted loop id="background-video">
         <source src="leaves-swaying.mp4" type="video/mp4" />
       </video>
     </>

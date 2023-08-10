@@ -80,7 +80,12 @@ export default function TestingFetches() {
         .then((response) => response.json())
         .then((responseBody) => {
           const filteredResults = responseBody["_embedded"]["plantList"].filter(item => {
-            return item[searchBy].toLowerCase().includes(searchKeywords.toLowerCase());
+            console.log("The " +  searchBy + " is " + item[searchBy] + ", and its type is " + typeof item[searchBy]);
+            return (
+              (searchKeywords == "") ||
+              (item[searchBy] == searchKeywords.toLowerCase()) ||
+              (typeof item[searchBy] !== 'boolean' && item[searchBy].toLowerCase().includes(searchKeywords.toLowerCase()))
+            );
           });
           console.log("Here are the filtered search results: " + filteredResults);
           setSearchResults(filteredResults);
@@ -100,7 +105,7 @@ export default function TestingFetches() {
           <select id="search-by" onChange={(e) => setSearchBy(e.target.value)}>
             <option value="name">Name</option>
             <option value="isInvasive">Is Invasive</option>
-            <option value="isInvasive">Is Native</option>
+            <option value="isNative">Is Native</option>
             <option value="color">Color</option>
             <option value="description">Description</option>
           </select>
@@ -131,8 +136,8 @@ export default function TestingFetches() {
           <div id={`plant-number-${plant.plantID}`} className='plant-container'>
             <ul>
                 <li>Name: {plant.name}</li>
-                <li>Is Invasive: {plant.isInvasive}</li>
-                <li>Is Native: {plant.isNative}</li>
+                <li>Is Invasive: {plant.isInvasive.toString()}</li>
+                <li>Is Native: {plant.isNative.toString()}</li>
                 <li>Color: {plant.color}</li>
                 <li>ID: {plant.plantID}</li>
             </ul>

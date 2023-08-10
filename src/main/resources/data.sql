@@ -24,7 +24,7 @@ VALUES
         true,
         'Red',
         'plantImages/RaspberriesF.jpg',
-        'plantImages/RaspberriesL',
+        'plantImages/RaspberriesL.jpg',
         'By Ivar Leidus - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=96641162',
         'By Tomwsulcer - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=19087683',
         'https://en.wikipedia.org/wiki/Rubus_idaeus',
@@ -50,7 +50,7 @@ VALUES
         false,
         true,
         'White',
-        'plantImages/Ceanothus-americanus.jpg',
+        'plantImages/New-Jersey-Tea(F).jpg',
         'By unknown author, USFWS - United States Fish and Wildlife Service, Sherburne National Wildlife Refuge: Ceanothus americanus L., Public Domain, https://commons.wikimedia.org/w/index.php?curid=666534',
         'https://en.wikipedia.org/w/index.php?title=Ceanothus_americanus&oldid=1157315821',
         -2
@@ -75,7 +75,7 @@ VALUES
         false,
         true,
         'White',
-        'plantImages\Grey-Dogwood(F).jpg',
+        'plantImages/Grey-Dogwood(F).jpg',
         'By Mitternacht90 at English Wikipedia - Mitternacht90 (talk) (Uploads), Public Domain, https://commons.wikimedia.org/w/index.php?curid=19873364',
         'https://en.wikipedia.org/wiki/Cornus_racemosa',
         -3
@@ -103,7 +103,7 @@ VALUES
         true,
         'Brown',
         'plantImages/American-Hazelnut(F).jpg',
-        'plantImages\American-Hazelnut(L).jpg',
+        'plantImages/American-Hazelnut(L).jpg',
         'Public Domain, https://commons.wikimedia.org/w/index.php?curid=655914',
         'Public Domain, https://commons.wikimedia.org/w/index.php?curid=655927',
         'https://en.wikipedia.org/wiki/Corylus_americana',
@@ -131,8 +131,8 @@ VALUES
         false,
         true,
         'Yellow',
-        'static/plantImages/Fragrant-Sumac(F).jpg',
-        'plantImages\Fragrant-Sumac(L).jpg',
+        'plantImages/Fragrant-Sumac(F).jpg',
+        'plantImages/Fragrant-Sumac(L).jpg',
         'By Salicyna - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=51291378',
         'By Krzysztof Ziarnek, Kenraiz - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=102127221',
         'https://en.wikipedia.org/wiki/Rhus_aromatica',
@@ -274,4 +274,116 @@ VALUES
         'By Sten, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=302410',
         'https://en.wikipedia.org/wiki/Berberis_vulgaris',
         -10
+    );
+
+INSERT INTO
+    plant (
+        name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Flowering Rush',
+        'Butomus umbellatus is a perennial which spreads primarily from rhizomes. This aquatic plant invades along the margins of slow moving waterways. This plant can reach from 1-5 ft. (0.3-1.5 m) in height and can survive in water of up to 9.8 ft. (3 m) deep. It does not tolerate salt water.',
+        true,
+        false,
+        'White outer flower with red center',
+        'plantImages/Flowering-Rush(F).jpg',
+        'plantImages/Flowering-Rush(L).jpg',
+        'By Ivar Leidus - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=27558951',
+        'Public Domain, https://commons.wikimedia.org/w/index.php?curid=8955',
+        'https://en.wikipedia.org/wiki/Butomus',
+        -11
+    );
+
+INSERT INTO
+    plant (
+        name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_Fruit_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Oriental Bittersweet',
+        'The plants defining feature is its thin, spindly vines with silver to reddish-brown bark, ranging from 1 to over 10 cm in diameter. These vines can encircle trees up to 40 feet high, leading to strangulation or branch breakage, and the plant bears toxic round leaves, small green flowers, and distinctive red seeds within yellow pods.',
+        true,
+        false,
+        'Red',
+        'plantImages/Oriental-Bittersweet(F).jpg',
+        'Public Domain, https://commons.wikimedia.org/w/index.php?curid=586390',
+        'https://en.wikipedia.org/wiki/Celastrus_orbiculatus',
+        -12
+    );
+
+INSERT INTO
+    plant (
+        name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Spotted Knapweed',
+        'Centaurea stoebe, a biennial or short-lived perennial plant, displays deeply-lobed leaves with fine short hairs, forming a basal rosette in its first year and an erect, branching stem up to 0.91 meters (3 feet) tall in the second year. Its vibrant pink to lavender disc flowers with five narrow lobes bloom from July to September, followed by achene fruit dispersed primarily by wind, aided by its tumbleweed mode.',
+        true,
+        false,
+        'Purple',
+        'plantImages/Spotted-Knapweed(F).jpg',
+        'plantImages/Spotted-Knapweed(L).jpg',
+        'By Matt Lavin from Bozeman, Montana, USA - Centaurea maculosa, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=14711862',
+        'By Thayne Tuason - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=66337967',
+        'https://en.wikipedia.org/wiki/Centaurea_stoebe',
+        -13
+    );
+
+INSERT INTO
+    plant (
+        name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Common Teasel',
+        'The genus name refers to cup-like formations formed by merging sessile leaves at the stem, potentially preventing sap-sucking insects. Teasels are recognized by prickly stems, lanceolate leaves, and an inflorescence of purple to lavender flowers atop the stem. A 2011 study hints at potential carnivorous behavior, but 2019 experiments suggest increased seed production may be due to poor soil conditions rather than true carnivory.',
+        true,
+        false,
+        "Purple",
+        'plantImages/Common-Teasel(F).jpg',
+        'plantImages/Common-Teasel(L).jpg',
+        'By MPF - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=294179',
+        'By Blokenearexeter - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=20294085',
+        'https://en.wikipedia.org/wiki/Dipsacus_fullonum',
+        -14
     );

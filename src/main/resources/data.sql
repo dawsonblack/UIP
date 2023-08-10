@@ -12,3 +12,32 @@ INSERT INTO plant (name, description, is_Invasive, is_Native, color, image_Fruit
 INSERT INTO plant (name, description, is_Invasive, is_Native, color, image_FruitURL, image_LeafURL, image_Fruit_Source, image_Leaf_Source, wiki_Link, plantID) VALUES ('Porcelain-berry', 'Ampelopsis glandulosa, is known as Porcelain berry, is a deciduous climbing vine with palmately lobed leaves, opposite flowers, and tendrils that reach 4-6m (15-20 ft) in height. Its small green-white flowers form in umbels opposite the leaves, giving rise to multicolored berries in late summer and fall, which are dispersed by birds.', true, false, 'Multi-colored: blueish to pink', 'fruitImages/Porcelain-Berry(F).jpg', 'leafImages/Porcelain-Berry(L).jpg', 'By Olivier Vanpé - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=7964726', 'By Pancrat - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=7106725', 'https://en.wikipedia.org/wiki/Ampelopsis_glandulosa', -8);
 
 INSERT INTO plant (name, description, is_Invasive, is_Native, color, image_FruitURL, image_LeafURL, image_Fruit_Source, image_Leaf_Source, wiki_Link, plantID) VALUES ('Mosquito-fern', 'Azolla pinnata, also called mosquitofern or water velvet, is an aquatic fern native to Africa, Asia, and parts of Australia. It features small, velvety leaves that float on the waters surface, forming dense mats. It is known for its nitrogen-fixing ability, invasive tendencies, and its use in rice paddies for fertilizer and pollution absorption.', true, false, 'Green, blue-green, or dark red', 'fruitImages/Mosquito-fern(F).jpg', 'leafImages/Mosquito-fern(L).jpg', '', 'By Tpa2067 - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=11994712', 'https://en.wikipedia.org/wiki/Azolla_pinnata', -9);
+
+INSERT INTO
+    plant (
+        name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Common Barberry',
+        'Berberis vulgaris is a deciduous shrub that reaches up to 4 meters in height and bears small oval leaves with serrated edges in clusters of 2-5, accompanied by three-branched spines. Yellow flowers about 4-6 mm across appear on 3-6 cm long panicles in late spring, leading to the development of red oblong berries, 7-10 mm long, in late summer or autumn.',
+        true,
+        false,
+        'Flower is yellow, fruit is red',
+        'plantImages/Common-Barberry(F).jpg',
+        'plantImages/Common-Barberry(L).jpg',
+        'By Arnstein Rønning - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=16499955',
+        'By Sten, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=302410',
+        'https://en.wikipedia.org/wiki/Berberis_vulgaris',
+        -10
+    );

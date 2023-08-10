@@ -71,7 +71,9 @@ h1{
     
 }
 
-#about{
+#about p{
+  box-sizing: border-box;
+  background-color:darkgray;
   left: 0;
   right: 0;
 }

@@ -141,8 +141,8 @@ export default function TestingFetches() {
                 <li>Color: {plant.color}</li>
                 <li>ID: {plant.plantID}</li>
             </ul>
-            <img src={plant.imageFruitURL} alt="fruit image" />
-            <img src={plant.imageLeafURL} alt="leaf image" />
+            <img src={plant.imageFruitURL} />
+            <img src={plant.imageLeafURL} />
             <p>{plant.description} <a href={plant.wikiLink}>Learn More</a></p>
           </div>
         );

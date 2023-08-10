@@ -169,7 +169,7 @@ VALUES
         false,
         'Yellowish green to reddish',
         'fruitImages/Tree-of-Heaven(F).jpg',
-        'leafImages/Tree-of-Heaven(L).jfif',
+        'leafImages/Tree-of-Heaven(L).jpg',
         'CC BY-SA 2.1 es, https://commons.wikimedia.org/w/index.php?curid=139593',
         'By Famartin - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=36997369',
         'https://en.wikipedia.org/wiki/Ailanthus_altissima',
@@ -503,3 +503,119 @@ VALUES
         'https://en.wikipedia.org/wiki/Elaeagnus_angustifolia',
         -18
     );
+
+INSERT INTO
+    plant (
+        name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Autumn Olive',
+        'Elaeagnus umbellata is a deciduous shrub or small tree, reaching up to 3.5 meters in height, known for its dense crown and thorny spur branches. It produces fragrant white to yellow flowers in clusters, characterized by their four-lobed structure, and features alternate leaves with wavy margins that start silvery in spring, gradually turning greener as the scales wear off during summer.',
+        true,
+        false,
+        'Red',
+        'fruitImages/Autumn-Olive(F).jpg',
+        'leafImages/Autumn-Olive(L).jpg',
+        'By VoDeTan2Dericks-Tan - Own workEigenes Werk, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=9637135',
+        'By Jaknouse at English Wikipedia - Transferred from en.wikipedia to Commons by Premeditated Chaos using CommonsHelper., Public Domain, https://commons.wikimedia.org/w/index.php?curid=18674726',
+        'https://en.wikipedia.org/wiki/Elaeagnus_umbellata',
+        -19
+    );
+
+INSERT INTO
+    plant (
+        name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Hairy Willowherb',
+        'This tall perennial plant can grow up to 2 meters in height, featuring hairy stems and leaves with toothed edges. Its large flowers, usually 10-16 mm long, exhibit four notched purple-pink petals and a white, four-lobed stigma, accompanied by green sepals.',
+        true,
+        false,
+        'Pink',
+        'fruitImages/Hairy-Willowherb(F).jpg',
+        'leafImages/Hairy-Willowherb(L).jpg',
+        'By Ivar Leidus - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=27184927',
+        'By Jeffdelonge, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2263428',
+        'https://en.wikipedia.org/wiki/Epilobium_hirsutum',
+        -20
+    );
+
+INSERT INTO
+    plant (
+        name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Japanese Knotweed',
+        'Japanese knotweed produces small cream or white flowers in erect racemes during late summer and early autumn. It features hollow stems resembling bamboo with raised nodes, growing up to 3-4 meters each season. Its leaves are broad oval with a truncated base, typically 7-14 cm long and 5-12 cm broad, forming dense thickets in mature stands.',
+        true,
+        false,
+        'White',
+        'fruitImages/Japanese-Knotweed(F).jpg',
+        'leafImages/Japanese-Knotweed(L).jpg',
+        'By W.carter - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=87826184',
+        'By Ancatdubh43 at English Wikipedia - Transferred from en.wikipedia to Commons by Flamenc., Public Domain, https://commons.wikimedia.org/w/index.php?curid=20654299',
+        'https://en.wikipedia.org/wiki/Reynoutria_japonica',
+        -21
+    );
+
+INSERT INTO
+    plant (
+        name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Lesser Celandine',
+        'Lesser celandine is a hairless perennial plant growing up to 25 cm high in clumps of short stems. Its cordate leaves are dark green above with variegated patterns, pale green below, often weakly lobed, and accompanied by clusters of tubers and fibrous roots. The plant produces large radially symmetrical yellow flowers, around 3 cm in diameter, with glossy petals and numerous stamens and carpels. It blooms between March and May in the UK.',
+        true,
+        false,
+        'Yellow',
+        'fruitImages/Lesser-Celandine(F).jpg',
+        'leafImages/Lesser-Celandine(L).jpg',
+        'By Michal Osmenda from Brussels, Belgium - https://www.flickr.com/photos/michalo/2425723494/, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=46945738',
+        'By SiGarb - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=77846647',
+        'https://en.wikipedia.org/wiki/Ficaria_verna',
+        -22
+    )

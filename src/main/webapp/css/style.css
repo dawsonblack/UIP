@@ -1,7 +1,7 @@
 nav{
-    display: flex;
-    justify-content: space-around;
-    background-color: cadetblue;
+  display: flex;
+  justify-content: space-around;
+  background-color: cadetblue;
   margin-bottom: 2%;
   padding: 0.75em;
   background-color:darkgray;
@@ -15,22 +15,31 @@ nav a{
 
 body{
   margin: 0px;
-  background-image: url(images/background-image.jpg);
-  background-position: 0px 0px;
+  /*background-image: url(images/background-image.jpg);
+  background-position: 0px 0px;*/
   height: 100%;
   width: 100%;
   color: white;
-  animation: animateBackground 60s linear infinite alternate;;
+  /*animation: animateBackground 60s linear infinite alternate;*/
 }
 
-@keyframes animateBackground{
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+/*@keyframes animateBackground{
   from {
       background-position: 0 0;
   }
   to {
       background-position: 100% 0;
   }
-}
+}*/
 
 
 #header{
@@ -62,7 +71,9 @@ h1{
     
 }
 
-#about{
+#about p{
+  box-sizing: border-box;
+  background-color:darkgray;
   left: 0;
   right: 0;
 }

@@ -15,12 +15,9 @@ nav a {
 
 body {
   margin: 0px;
-  /*background-image: url(images/background-image.jpg);
-  background-position: 0px 0px;*/
   height: 100%;
   width: 100%;
   color: white;
-  /*animation: animateBackground 60s linear infinite alternate;*/
 }
 
 #background-video {
@@ -33,15 +30,6 @@ body {
 
   filter: blur(8px);
 }
-
-/*@keyframes animateBackground{
-  from {
-      background-position: 0 0;
-  }
-  to {
-      background-position: 100% 0;
-  }
-}*/
 
 #header {
   display: flex;
@@ -77,38 +65,69 @@ h1 {
   right: 0;
 }
 
-.creators {
+#creators {
   display: flex;
-  width: 100%;
   flex-direction: row;
   justify-content: center;
-  gap: 100px;
-  position: fixed;
+  gap: 150px;
+
   bottom: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
+  position: fixed; /*Maybe remove this*/
+
   font-size: 70%;
   background-color: darkgray;
   margin-top: 2%;
-  padding: 0.01em;
 }
 
-.github {
+.team-member {
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+}
+
+.headshot {
+  max-width: 100px;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.info-box {
+  position: absolute;
+  bottom: 0;
+  /*left: 0;*/
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none; /* Allow hovering over the box */
+
+
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+}
+
+.team-member:hover .headshot {
+  transform: translateY(-100%);
+}
+
+.team-member:hover .info-box {
+  opacity: 1;
+}
+
+.info-box h4 {
+  color: black;
+}
+
+.social-link {
   width: auto;
   height: 30px;
   max-height: 30px;
-}
-
-.linkedin {
-  width: auto;
-  height: 30px;
-  max-height: 30px;
-}
-
-.gmail {
-  width: auto;
-  height: 30px;
-  max-height: 30px;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 
 #search-container {
@@ -253,9 +272,4 @@ h1 {
 #no-results-message img {
   max-width: 100px;
   opacity: 0.95;
-}
-
-.headshot {
-  height: 100px;
-  width: auto;
 }

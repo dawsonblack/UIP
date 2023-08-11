@@ -731,3 +731,32 @@ VALUES
         'https://en.wikipedia.org/wiki/Rosa_arkansana',
         -26
     );
+
+INSERT INTO
+    plant (
+        name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Black Raspberry',
+        'Rubus occidentalis, a deciduous shrub, reaches 2 to 3 meters tall with pinnate leaves. It produces distinct flowers with long sepals and edible round fruit containing anthocyanins and ellagic acid. Its canes, growing up to 1.8 meters long, feature sharp thorns and arching growth. This black raspberry is related to red raspberries, sharing leaf characteristics and easily detachable fruit.',
+        false,
+        true,
+        'Red to Black',
+        'fruitImages/Black-Raspberry(F).jpg',
+        'leafImages/Black-Raspberry(L).jpg',
+        'By Alina Zienowicz Ala z - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=4349078',
+        'By Prestele, William Henry, 1838-1895 - http://usdawatercolors.nal.usda.gov/pom/catalog.xhtml?id=POM00007255, Public Domain, https://commons.wikimedia.org/w/index.php?curid=43160453',
+        'https://en.wikipedia.org/wiki/Rubus_occidentalis',
+        -27
+    );

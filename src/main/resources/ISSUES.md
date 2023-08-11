@@ -10,6 +10,8 @@ NOTES FROM DAWSON:
 -add the ability to just press enter and search
 -"is invasive: true" is weird and not user friendly
 -check the grammar of the descriptions
+-make the formatting of the about paragraph better: font, background, max-width
+-hide the ID in search results, maybe make it a popup
 
 NOTES FROM ABDI:
 

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 const videos = [
   "flower1.mp4",
-  "flower2.mp4",
+  "flower-new.mp4",
   "flower3.mp4",
   "leaves-swaying.mp4",
 ];

@@ -7,6 +7,8 @@ NOTES FROM DAWSON:
 -consider adding a scientific and common name
 -need a fruiting image for mosquito-fern
 -you may be able to generate the team members with react and cut down on code
+-add the ability to just press enter and search
+-"is invasive: true" is weird and not user friendly
 
 NOTES FROM ABDI:
 

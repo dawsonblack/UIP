@@ -4,8 +4,8 @@ WHERE
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -35,8 +35,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -66,8 +66,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -97,8 +97,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -128,8 +128,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -159,8 +159,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -190,8 +190,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -217,8 +217,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -248,8 +248,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -275,8 +275,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -306,8 +306,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -337,8 +337,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -364,8 +364,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -395,8 +395,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -426,8 +426,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -453,8 +453,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -484,8 +484,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -511,8 +511,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -542,8 +542,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -573,8 +573,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -604,8 +604,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -635,8 +635,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -666,8 +666,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -697,8 +697,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -728,8 +728,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -759,8 +759,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,
@@ -786,8 +786,8 @@ VALUES
 
 INSERT INTO
     plant (
-        commonName,
-        scientificName,
+        common_Name,
+        scientific_Name,
         description,
         is_Invasive,
         is_Native,

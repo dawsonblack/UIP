@@ -4,7 +4,8 @@ WHERE
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -19,6 +20,7 @@ INSERT INTO
 VALUES
     (
         'Red Raspberry',
+        'Rubus idaeus',
         'Rubus idaeus, commonly known as raspberries, are perennial plants with biennial stems that grow from a perennial root system. These plants produce edible red aggregate fruits consisting of numerous drupelets around a central core, with distinct growth patterns in their first and second years.',
         false,
         true,
@@ -33,7 +35,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -48,6 +51,7 @@ INSERT INTO
 VALUES
     (
         'New Jersey Tea',
+        'Ceanothus Americanus',
         'Ceanothus Americanus, a shrub reaching 18-42 inches (0.5-1m) in height, with thin branches and extensive root systems adapted to wildfires. It features clumps of white flowers on long peduncles and produces dry, dehiscent seed capsules.',
         false,
         true,
@@ -62,7 +66,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -77,6 +82,7 @@ INSERT INTO
 VALUES
     (
         'Gray Dogwood',
+        'Cornus Racemosa',
         'Cornus Racemosa, a shrub reaching 1.2-3 m (4-10 ft) in height, forming thickets through underground rhizomes. It bears small white flowers in rounded clusters, followed by white fruits, attracting various bird species. The plants gray bark, oppositely arranged leaves, and reddish or purplish fall foliage contribute to its appearance.',
         false,
         true,
@@ -91,7 +97,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -106,6 +113,7 @@ INSERT INTO
 VALUES
     (
         'American Hazelnut',
+        'Corylus americana',
         'Corylus americana, is a medium to large shrub, growing 2.5-5 m (8-16 ft) tall with a spreading crown. It blooms in early to mid-spring, featuring hanging male catkins and clusters of tiny female flowers. It produces edible nuts enclosed in leaf-like bracts that mature from July to October.',
         false,
         true,
@@ -120,7 +128,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -135,6 +144,7 @@ INSERT INTO
 VALUES
     (
         'Fragrant Sumac',
+        'Rhus aromatica',
         'Rhus aromatica, a deciduous shrub in the Anacardiaceae family, is native to North America, thriving in a range of conditions from southern Canada to the lower 48 states. With a rounded form, it grows 2-5 ft tall and wide, producing small yellow flowers in clusters before its leaves emerge. The plants three-leaflet leaves, orange-red fall foliage, and lemon-scented crushed leaves make it a distinctive species.',
         false,
         true,
@@ -149,7 +159,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -164,7 +175,8 @@ INSERT INTO
 VALUES
     (
         'Tree of Heaven',
-        'Ailanthus altissima, Ailanthus altissima, is a medium-sized deciduous tree reaching 17-27 m (60-90 ft) in height with smooth gray bark and pinnately compound leaves. It produces yellowish-green to reddish flowers in large panicles and bears large, twisted samaras that aid in wind and water dispersal.',
+        'Ailanthus altissima',
+        'Ailanthus altissima, is a medium-sized deciduous tree reaching 17-27 m (60-90 ft) in height with smooth gray bark and pinnately compound leaves. It produces yellowish-green to reddish flowers in large panicles and bears large, twisted samaras that aid in wind and water dispersal.',
         true,
         false,
         'Yellowish green to reddish',
@@ -178,7 +190,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -191,6 +204,7 @@ INSERT INTO
 VALUES
     (
         'Garlic Mustard',
+        'Alliaria petiolata',
         'Alliaria petiolata, is an herbaceous biennial plant with triangular to heart-shaped leaves, producing clusters of small white flowers with an unpleasant aroma in spring and summer. It develops slender, erect seed capsules containing shiny black seeds. The plant can self-fertilize or be cross-pollinated by insects and is associated with various herbivores and fungi.',
         true,
         false,
@@ -203,7 +217,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -218,7 +233,8 @@ INSERT INTO
 VALUES
     (
         'Porcelain-berry',
-        'Ampelopsis glandulosa, is known as Porcelain berry, is a deciduous climbing vine with palmately lobed leaves, opposite flowers, and tendrils that reach 4-6m (15-20 ft) in height. Its small green-white flowers form in umbels opposite the leaves, giving rise to multicolored berries in late summer and fall, which are dispersed by birds.',
+        'Ampelopsis glandulosa',
+        'Ampelopsis glandulosa, also known as Porcelain berry, is a deciduous climbing vine with palmately lobed leaves, opposite flowers, and tendrils that reach 4-6m (15-20 ft) in height. Its small green-white flowers form in umbels opposite the leaves, giving rise to multicolored berries in late summer and fall, which are dispersed by birds.',
         true,
         false,
         'Multi-colored: blueish to pink',
@@ -232,7 +248,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -245,6 +262,7 @@ INSERT INTO
 VALUES
     (
         'Mosquito-fern',
+        'Azolla pinnata',
         'Azolla pinnata, is an aquatic fern native to Africa, Asia, and parts of Australia. It features small, velvety leaves that float on the waters surface, forming dense mats. It is known for its nitrogen-fixing ability, invasive tendencies, and its use in rice paddies for fertilizer and pollution absorption.',
         true,
         false,
@@ -257,7 +275,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -272,6 +291,7 @@ INSERT INTO
 VALUES
     (
         'Common Barberry',
+        'Berberis vulgaris',
         'Berberis vulgaris is a deciduous shrub that reaches up to 4 meters in height and bears small oval leaves with serrated edges in clusters of 2-5, accompanied by three-branched spines. Yellow flowers about 4-6 mm across appear on 3-6 cm long panicles in late spring, leading to the development of red oblong berries, 7-10 mm long, in late summer or autumn.',
         true,
         false,
@@ -286,7 +306,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -301,6 +322,7 @@ INSERT INTO
 VALUES
     (
         'Flowering Rush',
+        'Butomus umbellatus',
         'Butomus umbellatus is a perennial which spreads primarily from rhizomes. This aquatic plant invades along the margins of slow moving waterways. This plant can reach from 1-5 ft. (0.3-1.5 m) in height and can survive in water of up to 9.8 ft. (3 m) deep. It does not tolerate salt water.',
         true,
         false,
@@ -315,7 +337,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -328,6 +351,7 @@ INSERT INTO
 VALUES
     (
         'Oriental Bittersweet',
+        'Celastrus orbiculatus',
         'The plants defining feature is its thin, spindly vines with silver to reddish-brown bark, ranging from 1 to over 10 cm in diameter. These vines can encircle trees up to 40 feet high, leading to strangulation or branch breakage, and the plant bears toxic round leaves, small green flowers, and distinctive red seeds within yellow pods.',
         true,
         false,
@@ -340,7 +364,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -355,6 +380,7 @@ INSERT INTO
 VALUES
     (
         'Spotted Knapweed',
+        'Centaurea stoebe',
         'Centaurea stoebe, a biennial or short-lived perennial plant, displays deeply-lobed leaves with fine short hairs, forming a basal rosette in its first year and an erect, branching stem up to 0.91 meters (3 feet) tall in the second year. Its vibrant pink to lavender disc flowers with five narrow lobes bloom from July to September, followed by achene fruit dispersed primarily by wind, aided by its tumbleweed mode.',
         true,
         false,
@@ -369,7 +395,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -384,6 +411,7 @@ INSERT INTO
 VALUES
     (
         'Common Teasel',
+        'Dipsacus fullonum',
         'The genus name refers to cup-like formations formed by merging sessile leaves at the stem, potentially preventing sap-sucking insects. Teasels are recognized by prickly stems, lanceolate leaves, and an inflorescence of purple to lavender flowers atop the stem. A 2011 study hints at potential carnivorous behavior, but 2019 experiments suggest increased seed production may be due to poor soil conditions rather than true carnivory.',
         true,
         false,
@@ -398,7 +426,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -411,6 +440,7 @@ INSERT INTO
 VALUES
     (
         'Cutleaf Teasel',
+        'Dipsacus laciniatus',
         'Dipsacus laciniatus, known as cutleaf teasel, is a perennial herb native to Europe and Asia, now invasive in North America. It features hollow, prickly stems, oppositely arranged leaves forming cups, and egg-shaped flower heads containing up to 1500 flowers. The plant is monocarpic, reproducing only by seed, and poses invasive threats in various habitats due to a lack of native predators.',
         true,
         false,
@@ -423,7 +453,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -438,6 +469,7 @@ INSERT INTO
 VALUES
     (
         'Brazilian Waterweed',
+        'Egeria densa',
         'Egeria densa is an aquatic plant with trailing stems that can reach 2 meters in length, producing leaves in whorls of 4-8, and dioecious flowers with three white petals on separate male and female plants. It forms dense surface canopies, inhibiting light penetration to lower plants.',
         true,
         false,
@@ -452,7 +484,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -465,6 +498,7 @@ INSERT INTO
 VALUES
     (
         'Anchored Water Hyacinth',
+        'Pontederia azurea',
         'The anchored water hyacinth is a free-floating aquatic perennial with distinctive thick, waxy green leaves and lavender blue flowers resembling lilacs. It grows both underwater and above water on long stems, producing up to 5 flowers per stem, and can reach three feet above the waters surface while being rooted underwater.',
         true,
         false,
@@ -477,7 +511,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -492,6 +527,7 @@ INSERT INTO
 VALUES
     (
         'Russian Olive',
+        'Elaeagnus angustifolia',
         'Elaeagnus angustifolia is a thorny tree reaching 35 feet in height, characterized by silvery to rusty scaled stems, lanceolate leaves, and aromatic clusters of creamy yellow flowers followed by small orange-red cherry-like fruit covered in silvery scales. The species reproduces mainly by seed, with thorny branches up to 7 cm long.',
         true,
         false,
@@ -506,7 +542,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -521,6 +558,7 @@ INSERT INTO
 VALUES
     (
         'Autumn Olive',
+        'Elaeagnus umbellata',
         'Elaeagnus umbellata is a deciduous shrub or small tree, reaching up to 3.5 meters in height, known for its dense crown and thorny spur branches. It produces fragrant white to yellow flowers in clusters, characterized by their four-lobed structure, and features alternate leaves with wavy margins that start silvery in spring, gradually turning greener as the scales wear off during summer.',
         true,
         false,
@@ -535,7 +573,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -550,6 +589,7 @@ INSERT INTO
 VALUES
     (
         'Hairy Willowherb',
+        'Epilobium hirsutum',
         'This tall perennial plant can grow up to 2 meters in height, featuring hairy stems and leaves with toothed edges. Its large flowers, usually 10-16 mm long, exhibit four notched purple-pink petals and a white, four-lobed stigma, accompanied by green sepals.',
         true,
         false,
@@ -564,7 +604,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -579,6 +620,7 @@ INSERT INTO
 VALUES
     (
         'Japanese Knotweed',
+        'Reynoutria japonica',
         'Japanese knotweed produces small cream or white flowers in erect racemes during late summer and early autumn. It features hollow stems resembling bamboo with raised nodes, growing up to 3-4 meters each season. Its leaves are broad oval with a truncated base, typically 7-14 cm long and 5-12 cm broad, forming dense thickets in mature stands.',
         true,
         false,
@@ -593,7 +635,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -608,6 +651,7 @@ INSERT INTO
 VALUES
     (
         'Lesser Celandine',
+        'Ficaria verna',
         'Lesser celandine is a hairless perennial plant growing up to 25 cm high in clumps of short stems. Its cordate leaves are dark green above with variegated patterns, pale green below, often weakly lobed, and accompanied by clusters of tubers and fibrous roots. The plant produces large radially symmetrical yellow flowers, around 3 cm in diameter, with glossy petals and numerous stamens and carpels. It blooms between March and May in the UK.',
         true,
         false,
@@ -622,7 +666,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -637,6 +682,7 @@ INSERT INTO
 VALUES
     (
         'Winged Sumac',
+        'Rhus copallinum',
         'Shining sumac is a valuable ornamental plant known for its dense, shrubby cover with lustrous dark green foliage that turns brilliant orange-red in fall, attracting wildlife. It features showy yellow flowers in summer, followed by persistent red berries, and requires pruning for optimal growth and canopy clearance.',
         false,
         true,
@@ -651,7 +697,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -666,6 +713,7 @@ INSERT INTO
 VALUES
     (
         'Smooth Sumac',
+        'Rhus glabra',
         'Smooth sumac (Rhus glabra), a North American native in the Anacardiaceae family, is recognized for its open growth reaching up to 3 m (9.8 ft) tall, with compound leaves turning scarlet in autumn. Its spring flowers, green and tiny, mature into edible crimson berries that persist into winter. This species also occasionally forms harmless galls due to the sumac leaf gall aphid.',
         false,
         true,
@@ -680,7 +728,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -695,6 +744,7 @@ INSERT INTO
 VALUES
     (
         'Staghorn Sumac',
+        'Rhus typhina',
         'Staghorn sumac (Rhus typhina) is a deciduous shrub or small tree, reaching up to 5 m (16 ft) tall and 6 m (20 ft) broad. Its compound leaves with serrated leaflets are velvety due to rust-colored hairs, and its distinctive branching pattern has earned it the name "stags horn sumac." It produces greenish-white to yellowish flowers and small drupes, with brilliant red, orange, and yellow fall foliage. The plant spreads through seeds and rhizomes, often forming clones, and is not closely related to poison sumac.',
         false,
         true,
@@ -709,7 +759,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -722,6 +773,7 @@ INSERT INTO
 VALUES
     (
         'Prairie Rose',
+        'Rosa arkansana',
         'Rosa arkansana, commonly known as prairie rose or wild prairie rose, is a North American rose species found between the Appalachian and Rocky Mountains, from Alberta to Texas. It thrives in various habitats, attracting butterflies and birds, and shares its common name with Rosa blanda, a similar species more northernly distributed.',
         false,
         true,
@@ -734,7 +786,8 @@ VALUES
 
 INSERT INTO
     plant (
-        name,
+        commonName,
+        scientificName,
         description,
         is_Invasive,
         is_Native,
@@ -749,6 +802,7 @@ INSERT INTO
 VALUES
     (
         'Black Raspberry',
+        'Rubus occidentalis',
         'Rubus occidentalis, a deciduous shrub, reaches 2 to 3 meters tall with pinnate leaves. It produces distinct flowers with long sepals and edible round fruit containing anthocyanins and ellagic acid. Its canes, growing up to 1.8 meters long, feature sharp thorns and arching growth. This black raspberry is related to red raspberries, sharing leaf characteristics and easily detachable fruit.',
         false,
         true,

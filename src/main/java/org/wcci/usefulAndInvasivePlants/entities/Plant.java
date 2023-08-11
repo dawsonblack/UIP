@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 ////import com.fasterxml.jackson.core.type.TypeReference;
 //import com.fasterxml.jackson.databind.ObjectMapper;
 
-import jakarta.annotation.Generated;
+//import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,7 +17,8 @@ import jakarta.persistence.InheritanceType;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Plant {
-    private String name;
+    private String commonName;
+    private String scientificName;
     @Column(length = 1000)
     private String description;
     private Boolean isInvasive;
@@ -33,10 +34,11 @@ public class Plant {
     @GeneratedValue
     private long plantID;
 
-    public Plant(String name, String description, Boolean isInvasive, Boolean isNative, String color, String FURL,
+    public Plant(String commonName, String scientificName, String description, Boolean isInvasive, Boolean isNative, String color, String FURL,
             String Fsource,
             String LURL, String Lsource, String wiki) {
-        this.name = name;
+        this.commonName = commonName;
+        this.scientificName = scientificName;
         this.description = description;
         this.isInvasive = isInvasive;
         this.color = color;
@@ -51,12 +53,16 @@ public class Plant {
 
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCommonName(String commonName) {
+        this.commonName = commonName;
+    }
+
+    public void setScientificName(String scientificName) {
+        this.scientificName = scientificName;
     }
 
     public void setDescription(String description) {
-        this.name = description;
+        this.commonName = description;
     }
 
     public void setIsInvasive(Boolean isInvasive) {
@@ -95,8 +101,12 @@ public class Plant {
         this.WikiLink = link;
     }
 
-    public String getName() {
-        return this.name;
+    public String getCommonName() {
+        return this.commonName;
+    }
+
+    public String getScientificName() {
+        return this.scientificName;
     }
 
     public String getDescription() {

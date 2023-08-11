@@ -9,6 +9,7 @@ NOTES FROM DAWSON:
 -you may be able to generate the team members with react and cut down on code
 -add the ability to just press enter and search
 -"is invasive: true" is weird and not user friendly
+-check the grammar of the descriptions
 
 NOTES FROM ABDI:
 

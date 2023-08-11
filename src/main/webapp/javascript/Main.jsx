@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 
-import { createRoot} from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, Outlet, Link } from "react-router-dom";
+import BackgroundVideo from "./BackgroundVideo";
 
 import "../css/style.css";
 
@@ -11,9 +12,8 @@ import Search from "./Search.jsx";
 import User from "./User.jsx";
 
 function Layout() {
-
   useEffect(() => {
-    let video = document.querySelector('video');
+    let video = document.querySelector("video");
     video.playbackRate = 0.5;
   }, []);
 
@@ -21,15 +21,18 @@ function Layout() {
     <>
       <nav>
         <Link to="/">Home</Link>
-        <Link to="/Test">Test</Link>
-        <Link to="/Search">Search</Link>
-        <Link to="/User">User</Link>
+        {/* <Link to="Test">Test</Link> */}
+        <Link to="Search">Search</Link>
+        {/* <Link to="User">User</Link> */}
       </nav>
       <Outlet />
-
-      <video autoPlay muted loop id="background-video">
+      <div className="App">
+        <BackgroundVideo />
+        {/* Your other content */}
+      </div>
+      {/* <video autoPlay muted loop id="background-video">
         <source src="leaves-swaying.mp4" type="video/mp4" />
-      </video>
+      </video> */}
     </>
   );
 }

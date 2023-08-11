@@ -40,7 +40,7 @@ export default function Home() {
       </div>
       <div id="creators">
         <div className="team-member">
-          <img src="images/Abdikarim_headshot.jpg" className="headshot" />
+          <img src="images/Abdi_headshot.jpg" className="headshot" />
           <div className="info-box">
             <h4>Abdikarim Farah</h4>
             <a href="https://Abdikarimfarah.github.io">

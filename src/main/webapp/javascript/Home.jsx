@@ -23,56 +23,66 @@ export default function Home() {
           </tr>
         </div>
       </div>
-      <div className="creators">
-        <div>
-          <h4>Abdikarim Farah</h4>
-          <a href="https://Abdikarimfarah.github.io">
-            <img className="github" src="images/github-mark.png" />
-          </a>
-          <a href="mailto:abdikarimfarah12@gmail.com">
-            <img className="gmail" src="images\Gmail-Email-PNG-Pic.png" />
-          </a>
-          <a href="https://www.linkedin.com/in/abdikarim-farah-37a5b0274/">
-            <img className="linkedin" src="images\In-Blue-128.png" />
-          </a>
+      <div id="creators">
+        <div className="team-member">
+          <img src="images/Abdikarim_headshot.jpg" className="headshot" />
+          <div className="info-box">
+            <h4>Abdikarim Farah</h4>
+            <a href="https://Abdikarimfarah.github.io">
+              <img className="social-link" src="images/github-mark.png" />
+            </a>
+            <a href="mailto:abdikarimfarah12@gmail.com">
+              <img className="social-link" src="images\Gmail-Email-PNG-Pic.png" />
+            </a>
+            <a href="https://www.linkedin.com/in/abdikarim-farah-37a5b0274/">
+              <img className="social-link" src="images\In-Blue-128.png" />
+            </a>
+          </div>
         </div>
-        <div>
-          <h4>Dawson Black</h4>
-          <img class="headshot" src="images/Dawson.jpg"></img>
-          <a href="https://dawsonblack.github.io/">
-            <img className="github" src="images/github-mark.png" />
-          </a>
-          <a href="dawsonblack0816@gmail.com">
-            <img className="gmail" src="images\Gmail-Email-PNG-Pic.png" />
-          </a>
-          <a href="https://www.linkedin.com/in/ddablack/">
-            <img className="linkedin" src="images\In-Blue-128.png" />
-          </a>
+        <div className="team-member">
+          <img src="images/Dawson_headshot.jpg" className="headshot" />
+          <div className="info-box">
+            <h4>Dawson Black</h4>
+            <a href="https://dawsonblack.github.io/">
+              <img className="social-link" src="images/github-mark.png" />
+            </a>
+            <a href="dawsonblack0816@gmail.com">
+              <img className="social-link" src="images\Gmail-Email-PNG-Pic.png" />
+            </a>
+            <a href="https://www.linkedin.com/in/ddablack/">
+              <img className="social-link" src="images\In-Blue-128.png" />
+            </a>
+          </div>
         </div>
-        <div>
-          <img class="headshot" src="images/Robert.jpg"></img>
-          <h4>Robert Johnson</h4>
-          <a href="https://Johnsonroberte.github.io">
-            <img className="github" src="images/github-mark.png" />
-          </a>
-          <a href="mailto:JohnsonRobertE809@gmail.com">
-            <img className="gmail" src="images\Gmail-Email-PNG-Pic.png" />
-          </a>
-          <a href="https://www.linkedin.com/in/robert-johnson-2489551a4">
-            <img className="linkedin" src="images\In-Blue-128.png" />
-          </a>
+        <div className="team-member">
+          <img src="images/Robert_headshot.jpg" className="headshot" />
+          <div className="info-box">
+            <h4>Robert Johnson</h4>
+            <a href="https://Johnsonroberte.github.io">
+              <img className="social-link" src="images/github-mark.png" />
+            </a>
+            <a href="mailto:JohnsonRobertE809@gmail.com">
+              <img className="social-link" src="images\Gmail-Email-PNG-Pic.png" />
+            </a>
+            <a href="https://www.linkedin.com/in/robert-johnson-2489551a4">
+              <img className="social-link" src="images\In-Blue-128.png" />
+            </a>
+          </div>
         </div>
-        <div>
-          <h4>Siman Farah</h4>
-          <a href="https://Siman-1.github.io">
-            <img className="github" src="images/github-mark.png" />
-          </a>
-          <a href="mailto:simanfaraa.h@gmail.com">
-            <img className="gmail" src="images\Gmail-Email-PNG-Pic.png" />
-          </a>
-          <a href="https://www.linkedin.com/in/siman-farah-101682282/">
-            <img className="linkedin" src="images\In-Blue-128.png" />
-          </a>
+        <div className="team-member">
+          <img src="images/Siman_headshot.jpg" className="headshot" />
+          <div className="info-box">
+            <h4>Siman Farah</h4>
+            <a href="https://Siman-1.github.io">
+              <img className="social-link" src="images/github-mark.png" />
+            </a>
+            <a href="mailto:simanfaraa.h@gmail.com">
+              <img className="social-link" src="images\Gmail-Email-PNG-Pic.png" />
+            </a>
+            <a href="https://www.linkedin.com/in/siman-farah-101682282/">
+              <img className="social-link" src="images\In-Blue-128.png" />
+            </a>
+          </div>
         </div>
       </div>
     </div>

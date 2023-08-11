@@ -6,6 +6,7 @@ NOTES FROM DAWSON:
 -add some space between ul and img in results
 -consider adding a scientific and common name
 -need a fruiting image for mosquito-fern
+-you may be able to generate the team members with react and cut down on code
 
 NOTES FROM ABDI:
 

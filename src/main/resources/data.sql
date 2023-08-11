@@ -618,4 +618,116 @@ VALUES
         'By SiGarb - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=77846647',
         'https://en.wikipedia.org/wiki/Ficaria_verna',
         -22
+    );
+
+INSERT INTO
+    plant (
+        name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
     )
+VALUES
+    (
+        'Winged Sumac',
+        'Shining sumac is a valuable ornamental plant known for its dense, shrubby cover with lustrous dark green foliage that turns brilliant orange-red in fall, attracting wildlife. It features showy yellow flowers in summer, followed by persistent red berries, and requires pruning for optimal growth and canopy clearance.',
+        false,
+        true,
+        'Red',
+        'fruitImages/Winged-Sumac(F).jpg',
+        'leafImages/Winged-Sumac(L).jpg',
+        'By Riverbanks Outdoor Store from New Port Richey, FL, United States - Candy Coated Winged Sumac Berries, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=8770573',
+        'Public Domain, https://commons.wikimedia.org/w/index.php?curid=606675',
+        'https://en.wikipedia.org/wiki/Rhus_copallinum',
+        -23
+    );
+
+INSERT INTO
+    plant (
+        name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Smooth Sumac',
+        'Smooth sumac (Rhus glabra), a North American native in the Anacardiaceae family, is recognized for its open growth reaching up to 3 m (9.8 ft) tall, with compound leaves turning scarlet in autumn. Its spring flowers, green and tiny, mature into edible crimson berries that persist into winter. This species also occasionally forms harmless galls due to the sumac leaf gall aphid.',
+        false,
+        true,
+        'Crimson',
+        'fruitImages/Smooth-Sumac(F).jpg',
+        'leafImages/Winged-Sumac(L).jpg',
+        'Public Domain, https://commons.wikimedia.org/w/index.php?curid=647560',
+        'By Eric Hunt - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=77692462',
+        'https://en.wikipedia.org/wiki/Rhus_glabra',
+        -24
+    );
+
+INSERT INTO
+    plant (
+        name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Staghorn Sumac',
+        'Staghorn sumac (Rhus typhina) is a deciduous shrub or small tree, reaching up to 5 m (16 ft) tall and 6 m (20 ft) broad. Its compound leaves with serrated leaflets are velvety due to rust-colored hairs, and its distinctive branching pattern has earned it the name "stags horn sumac." It produces greenish-white to yellowish flowers and small drupes, with brilliant red, orange, and yellow fall foliage. The plant spreads through seeds and rhizomes, often forming clones, and is not closely related to poison sumac.',
+        false,
+        true,
+        'Red',
+        'fruitImages/Staghorn-Sumac(F).jpg',
+        'leafImages/Staghorn-Sumac(L).jpg',
+        'By AnRo0002 - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=39864762',
+        'By Katya from Moscow, Russia - Сумах оленерогий (Сумах пушистый, Уксусное дерево) / Rhus typhina / Staghorn sumac / Влакнест шмак / Essigbaum, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=45504388',
+        'https://en.wikipedia.org/wiki/Rhus_typhina',
+        -25
+    );
+
+INSERT INTO
+    plant (
+        name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_Fruit_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Prairie Rose',
+        'Rosa arkansana, commonly known as prairie rose or wild prairie rose, is a North American rose species found between the Appalachian and Rocky Mountains, from Alberta to Texas. It thrives in various habitats, attracting butterflies and birds, and shares its common name with Rosa blanda, a similar species more northernly distributed.',
+        false,
+        true,
+        'Pink',
+        'fruitImages/Prairie-Rose(F).jpg',
+        'By I, Alexwcovington, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2280101',
+        'https://en.wikipedia.org/wiki/Rosa_arkansana',
+        -26
+    );

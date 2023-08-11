@@ -47,7 +47,10 @@ export default function Home() {
               <img className="social-link" src="images/github-mark.png" />
             </a>
             <a href="mailto:abdikarimfarah12@gmail.com">
-              <img className="social-link" src="images\Gmail-Email-PNG-Pic.png" />
+              <img
+                className="social-link"
+                src="images\Gmail-Email-PNG-Pic.png"
+              />
             </a>
             <a href="https://www.linkedin.com/in/abdikarim-farah-37a5b0274/">
               <img className="social-link" src="images\In-Blue-128.png" />
@@ -62,7 +65,10 @@ export default function Home() {
               <img className="social-link" src="images/github-mark.png" />
             </a>
             <a href="dawsonblack0816@gmail.com">
-              <img className="social-link" src="images\Gmail-Email-PNG-Pic.png" />
+              <img
+                className="social-link"
+                src="images\Gmail-Email-PNG-Pic.png"
+              />
             </a>
             <a href="https://www.linkedin.com/in/ddablack/">
               <img className="social-link" src="images\In-Blue-128.png" />
@@ -77,7 +83,10 @@ export default function Home() {
               <img className="social-link" src="images/github-mark.png" />
             </a>
             <a href="mailto:JohnsonRobertE809@gmail.com">
-              <img className="social-link" src="images\Gmail-Email-PNG-Pic.png" />
+              <img
+                className="social-link"
+                src="images\Gmail-Email-PNG-Pic.png"
+              />
             </a>
             <a href="https://www.linkedin.com/in/robert-johnson-2489551a4">
               <img className="social-link" src="images\In-Blue-128.png" />
@@ -85,14 +94,17 @@ export default function Home() {
           </div>
         </div>
         <div className="team-member">
-          <img src="images/Siman_headshot.jpg" className="headshot" />
+          <img src="images/Siman_headshot.png" className="headshot" />
           <div className="info-box">
             <h4>Siman Farah</h4>
             <a href="https://Siman-1.github.io">
               <img className="social-link" src="images/github-mark.png" />
             </a>
             <a href="mailto:simanfaraa.h@gmail.com">
-              <img className="social-link" src="images\Gmail-Email-PNG-Pic.png" />
+              <img
+                className="social-link"
+                src="images\Gmail-Email-PNG-Pic.png"
+              />
             </a>
             <a href="https://www.linkedin.com/in/siman-farah-101682282/">
               <img className="social-link" src="images\In-Blue-128.png" />

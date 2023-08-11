@@ -5,10 +5,10 @@ import { BrowserRouter, Routes, Route, Outlet, Link } from "react-router-dom";
 
 import "../css/style.css";
 
-import Home from "./Home";
-import Test from "./Test";
-import Search from "./Search";
-import User from "./User";
+import Home from "./Home.jsx";
+import Test from "./Test.jsx";
+import Search from "./Search.jsx";
+import User from "./User.jsx";
 
 function Layout() {
 
@@ -21,9 +21,9 @@ function Layout() {
     <>
       <nav>
         <Link to="/">Home</Link>
-        <Link to="Test">Test</Link>
-        <Link to="Search">Search</Link>
-        <Link to="User">User</Link>
+        <Link to="/Test">Test</Link>
+        <Link to="/Search">Search</Link>
+        <Link to="/User">User</Link>
       </nav>
       <Outlet />
 

@@ -21,9 +21,9 @@ function Layout() {
     <>
       <nav>
         <Link to="/">Home</Link>
-        <Link to="Test">Test</Link>
+        {/* <Link to="Test">Test</Link> */}
         <Link to="Search">Search</Link>
-        <Link to="User">User</Link>
+        {/* <Link to="User">User</Link> */}
       </nav>
       <Outlet />
       <div className="App">

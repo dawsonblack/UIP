@@ -53,6 +53,7 @@ export default function Home() {
         </div>
         <div>
           <h4>Dawson Black</h4>
+          <img class="headshot" src="images/Dawson.jpg"></img>
           <a href="https://dawsonblack.github.io/">
             <img className="github" src="images/github-mark.png" />
           </a>
@@ -64,6 +65,7 @@ export default function Home() {
           </a>
         </div>
         <div>
+          <img class="headshot" src="images/Robert.jpg"></img>
           <h4>Robert Johnson</h4>
           <a href="https://Johnsonroberte.github.io">
             <img className="github" src="images/github-mark.png" />

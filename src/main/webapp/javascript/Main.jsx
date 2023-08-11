@@ -7,7 +7,8 @@ import "../css/style.css";
 
 import Home from "./Home";
 import Test from "./Test";
-import TestingFetches from "./TestingFetches";
+import Search from "./Search";
+import User from "./User";
 
 function Layout() {
 
@@ -21,7 +22,8 @@ function Layout() {
       <nav>
         <Link to="/">Home</Link>
         <Link to="Test">Test</Link>
-        <Link to="TestingFetches">TestingFetches</Link>
+        <Link to="Search">Search</Link>
+        <Link to="User">User</Link>
       </nav>
       <Outlet />
 
@@ -42,7 +44,8 @@ function Main() {
           >
             <Route index element={<Home />} />
             <Route path="Test" element={<Test />} />
-            <Route path="TestingFetches" element={<TestingFetches />} />
+            <Route path="Search" element={<Search />} />
+            <Route path="User" element={<User />} />
           </Route>
         </Routes>
       </BrowserRouter>

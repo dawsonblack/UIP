@@ -71,6 +71,7 @@ h1 {
   flex-direction: row;
   justify-content: center;
   gap: 150px;
+  padding: 15px;
 
   bottom: 0;
   width: 100%;
@@ -84,35 +85,31 @@ h1 {
 .team-member {
   position: relative;
   display: inline-block;
-  margin: 20px;
 }
 
 .headshot {
-  max-width: 100px;
+  max-width: 105px;
   height: auto;
   transition: transform 0.3s;
+  
 }
 
 .info-box {
   position: absolute;
   bottom: 0;
-  width: 80px;
-  height: 100%;
-  background-color: white;
+
+  width: 85px;
+  height: 120px;
   padding: 10px;
+
+  background-color: white;
   text-align: center;
   opacity: 0;
-  z-index: -1;
   transition: opacity 0.3s;
-  pointer-events: none; /* Allow hovering over the box */
-
-
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally */
 }
 
 .team-member:hover .headshot {
-  transform: translateY(-100%);
+  transform: translateY(-120%);
 }
 
 .team-member:hover .info-box {
@@ -125,10 +122,8 @@ h1 {
 
 .social-link {
   width: auto;
-  height: 30px;
   max-height: 30px;
-  margin-left: 2px;
-  margin-right: 2px;
+  margin: 2px;
 }
 
 #search-container {

@@ -31,8 +31,8 @@ public class User {
         return userID;
     }
 
-    public void setUserID(Long id) {
-        this.userID = id;
+    public void setUserID(Long user_id) {
+        this.userID = user_id;
     }
 
     public String getEmail() {

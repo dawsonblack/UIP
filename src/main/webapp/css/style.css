@@ -205,7 +205,7 @@ h1 {
 .plant-container {
   display: flex;
   flex-direction: row;
-  list-style: none;
+  justify-content: space-between;
   border: 1px solid #ccc;
   padding: 10px;
   margin-top: 10px;
@@ -226,13 +226,20 @@ h1 {
   justify-content: space-around;
 
   list-style: none;
-  margin: 0;
+  margin-right: 10px;
   padding: 0;
   flex: 1;
 }
 
 .plant-container ul li {
   margin-bottom: 5px;
+}
+
+.invasive {
+  color: rgb(255, 68, 68);
+}
+.non-invasive {
+  color: rgb(1, 219, 1);
 }
 
 .plant-container img {

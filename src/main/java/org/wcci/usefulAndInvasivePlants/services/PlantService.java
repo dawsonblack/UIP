@@ -44,9 +44,6 @@ public class PlantService {
     }
 
     public Plant writeToDatabase(final Plant plant) {
-        if (plant.getName().contains("bad word"))
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Sorry, cursing not allowed");
-
         return plantRepo.save(plant);
     }
 
@@ -65,7 +62,7 @@ public class PlantService {
                     "Sorry, you may not change the plant_id");
 
         // Copy the non-ID info from the requestbody to the database object
-        databasePlant.setName(plant.getName());
+        databasePlant.setCommonName(plant.getCommonName());
         databasePlant.setIsInvasive(plant.getIsInvasive());
         databasePlant.setColor(plant.getColor());
 

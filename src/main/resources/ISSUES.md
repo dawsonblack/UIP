@@ -8,6 +8,7 @@ NOTES FROM DAWSON:
 -the background is distracting and sometimes makes text unreadable
 -on mobile, user should tap once to cause a headshot to move up, then once again to move it back down (or by tapping another headshot)
 -crop the social media images as tightly as you can
+-link turning orange might take slightly too long
 
 NOTES FROM ABDI:
 

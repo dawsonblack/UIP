@@ -6,10 +6,10 @@ import BackgroundVideo from "./BackgroundVideo";
 
 import "../css/style.css";
 
-import Home from "./Home";
-import Test from "./Test";
-import Search from "./Search";
-import User from "./User";
+import Home from "./Home.jsx";
+import Test from "./Test.jsx";
+import Search from "./Search.jsx";
+import User from "./User.jsx";
 
 function Layout() {
   useEffect(() => {

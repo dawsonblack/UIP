@@ -73,7 +73,7 @@ export default function TestingFetches() {
     const [searchWasRun, setSearchWasRun] = useState(false);
 
     const [searchKeywords, setSearchKeywords] = useState("");
-    const [searchBy, setSearchBy] = useState("name");
+    const [searchBy, setSearchBy] = useState("commonName");
     
     function getPlants() {
       fetch(`/api/plants`, { method: "GET", cache: "default" })
@@ -103,7 +103,7 @@ export default function TestingFetches() {
         <label htmlFor="search-by">Search By:</label>
         <div className="search-dropdown">
           <select id="search-by" onChange={(e) => setSearchBy(e.target.value)}>
-            <option value="name">Name</option>
+            <option value="commonName">Name</option>
             <option value="isInvasive">Is Invasive</option>
             <option value="isNative">Is Native</option>
             <option value="color">Color</option>
@@ -135,7 +135,8 @@ export default function TestingFetches() {
         return (
           <div id={`plant-number-${plant.plantID}`} className='plant-container'>
             <ul>
-                <li>Name: {plant.name}</li>
+                <li>Common Name: {plant.commonName}</li>
+                <li>Scientific Name: {plant.scientificName}</li>
                 <li>Is Invasive: {plant.isInvasive.toString()}</li>
                 <li>Is Native: {plant.isNative.toString()}</li>
                 <li>Color: {plant.color}</li>

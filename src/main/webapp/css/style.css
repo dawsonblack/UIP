@@ -77,8 +77,8 @@ section {
 }
 
 .headshot {
-  max-width: 105px;
-  height: auto;
+  width: 105px;
+  height: 130px;
   margin-bottom: 10px;
 }
 

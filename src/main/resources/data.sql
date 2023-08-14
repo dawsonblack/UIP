@@ -618,4 +618,12 @@ VALUES
         'By SiGarb - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=77846647',
         'https://en.wikipedia.org/wiki/Ficaria_verna',
         -22
-    )
+    );
+
+DELETE FROM user
+WHERE
+    id < 0;
+
+
+     insert into user(id, email, first_name, pass_word, user_name) values (1,"simanemail@gmail.com", "siman", "password", "siman1");
+     insert into user(id, email, first_name, pass_word, user_name) values (2, "dummy1@gmail.com", "dummy", "password", "dummy1");

@@ -1,5 +1,6 @@
 package org.wcci.usefulAndInvasivePlants.services;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -12,19 +13,23 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import org.wcci.usefulAndInvasivePlants.entities.Plant;
+import org.wcci.usefulAndInvasivePlants.entities.User;
 import org.wcci.usefulAndInvasivePlants.repositories.PlantRepo;
+import org.wcci.usefulAndInvasivePlants.repositories.UserRepo;
 
 @Service
 /**
  * I contain the business logic for responding to API requests for
- * plant-related requests.
+ * plant-related requests. // contains business logic
  */
 public class PlantService {
     final private static Logger logger = LoggerFactory.getLogger(PlantService.class);
     final private PlantRepo plantRepo;
+    final private UserRepo userRepo;
 
-    public PlantService(@Autowired final PlantRepo plantRepo) {
+    public PlantService(@Autowired final PlantRepo plantRepo, @Autowired final UserRepo userRepo) {
         this.plantRepo = plantRepo;
+        this.userRepo = userRepo;
     }
 
     public Stream<Plant> plantStream() {
@@ -44,10 +49,12 @@ public class PlantService {
     }
 
     public Plant writeToDatabase(final Plant plant) {
-        if (plant.getName().contains("bad word"))
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Sorry, cursing not allowed");
 
         return plantRepo.save(plant);
+    }
+
+    public void addNewUser(final User user) {
+        userRepo.save(user);
     }
 
     public void deletePlantById(final long plant_id) {
@@ -55,6 +62,15 @@ public class PlantService {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Plant not found " + plant_id);
 
         plantRepo.deleteById(plant_id);
+    }
+
+
+    
+    public void deleteUserByID (final long user_id){
+        if (!userRepo.findById(user_id).isPresent())
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found " + user_id);
+            
+        userRepo.deleteById(user_id);
     }
 
     public Plant updatePlant(Plant plant, long plant_id) {
@@ -73,5 +89,15 @@ public class PlantService {
         writeToDatabase(databasePlant);
 
         return databasePlant;
+    }
+
+    public Optional<User> getUserById(long id) {
+        return userRepo.findById(id);
+    }
+
+    public List<User> getUsers() {
+
+        return (List<User>) userRepo.findAll();
+        
     }
 }

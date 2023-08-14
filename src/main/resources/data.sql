@@ -1142,16 +1142,140 @@ VALUES
     )
 VALUES
     (
-        'Amur honeysuckle',
-        'Lonicera maackii',
-        'The plant is a deciduous shrub reaching up to 6 meters in height, with stems up to 10 centimeters in diameter. Its leaves are opposite, measuring 5–9 centimeters in length and 2–4 centimeters in width, featuring an entire margin and some rough pubescence. The flowers, produced in pairs, are 2 centimeters long with two lips, initially white and later turning yellow or pale orange. Flowering occurs from middle spring to early summer. The plant bears bright red to black, semi-translucent berries that are 2–6 millimeters in diameter. These berries contain small seeds and mature in autumn, providing food for birds that disperse the seeds through their droppings.',
+        'Morrows honeysuckle',
+        'Lonicera morrowii',
+        'Lonicera morrowii, or Morrows honeysuckle, is a deciduous shrub native to Japan, Korea, and Northeast China. It grows up to 2.5 meters with oblong leaves and early spring foliage. Its white to pale yellow flowers develop into dark red berries, which are toxic to humans but eaten by birds. Often called "bush honeysuckle," it is invasive in the United States and can hybridize with other Lonicera species, forming invasive hybrids like L. × bella when crossed with L. tatarica.',
         true,
         false,
         'red to yellow to white',
-        'fruitImages/Lonicera maackii-fruit.jpg',
-        'leafImages/Lonicera_maackii_leaf.jpg',
-        'By Photo taken by Fanghong - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=424662',
-        'By Eric Hunt - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=72970624',
-        'https://en.wikipedia.org/wiki/Lonicera_maackii',
-        -37
+        'fruitImages/Lonicera_Morrowii_fruit.jpg',
+        'leafImages/lonicera-morrowii-leaf.jpg',
+        'By Sixflashphoto - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=63125414',
+        'Leslie J. Mehrhoff, University of Connecticut, Bugwood.org',
+        'https://en.wikipedia.org/wiki/Lonicera_morrowii',
+        -38
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Tatarian honeysuckle',
+        'Lonicera tatarica',
+        'Lonicera tatarica is a bushy shrub that can reach around 3 meters in height. It features oval or rounded simple leaves measuring 3 to 6 centimeters long, with egg-shaped, hairless, and toothless characteristics. The inflorescence displays colors ranging from deep rose to light pink, occasionally white, with petals about 2–2.5 cm long and a slender tube. The flowers emit a sweet fragrance resembling honeysuckle. The shiny orange or red berries, up to 1 cm wide, are attractive to wildlife and aid in the plants spread through consumption by animals.',
+        true,
+        false,
+        'white to pink to crimson',
+        'fruitImages/Tatarian_Honeysuckle_.jpg',
+        'leafImages/Tatarian_honeysuckle_-.jpg',
+        'By Shadowmeld Photography - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=75728699',
+        'By Matt Lavin - https://www.flickr.com/photos/35478170@N08/51892967732/, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=118321828',
+        'https://en.wikipedia.org/wiki/Lonicera_tatarica',
+        -39
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'purple loosestrife',
+        'Lythrum salicaria',
+        'Lythrum salicaria is a tall plant that can grow 1-2 meters, forming colonies from a single root mass. It has reddish-purple square stems, lanceolate leaves that are 3–10 cm long, and reddish-purple flowers, 10–20 mm in diameter. The flowers come in different types with varying stamen and style lengths to ensure cross-pollination. The fruit is a small capsule containing tiny seeds, and flowering lasts through the summer. In autumn, leaves often turn bright red. The plant is variable in leaf shape and hairiness, with subspecies and varieties described but considered non-significant. It is also referred to as Lythrum intermedium.',
+        true,
+        false,
+        'reddish purple',
+        'fruitImages/LythrumSalicaria.jpg',
+        'leafImages/loosestrife-leaf.jpg',
+        'By Christian Fischer, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=1043852',
+        'Norman E. Rees, USDA Agricultural Research Service - Retired, Bugwood.org',
+        'https://en.wikipedia.org/wiki/Lythrum_salicaria',
+        -40
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'wand loosestrife',
+        'Lythrum virgatum',
+        'Lythrum virgatum, the wand loosestrife, is a species of flowering plant in the family Lythraceae, native to wet areas of the Eurasian steppes, and introduced to France, Germany, and the United States. The unimproved species and a number of cultivars are available from commercial suppliers. It is considered an invasive species in some jurisdictions.',
+        true,
+        false,
+        'purple',
+        '',
+        'leafImages/Lythrum_virgatum_.jpg',
+        '',
+        'By Stefan.lefnaer - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=73914930',
+        'https://en.wikipedia.org/wiki/Lythrum_virgatum',
+        -41
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'European water-clover',
+        'Marsilea quadrifolia',
+        'Aquatic fern bearing 4 parted leaf resembling Four-leaf clover (Trifolium). Leaves floating in deep water or erect in shallow water or on land. Leaflets obdeltoid, to 3/4" long, glaucous, petioles to 8" long; Sporocarp (ferns) ellipsoid, to 3/16" long, dark brown, on stalks to 3/4" long, attached to base of petioles.',
+        true,
+        false,
+        'green',
+        '',
+        'leafImages/Marsilea_quadrifolia_plants.jpg',
+        '',
+        'By Hardyplants - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=38454416',
+        'https://en.wikipedia.org/wiki/Marsilea_quadrifolia',
+        -42
     );

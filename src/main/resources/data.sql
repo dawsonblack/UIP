@@ -620,9 +620,7 @@ VALUES
         -22
     );
 
-DELETE FROM user
-WHERE
-    id < 0;
+DELETE FROM user;
 
 
      insert into user(id, email, first_name, pass_word, user_name) values (-991,"simanemail@gmail.com", "siman", "password", "siman1");

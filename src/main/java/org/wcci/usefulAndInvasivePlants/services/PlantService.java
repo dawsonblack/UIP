@@ -1,6 +1,5 @@
 package org.wcci.usefulAndInvasivePlants.services;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -11,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-
 import org.wcci.usefulAndInvasivePlants.entities.Plant;
 import org.wcci.usefulAndInvasivePlants.entities.User;
 import org.wcci.usefulAndInvasivePlants.repositories.PlantRepo;
@@ -53,8 +51,8 @@ public class PlantService {
         return plantRepo.save(plant);
     }
 
-    public void addNewUser(final User user) {
-        userRepo.save(user);
+    public User addNewUser(final User user) {
+        return userRepo.save(user);
     }
 
     public void deletePlantById(final long plant_id) {
@@ -95,9 +93,9 @@ public class PlantService {
         return userRepo.findById(id);
     }
 
-    public List<User> getUsers() {
+    public Iterable<User> getUsers() {
 
-        return (List<User>) userRepo.findAll();
+        return userRepo.findAll();
         
     }
 }

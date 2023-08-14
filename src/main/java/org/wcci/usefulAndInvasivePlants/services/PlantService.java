@@ -37,6 +37,13 @@ public class PlantService {
         return StreamSupport.stream(plants.spliterator(), false);
     }
 
+        public Stream<User> userStream() {
+        final Iterable<User> users = this.userRepo.findAll();
+
+        // Standard conversion from iterator to stream.
+        return StreamSupport.stream(users.spliterator(), false);
+    }
+
     public Plant findPlant(final long plant_id) {
         final Optional<Plant> possiblyAPlant = plantRepo.findById(plant_id);
         if (!possiblyAPlant.isPresent()) {
@@ -89,9 +96,15 @@ public class PlantService {
         return databasePlant;
     }
 
-    public Optional<User> getUserById(long id) {
-        return userRepo.findById(id);
+    public User findUser(final long user_id) {
+        final Optional<User> possiblyAUser = userRepo.findById(user_id);
+        if (!possiblyAUser.isPresent()) {
+            logger.info("User not found: " + user_id);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found " + user_id);
+        }
+        return possiblyAUser.get();
     }
+
 
     public Iterable<User> getUsers() {
 

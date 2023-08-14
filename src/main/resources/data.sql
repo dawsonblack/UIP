@@ -619,9 +619,3 @@ VALUES
         'https://en.wikipedia.org/wiki/Ficaria_verna',
         -22
     );
-
-DELETE FROM user;
-
-
-     insert into user(id, email, first_name, pass_word, user_name) values (-991,"simanemail@gmail.com", "siman", "password", "siman1");
-     insert into user(id, email, first_name, pass_word, user_name) values (-992, "dummy1@gmail.com", "dummy", "password", "dummy1");

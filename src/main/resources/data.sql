@@ -1273,9 +1273,71 @@ VALUES
         false,
         'green',
         '',
-        'leafImages/Marsilea_quadrifolia_plants.jpg',
+        'leafImages/european-water-clover.jpg',
         '',
-        'By Hardyplants - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=38454416',
+        'Leslie J. Mehrhoff, University of Connecticut, Bugwood.org',
         'https://en.wikipedia.org/wiki/Marsilea_quadrifolia',
         -42
+    );
+
+     INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Japanese stiltgrass',
+        'Microstegium vimineum',
+        'Japanese stiltgrass typically reaches heights of 40 to 100 cm and can root at each node. It flowers in late summer, followed by seed formation in caryopsis. Distinguished by its silver-striped leaf center, it resembles North American grass Leersia virginica, which lacks this stripe and flowers earlier. Japanese stiltgrass is a common tick habitat, notably the lone star tick, often carried by browsing deer to new areas.',
+        true,
+        false,
+        'green',
+        '',
+        'leafImages/Microstegium_vimineum.JPG',
+        '',
+        'By Bcbaker2390 - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=7897217',
+        'https://en.wikipedia.org/wiki/Microstegium_vimineum',
+        -43
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'heartshape false pickerelweed',
+        'Monochoria vaginalis',
+        'Native to Asia and the Pacific Islands, this plant is introduced in various regions and often considered an invasive weed, even listed on the US Federal Noxious Weed List. It thrives in water bodies, particularly invasive in rice paddies. This herb, annual or perennial, grows from a small rhizome. It features shiny green leaves about 12 cm long, on rigid, hollow petioles. The inflorescence carries 3 to 25 underwater-opening flowers simultaneously, each with purple-blue tepals over a centimeter long. Its capsule-like fruit, about a centimeter long, contains numerous small winged seeds.',
+        true,
+        false,
+        'purple',
+        '',
+        'leafImages/Monochoria_vaginalis_.jpg',
+        '',
+        'By © 2010 Jee & Rani Nature Photography (License: CC BY-SA 4.0), CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=30789950',
+        'https://en.wikipedia.org/wiki/Pontederia_vaginalis',
+        -44
     );

@@ -7,6 +7,7 @@ NOTES FROM DAWSON:
 -make the formatting of the about paragraph better: font, background, max-width
 -the background is distracting and sometimes makes text unreadable
 -on mobile, user should tap once to cause a headshot to move up, then once again to move it back down (or by tapping another headshot)
+-make the search page look nice on mobile
 
 NOTES FROM ABDI:
 

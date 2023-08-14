@@ -56,7 +56,7 @@ export default function Home() {
               <a href="https://dawsonblack.github.io/">
                 <img className="social-link" src="images/github-mark.png" />
               </a>
-              <a href="dawsonblack0816@gmail.com">
+              <a href="mailto:dawsonblack0816@gmail.com">
                 <img
                   className="social-link"
                   src="images\Gmail-Email-PNG-Pic.png"

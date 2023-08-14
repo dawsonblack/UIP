@@ -625,5 +625,5 @@ WHERE
     id < 0;
 
 
-     insert into user(id, email, first_name, pass_word, user_name) values (1,"simanemail@gmail.com", "siman", "password", "siman1");
-     insert into user(id, email, first_name, pass_word, user_name) values (2, "dummy1@gmail.com", "dummy", "password", "dummy1");
+     insert into user(id, email, first_name, pass_word, user_name) values (-991,"simanemail@gmail.com", "siman", "password", "siman1");
+     insert into user(id, email, first_name, pass_word, user_name) values (-992, "dummy1@gmail.com", "dummy", "password", "dummy1");

@@ -77,9 +77,11 @@ section {
 }
 
 .headshot {
-  width: 105px;
-  height: 130px;
+  width: 120px;
+  height: 150px;
   margin-bottom: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .info-box {
@@ -93,14 +95,19 @@ section {
 }
 
 .info-box h4 {
-  color: black;
+  color: #333;
   margin-bottom: 5px;
 }
 
 .social-link {
   width: 30px;
   height: auto;
-  margin: 2px;
+  margin: 5px;
+  transition: transform 0.3s;
+}
+
+.social-link:hover {
+  transform: scale(1.2);
 }
 
 #search-container {

@@ -96,13 +96,13 @@ h1 {
 .info-box {
   position: absolute;
   bottom: 0;
-  /*left: 0;*/
-  width: 100%;
+  width: 80px;
   height: 100%;
   background-color: white;
   padding: 10px;
   text-align: center;
   opacity: 0;
+  z-index: -1;
   transition: opacity 0.3s;
   pointer-events: none; /* Allow hovering over the box */
 

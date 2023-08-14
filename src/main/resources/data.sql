@@ -1341,3 +1341,97 @@ VALUES
         'https://en.wikipedia.org/wiki/Pontederia_vaginalis',
         -44
     );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'white mulberry',
+        'Morus alba',
+        'The white mulberry tree has variable leaf sizes and deciduous habit in temperate regions but can be evergreen in tropical areas. It produces single-sex catkin flowers and sweet, but mild, fruit that changes color. Birds disperse its seeds. The tree is scientifically notable for its extremely rapid pollen release from its catkins, achieved through catapult-like stamens, reaching speeds of around 380 miles per hour, making it the fastest known plant movement.',
+        true,
+        false,
+        'white to pink to red',
+        'fruitImages/Morus-alba.jpg',
+        'leafImages/Morus_alba-leaves.jpg',
+        'By GerardM - Luis Fernández García L. Fdez. / 2005-06-05 / Parque Ana Tutor, Madrid., CC BY-SA 2.1 es, https://commons.wikimedia.org/w/index.php?curid=178195',
+        'By Jaknouse - Own work, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=8640180',
+        'https://en.wikipedia.org/wiki/Morus_alba',
+        -45
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'parrots-feather',
+        'Myriophyllum aquaticum',
+        'Parrot feather is a perennial plant known for its feather-like leaves arranged in whorls of four to six. Its emergent stems resemble small fir trees and can grow over a foot above water. Pinkish-white flowers attach to the plant, which reproduces mainly through fragments. It thrives as water warms in spring, with most plants being female and seeds uncommon in North America. The leaves are blue-green to gray-green and deeply cut into narrow lobes.',
+        true,
+        false,
+        'bluish-green to green',
+        '',
+        'leafImages/Myriophyllum_aquaticum.jpg',
+        '',
+        'By André Karwath aka Aka - Own work, CC BY-SA 2.5, https://commons.wikimedia.org/w/index.php?curid=305652',
+        'https://en.wikipedia.org/wiki/Myriophyllum_aquaticum',
+        -46
+    );
+
+    
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'parrots-feather',
+        'Myriophyllum aquaticum',
+        'Parrot feather is a perennial plant known for its feather-like leaves arranged in whorls of four to six. Its emergent stems resemble small fir trees and can grow over a foot above water. Pinkish-white flowers attach to the plant, which reproduces mainly through fragments. It thrives as water warms in spring, with most plants being female and seeds uncommon in North America. The leaves are blue-green to gray-green and deeply cut into narrow lobes.',
+        true,
+        false,
+        'bluish-green to green',
+        '',
+        'leafImages/Myriophyllum_aquaticum.jpg',
+        '',
+        'By André Karwath aka Aka - Own work, CC BY-SA 2.5, https://commons.wikimedia.org/w/index.php?curid=305652',
+        'https://en.wikipedia.org/wiki/Myriophyllum_aquaticum',
+        -46
+    );

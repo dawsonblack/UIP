@@ -40,10 +40,10 @@ export default function CreateUser() {
     });
   };
   return (
-    <div>
+    <div className="create-user-container">
       <div>
-        <form>
-          <label htmlFor="email">Email: </label>
+        <form className="create-user-form">
+          <label htmlFor="email">Email:</label>
           <input
             type="text"
             name="email"
@@ -51,7 +51,7 @@ export default function CreateUser() {
             onChange={handleEmailChange}
           ></input>
 
-          <label htmlFor="firstName">First Name: </label>
+          <label htmlFor="firstName">First Name:</label>
           <input
             type="text"
             name="firstName"
@@ -59,7 +59,7 @@ export default function CreateUser() {
             onChange={handleFirstNameChange}
           ></input>
 
-          <label htmlFor="username">Username: </label>
+          <label htmlFor="username">Username:</label>
           <input
             type="text"
             name="username"
@@ -67,9 +67,9 @@ export default function CreateUser() {
             onChange={handleUsernameChange}
           ></input>
 
-          <label htmlFor="password">Password: </label>
+          <label htmlFor="password">Password:</label>
           <input
-            type="text"
+            type="password"
             name="password"
             value={password}
             onChange={handlePasswordChange}
@@ -77,7 +77,9 @@ export default function CreateUser() {
         </form>
       </div>
       <div>
-        <button onClick={postUser}>Create Account</button>
+        <button className="create-account-button" onClick={postUser}>
+          Create Account
+        </button>
       </div>
     </div>
   );

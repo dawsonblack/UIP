@@ -108,6 +108,7 @@ section {
   transform: scale(1.2);
 }
 
+/*Search.jsx*/
 #search-container {
   display: flex;
   flex-direction: column;
@@ -257,4 +258,50 @@ section {
 #no-results-message img {
   max-width: 100px;
   opacity: 0.95;
+}
+
+/*CreateUser.jsx*/
+.create-user-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.create-user-form {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  gap: 10px;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+
+.create-user-form label {
+  font-weight: bold;
+}
+
+.create-user-form input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.create-account-button {
+  margin-top: 5px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.create-account-button:hover {
+  background-color: #0056b3;
 }

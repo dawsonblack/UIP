@@ -1403,3 +1403,98 @@ VALUES
         'https://en.wikipedia.org/wiki/Myriophyllum_aquaticum',
         -46
     );
+
+    
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Eurasian watermilfoil',
+        'Myriophyllum spicatum',
+        'Eurasian watermilfoil is a plant with long, thin stems up to 250 cm in length. Its underwater leaves grow in groups of four with thread-like leaflets, while inconspicuous orange-red flowers appear on a spike above the waters surface. It has 12-21 pairs of leaflets, distinct from the 5-9 pairs of northern watermilfoil. Hybrids of these species can cause confusion due to intermediate leaf characteristics.',
+        true,
+        false,
+        'light green to yellowish to reddish',
+        '',
+        'leafImages/_Myriophyllum_spicatum.jpg',
+        '',
+        'CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=451399',
+        'https://en.wikipedia.org/wiki/Myriophyllum_spicatum',
+        -47
+    );
+
+    
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'brittle waternymph',
+        'Najas minor',
+        'Najas minor forms dense clusters with branched stems that break easily, allowing propagation from fragments or small seeds along the stem. Small flowers grow in clusters along leaf axils. Its opposite, unbranched strap-shaped leaves, about 4.5 cm long, feature visible serrations. It shares morphological similarities with coontail and slender naiad.',
+        true,
+        false,
+        'green to greenish brown',
+        '',
+        'leafImages/Najas_minor_.jpg',
+        '',
+        'By Robert H. Molenbrock - http://plants.usda.gov/java/profile?symbol=NAMI. Robert H. Mohlenbrock. USDA NRCS. 1995. Northeast wetland flora: Field office guide to plant species. Northeast National Technical Center, Chester. Courtesy of USDA NRCS Wetland Science Institute., Public Domain, https://commons.wikimedia.org/w/index.php?curid=2741130',
+        'https://en.wikipedia.org/wiki/Najas_minor',
+        -48
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'yellow floating heart',
+        'Nymphoides peltata',
+        'Nymphoides peltata is an aquatic perennial with creeping stolons up to 2 meters long. It features heart-shaped floating leaves (3-15 cm wide) in green to yellow-green shades with purple undersides. The leaves support loose clusters of 2-5 yellow flowers on peduncles above the water. Each flower forms a beaked capsule holding flat seeds with stiff hairs. It resembles Nuphar variegata and Nymphaea species but differs in leaf size and flower shape, with flowers crucial for species identification.',
+        true,
+        false,
+        'green to yellow-green',
+        '',
+        'leafImages/NymphoidesPeltata.jpg',
+        '',
+        'By Challiyil Eswaramangalath Pavithran Vipin - https://www.flickr.com/photos/challiyan/3038172072/, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=107817535',
+        'https://en.wikipedia.org/wiki/Najas_minor',
+        -48
+    );

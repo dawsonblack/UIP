@@ -79,17 +79,21 @@ export default function TestingFetches() {
       fetch(`/api/plants`, { method: "GET", cache: "default" })
         .then((response) => response.json())
         .then((responseBody) => {
-          const filteredResults = responseBody["_embedded"]["plantList"].filter(item => {
-            console.log("The " +  searchBy + " is " + item[searchBy] + ", and its type is " + typeof item[searchBy]);
-            return (
-              (searchKeywords == "") ||
-              (item[searchBy].toString() == searchKeywords.toLowerCase()) ||
-              (typeof item[searchBy] !== 'boolean' && item[searchBy].toLowerCase().includes(searchKeywords.toLowerCase()))
-            );
-          });
-          console.log("Here are the filtered search results: " + filteredResults);
-          setSearchResults(filteredResults);
-          setSearchWasRun(true);
+          if (searchKeywords == "") {
+              setSearchResults(responseBody["_embedded"]["plantList"]);
+        } else {
+              const filteredResults = responseBody["_embedded"]["plantList"].filter(item => {
+                console.log("The " +  searchBy + " is " + item[searchBy] + ", and its type is " + typeof item[searchBy]);
+                return (
+                  (item[searchBy].toString() == searchKeywords.toLowerCase()) ||
+                  (typeof item[searchBy] !== 'boolean' && item[searchBy].toLowerCase().includes(searchKeywords.toLowerCase())) ||
+                  (searchBy == "commonName" && item['scientificName'].toLowerCase().includes(searchKeywords.toLowerCase()))
+                );
+              });
+              console.log("Here are the filtered search results: " + filteredResults);
+              setSearchResults(filteredResults);
+              setSearchWasRun(true);
+          }
         });
     }
 
@@ -133,14 +137,15 @@ export default function TestingFetches() {
     function DisplaySearchResult({ plant }) {
       console.log(plant);
         return (
-          <div id={`plant-number-${plant.plantID}`} className='plant-container'>
+          <div id={`plant-number${plant.plantID}`} className='plant-container'>
             <ul>
                 <li>Common Name: {plant.commonName}</li>
                 <li>Scientific Name: {plant.scientificName}</li>
-                <li>Is Invasive: {plant.isInvasive.toString()}</li>
-                <li>Is Native: {plant.isNative.toString()}</li>
+                <li className={plant.isInvasive ? 'invasive' : 'non-invasive'}>
+                  {plant.isInvasive ? 'Invasive' : 'Non-invasive'}
+                </li>
+                <li>{plant.isnative ? 'Native' : 'Foreign'}</li>
                 <li>Color: {plant.color}</li>
-                <li>ID: {plant.plantID}</li>
             </ul>
             <img src={plant.imageFruitURL} />
             <img src={plant.imageLeafURL} />

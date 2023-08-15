@@ -4,115 +4,81 @@ nav {
   background-color: cadetblue;
   margin-bottom: 2%;
   padding: 0.75em;
-  background-color: darkgray;
   width: 100%;
 }
 
 nav a {
   text-decoration: none;
   color: black;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #ff8c00;
 }
 
 body {
   margin: 0px;
+  font-family: 'Arial', sans-serif;
   height: 100%;
   width: 100%;
   color: white;
 }
 
-#background-video {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -2;
-
-  filter: blur(8px);
+h1 {
+  text-align: center;
 }
 
-#header {
+section {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  z-index: -1;
-  position: absolute;
-  top: 21%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 35px 15px;
-  min-width: 750px;
-  border-radius: 50px;
-  background-color: transparent;
-  box-sizing: border-box;
-  font-family: sans-serif;
-  font-size: 1rem;
-  justify-content: space-between;
-}
-
-h1 {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  top: 50%;
-  left: 50%;
+  margin-bottom: 50px;
 }
 
 #about p {
   box-sizing: border-box;
   background-color: darkgray;
+  max-width: 700px;
   left: 0;
   right: 0;
+  padding: 20px;
 }
 
-#creators {
+#team-members {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  gap: 150px;
-  bottom: 0;
-  width: 100%;
-  position: fixed; /*Maybe remove this*/
-  font-size: 70%;
+  flex-wrap: wrap;
+  padding: 30px 0;
+  width: min(700px, 100%);
   background-color: darkgray;
-  margin-top: 2%;
-
 }
 
 .team-member {
-  position: relative;
-  display: inline-block;
-  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+  transition: transform 0.3s;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
 }
 
 .headshot {
-  max-width: 100px;
-  height: auto;
-  transition: transform 0.3s;
-  z-index: -1;
+  width: 120px;
+  height: 150px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .info-box {
-  position: absolute;
-  bottom: 0;
-  /*left: 0;*/
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  padding: 10px;
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s;
-  pointer-events: none; /* Allow hovering over the box */
-
-
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally */
-}
-
-.team-member:hover .headshot {
-  transform: translateY(-100%);
 }
 
 .team-member:hover .info-box {
@@ -121,16 +87,19 @@ h1 {
 }
 
 .info-box h4 {
-  color: black;
+  color: #333;
+  margin-bottom: 5px;
 }
 
 .social-link {
-  width: auto;
-  height: 30px;
-  max-height: 30px;
-  margin-left: 2px;
-  margin-right: 2px;
-  z-index: 0;
+  width: 30px;
+  height: auto;
+  margin: 5px;
+  transition: transform 0.3s;
+}
+
+.social-link:hover {
+  transform: scale(1.2);
 }
 
 #search-container {
@@ -207,7 +176,7 @@ h1 {
 .plant-container {
   display: flex;
   flex-direction: row;
-  list-style: none;
+  justify-content: space-between;
   border: 1px solid #ccc;
   padding: 10px;
   margin-top: 10px;
@@ -228,13 +197,20 @@ h1 {
   justify-content: space-around;
 
   list-style: none;
-  margin: 0;
+  margin-right: 10px;
   padding: 0;
   flex: 1;
 }
 
 .plant-container ul li {
   margin-bottom: 5px;
+}
+
+.invasive {
+  color: rgb(255, 68, 68);
+}
+.non-invasive {
+  color: rgb(1, 219, 1);
 }
 
 .plant-container img {

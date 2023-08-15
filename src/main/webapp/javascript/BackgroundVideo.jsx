@@ -52,6 +52,7 @@ class BackgroundVideo extends Component {
           height: "100%",
           objectFit: "cover",
           zIndex: -2,
+          filter: "blur(10px)",
         }}
       />
     );

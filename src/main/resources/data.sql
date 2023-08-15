@@ -114,7 +114,7 @@ VALUES
     (
         'American Hazelnut',
         'Corylus americana',
-        'Corylus americana, is a medium to large shrub, growing 2.5-5 m (8-16 ft) tall with a spreading crown. It blooms in early to mid-spring, featuring hanging male catkins and clusters of tiny female flowers. It produces edible nuts enclosed in leaf-like bracts that mature from July to October.',
+        'Corylus americana is a medium to large shrub that grows anywhere 2.5-5 m (8-16 ft) tall with a spreading crown. It blooms in early to mid-spring, featuring hanging male catkins and clusters of tiny female flowers. It produces edible nuts enclosed in leaf-like bracts that mature from July to October.',
         false,
         true,
         'Brown',
@@ -176,7 +176,7 @@ VALUES
     (
         'Tree of Heaven',
         'Ailanthus altissima',
-        'Ailanthus altissima, is a medium-sized deciduous tree reaching 17-27 m (60-90 ft) in height with smooth gray bark and pinnately compound leaves. It produces yellowish-green to reddish flowers in large panicles and bears large, twisted samaras that aid in wind and water dispersal.',
+        'Ailanthus altissima is a medium-sized deciduous tree reaching 17-27 m (60-90 ft) in height with smooth gray bark and pinnately compound leaves. It produces yellowish-green to reddish flowers in large panicles and bears large, twisted samaras that aid in wind and water dispersal.',
         true,
         false,
         'Yellowish green to reddish',
@@ -205,7 +205,7 @@ VALUES
     (
         'Garlic Mustard',
         'Alliaria petiolata',
-        'Alliaria petiolata, is an herbaceous biennial plant with triangular to heart-shaped leaves, producing clusters of small white flowers with an unpleasant aroma in spring and summer. It develops slender, erect seed capsules containing shiny black seeds. The plant can self-fertilize or be cross-pollinated by insects and is associated with various herbivores and fungi.',
+        'Alliaria petiolata is an herbaceous biennial plant with triangular to heart-shaped leaves, producing clusters of small white flowers with an unpleasant aroma in spring and summer. It develops slender, erect seed capsules containing shiny black seeds. The plant can self-fertilize or be cross-pollinated by insects and is associated with various herbivores and fungi.',
         true,
         false,
         'White',
@@ -263,7 +263,7 @@ VALUES
     (
         'Mosquito-fern',
         'Azolla pinnata',
-        'Azolla pinnata, is an aquatic fern native to Africa, Asia, and parts of Australia. It features small, velvety leaves that float on the waters surface, forming dense mats. It is known for its nitrogen-fixing ability, invasive tendencies, and its use in rice paddies for fertilizer and pollution absorption.',
+        'Azolla pinnata is an aquatic fern native to Africa, Asia, and parts of Australia. It features small, velvety leaves that float on the waters surface, forming dense mats. It is known for its nitrogen-fixing ability, invasive tendencies, and its use in rice paddies for fertilizer and pollution absorption.',
         true,
         false,
         'Green, blue-green, or dark red',
@@ -352,7 +352,7 @@ VALUES
     (
         'Oriental Bittersweet',
         'Celastrus orbiculatus',
-        'The plants defining feature is its thin, spindly vines with silver to reddish-brown bark, ranging from 1 to over 10 cm in diameter. These vines can encircle trees up to 40 feet high, leading to strangulation or branch breakage, and the plant bears toxic round leaves, small green flowers, and distinctive red seeds within yellow pods.',
+        'Celastrus orbiculatus\' defining feature is its thin, spindly vines with silver to reddish-brown bark, ranging from 1 to over 10 cm in diameter. These vines can encircle trees up to 40 feet high, leading to strangulation or branch breakage, and the plant bears toxic round leaves, small green flowers, and distinctive red seeds within yellow pods.',
         true,
         false,
         'Red',
@@ -441,7 +441,7 @@ VALUES
     (
         'Cutleaf Teasel',
         'Dipsacus laciniatus',
-        'Dipsacus laciniatus, known as cutleaf teasel, is a perennial herb native to Europe and Asia, now invasive in North America. It features hollow, prickly stems, oppositely arranged leaves forming cups, and egg-shaped flower heads containing up to 1500 flowers. The plant is monocarpic, reproducing only by seed, and poses invasive threats in various habitats due to a lack of native predators.',
+        'Dipsacus laciniatus, commonly known as cutleaf teasel, is a perennial herb native to Europe and Asia, now invasive in North America. It features hollow, prickly stems, oppositely arranged leaves forming cups, and egg-shaped flower heads containing up to 1500 flowers. The plant is monocarpic, reproducing only by seed, and poses invasive threats in various habitats due to a lack of native predators.',
         true,
         false,
         'White',

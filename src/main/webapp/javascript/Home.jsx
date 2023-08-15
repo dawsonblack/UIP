@@ -29,7 +29,7 @@ export default function Home() {
         </p>
       </section>
       <section id="creators">
-        <h3>Meet The Creators:</h3>
+        <h3 id="meet-us">Meet The Creators:</h3>
         <div id="team-members">
           <div className="team-member">
             <img src="images/Abdi_headshot.jpg" className="headshot" />

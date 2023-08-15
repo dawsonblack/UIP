@@ -5,6 +5,8 @@ export default function CreateUser() {
   const [firstName, setFirstName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [plantToSave, setPlantToSave] = useState("");
+  const [user_id, setUser_id] = useState("");
 
   const handleEmailChange = ({ target }) => {
     setEmail(target.value);
@@ -20,6 +22,14 @@ export default function CreateUser() {
 
   const handlePasswordChange = ({ target }) => {
     setPassword(target.value);
+  };
+
+  const handlePlantToSaveChange = ({ target }) => {
+    setPlantToSave(target.value);
+  };
+
+  const handleUser_idChange = ({ target }) => {
+    setUser_id(target.value);
   };
 
   const postUser = () => {
@@ -39,6 +49,22 @@ export default function CreateUser() {
       console.log("User saved successfully!");
     });
   };
+
+  const updateSavedPlants = () => {
+    fetch(`/api/users/${user_id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(plantToSave),
+    }).then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      console.log("Plant saved successfully!");
+    });
+  };
+
   return (
     <div>
       <div>
@@ -75,9 +101,27 @@ export default function CreateUser() {
             onChange={handlePasswordChange}
           ></input>
         </form>
+        <form>
+          <label htmlFor="user_id">Account ID: </label>
+          <input
+            type="text"
+            name="user_id"
+            value={user_id}
+            onChange={handleUser_idChange}
+          ></input>
+
+          <label htmlFor="plantToSave">Plant ID: </label>
+          <input
+            type="text"
+            name="plantToSave"
+            value={plantToSave}
+            onChange={handlePlantToSaveChange}
+          ></input>
+        </form>
       </div>
       <div>
         <button onClick={postUser}>Create Account</button>
+        <button onClick={updateSavedPlants}>Update Saved Plants</button>
       </div>
     </div>
   );

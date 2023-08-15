@@ -9,11 +9,12 @@ import jakarta.persistence.Id;
 public class User {
     @Id
     @GeneratedValue
-    private Long userID; /// should I use Int here instead? 
+    private Long userID; /// should I use Int here instead?
     private String email;
     private String firstName;
     private String userName;
     private String passWord;
+    private String[] savedPlants;
 
     // is line 12-15 a constructor? if not what is a constructor and where is it
     public User(Long id, String email, String firstName, String userName, String passWord) {
@@ -24,7 +25,7 @@ public class User {
         this.passWord = passWord;
     }
 
-    public User(){
+    public User() {
     }
 
     public Long getUserID() {
@@ -67,5 +68,12 @@ public class User {
         this.passWord = passWord;
     }
 
-    
+    public String[] getSavedPlants() {
+        return savedPlants;
+    }
+
+    public void setSavedPlants(String[] savedPlants) {
+        this.savedPlants = savedPlants;
+    }
+
 }

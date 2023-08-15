@@ -37,7 +37,7 @@ public class PlantService {
         return StreamSupport.stream(plants.spliterator(), false);
     }
 
-        public Stream<User> userStream() {
+    public Stream<User> userStream() {
         final Iterable<User> users = this.userRepo.findAll();
 
         // Standard conversion from iterator to stream.
@@ -68,12 +68,10 @@ public class PlantService {
         plantRepo.deleteById(plant_id);
     }
 
-
-    
-    public void deleteUserByID (final long user_id){
+    public void deleteUserByID(final long user_id) {
         if (!userRepo.findById(user_id).isPresent())
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found " + user_id);
-            
+
         userRepo.deleteById(user_id);
     }
 
@@ -104,10 +102,26 @@ public class PlantService {
         return possiblyAUser.get();
     }
 
-
     public Iterable<User> getUsers() {
 
         return userRepo.findAll();
-        
+
     }
+
+    public User updateUser(User user, long user_id) {
+        final User databaseUser = findUser(user_id);
+
+        if (user_id != databaseUser.getUserID())
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                    "Sorry, you may not change the user_id");
+
+        // Copy the non-ID info from the requestbody to the database object
+        databaseUser.setSavedPlants(user.getSavedPlants());
+
+        // Ask the repo to write the modified student to MySQL (or whatever)
+        addNewUser(databaseUser);
+
+        return databaseUser;
+    }
+
 }

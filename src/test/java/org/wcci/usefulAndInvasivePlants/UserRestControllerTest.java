@@ -42,8 +42,7 @@ public class UserRestControllerTest extends HateoasHelper {
                 final MvcResult userPostResult = this.mvc
                                 .perform(MockMvcRequestBuilders.post("/api/users")
                                                 .accept(MediaTypes.HAL_JSON)
-                                                .contentType(MediaType.APPLICATION_JSON) // I'm a program and sending
-                                                                                         // you JSON-encoded data
+                                                .contentType(MediaType.APPLICATION_JSON)
                                                 .content(new ObjectMapper().writeValueAsString(user)))
                                 .andExpect(status().isOk())
                                 .andExpect(content().contentTypeCompatibleWith(MediaTypes.HAL_JSON))

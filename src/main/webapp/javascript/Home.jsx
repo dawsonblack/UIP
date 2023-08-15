@@ -86,7 +86,7 @@ export default function Home() {
             </div>
           </div>
           <div className="team-member">
-            <img src="images/Siman_headshot.png" className="headshot" />
+            <img src="images/Siman_headshot.jpg" className="headshot" />
             <div className="info-box">
               <h4>Siman Farah</h4>
               <a href="https://Siman-1.github.io">

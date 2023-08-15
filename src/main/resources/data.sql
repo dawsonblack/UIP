@@ -1495,6 +1495,37 @@ VALUES
         'leafImages/NymphoidesPeltata.jpg',
         '',
         'By Challiyil Eswaramangalath Pavithran Vipin - https://www.flickr.com/photos/challiyan/3038172072/, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=107817535',
-        'https://en.wikipedia.org/wiki/Najas_minor',
-        -48
+        'https://en.wikipedia.org/wiki/Nymphoides_peltata',
+        -49
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'duck lettuce',
+        'Ottelia alismoides',
+        'Ottelia alismoides is a submersed aquatic herbaceous plant that is native to Africa, Asia, Australia, and the Pacific. The plant is entirely submersed except for the flower. Its common name, duck lettuce, comes from the strong resemblance the leaves of O. alismoides bears to lettuce leaves.',
+        true,
+        false,
+        'white to yellow',
+        '',
+        'leafImages/Ottelia_alismoides_.jpg',
+        '',
+        'By Fan Wen - Own work http://www.flowersview.com/Ottelia-alismoides/IMG_8623.jpg.html, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=44116644',
+        'https://en.wikipedia.org/wiki/Nymphoides_peltata',
+        -49
     );

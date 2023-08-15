@@ -114,7 +114,7 @@ VALUES
     (
         'American Hazelnut',
         'Corylus americana',
-        'Corylus americana is a medium to large shrub that grows anywhere 2.5-5 m (8-16 ft) tall with a spreading crown. It blooms in early to mid-spring, featuring hanging male catkins and clusters of tiny female flowers. It produces edible nuts enclosed in leaf-like bracts that mature from July to October.',
+        'Corylus americana is a medium to large shrub that grows anywhere from 2.5-5 m (8-16 ft) tall with a spreading crown. It blooms in early to mid-spring, featuring hanging male catkins and clusters of tiny female flowers. It produces edible nuts enclosed in leaf-like bracts that mature from July to October.',
         false,
         true,
         'Brown',

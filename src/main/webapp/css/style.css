@@ -40,10 +40,17 @@ section {
 #about p {
   box-sizing: border-box;
   background-color: darkgray;
-  max-width: 700px;
+  max-width: min(700px, 90%);
   left: 0;
   right: 0;
   padding: 20px;
+}
+
+#meet-us {
+  background-color: black;
+  text-align: center;
+  padding: 5px 0;
+  width: min(1500px, 100%);
 }
 
 #team-members {
@@ -51,7 +58,7 @@ section {
   justify-content: center;
   flex-wrap: wrap;
   padding: 30px 0;
-  width: min(700px, 100%);
+  width: min(700px, 90%);
   background-color: darkgray;
 }
 

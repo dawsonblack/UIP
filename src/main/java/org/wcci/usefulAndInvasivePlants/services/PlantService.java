@@ -54,10 +54,6 @@ public class PlantService {
     }
 
     public Plant writeToDatabase(final Plant plant) {
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/main
         return plantRepo.save(plant);
     }
 

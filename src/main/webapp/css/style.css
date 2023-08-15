@@ -1,123 +1,110 @@
-nav{
+nav {
   display: flex;
   justify-content: space-around;
   background-color: cadetblue;
   margin-bottom: 2%;
   padding: 0.75em;
-  background-color:darkgray;
   width: 100%;
 }
 
-nav a{
+nav a {
   text-decoration: none;
   color: black;
+  transition: color 0.2s;
 }
 
-body{
+nav a:hover {
+  color: #ff8c00;
+}
+
+body {
   margin: 0px;
-  /*background-image: url(images/background-image.jpg);
-  background-position: 0px 0px;*/
+  font-family: 'Arial', sans-serif;
   height: 100%;
   width: 100%;
   color: white;
-  /*animation: animateBackground 60s linear infinite alternate;*/
 }
 
-#background-video {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
-
-  filter: blur(8px);
+h1 {
+  text-align: center;
 }
 
-/*@keyframes animateBackground{
-  from {
-      background-position: 0 0;
-  }
-  to {
-      background-position: 100% 0;
-  }
-}*/
-
-
-#header{
+section {
   display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: absolute;
-    top: 21%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 35px 15px;
-    min-width: 750px;
-    border-radius: 50px;
-    background-color: transparent;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    font-size: 1.0rem;
-    justify-content: space-between;
-}
-
-
-h1{
-  display: flex;
-    align-content: center;
-    justify-content:center;
-    top: 50%;
-    left: 50%;
-    
-}
-
-#about p{
-  box-sizing: border-box;
-  background-color:darkgray;
-  left: 0;
-  right: 0;
-}
-
-.creators{
-  display: flex;
-  width: 100%;
-  flex-direction: row;
   justify-content: center;
-  gap: 100px;
-  position: fixed;
-  bottom: 0;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+#about p {
+  box-sizing: border-box;
+  background-color: darkgray;
+  max-width: 700px;
   left: 0;
   right: 0;
-  font-size:70%;
+  padding: 20px;
+}
+
+#team-members {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px 0;
+  width: min(700px, 100%);
   background-color: darkgray;
-  margin-top: 2%;
-  padding: 0.01em;
 }
 
-.github {
-  width: auto;
-  height: 30px;
-  max-height: 30px;
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+  transition: transform 0.3s;
 }
 
-.linkedin {
-  width: auto;
-  height: 30px;
-  max-height: 30px;
+.team-member:hover {
+  transform: translateY(-5px);
 }
 
-.gmail {
-  width: auto;
-  height: 30px;
-  max-height: 30px;
+.headshot {
+  width: 120px;
+  height: 150px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-box {
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.team-member:hover .info-box {
+  opacity: 1;
+}
+
+.info-box h4 {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.social-link {
+  width: 30px;
+  height: auto;
+  margin: 5px;
+  transition: transform 0.3s;
+}
+
+.social-link:hover {
+  transform: scale(1.2);
 }
 
 #search-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #search-bar {
@@ -140,7 +127,7 @@ h1{
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-left: 10px; 
+  margin-left: 10px;
   transition: background-color 0.1s ease;
 }
 
@@ -186,16 +173,16 @@ h1{
 }
 
 .plant-container {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    background-color: rgba(150, 150, 150, 0.8);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: rgba(150, 150, 150, 0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .plant-container:hover {
@@ -209,13 +196,20 @@ h1{
   justify-content: space-around;
 
   list-style: none;
-  margin: 0;
+  margin-right: 10px;
   padding: 0;
   flex: 1;
 }
 
 .plant-container ul li {
   margin-bottom: 5px;
+}
+
+.invasive {
+  color: rgb(255, 68, 68);
+}
+.non-invasive {
+  color: rgb(1, 219, 1);
 }
 
 .plant-container img {

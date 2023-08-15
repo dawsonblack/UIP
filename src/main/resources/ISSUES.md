@@ -1,11 +1,13 @@
 NOTES FROM DAWSON:
--consider adding a search by anything option
 -add a README.md
--search function runs through all results no matter what, even if the user left the search bar blank
 -pictures could be formatted better
--add some space between ul and img in results
--consider adding a scientific and common name
--need a fruiting image for mosquito-fern
+-need to fill in missing images
+-add the ability to just press enter and search
+-check the grammar of the descriptions past 27
+-make the formatting of the about paragraph better: font, background, max-width
+-the background is distracting and sometimes makes text unreadable
+-on mobile, user should tap once to cause a headshot to move up, then once again to move it back down (or by tapping another headshot)
+-make the search page look nice on mobile
 
 NOTES FROM ABDI:
 

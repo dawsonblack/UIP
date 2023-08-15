@@ -12,3 +12,4 @@ Data.sql
 MySQL
 React useState
 HATEOS Helper
+Machine learning tools/ChatGPT

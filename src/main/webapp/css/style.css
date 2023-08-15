@@ -307,3 +307,9 @@ section {
 .create-account-button:hover {
   background-color: #0056b3;
 }
+
+.create-account-button:disabled {
+  background-color: #a8d2ff; /* Light gray background for disabled state */
+  cursor: not-allowed;
+  opacity: 0.7;
+}

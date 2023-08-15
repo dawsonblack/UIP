@@ -8,6 +8,7 @@ NOTES FROM DAWSON:
 -the background is distracting and sometimes makes text unreadable
 -on mobile, user should tap once to cause a headshot to move up, then once again to move it back down (or by tapping another headshot)
 -make the search page look nice on mobile
+-why is password in the database as passWord?
 
 NOTES FROM ABDI:
 

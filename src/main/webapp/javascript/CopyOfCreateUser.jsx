@@ -1,26 +1,40 @@
 import React, { useState, useEffect } from "react";
 
-export default function CreateUser() {
+export default function CopyOfCreateUser() {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
   const handleEmailChange = ({ target }) => {
     setEmail(target.value);
+    checkIfFormIsFilled();
   };
 
   const handleFirstNameChange = ({ target }) => {
     setFirstName(target.value);
+    checkIfFormIsFilled();
   };
 
   const handleUsernameChange = ({ target }) => {
     setUsername(target.value);
+    checkIfFormIsFilled();
   };
 
   const handlePasswordChange = ({ target }) => {
     setPassword(target.value);
+    checkIfFormIsFilled();
   };
+
+  const checkIfFormIsFilled = () => {
+    setIsButtonDisabled(
+        email == "" ||
+        firstName == "" ||
+        username == "" ||
+        password == ""
+        );
+  }
 
   async function sha256(message) {
     // encode as UTF-8
@@ -39,7 +53,7 @@ export default function CreateUser() {
 
   const postUser = async () => {
     const hashedPassword = await sha256(password);
-
+    
     fetch("/api/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -55,6 +69,11 @@ export default function CreateUser() {
       }
       console.log("User saved successfully!");
     });
+
+    setEmail("");
+    setFirstName("");
+    setUsername("");
+    setPassword("");
   };
   return (
     <div className="create-user-container">
@@ -94,7 +113,7 @@ export default function CreateUser() {
         </form>
       </div>
       <div>
-        <button className="create-account-button" onClick={postUser}>
+        <button className="create-account-button" onClick={postUser} disabled={isButtonDisabled}>
           Create Account
         </button>
       </div>

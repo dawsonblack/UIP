@@ -83,6 +83,7 @@ section {
 
 .team-member:hover .info-box {
   opacity: 1;
+  z-index: 0;
 }
 
 .info-box h4 {

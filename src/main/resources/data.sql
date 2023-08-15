@@ -814,3 +814,592 @@ VALUES
         'https://en.wikipedia.org/wiki/Rubus_occidentalis',
         -27
     );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Giant Hogweed',
+        'Heracleum mantegazzianum',
+        'The giant hogweed plant grows to 2-5 meters, sometimes even 5.5 meters tall. It has large leaves, a green stem with dark reddish-purple spots and coarse white hairs, and an umbrella-shaped inflorescence up to 100 cm wide. Its flowers are white or greenish white, and it produces schizocarp fruits containing flattened oval seeds about 1 cm in length.',
+        true,
+        true,
+        'white',
+        'fruitImages/Giant-Hogweed.jpg',
+        'leafImages/Giant-Hogweed.jpg',
+        'By Fritz Geller-Grimm - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=5595612',
+        'By Derek Harper, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=13471101',
+        'https://en.wikipedia.org/wiki/Heracleum_mantegazzianum',
+        -28
+    );
+
+INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'dames rocket',
+        'Hesperis matronlis',
+        'Hesperis matronalis, also known as dames rocket, grows over 100 cm tall with upright, hairy stems. It is typically a biennial plant, flowering in the second year, but can sometimes act as a short-lived perennial. The leaves are lanceolate-shaped with toothed margins and short hairs, and the showy, fragrant flowers appear in spring in terminal racemes. Each large flower has four petals, often in shades of lavender or purple, with some variations in color, and is accompanied by four erect sepals. The plant produces thin fruits containing oblong seeds, which can be confused with native Phlox species in North America due to similar flower clusters, but they can be distinguished by their foliage and petal count.',
+        true,
+        false,
+        'pink',
+        'fruitImages/dames-rocket.png',
+        'leafImages/dames-rocket.jpg',
+        'By Huw Williams (Huwmanbeing) - Own work, Public Domain, https://commons.wikimedia.org/w/index.php?curid=3645242',
+        'By Raffi Kojian - http://Gardenology.org, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=12734849',
+        'https://en.wikipedia.org/wiki/Hesperis_matronalis',
+        -29
+    );
+
+INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'hydrilla',
+        'Hydrilla verticillata',
+        'Hydrilla is a plant with stems growing up to 1-2 meters long, featuring leaves arranged in whorls of two to eight along the stem. The leaves are 5-20 mm long, 0.7-2 mm wide, and have serrations or small spines on the margins. The plant produces small male and female flowers separately, with transparent petals bearing red streaks. It primarily reproduces through fragmentation and rhizomes, with rare flowering. Hydrilla is notable for its resistance to salinity in comparison to other freshwater aquatic plants.',
+        true,
+        false,
+        'green',
+        'fruitImages/Hydrilla-fruit.jpg',
+        'leafImages/Hydrilla.jpg',
+        'By No machine-readable author provided. Michael Lo~commonswiki assumed (based on copyright claims). - No machine-readable source provided. Own work assumed (based on copyright claims)., CC BY 2.5, https://commons.wikimedia.org/w/index.php?curid=739341',
+        'Public Domain, https://commons.wikimedia.org/w/index.php?curid=2728025',
+        'https://en.wikipedia.org/wiki/Hydrilla#',
+        -30
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'European frog-bit',
+        'Hydrocharis morsus-ranae',
+        'The European frogbit is a small floating plant that resembles a miniature water lily, with kidney-shaped leaves forming rosettes on the water surface. It produces small white flowers with three petals and spreads quickly through stolons. During winter, it forms dormant turions at the bottom of water bodies, reemerging in spring. While native to Europe and parts of Asia, it became invasive in Canada and the northeastern United States after its introduction in the 1930s, particularly around the Great Lakes. Its rapid growth and dense surface coverage pose a threat to local biodiversity in this region, although it is less dominant in its native habitats.',
+        true,
+        false,
+        'white',
+        'fruitImages/european-frogbit.jpg',
+        'leafImages/europeanfrogbit.jpg',
+        'By Christian Fischer, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=1042515',
+        'By Christian Fischer, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=6729105',
+        'https://en.wikipedia.org/wiki/Hydrocharis_morsus-ranae',
+        -31
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'miramar weed',
+        'Hygrophila polysperma',
+        'Stem/Roots: Hygrophila polysperma is a spiny dicotyledon plant. It is primarily a submersed rooted plant, but can be emersed in shallow areas with smaller, darker leaves (Cuda and Sutton 2000). Stems are creeping ascendant, brittle, and easily fragmented, and are 6 feet or longer',
+        true,
+        false,
+        'green',
+        'fruitImages/miramar.jpg',
+        'leafImages/miramar-weedf.JPG',
+        'Shaun Winterton, Aquarium and Pond Plants of the World, Edition 3, USDA APHIS PPQ, Bugwood.org',
+        'CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=550261',
+        'https://en.wikipedia.org/wiki/Hygrophila_polysperma',
+        -32
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        ' yellow iris',
+        'Iris pseudacorus',
+        'The herbaceous flowering perennial plant Iris pseudacorus grows up to 2 meters tall, with erect leaves up to 90 cm long. Its bright yellow iris-like flowers are 7-10 cm across, and it produces dry capsules containing pale brown seeds. This plant thrives in wet conditions, particularly wetlands, and can tolerate submersion, low pH, and anaerobic soils. It spreads rapidly through rhizomes and water-dispersed seeds, often growing alongside Typha in shallower water. It serves as an important habitat for the endangered corncrake. While primarily aquatic or marginal, its rhizomes can endure dry periods. Both the petals and stem of I. pseudacorus are toxic to animals and plants.',
+        true,
+        false,
+        'yellow',
+        'fruitImages/iris-pseudacorus.jpg',
+        'leafImages/Iris_pseudacorus_Flower_.jpg',
+        'CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=213664',
+        'By Photo by and (c)2007 Derek Ramsey (Ram-Man) - Self-photographed, GFDL 1.2, https://commons.wikimedia.org/w/index.php?curid=2459934',
+        'https://en.wikipedia.org/wiki/Iris_pseudacorus',
+        -33
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'common privet',
+        'Ligustrum vulgare',
+        'This shrub is semi-evergreen or deciduous, reaching heights of 3 meters (occasionally 5 meters). It features stiff, erect stems with gray-brown bark marked by small brown lenticels. Its leaves grow in opposite pairs, are narrow oval to lanceolate, measuring 2–6 cm long and 0.5–1.5 cm wide. Creamy-white tubular flowers with four-lobed corollas appear in mid-summer on 3–6 cm long panicles. The flowers emit a strong, pungent fragrance that some find unpleasant. The plant produces small glossy black berries (6–8 mm diameter) containing toxic seeds for humans but eaten by thrushes that disperse the seeds. In warmer regions, a more evergreen variation exists, sometimes referred to as Ligustrum vulgare var. italicum.',
+        true,
+        false,
+        'yellow',
+        'fruitImages/Ligustrum_vulgare-Berries.jpg',
+        'leafImages/Ligustrum-vulgare.jpg',
+        'By User:Nino Barbieri - Own work, CC BY-SA 2.5, https://commons.wikimedia.org/w/index.php?curid=1786129',
+        'Robert Vidéki, Doronicum Kft., Bugwood.org',
+        'https://en.wikipedia.org/wiki/Ligustrum_vulgare',
+        -34
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Asian marshweed',
+        'Limnophila sessiliflora',
+        'This species resembles Cabomba caroliniana but has whorls of leaves about 1.2 inches (3 cm) in diameter. The pinnate leaves are bright green and can turn reddish under strong light. The leaves close and the plant "sleeps" after receiving enough light. It can grow over 16 inches (40 cm) tall, often emerging from the waters surface for better access to light and carbon dioxide. Submersed leaves are darker green and lance-shaped due to lower light, while the fruit are elliptical capsules, measuring 3.5-5.5 mm long, green-brown when submerged and dark brown when emerged.',
+        true,
+        false,
+        'green to brown',
+        'fruitImages/Limnophila_sessiliflora.jpg',
+        'leafImages/Limnophila_sessiliflora-.jpg',
+        'By kajuko - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2860688',
+        'By J.M.Garg - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=5688358',
+        'https://en.wikipedia.org/wiki/Limnophila_sessiliflora',
+        -35
+    );
+
+ INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Japanese honeysuckle',
+        'Lonicera japonica',
+        'Lonicera japonica is a climbing vine that can grow up to 10 meters or more in trees. It features oval leaves that are 3–8 cm long and 2–3 cm wide. Young stems are slightly red and fuzzy, while older ones are brown with peeling bark and may be hollow. The flowers are double-tongued, starting white and turning yellow with a sweet vanilla scent. In the fall, it produces black spherical berries (3–4 mm in diameter) containing a few seeds. While human consumption of flower nectar is safe, all other parts of the plant have the potential to be toxic.',
+        true,
+        false,
+        'green to brown',
+        'fruitImages/Lonicera_japonica,_Fruit.JPG',
+        'leafImages/Lonicera_japonica_leaf.jpg',
+        'By Qwert1234 - Qwert1234&#039;s file, Public Domain, https://commons.wikimedia.org/w/index.php?curid=8324330',
+        'By Ragnhild&amp;Neil Crawford from Sweden - Lonicera japonica -4375, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=75687236',
+        'https://en.wikipedia.org/wiki/Lonicera_japonica',
+        -36
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Amur honeysuckle',
+        'Lonicera maackii',
+        'The plant is a deciduous shrub reaching up to 6 meters in height, with stems up to 10 centimeters in diameter. Its leaves are opposite, measuring 5–9 centimeters in length and 2–4 centimeters in width, featuring an entire margin and some rough pubescence. The flowers, produced in pairs, are 2 centimeters long with two lips, initially white and later turning yellow or pale orange. Flowering occurs from middle spring to early summer. The plant bears bright red to black, semi-translucent berries that are 2–6 millimeters in diameter. These berries contain small seeds and mature in autumn, providing food for birds that disperse the seeds through their droppings.',
+        true,
+        false,
+        'red to yellow to white',
+        'fruitImages/Lonicera maackii-fruit.jpg',
+        'leafImages/Lonicera_maackii_leaf.jpg',
+        'By Photo taken by Fanghong - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=424662',
+        'By Eric Hunt - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=72970624',
+        'https://en.wikipedia.org/wiki/Lonicera_maackii',
+        -37
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Morrows honeysuckle',
+        'Lonicera morrowii',
+        'Lonicera morrowii, or Morrows honeysuckle, is a deciduous shrub native to Japan, Korea, and Northeast China. It grows up to 2.5 meters with oblong leaves and early spring foliage. Its white to pale yellow flowers develop into dark red berries, which are toxic to humans but eaten by birds. Often called "bush honeysuckle," it is invasive in the United States and can hybridize with other Lonicera species, forming invasive hybrids like L. × bella when crossed with L. tatarica.',
+        true,
+        false,
+        'red to yellow to white',
+        'fruitImages/Lonicera_Morrowii_fruit.jpg',
+        'leafImages/lonicera-morrowii-leaf.jpg',
+        'By Sixflashphoto - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=63125414',
+        'Leslie J. Mehrhoff, University of Connecticut, Bugwood.org',
+        'https://en.wikipedia.org/wiki/Lonicera_morrowii',
+        -38
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Tatarian honeysuckle',
+        'Lonicera tatarica',
+        'Lonicera tatarica is a bushy shrub that can reach around 3 meters in height. It features oval or rounded simple leaves measuring 3 to 6 centimeters long, with egg-shaped, hairless, and toothless characteristics. The inflorescence displays colors ranging from deep rose to light pink, occasionally white, with petals about 2–2.5 cm long and a slender tube. The flowers emit a sweet fragrance resembling honeysuckle. The shiny orange or red berries, up to 1 cm wide, are attractive to wildlife and aid in the plants spread through consumption by animals.',
+        true,
+        false,
+        'white to pink to crimson',
+        'fruitImages/Tatarian_Honeysuckle_.jpg',
+        'leafImages/Tatarian_honeysuckle_-.jpg',
+        'By Shadowmeld Photography - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=75728699',
+        'By Matt Lavin - https://www.flickr.com/photos/35478170@N08/51892967732/, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=118321828',
+        'https://en.wikipedia.org/wiki/Lonicera_tatarica',
+        -39
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'purple loosestrife',
+        'Lythrum salicaria',
+        'Lythrum salicaria is a tall plant that can grow 1-2 meters, forming colonies from a single root mass. It has reddish-purple square stems, lanceolate leaves that are 3–10 cm long, and reddish-purple flowers, 10–20 mm in diameter. The flowers come in different types with varying stamen and style lengths to ensure cross-pollination. The fruit is a small capsule containing tiny seeds, and flowering lasts through the summer. In autumn, leaves often turn bright red. The plant is variable in leaf shape and hairiness, with subspecies and varieties described but considered non-significant. It is also referred to as Lythrum intermedium.',
+        true,
+        false,
+        'reddish purple',
+        'fruitImages/LythrumSalicaria.jpg',
+        'leafImages/loosestrife-leaf.jpg',
+        'By Christian Fischer, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=1043852',
+        'Norman E. Rees, USDA Agricultural Research Service - Retired, Bugwood.org',
+        'https://en.wikipedia.org/wiki/Lythrum_salicaria',
+        -40
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'wand loosestrife',
+        'Lythrum virgatum',
+        'Lythrum virgatum, the wand loosestrife, is a species of flowering plant in the family Lythraceae, native to wet areas of the Eurasian steppes, and introduced to France, Germany, and the United States. The unimproved species and a number of cultivars are available from commercial suppliers. It is considered an invasive species in some jurisdictions.',
+        true,
+        false,
+        'purple',
+        '',
+        'leafImages/Lythrum_virgatum_.jpg',
+        '',
+        'By Stefan.lefnaer - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=73914930',
+        'https://en.wikipedia.org/wiki/Lythrum_virgatum',
+        -41
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'European water-clover',
+        'Marsilea quadrifolia',
+        'Aquatic fern bearing 4 parted leaf resembling Four-leaf clover (Trifolium). Leaves floating in deep water or erect in shallow water or on land. Leaflets obdeltoid, to 3/4" long, glaucous, petioles to 8" long; Sporocarp (ferns) ellipsoid, to 3/16" long, dark brown, on stalks to 3/4" long, attached to base of petioles.',
+        true,
+        false,
+        'green',
+        '',
+        'leafImages/european-water-clover.jpg',
+        '',
+        'Leslie J. Mehrhoff, University of Connecticut, Bugwood.org',
+        'https://en.wikipedia.org/wiki/Marsilea_quadrifolia',
+        -42
+    );
+
+     INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Japanese stiltgrass',
+        'Microstegium vimineum',
+        'Japanese stiltgrass typically reaches heights of 40 to 100 cm and can root at each node. It flowers in late summer, followed by seed formation in caryopsis. Distinguished by its silver-striped leaf center, it resembles North American grass Leersia virginica, which lacks this stripe and flowers earlier. Japanese stiltgrass is a common tick habitat, notably the lone star tick, often carried by browsing deer to new areas.',
+        true,
+        false,
+        'green',
+        '',
+        'leafImages/Microstegium_vimineum.JPG',
+        '',
+        'By Bcbaker2390 - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=7897217',
+        'https://en.wikipedia.org/wiki/Microstegium_vimineum',
+        -43
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'heartshape false pickerelweed',
+        'Monochoria vaginalis',
+        'Native to Asia and the Pacific Islands, this plant is introduced in various regions and often considered an invasive weed, even listed on the US Federal Noxious Weed List. It thrives in water bodies, particularly invasive in rice paddies. This herb, annual or perennial, grows from a small rhizome. It features shiny green leaves about 12 cm long, on rigid, hollow petioles. The inflorescence carries 3 to 25 underwater-opening flowers simultaneously, each with purple-blue tepals over a centimeter long. Its capsule-like fruit, about a centimeter long, contains numerous small winged seeds.',
+        true,
+        false,
+        'purple',
+        '',
+        'leafImages/Monochoria_vaginalis_.jpg',
+        '',
+        'By © 2010 Jee & Rani Nature Photography (License: CC BY-SA 4.0), CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=30789950',
+        'https://en.wikipedia.org/wiki/Pontederia_vaginalis',
+        -44
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'white mulberry',
+        'Morus alba',
+        'The white mulberry tree has variable leaf sizes and deciduous habit in temperate regions but can be evergreen in tropical areas. It produces single-sex catkin flowers and sweet, but mild, fruit that changes color. Birds disperse its seeds. The tree is scientifically notable for its extremely rapid pollen release from its catkins, achieved through catapult-like stamens, reaching speeds of around 380 miles per hour, making it the fastest known plant movement.',
+        true,
+        false,
+        'white to pink to red',
+        'fruitImages/Morus-alba.jpg',
+        'leafImages/Morus_alba-leaves.jpg',
+        'By GerardM - Luis Fernández García L. Fdez. / 2005-06-05 / Parque Ana Tutor, Madrid., CC BY-SA 2.1 es, https://commons.wikimedia.org/w/index.php?curid=178195',
+        'By Jaknouse - Own work, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=8640180',
+        'https://en.wikipedia.org/wiki/Morus_alba',
+        -45
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'parrots-feather',
+        'Myriophyllum aquaticum',
+        'Parrot feather is a perennial plant known for its feather-like leaves arranged in whorls of four to six. Its emergent stems resemble small fir trees and can grow over a foot above water. Pinkish-white flowers attach to the plant, which reproduces mainly through fragments. It thrives as water warms in spring, with most plants being female and seeds uncommon in North America. The leaves are blue-green to gray-green and deeply cut into narrow lobes.',
+        true,
+        false,
+        'bluish-green to green',
+        '',
+        'leafImages/Myriophyllum_aquaticum.jpg',
+        '',
+        'By André Karwath aka Aka - Own work, CC BY-SA 2.5, https://commons.wikimedia.org/w/index.php?curid=305652',
+        'https://en.wikipedia.org/wiki/Myriophyllum_aquaticum',
+        -46
+    );

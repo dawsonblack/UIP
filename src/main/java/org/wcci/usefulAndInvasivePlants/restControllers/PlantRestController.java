@@ -28,6 +28,7 @@ public class PlantRestController {
 
     final private PlantService plantService;
 
+    //contructor injection through contructor @Autowired
     public PlantRestController(@Autowired PlantService plantService) {
         this.plantService = plantService;
     }

@@ -1,7 +1,10 @@
 package org.wcci.usefulAndInvasivePlants.entities;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -17,7 +20,8 @@ public class User {
     private String firstName;
     private String userName;
     private String passWord;
-    private String[] savedPlants;
+    @Convert(converter = StringListConverter.class)
+    private List<String> savedPlants;
 
     // is line 12-15 a constructor? if not what is a constructor and where is it
     public User(Long id, String email, String firstName, String userName, String passWord) {
@@ -71,11 +75,11 @@ public class User {
         this.passWord = passWord;
     }
 
-    public String[] getSavedPlants() {
+    public List<String> getSavedPlants() {
         return savedPlants;
     }
 
-    public void setSavedPlants(String[] savedPlants) {
+    public void setSavedPlants(List<String> savedPlants) {
         this.savedPlants = savedPlants;
     }
 

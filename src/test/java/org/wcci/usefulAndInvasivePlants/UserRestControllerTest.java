@@ -29,8 +29,10 @@ import com.jayway.jsonpath.JsonPath;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
+@ActiveProfiles(value = "test")
+@Transactional()
 public class UserRestControllerTest extends HateoasHelper {
-        private static final String ORGANIC_USER_LIST = "organicUserList";
+        private static final String USER_LIST = "userList";
 
         @Autowired
         private MockMvc mvc;
@@ -56,11 +58,14 @@ public class UserRestControllerTest extends HateoasHelper {
                                 MockMvcRequestBuilders
                                                 .get(extractLink(userPostResult,
                                                                 UserRestController.LIST_ALL_USERS))
+                                                .accept(MediaTypes.HAL_JSON)
+                                                .contentType(MediaType.APPLICATION_JSON)
+                                                .content(new ObjectMapper().writeValueAsString(user))
                                                 .accept(MediaTypes.HAL_JSON))
                                 .andExpect(status().isOk())
                                 .andReturn();
 
-                final List<User> allUsers = extractEmbeddedList(getAllUsersResult, ORGANIC_USER_LIST, User.class);
+                final List<User> allUsers = extractEmbeddedList(getAllUsersResult, USER_LIST, User.class);
 
                 assertEquals(1, allUsers.size());
 

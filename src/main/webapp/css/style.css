@@ -261,7 +261,7 @@ section {
 }
 
 /*CreateUser.jsx*/
-.create-user-container {
+.register-login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -269,7 +269,7 @@ section {
   height: 100vh;
 }
 
-.create-user-form {
+.register-login-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -282,18 +282,18 @@ section {
   background-color: #f8f8f8;
 }
 
-.create-user-form label {
+.register-login-form label {
   font-weight: bold;
 }
 
-.create-user-form input {
+.register-login-form input {
   padding: 5px;
   margin-bottom: 5px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
 
-.create-account-button {
+.register-login-button {
   margin-top: 5px;
   padding: 10px 20px;
   background-color: #007bff;
@@ -304,11 +304,11 @@ section {
   font-size: 16px;
 }
 
-.create-account-button:hover {
+.register-login-button:hover {
   background-color: #0056b3;
 }
 
-.create-account-button:disabled {
+.register-login-button:disabled {
   background-color: #a8d2ff; /* Light gray background for disabled state */
   cursor: not-allowed;
   opacity: 0.7;

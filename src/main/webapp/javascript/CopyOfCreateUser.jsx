@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function CopyOfCreateUser() {
   const [email, setEmail] = useState("");
@@ -76,9 +77,9 @@ export default function CopyOfCreateUser() {
     setPassword("");
   };
   return (
-    <div className="create-user-container">
+    <div className="register-login-container">
       <div>
-        <form className="create-user-form">
+        <form className="register-login-form">
           <label htmlFor="email">Email:</label>
           <input
             type="text"
@@ -113,10 +114,11 @@ export default function CopyOfCreateUser() {
         </form>
       </div>
       <div>
-        <button className="create-account-button" onClick={postUser} disabled={isButtonDisabled}>
+        <button className="register-login-button" onClick={postUser} disabled={isButtonDisabled}>
           Create Account
         </button>
       </div>
+      <p>Already have an account? <Link to="/Login">Sign in</Link></p>
     </div>
   );
 }

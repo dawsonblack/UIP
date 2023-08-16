@@ -11,6 +11,7 @@ import Test from "./Test.jsx";
 import Search from "./Search.jsx";
 import User from "./User.jsx";
 import CopyOfCreateUser from "./CopyOfCreateUser";
+import Login from "./Login";
 
 function Layout() {
   useEffect(() => {
@@ -25,7 +26,7 @@ function Layout() {
         {/* <Link to="Test">Test</Link> */}
         <Link to="Search">Search</Link>
         {/* <Link to="User">User</Link> */}
-        <Link to="CopyOfCreateUser">Create Account</Link>
+        <Link to="Login">Log In</Link>
       </nav>
       <Outlet />
       <div className="App">
@@ -52,6 +53,7 @@ function Main() {
             <Route path="Search" element={<Search />} />
             <Route path="User" element={<User />} />
             <Route path="CopyOfCreateUser" element={<CopyOfCreateUser />} />
+            <Route path="Login" element={<Login />} />
           </Route>
         </Routes>
       </BrowserRouter>

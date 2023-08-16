@@ -10,7 +10,7 @@ import Home from "./Home.jsx";
 import Test from "./Test.jsx";
 import Search from "./Search.jsx";
 import User from "./User.jsx";
-import CopyOfCreateUser from "./CopyOfCreateUser";
+import Register from "./Register";
 import Login from "./Login";
 
 export async function sha256(message) {
@@ -67,7 +67,7 @@ function Main() {
             <Route path="Test" element={<Test />} />
             <Route path="Search" element={<Search />} />
             <Route path="User" element={<User />} />
-            <Route path="CopyOfCreateUser" element={<CopyOfCreateUser />} />
+            <Route path="Register" element={<Register />} />
             <Route path="Login" element={<Login />} />
           </Route>
         </Routes>

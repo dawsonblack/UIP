@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { sha256 } from "./Main";
 
-export default function CopyOfCreateUser() {
+export default function Register() {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [username, setUsername] = useState("");

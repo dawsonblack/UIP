@@ -9,6 +9,7 @@ NOTES FROM DAWSON:
 -on mobile, user should tap once to cause a headshot to move up, then once again to move it back down (or by tapping another headshot)
 -make the search page look nice on mobile
 -why is password in the database as passWord?
+-teh create account button doesn't enable and disable quite like it should
 
 NOTES FROM ABDI:
 

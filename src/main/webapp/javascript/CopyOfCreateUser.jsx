@@ -8,7 +8,8 @@ export default function CopyOfCreateUser() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const [isValidEmail, setIsValidEmail] = useState(null);
+  const [isInvalidEmail, setIsInvalidEmail] = useState(null);
+  const [isInvalidPassword, setIsInvalidPassword] = useState(null);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
   const handleEmailChange = ({ target }) => {
@@ -16,7 +17,7 @@ export default function CopyOfCreateUser() {
     checkIfFormIsFilled();
 
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    setIsValidEmail(emailRegex.test(target.value));
+    setIsInvalidEmail(!emailRegex.test(target.value));
   };
 
   const handleFirstNameChange = ({ target }) => {
@@ -32,14 +33,17 @@ export default function CopyOfCreateUser() {
   const handlePasswordChange = ({ target }) => {
     setPassword(target.value);
     checkIfFormIsFilled();
+    setIsInvalidPassword(target.value.length < 8);
   };
 
   const checkIfFormIsFilled = () => {
     setIsButtonDisabled(
-        !isValidEmail ||
+        email == "" ||
         firstName == "" ||
         username == "" ||
-        password == ""
+        password == "" ||
+        isInvalidEmail ||
+        isInvalidPassword
         );
   }
 
@@ -78,6 +82,7 @@ export default function CopyOfCreateUser() {
             value={email}
             onChange={handleEmailChange}
           ></input>
+          {isInvalidEmail && <p className="form-info-error-message">Invalid email</p>}
 
           <label htmlFor="firstName">First Name:</label>
           <input
@@ -102,6 +107,7 @@ export default function CopyOfCreateUser() {
             value={password}
             onChange={handlePasswordChange}
           ></input>
+          {isInvalidPassword && <p className="form-info-error-message">Your password must be at least 8 characters long</p>}
         </form>
       </div>
       <div>

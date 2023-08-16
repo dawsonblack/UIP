@@ -1990,6 +1990,130 @@ VALUES
         'leafImages/sparganium erectum.JPG',
         'By Show_ryu - Own work, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=7801372',
         'By Hugo.arg - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=7314401',
-        'https://en.wikipedia.org/wiki/Salvinia_molesta',
+        'https://en.wikipedia.org/wiki/Sparganium_erectum',
         -65
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Water Soldiers',
+        'Stratiotes Aloides',
+        'Stratiotes aloides has a rosette of serrated leaves, lanceolate, up to 30 cm long in tufts. White flowers are up to 45 mm across with many stamens in the male plants are produced in the summer.',
+        true,
+        false,
+        'White and Green',
+        '',
+        'leafImages/Stratiotes_aloides.jpg',
+        '',
+        'By Jörg Hempel, CC BY-SA 3.0 de, https://commons.wikimedia.org/w/index.php?curid=19179398',
+        'https://en.wikipedia.org/wiki/Stratiotes_aloides',
+        -66
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Water Chestnut',
+        'Trapa Natans',
+        'The water caltrop is an aquatic plant with submerged stems up to 4.6 meters long. It has divided submerged leaves along the stem and undivided floating leaves in a rosette. These leaves are saw-toothed and ovoid or triangular, with inflated petioles for buoyancy. White four-petaled flowers appear in early summer, and its fruit is a nut with four barbed spines. Seeds can stay viable for up to 12 years. The plant spreads when rosettes and fruits detach, floating to new areas via currents or clinging to objects and animals. Another unrelated plant called Eleocharis dulcis is also called water chestnut, used in Chinese cuisine for its edible corms.',
+        true,
+        false,
+        'Olive-Green',
+        'fruitImages/Trapa_natans_seeds.jpg',
+        'leafImages/Trapa_natans1.jpg',
+        'By TheDarkCurrent - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=16377601',
+        'By Prof. Dr. Otto Wilhelm Thomé - Original book source:Prof. Dr. Otto Wilhelm Thomé Flora von Deutschland, Österreich und der Schweiz1885, Gera, GermanySource: www.biolib.de, Public Domain, https://commons.wikimedia.org/w/index.php?curid=4101439',
+        'https://en.wikipedia.org/wiki/Water_caltrop',
+        -67
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Narrow-Leaved Cattail',
+        'Typha Angustifolia',
+        'The plant features flat, narrow leaves measuring ¼"–½" wide and 3–6 tall when mature. Each vegetative shoot produces 12–16 leaves. The leaves have distinct stalks as tall as the leaves themselves and are crowned with brown, fluffy, sausage-shaped flowering heads. The plant has robust rhizomatous roots that can grow up to 27" in length and ¾"–1½" in diameter.',
+        true,
+        true,
+        'Green',
+        'fruitImages/Typha_angustifolia_nf.jpg',
+        'leafImages/Typha_angustifolia_(habitus)_1.jpg',
+        'By Carl Axel Magnus Lindman - http://runeberg.org/nordflor/493.html, Public Domain, https://commons.wikimedia.org/w/index.php?curid=385802',
+        'By Le.Loup.Gris - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=16418868',
+        'https://en.wikipedia.org/wiki/Typha_angustifolia',
+        -68
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Hybrid Cattail',
+        'Typha x Glauca',
+        'Perennial, erect wetland plant reaching 5-10 tall, often with an underwater base. The hybrid cattail is a hybrid of common (broad-leaved) and narrow-leaved cattails and its structure is intermediate between its parental species.',
+        true,
+        true,
+        'Green',
+        '',
+        'leafImages/Typha_x_glauca.jpg',
+        '',
+        'By Bobby McCabe - https://www.inaturalist.org/photos/9844478, CC BY 4.0, https://commons.wikimedia.org/w/index.php?curid=115155337',
+        'https://en.wikipedia.org/wiki/Typha_angustifolia',
+        -69
     );

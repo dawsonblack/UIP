@@ -12,9 +12,26 @@ export default function CopyOfCreateUser() {
   const [isInvalidPassword, setIsInvalidPassword] = useState(null);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
+  useEffect(() => {
+    setIsButtonDisabled(
+      email == "" ||
+      firstName == "" ||
+      username == "" ||
+      password == "" ||
+      isInvalidEmail ||
+      isInvalidPassword
+    );
+  }, [email, firstName, username, password]);
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter" && !isButtonDisabled) {
+      event.preventDefault();
+      postUser();
+    }
+  };
+
   const handleEmailChange = ({ target }) => {
     setEmail(target.value);
-    checkIfFormIsFilled();
 
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     setIsInvalidEmail(!emailRegex.test(target.value));
@@ -22,30 +39,16 @@ export default function CopyOfCreateUser() {
 
   const handleFirstNameChange = ({ target }) => {
     setFirstName(target.value);
-    checkIfFormIsFilled();
   };
 
   const handleUsernameChange = ({ target }) => {
     setUsername(target.value);
-    checkIfFormIsFilled();
   };
 
   const handlePasswordChange = ({ target }) => {
     setPassword(target.value);
-    checkIfFormIsFilled();
     setIsInvalidPassword(target.value.length < 8);
   };
-
-  const checkIfFormIsFilled = () => {
-    setIsButtonDisabled(
-        email == "" ||
-        firstName == "" ||
-        username == "" ||
-        password == "" ||
-        isInvalidEmail ||
-        isInvalidPassword
-        );
-  }
 
   const postUser = async () => {
     const hashedPassword = await sha256(password);
@@ -81,6 +84,7 @@ export default function CopyOfCreateUser() {
             name="email"
             value={email}
             onChange={handleEmailChange}
+            onKeyDown={handleKeyPress}
           ></input>
           {isInvalidEmail && <p className="form-info-error-message">Invalid email</p>}
 
@@ -90,6 +94,7 @@ export default function CopyOfCreateUser() {
             name="firstName"
             value={firstName}
             onChange={handleFirstNameChange}
+            onKeyDown={handleKeyPress}
           ></input>
 
           <label htmlFor="username">Username:</label>
@@ -98,6 +103,7 @@ export default function CopyOfCreateUser() {
             name="username"
             value={username}
             onChange={handleUsernameChange}
+            onKeyDown={handleKeyPress}
           ></input>
 
           <label htmlFor="password">Password:</label>
@@ -106,6 +112,7 @@ export default function CopyOfCreateUser() {
             name="password"
             value={password}
             onChange={handlePasswordChange}
+            onKeyDown={handleKeyPress}
           ></input>
           {isInvalidPassword && <p className="form-info-error-message">Your password must be at least 8 characters long</p>}
         </form>

@@ -9,6 +9,10 @@ export default function Login() {
   const [invalidLogin, setInvalidLogin] = useState();
 
   useEffect(() => {
+    setIsButtonDisabled(username === "" || password === "");
+  }, [username, password]);
+
+  useEffect(() => {
     if (invalidLogin == false) {
       console.log("Your login was successful!");
     } else {
@@ -16,22 +20,20 @@ export default function Login() {
     }
   }, [invalidLogin]);
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter" && !isButtonDisabled) {
+      event.preventDefault();
+      checkLoginInfo();
+    }
+  };
+
   const handleUsernameChange = ({ target }) => {
     setUsername(target.value);
-    checkIfFormIsFilled();
   };
 
   const handlePasswordChange = ({ target }) => {
     setPassword(target.value);
-    checkIfFormIsFilled();
   };
-
-  const checkIfFormIsFilled = () => {
-    setIsButtonDisabled(
-        username == "" ||
-        password == ""
-        );
-  }
 
   async function checkLoginInfo() {
     const hashedPassword = await sha256(password);
@@ -67,6 +69,7 @@ export default function Login() {
             name="username"
             value={username}
             onChange={handleUsernameChange}
+            onKeyDown={handleKeyPress}
           ></input>
 
           <label htmlFor="password">Password:</label>
@@ -75,6 +78,7 @@ export default function Login() {
             name="password"
             value={password}
             onChange={handlePasswordChange}
+            onKeyDown={handleKeyPress}
           ></input>
           {invalidLogin && <p className="form-info-error-message">Your username or password was incorrect</p>}
         </form>

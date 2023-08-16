@@ -1,11 +1,12 @@
 package org.wcci.usefulAndInvasivePlants;
 
 import static org.hamcrest.Matchers.hasKey;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,7 +82,7 @@ public class UserRestControllerTest extends HateoasHelper {
                                 .andReturn();
 
                 // And extract the object from the result
-                this.mvc.perform(
+                final MvcResult withPlants = this.mvc.perform(
                                 MockMvcRequestBuilders
                                                 .get("/api/users/" + userResultObject.getUserID())
                                                 .accept(MediaTypes.HAL_JSON))
@@ -89,10 +90,11 @@ public class UserRestControllerTest extends HateoasHelper {
                                 .andReturn();
 
                 final User createdUser = new ObjectMapper().readValue(
-                                userPostResult.getResponse().getContentAsString(),
+                                withPlants.getResponse().getContentAsString(),
                                 User.class);
 
                 assertEquals(1, createdUser.getUserID());
+                assertEquals(1, createdUser.getSavedPlants().size());
 
                 plants.remove(0);
                 plants.add("-14");
@@ -106,7 +108,7 @@ public class UserRestControllerTest extends HateoasHelper {
                                 .andReturn();
 
                 // And extract the object from the result
-                this.mvc.perform(
+                final MvcResult withTwoPlants = this.mvc.perform(
                                 MockMvcRequestBuilders
                                                 .get("/api/users/" + userResultObject.getUserID())
                                                 .accept(MediaTypes.HAL_JSON))
@@ -114,7 +116,7 @@ public class UserRestControllerTest extends HateoasHelper {
                                 .andReturn();
 
                 final User createdUser2 = new ObjectMapper().readValue(
-                                userPostResult.getResponse().getContentAsString(),
+                                withTwoPlants.getResponse().getContentAsString(),
                                 User.class);
 
                 assertEquals(2, createdUser2.getSavedPlants().size());

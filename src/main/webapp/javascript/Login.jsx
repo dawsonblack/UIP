@@ -6,15 +6,15 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
-  const [validLogin, setValidLogin] = useState(false);
+  const [invalidLogin, setInvalidLogin] = useState();
 
   useEffect(() => {
-    if (validLogin) {
+    if (invalidLogin == false) {
       console.log("Your login was successful!");
     } else {
       console.log("Your username or password is incorrect!");
     }
-  }, [validLogin]);
+  }, [invalidLogin]);
 
   const handleUsernameChange = ({ target }) => {
     setUsername(target.value);
@@ -41,22 +41,20 @@ export default function Login() {
     .then((responseBody) => {
         for (let i = 0; i < responseBody["_embedded"]["userList"].length; i++) {
             if (username == responseBody["_embedded"]["userList"][i].userName) {
-                console.log("inputted username " + username + " matched username " + responseBody["_embedded"]["userList"][i].userName);
                 if (hashedPassword == responseBody["_embedded"]["userList"][i].passWord) {
                     console.log(password + " hashed is " + hashedPassword + ", which is a match with the stored password");
-                    setValidLogin(true);
-                }
-                else {
-                    console.log("user " + username + "'s password did not match the records. Password was " + password +
-                        ", which is " + hashedPassword + " hashed. Should have been " + responseBody["_embedded"]["userList"][i].passWord);
+                    setInvalidLogin(false);
                 }
                 break;
             }
-            else {
-                console.log("inputted username " + username + " did not match username " + responseBody["_embedded"]["userList"][i].userName);
-            }
+        }
+        if (invalidLogin == null) {
+            setInvalidLogin(true);
         }
     });
+
+    setUsername("");
+    setPassword("");
   }
   
   return (
@@ -78,6 +76,7 @@ export default function Login() {
             value={password}
             onChange={handlePasswordChange}
           ></input>
+          {invalidLogin && <p className="form-info-error-message">Your username or password was incorrect</p>}
         </form>
       </div>
       <div>

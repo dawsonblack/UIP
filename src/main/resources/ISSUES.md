@@ -2,7 +2,7 @@ NOTES FROM DAWSON:
 -add a README.md
 -pictures could be formatted better
 -need to fill in missing images
--add the ability to just press enter and search
+-add the ability to just press enter and search or login/register
 -check the grammar of the descriptions past 27
 -make the formatting of the about paragraph better: font, background, max-width
 -the background is distracting and sometimes makes text unreadable
@@ -11,6 +11,7 @@ NOTES FROM DAWSON:
 -why are username and password stored in the database in camelCase?
 -the create account button doesn't enable and disable quite like it should
 -turn off autofill in inputs
+-see if it's possible to get rid of the useEffect
 
 NOTES FROM ABDI:
 

@@ -2078,7 +2078,7 @@ VALUES
         'The plant features flat, narrow leaves measuring ¼"–½" wide and 3–6 tall when mature. Each vegetative shoot produces 12–16 leaves. The leaves have distinct stalks as tall as the leaves themselves and are crowned with brown, fluffy, sausage-shaped flowering heads. The plant has robust rhizomatous roots that can grow up to 27" in length and ¾"–1½" in diameter.',
         true,
         true,
-        'Green',
+        'Green and Brown',
         'fruitImages/Typha_angustifolia_nf.jpg',
         'leafImages/Typha_angustifolia_(habitus)_1.jpg',
         'By Carl Axel Magnus Lindman - http://runeberg.org/nordflor/493.html, Public Domain, https://commons.wikimedia.org/w/index.php?curid=385802',
@@ -2108,12 +2108,74 @@ VALUES
         'Typha x Glauca',
         'Perennial, erect wetland plant reaching 5-10 tall, often with an underwater base. The hybrid cattail is a hybrid of common (broad-leaved) and narrow-leaved cattails and its structure is intermediate between its parental species.',
         true,
-        true,
-        'Green',
+        false,
+        'Green and Brown',
         '',
-        'leafImages/Typha_x_glauca.jpg',
+        'leafImages/Typha_×_glauca.jpg',
         '',
         'By Bobby McCabe - https://www.inaturalist.org/photos/9844478, CC BY 4.0, https://commons.wikimedia.org/w/index.php?curid=115155337',
-        'https://en.wikipedia.org/wiki/Typha_angustifolia',
+        'https://en.wikipedia.org/wiki/Typha_%C3%97_glauca',
         -69
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Siberian Elm',
+        'Ulmus Pumila',
+        'The Siberian elm is a deciduous tree, often bushy, up to 25 meters tall. It has gray bark and yellowish-gray branchlets. Leaves are elliptic-ovate, turning yellow in autumn. In early spring, inconspicuous flowers appear before leaves. Wind-dispersed samarae are whitish-tan, orbicular. The tree self-pollinates and lives around 60 years in temperate climates, longer in its native habitat.',
+        true,
+        false,
+        'Dark Green',
+        'fruitImages/Ulmus_pumila_.jpg',
+        'leafImages/Ulmus_pumila_leaves.jpg',
+        'By Matt Lavin from Bozeman, Montana, USA - Ulmus pumilaUploaded by Tim1357, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=22758121',
+        'By Melburnian - Self-photographed, CC BY 2.5, https://commons.wikimedia.org/w/index.php?curid=1355203',
+        'https://en.wikipedia.org/wiki/Ulmus_pumila',
+        -70
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        ' Black Swallow-Wort',
+        'Vincetoxicum Nigrum',
+        'Vincetoxicum nigrum is a perennial vine with ovate leaves and pointed tips. Leaves are 3–4 inches long and 2–3 inches wide, growing in pairs on the stem. Its star-shaped flowers have five petals and are covered in white hairs, ranging from dark purple to black. The fruit is a slender, tapered follicle with seeds, each equipped with a fluffy pappus for wind dispersal.',
+        true,
+        false,
+        'Puprle and Green',
+        'fruitImages/vincetoxicum-nigrum.jpg',
+        'leafImages/vincetoxicum-nigrum-leaf.jpg',
+        'Leslie J. Mehrhoff, University of Connecticut, Bugwood.org',
+        'Leslie J. Mehrhoff, University of Connecticut, Bugwood.org',
+        'https://en.wikipedia.org/wiki/Vincetoxicum_nigrum',
+        -71
     );

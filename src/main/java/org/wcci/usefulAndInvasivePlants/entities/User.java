@@ -1,5 +1,6 @@
 package org.wcci.usefulAndInvasivePlants.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -76,6 +77,9 @@ public class User {
     }
 
     public List<String> getSavedPlants() {
+        if (savedPlants == null) {
+            return new ArrayList<String>();
+        }
         return savedPlants;
     }
 

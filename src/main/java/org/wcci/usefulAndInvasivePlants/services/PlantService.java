@@ -138,7 +138,6 @@ public class PlantService {
 
         // Ask the repo to write the modified student to MySQL (or whatever)
         addNewUser(databaseUser);
-
         return databaseUser;
     }
 

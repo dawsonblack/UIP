@@ -93,5 +93,30 @@ public class UserRestControllerTest extends HateoasHelper {
                                 User.class);
 
                 assertEquals(1, createdUser.getUserID());
+
+                plants.remove(0);
+                plants.add("-14");
+                this.mvc.perform(
+                                MockMvcRequestBuilders
+                                                .put("/api/users/" + userResultObject.getUserID() + "/plants")
+                                                .accept(MediaTypes.HAL_JSON)
+                                                .contentType(MediaType.APPLICATION_JSON)
+                                                .content(new ObjectMapper().writeValueAsString(plants)))
+                                .andExpect(status().isOk())
+                                .andReturn();
+
+                // And extract the object from the result
+                this.mvc.perform(
+                                MockMvcRequestBuilders
+                                                .get("/api/users/" + userResultObject.getUserID())
+                                                .accept(MediaTypes.HAL_JSON))
+                                .andExpect(status().isOk())
+                                .andReturn();
+
+                final User createdUser2 = new ObjectMapper().readValue(
+                                userPostResult.getResponse().getContentAsString(),
+                                User.class);
+
+                assertEquals(2, createdUser2.getSavedPlants().size());
         }
 }

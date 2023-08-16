@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import sha256 from "./Main";
+import { sha256 } from "./Main";
 
 export default function CopyOfCreateUser() {
   const [email, setEmail] = useState("");

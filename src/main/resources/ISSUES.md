@@ -8,8 +8,9 @@ NOTES FROM DAWSON:
 -the background is distracting and sometimes makes text unreadable
 -on mobile, user should tap once to cause a headshot to move up, then once again to move it back down (or by tapping another headshot)
 -make the search page look nice on mobile
--why is password in the database as passWord?
--teh create account button doesn't enable and disable quite like it should
+-why are username and password stored in the database in camelCase?
+-the create account button doesn't enable and disable quite like it should
+-turn off autofill in inputs
 
 NOTES FROM ABDI:
 

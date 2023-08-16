@@ -13,7 +13,7 @@ import User from "./User.jsx";
 import CopyOfCreateUser from "./CopyOfCreateUser";
 import Login from "./Login";
 
-async function sha256(message) {
+export async function sha256(message) {
   // encode as UTF-8
   const msgBuffer = new TextEncoder().encode(message);                    
 

@@ -11,7 +11,6 @@ import Test from "./Test.jsx";
 import Search from "./Search.jsx";
 import User from "./User.jsx";
 import CreateUser from "./CreateUser";
-import EmailValidator from "./EmailValidator";
 
 function Layout() {
   useEffect(() => {
@@ -27,7 +26,6 @@ function Layout() {
         <Link to="Search">Search</Link>
         {/* <Link to="User">User</Link> */}
         <Link to="CreateAccount">Create Account</Link>
-        <Link to="EmailValidator">Email</Link>
       </nav>
       <Outlet />
       <div className="App">
@@ -54,7 +52,6 @@ function Main() {
             <Route path="Search" element={<Search />} />
             <Route path="User" element={<User />} />
             <Route path="CreateAccount" element={<CreateUser />} />
-            <Route path="EmailValidator" element={<EmailValidator />} />
           </Route>
         </Routes>
       </BrowserRouter>

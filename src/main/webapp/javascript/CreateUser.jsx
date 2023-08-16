@@ -5,10 +5,14 @@ export default function CreateUser() {
   const [firstName, setFirstName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [isValidEmail, setIsValidEmail] = useState(null);
 
-  const handleEmailChange = ({ target }) => {
-    setEmail(target.value);
+  const handleEmailChange = (event) => {
+    const newEmail = event.target.value;
+    setEmail(newEmail);
+    setIsValidEmail(null); // Reset the validation status when input changes
   };
+
 
   const handleFirstNameChange = ({ target }) => {
     setFirstName(target.value);
@@ -20,6 +24,15 @@ export default function CreateUser() {
 
   const handlePasswordChange = ({ target }) => {
     setPassword(target.value);
+  };
+
+  const handleValidateEmail = () => {
+    setIsValidEmail(validateEmail(email));
+  };
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailRegex.test(email);
   };
 
   const postUser = () => {
@@ -77,9 +90,10 @@ export default function CreateUser() {
         </form>
       </div>
       <div>
-        <button className="create-account-button" onClick={postUser}>
+        <button className="create-account-button" onClick={() => { postUser(); handleValidateEmail();}}>
           Create Account
         </button>
+        {isValidEmail === false && <p>Not a valid email address</p>}
       </div>
     </div>
   );

@@ -43,9 +43,9 @@ public class UserRestController {
                 linkTo(methodOn(UserRestController.class).getUser(user_id)).withSelfRel());
     }
 
-    @DeleteMapping("/api/users/{id}")
-    public void deleteById(@PathVariable long id) {
-        plantService.deleteUserByID(id);
+    @DeleteMapping("/api/users/{user_id}")
+    public void deleteById(@PathVariable long user_id) {
+        plantService.deleteUserByID(user_id);
     }
 
     @PostMapping("/api/users")

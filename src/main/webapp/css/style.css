@@ -35,8 +35,22 @@ section {
   align-items: center;
   flex-direction: column;
   margin-bottom: 50px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
 }
 
+section.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+section:hover #about p {
+  opacity: 1;
+  cursor: pointer;
+  transition: opacity 0.3s, visibility 0.3s; 
+
+}
 #about p {
   box-sizing: border-box;
   background-color: darkgray;

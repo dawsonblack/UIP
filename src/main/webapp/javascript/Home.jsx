@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from "react";
 
 export default function Home() {
+  const [showAbout, setShowAbout] = useState(false);
+  const [handleHooverAbout] = () => {setShowAbout(true);}
+  const [handleAbout] = () => {setShowAbout(false);} // do we even need this if state is normally false? 
+
   return (
     <div>
       <h1>Useful and Invasive Plants</h1>
-      <section id="about">
+      <section
+        id="about"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className={showAbout ? 'visible' : ''}
+      >
         <h3>About</h3>
         <p>
           {/* UIP is an informational application that shows you common

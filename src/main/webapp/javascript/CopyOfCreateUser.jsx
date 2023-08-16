@@ -7,11 +7,16 @@ export default function CopyOfCreateUser() {
   const [firstName, setFirstName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const [isValidEmail, setIsValidEmail] = useState(null);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
   const handleEmailChange = ({ target }) => {
     setEmail(target.value);
     checkIfFormIsFilled();
+
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    setIsValidEmail(emailRegex.test(target.value));
   };
 
   const handleFirstNameChange = ({ target }) => {
@@ -31,7 +36,7 @@ export default function CopyOfCreateUser() {
 
   const checkIfFormIsFilled = () => {
     setIsButtonDisabled(
-        email == "" ||
+        !isValidEmail ||
         firstName == "" ||
         username == "" ||
         password == ""

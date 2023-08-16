@@ -13,7 +13,6 @@ export default function CreateUser() {
     setIsValidEmail(null); // Reset the validation status when input changes
   };
 
-
   const handleFirstNameChange = ({ target }) => {
     setFirstName(target.value);
   };
@@ -90,7 +89,13 @@ export default function CreateUser() {
         </form>
       </div>
       <div>
-        <button className="create-account-button" onClick={() => { postUser(); handleValidateEmail();}}>
+        <button
+          className="create-account-button"
+          onClick={() => {
+            postUser();
+            handleValidateEmail();
+          }}
+        >
           Create Account
         </button>
         {isValidEmail === false && <p>Not a valid email address</p>}

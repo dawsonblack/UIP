@@ -1085,7 +1085,7 @@ VALUES
         'Lonicera japonica is a climbing vine that can grow up to 10 meters or more in trees. It features oval leaves that are 3–8 cm long and 2–3 cm wide. Young stems are slightly red and fuzzy, while older ones are brown with peeling bark and may be hollow. The flowers are double-tongued, starting white and turning yellow with a sweet vanilla scent. In the fall, it produces black spherical berries (3–4 mm in diameter) containing a few seeds. While human consumption of flower nectar is safe, all other parts of the plant have the potential to be toxic.',
         true,
         false,
-        'Green to Brown',
+        'White to Pale Yellow',
         'fruitImages/Lonicera_japonica,_Fruit.JPG',
         'leafImages/Lonicera_japonica_leaf.jpg',
         'By Qwert1234 - Qwert1234&#039;s file, Public Domain, https://commons.wikimedia.org/w/index.php?curid=8324330',
@@ -1744,4 +1744,252 @@ VALUES
         'By Forest & Kim Starr, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=6120749',
         'https://en.wikipedia.org/wiki/Pueraria_montana_var._lobata',
         -57
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Callery pear',
+        'Pyrus calleryana',
+        'The Callery pear (Pyrus calleryana) is a deciduous tree reaching 5-8 meters in height. It features glossy dark green oval leaves with paler undersides that flutter in the breeze. It produces small white flowers in early spring before fully leafing out. The fruit, initially hard and inedible due to cyanide-laced seeds, softens after frost, becoming a food source for birds that spread the seeds. Its leaves turn vibrant colors in autumn. While resistant to disease, some cultivars like Bradford are vulnerable to storm damage due to rapid growth. Named after Joseph-Marie Callery, who brought specimens from China to Europe.',
+        true,
+        false,
+        'Pink to Purple to Yellow to Orange to White',
+        'fruitImages/callery-pear.jpg',
+        'leafImages/Pear_foliage.JPG',
+        'James H. Miller, USDA Forest Service, Bugwood.org',
+        'By Famartin - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=36997364',
+        'https://en.wikipedia.org/wiki/Pyrus_calleryana',
+        -58
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'European Buckthorn',
+        'Rhamnus Cathartica',
+        'Rhamnus cathartica is a deciduous shrub or small tree, up to 10 meters tall, with thorny branches and grey-brown bark. Its leaves are elliptic to oval, green and turn yellow in autumn, arranged in pairs or alternately. The yellowish-green flowers have four petals and are insect pollinated. The fruit is a black drupe, 6–10 mm across, containing two to four seeds. Initially named Rhamnus catharticus by Linnaeus, the correct spelling is Rhamnus cathartica due to the gender of the genus name.',
+        true,
+        false,
+        'Dark Green',
+        'fruitImages/Rhamnus_cathartica_.jpg',
+        'leafImages/_Rhamnus_catharticus_.png',
+        'By Matt Lavin from Bozeman, Montana, USA - Rhamnus catharticaUploaded by Tim1357, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=22749525',
+        'By Köhler, F. E. (Franz Eugen) - Köhler&#039;s Medizinal-Pflanzen in naturgetreuen Abbildungen mit kurz erläuterndem Texte: Atlas zur Pharmacopoea germanica, Volume 1 of 3, Public Domain, https://commons.wikimedia.org/w/index.php?curid=6362135',
+        'https://en.wikipedia.org/wiki/Rhamnus_cathartica',
+        -59
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Multiflora Rose',
+        'Rosa Multiflora',
+        'This scrambling shrub can climb over other plants, reaching 3-5 meters in height. It has stout stems with curved prickles and leaves that are compound, with 5-9 leaflets and feathered stipules, measuring 5-10 cm in length. Its small flowers, white or pink, appear in large corymbs during early summer. The reddish to purple hips, about 6-8 mm in diameter, develop afterward.',
+        true,
+        false,
+        'White to Light Pink',
+        'fruitImages/Multiflora_Rose.jpg',
+        'leafImages/Multiflora_Rose.JPG',
+        'By Famartin - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=90501378',
+        'By Broly0 - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=40552847',
+        'https://en.wikipedia.org/wiki/Rosa_multiflora',
+        -60
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Arrowhead',
+        'Sagittaria Sagittifolia',
+        'Sagittaria sagittifolia, known as arrowhead due to its leaf shape, is a flowering plant found in wetlands across Europe, including Russia, Ukraine, Asia, and Australia. It is also cultivated for food in some places. In the UK, it is the only native Sagittaria species. This herbaceous perennial grows in water, with arrowhead-shaped leaves above water and linear submerged leaves. Its flowers have three small sepals, three white petals, and several purple stamens.',
+        true,
+        false,
+        'White and Purple',
+        'fruitImages/Sagittaria.jpg',
+        'leafImages/SagittariaSagittifoliaLeaves.jpg',
+        'By Christian Fischer, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=4437547',
+        'By Christian Fischer, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2508501',
+        'https://en.wikipedia.org/wiki/Sagittaria_sagittifolia',
+        -61
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Crack Willow',
+        'Salix x Fragilis',
+        'Salix x fragilis is a rapid-growing deciduous tree, reaching 10-20 meters (rarely 29 meters) tall. Its bark is dark gray-brown and coarsely fissured. Lanceolate leaves are initially hairy, later becoming hairless, measuring 9-15 cm long. Catkin flowers emerge in early spring, pollinated by insects. The tree is dioecious, with separate male and female catkins. Small cotton-tufted seeds are released from fruit capsules in late spring, dispersing easily by wind and water and germinating upon contact with soil.',
+        true,
+        false,
+        'Green',
+        '',
+        'leafImages/Salix_fragilis_001.jpg',
+        '',
+        'By Willow - Own work, CC BY 2.5, https://commons.wikimedia.org/w/index.php?curid=2653825',
+        'https://en.wikipedia.org/wiki/Salix_%C3%97_fragilis',
+        -62
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Common Salvinia',
+        'Salvinia Minima',
+        'Salvinia minima is a fern with small oval leaves, 0.4 to 2 centimeters in length. Its rhizomes float near the surface and bear sets of leaves that branch horizontally. Each set has three leaves: two float on the surface, while one hangs below, resembling roots. The leaves have uniform fine white hairs that repel water, growing in groups of four without touching at the tips. Longer brown hairs are found underneath. The leaves vary in color from bright green to brown, often turning brown with age and sunlight exposure.',
+        true,
+        false,
+        'Bright Green to Brown',
+        '',
+        'leafImages/salvinia minima.jpg',
+        '',
+        'Barry Rice, sarracenia.com, Bugwood.org',
+        'https://en.wikipedia.org/wiki/Salvinia_minima#References',
+        -63
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Giant Salvinia',
+        'Salvinia Molesta',
+        'Salvinia molesta is a group of closely related floating ferns that can be hard to tell apart. Originally an ornamental plant, it has become an invasive pest in many places globally. It exhibits different growth forms, from small flat leaves in its invading stage to large, crowded, folded leaves in the mat form. Under optimal conditions, it can create thick mats up to two feet deep, causing disruptions to water activities. This fern has been used to extract nutrients and pollutants from water and can be used as mulch when dried.',
+        true,
+        false,
+        'Green to Gold to Brown',
+        '',
+        'leafImages/Salvinia_molesta.jpg',
+        '',
+        'By No machine-readable author provided. Marshman~commonswiki assumed (based on copyright claims). - No machine-readable source provided. Own work assumed (based on copyright claims)., CC BY 2.5, https://commons.wikimedia.org/w/index.php?curid=332981',
+        'https://en.wikipedia.org/wiki/Salvinia_molesta',
+        -64
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Branched Bur-Reed',
+        'Sparganium Erectum',
+        'Sparganium erectum is a perennial wetland or aquatic herbaceous plant that is native to North America. It grows from slender rhizomes with slender terete stems. S. erectum grows from 3-8 ft.',
+        true,
+        false,
+        'Light Green',
+        'fruitImages/Sparganium_erectum(Fruit).JPG',
+        'leafImages/sparganium erectum.JPG',
+        'By Show_ryu - Own work, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=7801372',
+        'By Hugo.arg - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=7314401',
+        'https://en.wikipedia.org/wiki/Salvinia_molesta',
+        -64
     );

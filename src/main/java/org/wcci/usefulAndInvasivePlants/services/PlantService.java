@@ -1,5 +1,6 @@
 package org.wcci.usefulAndInvasivePlants.services;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -117,6 +118,23 @@ public class PlantService {
 
         // Copy the non-ID info from the requestbody to the database object
         databaseUser.setSavedPlants(user.getSavedPlants());
+
+        // Ask the repo to write the modified student to MySQL (or whatever)
+        addNewUser(databaseUser);
+
+        return databaseUser;
+    }
+
+    public User updateUserPlants(List<String> plants, long user_id) {
+        final User databaseUser = findUser(user_id);
+        final List<String> updatedPlants = findUser(user_id).getSavedPlants();
+        updatedPlants.addAll(plants);
+        if (user_id != databaseUser.getUserID())
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                    "Sorry, you may not change the user_id");
+
+        // Copy the non-ID info from the requestbody to the database object
+        databaseUser.setSavedPlants(updatedPlants);
 
         // Ask the repo to write the modified student to MySQL (or whatever)
         addNewUser(databaseUser);

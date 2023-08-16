@@ -68,4 +68,16 @@ public class UserRestController {
         return EntityModel.of(databaseUser,
                 linkTo(methodOn(UserRestController.class).getUser(user.getUserID())).withSelfRel());
     }
+
+    @PutMapping("/api/users/{user_id}/plants")
+    public EntityModel<User> updateUserPlants(
+            @PathVariable final long user_id,
+            @RequestBody final List<String> plants) {
+        // Update the plant if that is the right thing to do
+        final User databaseUser = plantService.updateUserPlants(plants, user_id);
+
+        // Return the modified database plant
+        return EntityModel.of(databaseUser,
+                linkTo(methodOn(UserRestController.class).getUser(databaseUser.getUserID())).withSelfRel());
+    }
 }

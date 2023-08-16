@@ -6,6 +6,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -52,7 +53,7 @@ public class UserRestControllerTest extends HateoasHelper {
                                 .andExpect(jsonPath("$._links", hasKey(UserRestController.LIST_ALL_USERS)))
                                 .andReturn();
 
-                final User UserResultObject = this.extractObject(User.class, userPostResult);
+                final User userResultObject = this.extractObject(User.class, userPostResult);
 
                 final MvcResult getAllUsersResult = this.mvc.perform(
                                 MockMvcRequestBuilders
@@ -66,20 +67,23 @@ public class UserRestControllerTest extends HateoasHelper {
                                 .andReturn();
 
                 final List<User> allUsers = extractEmbeddedList(getAllUsersResult, USER_LIST, User.class);
-
+                final List<String> plants = new ArrayList<>();
+                plants.add("-1");
                 assertEquals(1, allUsers.size());
 
                 this.mvc.perform(
                                 MockMvcRequestBuilders
-                                                .put("/api/users/" + UserResultObject.getUserID())
-                                                .accept(MediaTypes.HAL_JSON))
+                                                .put("/api/users/" + userResultObject.getUserID() + "/plants")
+                                                .accept(MediaTypes.HAL_JSON)
+                                                .contentType(MediaType.APPLICATION_JSON)
+                                                .content(new ObjectMapper().writeValueAsString(plants)))
                                 .andExpect(status().isOk())
                                 .andReturn();
 
                 // And extract the object from the result
                 this.mvc.perform(
                                 MockMvcRequestBuilders
-                                                .get("/api/users/" + UserResultObject.getUserID())
+                                                .get("/api/users/" + userResultObject.getUserID())
                                                 .accept(MediaTypes.HAL_JSON))
                                 .andExpect(status().isOk())
                                 .andReturn();
@@ -88,6 +92,6 @@ public class UserRestControllerTest extends HateoasHelper {
                                 userPostResult.getResponse().getContentAsString(),
                                 User.class);
 
-                assertEquals(102, createdUser.getUserID());
+                assertEquals(1, createdUser.getUserID());
         }
 }

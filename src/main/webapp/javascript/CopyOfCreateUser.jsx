@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import sha256 from "./Main";
 
 export default function CopyOfCreateUser() {
   const [email, setEmail] = useState("");
@@ -35,21 +36,6 @@ export default function CopyOfCreateUser() {
         username == "" ||
         password == ""
         );
-  }
-
-  async function sha256(message) {
-    // encode as UTF-8
-    const msgBuffer = new TextEncoder().encode(message);                    
-
-    // hash the message
-    const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-
-    // convert ArrayBuffer to Array
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-
-    // convert bytes to hex string                  
-    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-    return hashHex;
   }
 
   const postUser = async () => {

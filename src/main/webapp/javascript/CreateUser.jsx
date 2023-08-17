@@ -5,7 +5,8 @@ export default function CreateUser() {
   const [firstName, setFirstName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [isValidEmail, setIsValidEmail] = useState(null);
+  const [plantToSave, setPlantToSave] = useState("");
+  const [user_id, setUser_id] = useState("");
 
   const handleEmailChange = (event) => {
     const newEmail = event.target.value;
@@ -25,13 +26,12 @@ export default function CreateUser() {
     setPassword(target.value);
   };
 
-  const handleValidateEmail = () => {
-    setIsValidEmail(validateEmail(email));
+  const handlePlantToSaveChange = ({ target }) => {
+    setPlantToSave(target.value);
   };
 
-  const validateEmail = (email) => {
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return emailRegex.test(email);
+  const handleUser_idChange = ({ target }) => {
+    setUser_id(target.value);
   };
 
   const postUser = () => {
@@ -51,6 +51,22 @@ export default function CreateUser() {
       console.log("User saved successfully!");
     });
   };
+
+  const updateSavedPlants = () => {
+    fetch(`/api/users/${user_id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(plantToSave),
+    }).then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      console.log("Plant saved successfully!");
+    });
+  };
+
   return (
     <div className="create-user-container">
       <div>
@@ -87,18 +103,27 @@ export default function CreateUser() {
             onChange={handlePasswordChange}
           ></input>
         </form>
+        <form>
+          <label htmlFor="user_id">Account ID: </label>
+          <input
+            type="text"
+            name="user_id"
+            value={user_id}
+            onChange={handleUser_idChange}
+          ></input>
+
+          <label htmlFor="plantToSave">Plant ID: </label>
+          <input
+            type="text"
+            name="plantToSave"
+            value={plantToSave}
+            onChange={handlePlantToSaveChange}
+          ></input>
+        </form>
       </div>
       <div>
-        <button
-          className="create-account-button"
-          onClick={() => {
-            postUser();
-            handleValidateEmail();
-          }}
-        >
-          Create Account
-        </button>
-        {isValidEmail === false && <p>Not a valid email address</p>}
+        <button onClick={postUser}>Create Account</button>
+        <button onClick={updateSavedPlants}>Update Saved Plants</button>
       </div>
     </div>
   );

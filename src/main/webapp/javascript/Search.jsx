@@ -65,15 +65,19 @@ export default function TestingFetches() {
 
 
 
-
-
-
   function SearchData() {
     const [searchResults, setSearchResults] = useState([]);
     const [searchWasRun, setSearchWasRun] = useState(false);
 
     const [searchKeywords, setSearchKeywords] = useState("");
     const [searchBy, setSearchBy] = useState("commonName");
+
+    const handleKeyPress = (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        getPlants();
+      }
+    };
     
     function getPlants() {
       fetch(`/api/plants`, { method: "GET", cache: "default" })
@@ -101,12 +105,16 @@ export default function TestingFetches() {
     return (
       <div id="search-container">
         <div>
-          <input type="text" id="search-bar" placeholder='Search your plants' value={searchKeywords} onChange={(e) => setSearchKeywords(e.target.value)}/>
+          <input type="text" id="search-bar" placeholder='Search your plants'
+            value={searchKeywords}
+            onChange={(e) => setSearchKeywords(e.target.value)}
+            onKeyDown={handleKeyPress}
+          />
           <button id="search-button" onClick={getPlants}>Search!</button>
         </div>
         <label htmlFor="search-by">Search By:</label>
         <div className="search-dropdown">
-          <select id="search-by" onChange={(e) => setSearchBy(e.target.value)}>
+          <select id="search-by" onChange={(e) => setSearchBy(e.target.value)} onKeyDown={handleKeyPress}>
             <option value="commonName">Name</option>
             <option value="isInvasive">Is Invasive</option>
             <option value="isNative">Is Native</option>

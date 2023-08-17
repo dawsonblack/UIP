@@ -836,7 +836,7 @@ VALUES
         'Heracleum Mantegazzianum',
         'The giant hogweed plant grows to 2-5 meters, sometimes even 5.5 meters tall. It has large leaves, a green stem with dark reddish-purple spots and coarse white hairs, and an umbrella-shaped inflorescence up to 100 cm wide. Its flowers are white or greenish white, and it produces schizocarp fruits containing flattened oval seeds about 1 cm in length.',
         true,
-        true,
+        false,
         'White',
         'fruitImages/Giant-Hogweed.jpg',
         'leafImages/Giant-Hogweed.jpg',

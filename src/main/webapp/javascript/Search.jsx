@@ -10,6 +10,13 @@ export default function TestingFetches() {
     return () => {};
   }
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      getPlants();
+    }
+  };
+
   function newPlant() {
     const info = {
       name: newPlantName,

@@ -1,17 +1,43 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { sha256 } from "./Main";
 
-export default function CreateUser() {
+export default function Register() {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [plantToSave, setPlantToSave] = useState("");
-  const [user_id, setUser_id] = useState("");
 
-  const handleEmailChange = (event) => {
-    const newEmail = event.target.value;
-    setEmail(newEmail);
-    setIsValidEmail(null); // Reset the validation status when input changes
+  const [isInvalidEmail, setIsInvalidEmail] = useState(null);
+  const [isInvalidPassword, setIsInvalidPassword] = useState(null);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
+  /*const [plantToSave, setPlantToSave] = useState("");
+  const [user_id, setUser_id] = useState("");*/
+
+  useEffect(() => {
+    setIsButtonDisabled(
+      email == "" ||
+      firstName == "" ||
+      username == "" ||
+      password == "" ||
+      isInvalidEmail ||
+      isInvalidPassword
+    );
+  }, [email, firstName, username, password]);
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter" && !isButtonDisabled) {
+      event.preventDefault();
+      postUser();
+    }
+  };
+
+  const handleEmailChange = ({ target }) => {
+    setEmail(target.value);
+
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    setIsInvalidEmail(!emailRegex.test(target.value));
   };
 
   const handleFirstNameChange = ({ target }) => {
@@ -24,17 +50,20 @@ export default function CreateUser() {
 
   const handlePasswordChange = ({ target }) => {
     setPassword(target.value);
+    setIsInvalidPassword(target.value.length < 8);
   };
 
-  const handlePlantToSaveChange = ({ target }) => {
+  /*const handlePlantToSaveChange = ({ target }) => {
     setPlantToSave(target.value);
   };
 
   const handleUser_idChange = ({ target }) => {
     setUser_id(target.value);
-  };
+  };*/
 
-  const postUser = () => {
+  const postUser = async () => {
+    const hashedPassword = await sha256(password);
+    
     fetch("/api/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -42,7 +71,7 @@ export default function CreateUser() {
         email: email,
         firstName: firstName,
         userName: username,
-        passWord: password,
+        passWord: hashedPassword,
       }),
     }).then((response) => {
       if (!response.ok) {
@@ -50,9 +79,14 @@ export default function CreateUser() {
       }
       console.log("User saved successfully!");
     });
+
+    setEmail("");
+    setFirstName("");
+    setUsername("");
+    setPassword("");
   };
 
-  const updateSavedPlants = () => {
+  /*const updateSavedPlants = () => {
     fetch(`/api/users/${user_id}`, {
       method: "PUT",
       headers: {
@@ -65,19 +99,21 @@ export default function CreateUser() {
       }
       console.log("Plant saved successfully!");
     });
-  };
+  };*/
 
   return (
-    <div className="create-user-container">
+    <div className="register-login-container">
       <div>
-        <form className="create-user-form">
+        <form className="register-login-form">
           <label htmlFor="email">Email:</label>
           <input
             type="text"
             name="email"
             value={email}
             onChange={handleEmailChange}
+            onKeyDown={handleKeyPress}
           ></input>
+          {isInvalidEmail && <p className="form-info-error-message">Invalid email</p>}
 
           <label htmlFor="firstName">First Name:</label>
           <input
@@ -85,6 +121,7 @@ export default function CreateUser() {
             name="firstName"
             value={firstName}
             onChange={handleFirstNameChange}
+            onKeyDown={handleKeyPress}
           ></input>
 
           <label htmlFor="username">Username:</label>
@@ -93,6 +130,7 @@ export default function CreateUser() {
             name="username"
             value={username}
             onChange={handleUsernameChange}
+            onKeyDown={handleKeyPress}
           ></input>
 
           <label htmlFor="password">Password:</label>
@@ -101,30 +139,17 @@ export default function CreateUser() {
             name="password"
             value={password}
             onChange={handlePasswordChange}
+            onKeyDown={handleKeyPress}
           ></input>
-        </form>
-        <form>
-          <label htmlFor="user_id">Account ID: </label>
-          <input
-            type="text"
-            name="user_id"
-            value={user_id}
-            onChange={handleUser_idChange}
-          ></input>
-
-          <label htmlFor="plantToSave">Plant ID: </label>
-          <input
-            type="text"
-            name="plantToSave"
-            value={plantToSave}
-            onChange={handlePlantToSaveChange}
-          ></input>
+          {isInvalidPassword && <p className="form-info-error-message">Your password must be at least 8 characters long</p>}
         </form>
       </div>
       <div>
-        <button onClick={postUser}>Create Account</button>
-        <button onClick={updateSavedPlants}>Update Saved Plants</button>
+        <button className="register-login-button" onClick={postUser} disabled={isButtonDisabled}>
+          Create Account
+        </button>
       </div>
+      <p>Already have an account? <Link to="/Login">Sign in</Link></p>
     </div>
   );
 }

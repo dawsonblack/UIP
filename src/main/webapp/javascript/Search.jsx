@@ -114,7 +114,11 @@ export default function TestingFetches() {
         </div>
         <label htmlFor="search-by">Search By:</label>
         <div className="search-dropdown">
-          <select id="search-by" onChange={(e) => setSearchBy(e.target.value)}>
+          <select
+            id="search-by"
+            onChange={(e) => setSearchBy(e.target.value)}
+            onKeyDown={handleKeyPress}
+          >
             <option value="commonName">Name</option>
             <option value="isInvasive">Is Invasive</option>
             <option value="isNative">Is Native</option>

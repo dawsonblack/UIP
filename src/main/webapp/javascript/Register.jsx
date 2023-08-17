@@ -7,9 +7,11 @@ export default function Register() {
   const [firstName, setFirstName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
-  const [isInvalidEmail, setIsInvalidEmail] = useState(null);
-  const [isInvalidPassword, setIsInvalidPassword] = useState(null);
+  const [isInvalidEmail, setIsInvalidEmail] = useState(true);
+  const [isInvalidPassword, setIsInvalidPassword] = useState(true);
+  const [passwordsDoNotMatch, setPasswordsDoNotMatch] = useState(true);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
   /*const [plantToSave, setPlantToSave] = useState("");
@@ -22,9 +24,10 @@ export default function Register() {
       username == "" ||
       password == "" ||
       isInvalidEmail ||
-      isInvalidPassword
+      isInvalidPassword ||
+      passwordsDoNotMatch
     );
-  }, [email, firstName, username, password]);
+  }, [email, firstName, username, password, confirmPassword]);
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter" && !isButtonDisabled) {
@@ -51,6 +54,12 @@ export default function Register() {
   const handlePasswordChange = ({ target }) => {
     setPassword(target.value);
     setIsInvalidPassword(target.value.length < 8);
+    setPasswordsDoNotMatch(target.value !== confirmPassword);
+  };
+
+  const handleConfirmPasswordChange = ({ target }) => {
+    setConfirmPassword(target.value);
+    setPasswordsDoNotMatch(target.value !== password);
   };
 
   /*const handlePlantToSaveChange = ({ target }) => {
@@ -84,6 +93,7 @@ export default function Register() {
     setFirstName("");
     setUsername("");
     setPassword("");
+    setConfirmPassword("");
   };
 
   /*const updateSavedPlants = () => {
@@ -113,7 +123,7 @@ export default function Register() {
             onChange={handleEmailChange}
             onKeyDown={handleKeyPress}
           ></input>
-          {isInvalidEmail && <p className="form-info-error-message">Invalid email</p>}
+          {isInvalidEmail && email !=="" && <p className="form-info-error-message">Invalid email</p>}
 
           <label htmlFor="firstName">First Name:</label>
           <input
@@ -141,7 +151,17 @@ export default function Register() {
             onChange={handlePasswordChange}
             onKeyDown={handleKeyPress}
           ></input>
-          {isInvalidPassword && <p className="form-info-error-message">Your password must be at least 8 characters long</p>}
+          {isInvalidPassword && password !=="" && <p className="form-info-error-message">Your password must be at least 8 characters long</p>}
+
+          <label htmlFor="confirm-password">Confirm Password:</label>
+          <input
+            type="password"
+            name="confirm-password"
+            value={confirmPassword}
+            onChange={handleConfirmPasswordChange}
+            onKeyDown={handleKeyPress}
+          ></input>
+          {passwordsDoNotMatch && confirmPassword !=="" && <p className="form-info-error-message">Passwords do not match</p>}
         </form>
       </div>
       <div>

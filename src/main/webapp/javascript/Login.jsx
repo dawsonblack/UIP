@@ -58,6 +58,10 @@ export default function Login() {
     setUsername("");
     setPassword("");
   }
+
+  if (invalidLogin == false) {
+    return <Redirect to="/accountPage" />; // Redirect here
+  }
   
   return (
     <div className="register-login-container">

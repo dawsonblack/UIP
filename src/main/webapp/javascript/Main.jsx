@@ -7,7 +7,6 @@ import BackgroundVideo from "./BackgroundVideo";
 import "../css/style.css";
 
 import Home from "./Home.jsx";
-import Test from "./Test.jsx";
 import Search from "./Search.jsx";
 import User from "./User.jsx";
 import Register from "./Register";
@@ -38,7 +37,6 @@ function Layout() {
     <>
       <nav>
         <Link to="/">Home</Link>
-        {/* <Link to="Test">Test</Link> */}
         <Link to="Search">Search</Link>
         {/* <Link to="User">User</Link> */}
         <Link to="Login">Log In</Link>
@@ -64,7 +62,6 @@ function Main() {
             element={<Layout />}
           >
             <Route index element={<Home />} />
-            <Route path="Test" element={<Test />} />
             <Route path="Search" element={<Search />} />
             <Route path="User" element={<User />} />
             <Route path="Register" element={<Register />} />

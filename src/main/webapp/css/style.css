@@ -19,7 +19,7 @@ nav a:hover {
 
 body {
   margin: 0px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   height: 100%;
   width: 100%;
   color: white;
@@ -226,10 +226,17 @@ section {
   padding-left: 20px;
   padding-right: 20px;
 
-  border: 1px solid #ccc;
   padding: 10px;
+  transition: width 0.3s ease, height 0.3s ease;
 }
 
+.plant-container img:hover {
+  max-width: none;
+  max-height: none;
+  width: 750px;
+  height: 750px;
+  transition: width 0.3s ease, height 0.3s ease;
+}
 .plant-container p {
   max-width: 300px;
   padding-left: 20px;

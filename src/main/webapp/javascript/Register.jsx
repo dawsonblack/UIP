@@ -12,6 +12,9 @@ export default function Register() {
   const [isInvalidPassword, setIsInvalidPassword] = useState(null);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
+  /*const [plantToSave, setPlantToSave] = useState("");
+  const [user_id, setUser_id] = useState("");*/
+
   useEffect(() => {
     setIsButtonDisabled(
       email == "" ||
@@ -50,6 +53,14 @@ export default function Register() {
     setIsInvalidPassword(target.value.length < 8);
   };
 
+  /*const handlePlantToSaveChange = ({ target }) => {
+    setPlantToSave(target.value);
+  };
+
+  const handleUser_idChange = ({ target }) => {
+    setUser_id(target.value);
+  };*/
+
   const postUser = async () => {
     const hashedPassword = await sha256(password);
     
@@ -74,6 +85,22 @@ export default function Register() {
     setUsername("");
     setPassword("");
   };
+
+  /*const updateSavedPlants = () => {
+    fetch(`/api/users/${user_id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(plantToSave),
+    }).then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      console.log("Plant saved successfully!");
+    });
+  };*/
+
   return (
     <div className="register-login-container">
       <div>

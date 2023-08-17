@@ -8,8 +8,10 @@ export default function CreateUser() {
   const [plantToSave, setPlantToSave] = useState("");
   const [user_id, setUser_id] = useState("");
 
-  const handleEmailChange = ({ target }) => {
-    setEmail(target.value);
+  const handleEmailChange = (event) => {
+    const newEmail = event.target.value;
+    setEmail(newEmail);
+    setIsValidEmail(null); // Reset the validation status when input changes
   };
 
   const handleFirstNameChange = ({ target }) => {
@@ -66,10 +68,10 @@ export default function CreateUser() {
   };
 
   return (
-    <div>
+    <div className="create-user-container">
       <div>
-        <form>
-          <label htmlFor="email">Email: </label>
+        <form className="create-user-form">
+          <label htmlFor="email">Email:</label>
           <input
             type="text"
             name="email"
@@ -77,7 +79,7 @@ export default function CreateUser() {
             onChange={handleEmailChange}
           ></input>
 
-          <label htmlFor="firstName">First Name: </label>
+          <label htmlFor="firstName">First Name:</label>
           <input
             type="text"
             name="firstName"
@@ -85,7 +87,7 @@ export default function CreateUser() {
             onChange={handleFirstNameChange}
           ></input>
 
-          <label htmlFor="username">Username: </label>
+          <label htmlFor="username">Username:</label>
           <input
             type="text"
             name="username"
@@ -93,9 +95,9 @@ export default function CreateUser() {
             onChange={handleUsernameChange}
           ></input>
 
-          <label htmlFor="password">Password: </label>
+          <label htmlFor="password">Password:</label>
           <input
-            type="text"
+            type="password"
             name="password"
             value={password}
             onChange={handlePasswordChange}

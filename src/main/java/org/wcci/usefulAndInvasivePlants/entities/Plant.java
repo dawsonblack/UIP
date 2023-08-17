@@ -23,7 +23,9 @@ public class Plant {
     private String color;
     private String imageFruitURL;
     private String imageLeafURL;
+    @Column(length = 1000)
     private String imageFruitSource;
+    @Column(length = 1000)
     private String imageLeafSource;
     private String WikiLink;
 
@@ -31,7 +33,8 @@ public class Plant {
     @GeneratedValue
     private long plantID;
 
-    public Plant(String commonName, String scientificName, String description, Boolean isInvasive, Boolean isNative, String color, String FURL,
+    public Plant(String commonName, String scientificName, String description, Boolean isInvasive, Boolean isNative,
+            String color, String FURL,
             String Fsource,
             String LURL, String Lsource, String wiki) {
         this.commonName = commonName;

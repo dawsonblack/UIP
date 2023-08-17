@@ -815,7 +815,7 @@ VALUES
         -27
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -908,7 +908,7 @@ VALUES
         -30
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -939,7 +939,7 @@ VALUES
         -31
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -970,7 +970,7 @@ VALUES
         -32
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1001,7 +1001,7 @@ VALUES
         -33
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1032,7 +1032,7 @@ VALUES
         -34
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1063,7 +1063,7 @@ VALUES
         -35
     );
 
- INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1094,7 +1094,7 @@ VALUES
         -36
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1125,7 +1125,7 @@ VALUES
         -37
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1156,7 +1156,7 @@ VALUES
         -38
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1187,7 +1187,7 @@ VALUES
         -39
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1218,7 +1218,7 @@ VALUES
         -40
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1249,7 +1249,7 @@ VALUES
         -41
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1280,7 +1280,7 @@ VALUES
         -42
     );
 
-     INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1311,7 +1311,7 @@ VALUES
         -43
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1342,7 +1342,7 @@ VALUES
         -44
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1373,7 +1373,7 @@ VALUES
         -45
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1404,8 +1404,7 @@ VALUES
         -46
     );
 
-    
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1436,7 +1435,7 @@ VALUES
         -47
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1467,7 +1466,7 @@ VALUES
         -48
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1498,7 +1497,7 @@ VALUES
         -49
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1529,7 +1528,7 @@ VALUES
         -50
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1560,7 +1559,7 @@ VALUES
         -51
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1591,7 +1590,7 @@ VALUES
         -52
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1622,7 +1621,7 @@ VALUES
         -53
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1653,7 +1652,7 @@ VALUES
         -54
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1684,7 +1683,7 @@ VALUES
         -55
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1715,7 +1714,7 @@ VALUES
         -56
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1746,7 +1745,7 @@ VALUES
         -57
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1777,7 +1776,7 @@ VALUES
         -58
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1808,7 +1807,7 @@ VALUES
         -59
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1839,7 +1838,7 @@ VALUES
         -60
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1870,7 +1869,7 @@ VALUES
         -61
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1901,7 +1900,7 @@ VALUES
         -62
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1932,7 +1931,7 @@ VALUES
         -63
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -1963,7 +1962,7 @@ VALUES
         -64
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,

@@ -126,11 +126,9 @@ export default function TestingFetches() {
             onChange={(e) => setSearchBy(e.target.value)}
             onKeyDown={handleKeyPress}
           >
-            <option value="commonName">Name</option>
-            <option value="isInvasive">Is Invasive</option>
-            <option value="isNative">Is Native</option>
-            <option value="color">Color</option>
-            <option value="description">Description</option>
+            <option value="commonName">Plant Name</option>
+            <option value="isNative">Is the Plant Native?</option>
+            <option value="color">Plant Color</option>
           </select>
           <div className="dropdown-arrow">&#9662;</div>
         </div>
@@ -166,7 +164,7 @@ export default function TestingFetches() {
           <li className={plant.isInvasive ? "invasive" : "non-invasive"}>
             {plant.isInvasive ? "Invasive" : "Non-invasive"}
           </li>
-          <li>{plant.isnative ? "Native" : "Foreign"}</li>
+          <li>{plant.isNative ? "Native" : "Foreign"}</li>
           <li>Color: {plant.color}</li>
         </ul>
         <img src={plant.imageFruitURL} />

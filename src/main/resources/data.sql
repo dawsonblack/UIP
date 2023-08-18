@@ -1612,7 +1612,7 @@ VALUES
         'This grass can grow up to 2 meters tall, featuring green or variegated leaves, and panicles up to 30 centimeters long. The spikelets are light green, occasionally streaked with darker shades. It Is a perennial grass that spreads through thick rhizomes beneath the ground.',
         true,
         false,
-        'Greenish-White to Pink',
+        'Greenish-White to Purple',
         'fruitImages/Phalaris_arundinacea_1.jpg',
         'leafImages/phalaris arundiacea.jpg',
         'By Franz Xaver - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=7997933',
@@ -1989,6 +1989,626 @@ VALUES
         'leafImages/sparganium erectum.JPG',
         'By Show_ryu - Own work, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=7801372',
         'By Hugo.arg - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=7314401',
-        'https://en.wikipedia.org/wiki/Salvinia_molesta',
+        'https://en.wikipedia.org/wiki/Sparganium_erectum',
         -65
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Water Soldiers',
+        'Stratiotes Aloides',
+        'Stratiotes aloides has a rosette of serrated leaves, lanceolate, up to 30 cm long in tufts. White flowers are up to 45 mm across with many stamens in the male plants are produced in the summer.',
+        true,
+        false,
+        'White and Green',
+        '',
+        'leafImages/Stratiotes_aloides.jpg',
+        '',
+        'By Jörg Hempel, CC BY-SA 3.0 de, https://commons.wikimedia.org/w/index.php?curid=19179398',
+        'https://en.wikipedia.org/wiki/Stratiotes_aloides',
+        -66
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Water Chestnut',
+        'Trapa Natans',
+        'The water caltrop is an aquatic plant with submerged stems up to 4.6 meters long. It has divided submerged leaves along the stem and undivided floating leaves in a rosette. These leaves are saw-toothed and ovoid or triangular, with inflated petioles for buoyancy. White four-petaled flowers appear in early summer, and its fruit is a nut with four barbed spines. Seeds can stay viable for up to 12 years. The plant spreads when rosettes and fruits detach, floating to new areas via currents or clinging to objects and animals. Another unrelated plant called Eleocharis dulcis is also called water chestnut, used in Chinese cuisine for its edible corms.',
+        true,
+        false,
+        'Olive-Green',
+        'fruitImages/Trapa_natans_seeds.jpg',
+        'leafImages/Trapa_natans1.jpg',
+        'By TheDarkCurrent - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=16377601',
+        'By Prof. Dr. Otto Wilhelm Thomé - Original book source:Prof. Dr. Otto Wilhelm Thomé Flora von Deutschland, Österreich und der Schweiz1885, Gera, GermanySource: www.biolib.de, Public Domain, https://commons.wikimedia.org/w/index.php?curid=4101439',
+        'https://en.wikipedia.org/wiki/Water_caltrop',
+        -67
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Narrow-Leaved Cattail',
+        'Typha Angustifolia',
+        'The plant features flat, narrow leaves measuring ¼"–½" wide and 3–6 tall when mature. Each vegetative shoot produces 12–16 leaves. The leaves have distinct stalks as tall as the leaves themselves and are crowned with brown, fluffy, sausage-shaped flowering heads. The plant has robust rhizomatous roots that can grow up to 27" in length and ¾"–1½" in diameter.',
+        true,
+        true,
+        'Green and Brown',
+        'fruitImages/Typha_angustifolia_nf.jpg',
+        'leafImages/Typha_angustifolia_(habitus)_1.jpg',
+        'By Carl Axel Magnus Lindman - http://runeberg.org/nordflor/493.html, Public Domain, https://commons.wikimedia.org/w/index.php?curid=385802',
+        'By Le.Loup.Gris - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=16418868',
+        'https://en.wikipedia.org/wiki/Typha_angustifolia',
+        -68
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Hybrid Cattail',
+        'Typha x Glauca',
+        'Perennial, erect wetland plant reaching 5-10 tall, often with an underwater base. The hybrid cattail is a hybrid of common (broad-leaved) and narrow-leaved cattails and its structure is intermediate between its parental species.',
+        true,
+        false,
+        'Green and Brown',
+        '',
+        'leafImages/Typha_×_glauca.jpg',
+        '',
+        'By Bobby McCabe - https://www.inaturalist.org/photos/9844478, CC BY 4.0, https://commons.wikimedia.org/w/index.php?curid=115155337',
+        'https://en.wikipedia.org/wiki/Typha_%C3%97_glauca',
+        -69
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Siberian Elm',
+        'Ulmus Pumila',
+        'The Siberian elm is a deciduous tree, often bushy, up to 25 meters tall. It has gray bark and yellowish-gray branchlets. Leaves are elliptic-ovate, turning yellow in autumn. In early spring, inconspicuous flowers appear before leaves. Wind-dispersed samarae are whitish-tan, orbicular. The tree self-pollinates and lives around 60 years in temperate climates, longer in its native habitat.',
+        true,
+        false,
+        'Dark Green',
+        'fruitImages/Ulmus_pumila_.jpg',
+        'leafImages/Ulmus_pumila_leaves.jpg',
+        'By Matt Lavin from Bozeman, Montana, USA - Ulmus pumilaUploaded by Tim1357, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=22758121',
+        'By Melburnian - Self-photographed, CC BY 2.5, https://commons.wikimedia.org/w/index.php?curid=1355203',
+        'https://en.wikipedia.org/wiki/Ulmus_pumila',
+        -70
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Black Swallow-Wort',
+        'Vincetoxicum Nigrum',
+        'Vincetoxicum nigrum is a perennial vine with ovate leaves and pointed tips. Leaves are 3–4 inches long and 2–3 inches wide, growing in pairs on the stem. Its star-shaped flowers have five petals and are covered in white hairs, ranging from dark purple to black. The fruit is a slender, tapered follicle with seeds, each equipped with a fluffy pappus for wind dispersal.',
+        true,
+        false,
+        'Puprle and Green',
+        'fruitImages/vincetoxicum-nigrum.jpg',
+        'leafImages/vincetoxicum-nigrum-leaf.jpg',
+        'Leslie J. Mehrhoff, University of Connecticut, Bugwood.org',
+        'Leslie J. Mehrhoff, University of Connecticut, Bugwood.org',
+        'https://en.wikipedia.org/wiki/Vincetoxicum_nigrum',
+        -71
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Jerusalem Artichoke',
+        'Helianthus Tuberosus',
+        'Helianthus tuberosus, or Jerusalem artichoke, is a tall perennial plant with rough leaves that change from large and ovoid-acute at the base to smaller and narrower higher up the stem. It produces fragrant yellow flowers in 5-10 cm clusters. The edible tubers, resembling ginger roots, vary in color and offer a crisp texture when raw.',
+        true,
+        true,
+        'Golden Yellow',
+        'fruitImages/jerusalem-artichoke-flower.jpg',
+        'leafImages/jerusalem-artichoke.jpg',
+        'CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=81355',
+        'CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=39407',
+        'https://en.wikipedia.org/wiki/Jerusalem_artichoke',
+        -72
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'fringed Loosestrife',
+        'Lysimachia Ciliata',
+        'Lysimachia ciliata, known as fringed loosestrife, is a tall herbaceous perennial with simple leaves and smooth green stems. Native to North America, it produces star-shaped yellow flowers in midsummer. Unique among Lysimachia species, it offers oil instead of nectar to pollinators, attracting the specialist oil bee Macropis nuda. This relationship is vital for the bees survival. It is also cultivated as an ornamental plant, but its growth can be managed by removing new suckers. Notable cultivars include: [cutoff]',
+        false,
+        true,
+        'Yellow',
+        'fruitImages/Lysimachia_ciliata_Prague_2013_2.jpg',
+        '',
+        'By Karelj - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=27668526',
+        '',
+        'https://en.wikipedia.org/wiki/Lysimachia_ciliata',
+        -73
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Virginia Bluebells',
+        'Mertensia Virginica',
+        'Virginia bluebells are characterized by gray-green ovate leaves on stems up to 24 inches tall. These leaves are up to 5 inches long, smooth-edged, and petiolate at the base of the stem, becoming sessile towards the top. The flowers are arranged in a nodding group at the end of arched stems. While the buds are pink, the open flowers typically showcase light blue hues, occasionally pink or rarely white. Each flower features five shallow lobes forming a tube at the base, five stamens, and a central pistil.',
+        false,
+        true,
+        'Deep purple to green',
+        'fruitImages/1024px-Virginia_Bluebells_at_Rocky_River.jpg',
+        'leafImages/Virginia_Bluebell_Mertensia_virginica_Plant_2262px.jpg',
+        'By Geoffrey A. Landis - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=89699170',
+        'By Photo (c)2010 Derek Ramsey (Ram-Man) - Self-photographed, GFDL 1.2, https://commons.wikimedia.org/w/index.php?curid=9929327',
+        'https://en.wikipedia.org/wiki/Mertensia_virginica',
+        -74
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Sharpwing Monkeyflower',
+        'Mimulus Alatus',
+        'Mimulus alatus, or the sharpwing monkeyflower, is a North American perennial with blue-violet flowers and green foliage. Blooming from June to September, it lacks a floral scent. This fast-growing herb has a short lifespan and thrives in wet to moist environments. Its bilabiate corolla, resembling a monkeys face, is accompanied by distinctive winged stems, which contribute to its common name.',
+        false,
+        true,
+        'Pale Blue to Violet',
+        'fruitImages/Mimulus_alatus,_2014-08-02,_Cranberry,_01.jpg',
+        'leafImages/Mimulus_alatus_2.jpg',
+        'By Cbaile19 - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=118883269',
+        'By Eric in SF - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=21953503',
+        'https://en.wikipedia.org/wiki/Mimulus_alatus',
+        -75
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Summer Phlox',
+        'Phlox Paniculata',
+        'Phlox paniculata is a tall, upright herbaceous perennial that can grow up to 120 cm in height and 100 cm in width. It features opposite, simple leaves on slender green stems. The fragrant flowers, measuring 1.5–2.5 cm in diameter, bloom from summer through fall. These flowers are arranged in panicles, which are characterized by branching stems. In its natural habitat, the flowers commonly appear in shades of pink or purple, with white being a rare occurrence.',
+        false,
+        true,
+        'Pink to Purple',
+        'fruitImages/Phlox_paniculata_Miss_Pepper4.JPG',
+        'leafImages/Phlox_paniculata_Franz_Schubert_3zz.jpg',
+        'By Uleli - Own work, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=11267314',
+        'By Photo by David J. Stang - source: David Stang. First published at ZipcodeZoo.com, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=61101146',
+        'https://en.wikipedia.org/wiki/Phlox_paniculata',
+        -76
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Cutleaf Coneflower',
+        'Rudbeckia Laciniata',
+        'This robust herbaceous perennial can grow up to 3 meters tall and has broadly ovate, sometimes glaucous leaves that are deeply dissected. The alternate leaves consist of a petiole and a leaf blade, with the blade being simple or one to two-pinnate, often lobed three to eleven times. Leaf margins vary from smooth to roughly serrated. Lower leaves are larger (38 to 127 cm long, 25 to 64 cm wide) compared to the upper leaves (8 to 40 cm long, 3 to 20 cm wide). The plant forms long rhizomes for persistence, with bare stems and fibrous roots.',
+        true,
+        true,
+        'Yellow and Green',
+        'fruitImages/Rudbeckia_laciniata_by_SvdW.jpg',
+        'leafImages/1280px-Rudbeckia_laciniata_humilis.jpg',
+        'By Sander van der Wel from Netherlands - [282/365] So many flowers, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=34928696',
+        'By Mason Brock (Masebrock) - Own work, Public Domain, https://commons.wikimedia.org/w/index.php?curid=66113542',
+        'https://en.wikipedia.org/wiki/Rudbeckia_laciniata',
+        -77
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Cup Plant',
+        'Silphium Perfoliatum',
+        'Silphium perfoliatum, or cup plant, thrives in sandy moist areas, often near woodlands. It is found across several US states and parts of Canada. While threatened in Michigan, it is invasive in New York. The plant grows 1-2.5 meters tall with square stems, toothed leaves, and sunflower-like flowers in midsummer to autumn. These flowers have yellow ray florets and sterile disk florets, with unique structural features.',
+        false,
+        true,
+        'Yellow',
+        'fruitImages/Silphium_perfoliatum_(Slovenia).jpg',
+        'leafImages/1280px-Cup_plant.jpg',
+        'By Petar Milošević - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=43081711',
+        'Public Domain, https://commons.wikimedia.org/w/index.php?curid=6383902',
+        'https://en.wikipedia.org/wiki/Silphium_perfoliatum',
+        -78
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Canada Germander',
+        'Teucrium Canadense',
+        'American germander is a sturdy perennial, reaching up to 3 ft tall, with square stems, side branches, and basal rhizomes. Its leaves are opposite, ovate or lanceolate, coarsely toothed, and veined, growing up to 5 in long and 2.5 in wide. The raceme-like inflorescence, up to 8 in long, bears numerous whitish or pale lilac lipped flowers with large lower lips. Blooming from mid-June for about a month, the flowers lack scent and produce roundish yellowish-brown seeds.',
+        false,
+        true,
+        'Pink',
+        'fruitImages/Teucrium_canadense_.jpg',
+        'leafImages/Teucrium_canadense_.jpg',
+        'By Ayotte, Gilles, 1948- - Bibliothèque de l&#039;Université Laval, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=128042079',
+        'By Salicyna - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=61811042',
+        'https://en.wikipedia.org/wiki/Teucrium_canadense',
+        -79
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Tall Meadow-Rue',
+        'Thalictrum Pubescens',
+        'Thalictrum pubescens is a herbaceous plant with alternate, pinnately compound leaves, on hollow, green stems. The flowers are white, borne in spring and summer.',
+        false,
+        true,
+        'White and Green',
+        'fruitImages/ThalictrumPubescens.jpg',
+        'leafImages/Thalictrum_pubescens_.jpg',
+        'By Matt Osborne - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=84702065',
+        'By Ayotte, Gilles, 1948- - Bibliothèque de l&#039;Université Laval, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=128042483',
+        'https://en.wikipedia.org/wiki/Thalictrum_pubescens',
+        -80
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Striped Cream Violet',
+        'Viola Striata',
+        'Features creamy white flowers with a purple-veined lower petal. Flowers appear in spring (April-June in St. Louis) rising from the leaf axils of leafy stems growing 6-12" tall. Dark green, heart-shaped leaves with deeply cut stipules form a thick ground cover.',
+        false,
+        true,
+        'Cream, Purple and Green',
+        'fruitImages/Viola_striata.jpg',
+        'leafImages/Cream_Violet.jpg',
+        'By Mason Brock (Masebrock) - Own work, Public Domain, https://commons.wikimedia.org/w/index.php?curid=32659149',
+        'By Katja Schulz from Washington, D. C., USA - Cream Violet, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=49933150',
+        'https://en.wikipedia.org/wiki/Viola_striata',
+        -81
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Grays Sedge',
+        'Carex Grayi',
+        'Carex grayi, commonly called gray sedge, has greenish yellow to brown seed heads that look like spiked clubs and are attractive in both fresh and dried flower arrangements. The fruits remain on the plant in winter, adding an interesting accent when the shadows reflect on snow.',
+        false,
+        true,
+        'Lime Green',
+        'fruitImages/Carex_grayi1.jpg',
+        'leafImages/carex-grayi.jpg',
+        'By Kurt Stüber [1] - caliban.mpiz-koeln.mpg.de/mavica/index.html part of www.biolib.de, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2906',
+        'By No machine-readable author provided. Zirpe~commonswiki assumed (based on copyright claims). - No machine-readable source provided. Own work assumed (based on copyright claims)., CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2261631',
+        'https://en.wikipedia.org/wiki/Carex_grayi',
+        -82
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'River Oats',
+        'Chasmanthium Latifolium',
+        'Chasmanthium latifolium is a warm-season, rhizomatous, perennial grass with stems about 1 m and 3 feet tall.The plant typically grows in wooded areas and riparian zones.',
+        false,
+        true,
+        'Green to Brown',
+        '',
+        'leafImages/Chasmanthium_latifolium.jpg',
+        '',
+        'By Eric in SF - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=15705972',
+        'https://en.wikipedia.org/wiki/Chasmanthium_latifolium',
+        -83
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Downy Wild Rye',
+        'Elymus Villosus',
+        'Elymus villosus is distinguished by its hairy sheaths, leaves, glumes and lemmas, glumes less than 1 mm wide, nodding spike with straight awns, and usually 1-flowered spikelets. There are 2 forms that are considered vars in some references, but are not recognized in Minnesota',
+        false,
+        true,
+        'Green',
+        '',
+        'leafImages/Elymus_villosus.jpg',
+        '',
+        'Public Domain, https://commons.wikimedia.org/w/index.php?curid=807654',
+        'https://en.wikipedia.org/wiki/Elymus_villosus',
+        -84
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        ' Virginia Wildrye',
+        'Elymus Virginicus',
+        'Elymus virginicus is a clump forming cool season perennial grass. The tufted foliage is narrow and evergreen or semi-evergreen. Blades have a green or silver blue color and a waxy sheen. Bristly wheat-like spikey flower with hair like awns form in late spring.',
+        false,
+        true,
+        'Green to Silver Blue',
+        '',
+        'leafImages/-Elymus_virginicus_.jpg',
+        '',
+        'By Matt Lavin from Bozeman, Montana, USA - Elymus virginicus, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=44493189',
+        'https://en.wikipedia.org/wiki/Elymus_virginicus',
+        -85
     );

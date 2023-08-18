@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from "react";
+import { Navigate } from "react-router-dom";
 
 export default function User() {
   const [username, setUsername] = useState('');
   const [plantId, setPlantId] = useState('');
   const [savedPlants, setSavedPlants] = useState([]);
-  const [name, setName] = useState(localStorage.getItem("loggedInName") || "")
+  const [name, setName] = useState(localStorage.getItem("loggedInName") || "");
 
   const handleSavePlant = () => {
     if (username && plantId) {
@@ -13,6 +14,15 @@ export default function User() {
       setPlantId('');
     }
   };
+
+  function logOut() {
+    setName("");
+    localStorage.setItem("loggedInName", "");
+  }
+
+  if (name == "") {
+    return <Navigate to="/" />;
+  }
 
   return (
     <div>
@@ -34,6 +44,7 @@ export default function User() {
 
       <h2>Saved Plants</h2>
       <h2>Welcome, {name}!</h2>
+      <button onClick={logOut}>Log Out</button>
       <ul>
         {savedPlants.map((plant) => (
           <li key={plant.id}>

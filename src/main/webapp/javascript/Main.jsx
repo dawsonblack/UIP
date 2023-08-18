@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, Outlet, Link } from "react-router-dom";
@@ -28,6 +28,8 @@ export async function sha256(message) {
 }
 
 function Layout() {
+  const [name, setName] = useState(localStorage.getItem("loggedInName") || "");
+
   useEffect(() => {
     let video = document.querySelector("video");
     video.playbackRate = 0.5;
@@ -38,8 +40,8 @@ function Layout() {
       <nav>
         <Link to="/">Home</Link>
         <Link to="Search">Search</Link>
-        {/* <Link to="User">User</Link> */}
-        <Link to="Login">Log In</Link>
+        {localStorage.getItem("loggedInName") == "" && <Link to="Login">Log In</Link>}
+        {localStorage.getItem("loggedInName") !== "" && <Link to="User">My Profile</Link>}
       </nav>
       <Outlet />
       <div className="App">
@@ -66,7 +68,6 @@ function Main() {
             <Route path="User" element={<User />} />
             <Route path="Register" element={<Register />} />
             <Route path="Login" element={<Login />} />
-            <Route path="User" element={<User />} />
           </Route>
         </Routes>
       </BrowserRouter>

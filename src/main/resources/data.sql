@@ -1612,7 +1612,7 @@ VALUES
         'This grass can grow up to 2 meters tall, featuring green or variegated leaves, and panicles up to 30 centimeters long. The spikelets are light green, occasionally streaked with darker shades. It Is a perennial grass that spreads through thick rhizomes beneath the ground.',
         true,
         false,
-        'Greenish-White to Pink',
+        'Greenish-White to Purple',
         'fruitImages/Phalaris_arundinacea_1.jpg',
         'leafImages/phalaris arundiacea.jpg',
         'By Franz Xaver - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=7997933',
@@ -2418,7 +2418,7 @@ VALUES
         'American germander is a sturdy perennial, reaching up to 3 ft tall, with square stems, side branches, and basal rhizomes. Its leaves are opposite, ovate or lanceolate, coarsely toothed, and veined, growing up to 5 in long and 2.5 in wide. The raceme-like inflorescence, up to 8 in long, bears numerous whitish or pale lilac lipped flowers with large lower lips. Blooming from mid-June for about a month, the flowers lack scent and produce roundish yellowish-brown seeds.',
         false,
         true,
-        'Yellow',
+        'Pink',
         'fruitImages/Teucrium_canadense_.jpg',
         'leafImages/Teucrium_canadense_.jpg',
         'By Ayotte, Gilles, 1948- - Bibliothèque de l&#039;Université Laval, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=128042079',
@@ -2508,14 +2508,107 @@ VALUES
     (
         'Grays Sedge',
         'Carex Grayi',
-        'Features creamy white flowers with a purple-veined lower petal. Flowers appear in spring (April-June in St. Louis) rising from the leaf axils of leafy stems growing 6-12" tall. Dark green, heart-shaped leaves with deeply cut stipules form a thick ground cover.',
+        'Carex grayi, commonly called gray sedge, has greenish yellow to brown seed heads that look like spiked clubs and are attractive in both fresh and dried flower arrangements. The fruits remain on the plant in winter, adding an interesting accent when the shadows reflect on snow.',
         false,
         true,
-        'Cream, Purple and Green',
-        'fruitImages/Viola_striata.jpg',
-        'leafImages/Cream_Violet.jpg',
-        'By Mason Brock (Masebrock) - Own work, Public Domain, https://commons.wikimedia.org/w/index.php?curid=32659149',
-        'By Katja Schulz from Washington, D. C., USA - Cream Violet, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=49933150',
-        'https://en.wikipedia.org/wiki/Viola_striata',
-        -81
+        'Lime Green',
+        'fruitImages/Carex_grayi1.jpg',
+        'leafImages/carex-grayi.jpg',
+        'By Kurt Stüber [1] - caliban.mpiz-koeln.mpg.de/mavica/index.html part of www.biolib.de, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2906',
+        'By No machine-readable author provided. Zirpe~commonswiki assumed (based on copyright claims). - No machine-readable source provided. Own work assumed (based on copyright claims)., CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2261631',
+        'https://en.wikipedia.org/wiki/Carex_grayi',
+        -82
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'River Oats',
+        'Chasmanthium Latifolium',
+        'Chasmanthium latifolium is a warm-season, rhizomatous, perennial grass with stems about 1 m and 3 feet tall.The plant typically grows in wooded areas and riparian zones.',
+        false,
+        true,
+        'Green to Brown',
+        '',
+        'leafImages/Chasmanthium_latifolium.jpg',
+        '',
+        'By Eric in SF - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=15705972',
+        'https://en.wikipedia.org/wiki/Chasmanthium_latifolium',
+        -83
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Downy Wild Rye',
+        'Elymus Villosus',
+        'Elymus villosus is distinguished by its hairy sheaths, leaves, glumes and lemmas, glumes less than 1 mm wide, nodding spike with straight awns, and usually 1-flowered spikelets. There are 2 forms that are considered vars in some references, but are not recognized in Minnesota',
+        false,
+        true,
+        'Green',
+        '',
+        'leafImages/Elymus_villosus.jpg',
+        '',
+        'Public Domain, https://commons.wikimedia.org/w/index.php?curid=807654',
+        'https://en.wikipedia.org/wiki/Elymus_villosus',
+        -84
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        ' Virginia Wildrye',
+        'Elymus Virginicus',
+        'Elymus virginicus is a clump forming cool season perennial grass. The tufted foliage is narrow and evergreen or semi-evergreen. Blades have a green or silver blue color and a waxy sheen. Bristly wheat-like spikey flower with hair like awns form in late spring.',
+        false,
+        true,
+        'Green to Silver Blue',
+        '',
+        'leafImages/-Elymus_virginicus_.jpg',
+        '',
+        'By Matt Lavin from Bozeman, Montana, USA - Elymus virginicus, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=44493189',
+        'https://en.wikipedia.org/wiki/Elymus_virginicus',
+        -85
     );

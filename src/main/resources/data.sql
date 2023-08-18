@@ -2816,16 +2816,109 @@ VALUES
     )
 VALUES
     (
-        'Black Huckleberry',
-        'Gaylussacia Baccata',
-        'Gaylussacia baccata, resembling native blueberry plants, stands out due to its resin dots on leaf undersides that sparkle when backlit. This shrub grows up to 150 cm, forming colonies, with bell-shaped orange or red flowers in groups of 3–7. Its berries, either dark blue or rarely white, are sweet and edible. They are consumed raw or used in various culinary creations, including jellies, pancakes, and muffins.',
+        'Witch-Hazel',
+        'Hamamelis Virginiana',
+        'This small deciduous tree or shrub grows up to 6 meters, often with clustered stems at its base. Bark is light brown, leaves oval with wavy margins, turning yellow in fall. Pale to bright yellow flowers appear in clusters from mid to late fall. Woody capsules split explosively, ejecting shiny black seeds up to 10 meters away. It is distinguishable from similar species by its fall flowering.',
         false,
         true,
         'Yellow to Green',
-        'fruitImages/Gaylussacia_baccata.jpg',
-        'leafImages/Gaylussacia_baccata_flower.jpg',
-        'By Rob Routledge, Sault College, Bugwood.org - http://www.forestryimages.org/search/action.cfm?q=Gaylussacia%20baccata, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=31003854',
-        'By Mason Brock (Masebrock) - Sky Bridge trail, Red River Gorge, Kentucky, Public Domain, https://commons.wikimedia.org/w/index.php?curid=10291655',
-        'https://en.wikipedia.org/wiki/Gaylussacia_baccata',
-        -91
+        'fruitImages/Hamamelis_virginiana_15zz.jpg',
+        'leafImages/Common_Witch_Hazel_Hamamelis_virginiana_.jpg',
+        'By Photo by David J. Stang - source: David Stang. First published at ZipcodeZoo.com, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=61003612',
+        'By Photo by and (c)2007 Derek Ramsey (Ram-Man) - Self-photographed, CC BY-SA 2.5, https://commons.wikimedia.org/w/index.php?curid=2079420',
+        'https://en.wikipedia.org/wiki/Hamamelis_virginiana',
+        -92
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Wild Hydrangea',
+        'Hydrangea Arborescens',
+        'Smooth hydrangea is characterized by a corymb inflorescence up to 15 cm wide, often without showy sterile flowers. Blooms occur from May to July. The large, opposite, ovate leaves have serrated edges and a green appearance with subtle fine hairs on the lower surface. The stem bark peels off in layers of various colors, leading to the name "sevenbark." It produces small, ribbed brown capsules around 2 mm long as fruit, appearing in October and lasting through winter. The plant can spread quickly through stolons to create colonies.',
+        false,
+        true,
+        'White to Green',
+        'fruitImages/Hydrangea_arborescens_annabelle.JPG',
+        'leafImages/Hydrangea_arborescens_.jpg',
+        'By Giligone at English Wikipedia, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=37825570',
+        'By Krzysztof Ziarnek, Kenraiz - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=124433165',
+        'https://en.wikipedia.org/wiki/Hydrangea_arborescens',
+        -93
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'St. Andrews Cross',
+        'Hypericum Hypericoides',
+        'Hypericum hypericoides, known as St. Andrews cross, is a flowering plant belonging to the St. Johns wort family. Native to the Southeastern United States, Mexico, Central America, and the Caribbean, it thrives in dry woods with acidic soil. This small shrub or shrublet features yellow four-petaled flowers. While some classify it into two subspecies, hypericoides and multicaule, the latter is often considered a distinct species.',
+        false,
+        true,
+        'Yellow to Brown',
+        '',
+        'leafImages/Hypericum_hypericoides_Arkansas.jpg',
+        '',
+        'By Eric Hunt - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=80374873',
+        'https://en.wikipedia.org/wiki/Hypericum_hypericoides',
+        -94
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Shrubby St. Johns Wort',
+        'Hypericum Prolificum',
+        'Hypericum prolificum is a shrub reaching up to 2 meters in height. It has elliptic to oblanceolate leaves measuring around 70 mm in length and 15 mm in width. The flowerheads contain 1 to 9 flowers, each about 15–30 mm in diameter, with 5 golden yellow petals and multiple stamens. The ovary typically consists of three parts, but some individuals may have up to five parts.',
+        false,
+        true,
+        'Blue-Green to Yellow',
+        'fruitImages/Hypericum_prolificum_Arkansas_2.jpg',
+        'leafImages/Hypericum_prolificum.jpg',
+        'By Eric Hunt - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=80374652',
+        'By Leonora (Ellie) Enking from East Preston, United Kingdom - Hypericum prolificum, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=79871073',
+        'https://en.wikipedia.org/wiki/Hypericum_prolificum',
+        -95
     );

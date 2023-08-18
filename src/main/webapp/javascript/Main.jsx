@@ -66,6 +66,7 @@ function Main() {
             <Route path="User" element={<User />} />
             <Route path="Register" element={<Register />} />
             <Route path="Login" element={<Login />} />
+            <Route path="User" element={<User />} />
           </Route>
         </Routes>
       </BrowserRouter>

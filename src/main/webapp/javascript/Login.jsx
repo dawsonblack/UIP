@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { sha256 } from "./Main";
 
 export default function Login() {
@@ -44,6 +44,7 @@ export default function Login() {
         for (let i = 0; i < responseBody["_embedded"]["userList"].length; i++) {
             if (username == responseBody["_embedded"]["userList"][i].userName) {
                 if (hashedPassword == responseBody["_embedded"]["userList"][i].passWord) {
+                    localStorage.setItem("loggedInName", responseBody["_embedded"]["userList"][i].firstName);
                     console.log(password + " hashed is " + hashedPassword + ", which is a match with the stored password");
                     setInvalidLogin(false);
                 }
@@ -59,8 +60,8 @@ export default function Login() {
     setPassword("");
   }
 
-  if (invalidLogin == false) {
-    return <Redirect to="/User" />; // Redirect here
+  if (invalidLogin === false) {
+    return <Navigate to="/User" />;
   }
   
   return (

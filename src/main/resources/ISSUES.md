@@ -10,6 +10,12 @@ NOTES FROM DAWSON:
 -why are username and password stored in the database in camelCase?
 -turn off autofill in inputs
 -get rid of invalid email/too short password messages whenever there is nothing in the textbox
+-check whether email or username is being used already
+-there's a problem with pressing enter
+-you have to try to log in twice before it lets you
+-add a message for successfully creating an account
+-add a captcha to registration
+-add a confirm email feature
 
 NOTES FROM ABDI:
 

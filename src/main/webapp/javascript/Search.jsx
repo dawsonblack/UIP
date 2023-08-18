@@ -114,6 +114,7 @@ export default function TestingFetches() {
             placeholder="Search your plants"
             value={searchKeywords}
             onChange={(e) => setSearchKeywords(e.target.value)}
+            onKeyDown={handleKeyPress}
           />
           <button id="search-button" onClick={getPlants}>
             Search!

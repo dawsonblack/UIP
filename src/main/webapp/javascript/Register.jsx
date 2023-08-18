@@ -71,7 +71,7 @@ export default function Register() {
   };*/
 
   const postUser = async () => {
-    const hashedPassword = await sha256(password);
+    const hashedPassword = await sha256(username + password);
     
     fetch("/api/users", {
       method: "POST",

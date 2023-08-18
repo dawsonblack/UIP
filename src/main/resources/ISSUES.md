@@ -10,6 +10,7 @@ NOTES FROM DAWSON:
 -why are username and password stored in the database in camelCase?
 -turn off autofill in inputs
 -get rid of invalid email/too short password messages whenever there is nothing in the textbox
+-check wheether email or username is being used already
 
 NOTES FROM ABDI:
 

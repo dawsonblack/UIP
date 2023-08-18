@@ -36,7 +36,7 @@ export default function Login() {
   };
 
   async function checkLoginInfo() {
-    const hashedPassword = await sha256(password);
+    const hashedPassword = await sha256(username + password);
 
     fetch(`/api/users`, { method: "GET", cache: "default" })
     .then((response) => response.json())
@@ -60,7 +60,7 @@ export default function Login() {
   }
 
   if (invalidLogin == false) {
-    return <Redirect to="/accountPage" />; // Redirect here
+    return <Redirect to="/User" />; // Redirect here
   }
   
   return (

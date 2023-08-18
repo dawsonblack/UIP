@@ -2599,7 +2599,7 @@ VALUES
     )
 VALUES
     (
-        ' Virginia Wildrye',
+        'Virginia Wildrye',
         'Elymus Virginicus',
         'Elymus virginicus is a clump forming cool season perennial grass. The tufted foliage is narrow and evergreen or semi-evergreen. Blades have a green or silver blue color and a waxy sheen. Bristly wheat-like spikey flower with hair like awns form in late spring.',
         false,
@@ -2611,4 +2611,221 @@ VALUES
         'By Matt Lavin from Bozeman, Montana, USA - Elymus virginicus, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=44493189',
         'https://en.wikipedia.org/wiki/Elymus_virginicus',
         -85
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Alternate-Leaved Dogwood',
+        'Cornus Alternifolia',
+        'This is a small deciduous shrub or tree, up to 25 feet tall (occasionally 30 feet), with distinctive horizontal branches and flat-topped crown. Leaves are elliptic, 2–5 inches long, arranged alternately or in clusters, green on top and bluish and hairy underneath. Gray to brown bark becomes ridged with age. Cream-colored flowers in clusters 2–5 inches across have four petals. It bears blackish-blue berries.',
+        false,
+        true,
+        'Yellowish-White',
+        'fruitImages/Cornus_alternifolia_.jpg',
+        'leafImages/Cornus_alternifolia_.jpg',
+        'By Ayotte, Gilles, 1948- - Bibliothèque de l&#039;Université Laval, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=127825162',
+        'By Ayotte, Gilles, 1948- - Bibliothèque de l&#039;Université Laval, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=127825121',
+        'https://en.wikipedia.org/wiki/Cornus_alternifolia',
+        -86
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'American Hazelnut',
+        'Corylus Americana',
+        'The American hazelnut is a medium to large shrub, occasionally tree-like, growing 2.5 to 5 meters in height with a spread of 3 to 4.5 meters. Its branches spread widely, forming a dense, spherical shape. It spreads through underground rhizomes and suckers. It flowers from very early to mid-spring, bearing hanging male catkins and small clusters of female flowers with red styles. Male catkins develop in fall and persist through winter. Edible nuts mature between July and October, each enclosed in two leaf-like bracts with jagged edges.',
+        false,
+        true,
+        'Orange, Burgundy, and Yellow',
+        'fruitImages/Corylus_americana_.jpg',
+        'leafImages/Corylus_americana_kz2.jpg',
+        'By Superior National Forest - Corylus americana 2-eheepUploaded by AlbertHerring, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=29788559',
+        'By Krzysztof Ziarnek, Kenraiz - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=53663058',
+        'https://en.wikipedia.org/wiki/Corylus_americana',
+        -87
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Bush Honeysuckle',
+        'Diervilla Lonicera',
+        'The Northern bush honeysuckle is a deciduous shrub, 0.6 to 1.2 meters tall, with low branches, pale yellow flowers, and woody fruit. Leaves start green and turn dark red. It blooms from July to August, with mature seeds in September. Its flowers are initially female-dominant, adapted for pollination, and stigmas remain receptive post-flowering.',
+        false,
+        true,
+        'Green',
+        'fruitImages/Diervilla_lonicera_.jpg',
+        'leafImages/Diervilla_lonicera_.jpg',
+        'By Superior National Forest - Diervilla lonicera 2Uploaded by AlbertHerring, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=29788569',
+        'By Agnieszka Kwiecień, Nova - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=109720287',
+        'https://en.wikipedia.org/wiki/Diervilla_lonicera',
+        -88
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Strawberry Bush',
+        'Euonymus Americanus',
+        'Euonymus americanus is a deciduous shrub, growing close to the ground at 2-3.5 meters high. It bears white and green flowers that develop into pink fruit capsules resembling strawberries, opening in fall to reveal large orange seeds.',
+        false,
+        true,
+        'Green to Orange-Red',
+        'fruitImages/Euonymus_americanus_fruit.jpgg',
+        'leafImages/Euonymus_americanus_.jpg',
+        'By Wasrts - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=95447111',
+        'By Fritzflohrreynolds - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=31358231',
+        'https://en.wikipedia.org/wiki/Euonymus_americanus',
+        -89
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'American Wahoo',
+        'Euonymus Atropurpureus',
+        'This deciduous shrub can reach up to 8 meters in height, with gray bark and purplish-brown twigs. Its opposite elliptical leaves are green above, paler below, and serrated, turning bright red in autumn. The small bisexual flowers have greenish sepals, brown-purple petals, and are borne in small clusters. The smooth reddish-pink fruit is a four-lobed capsule containing orange seeds with fleshy red arils.',
+        true,
+        true,
+        'Dark Green',
+        'fruitImages/Euonymus_europaeus_.jpg',
+        'leafImages/Euonymus_atropurpureus_0zz.jpg',
+        'By R. A. Nonenmacher - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=36481767',
+        'By Photo by David J. Stang - source: David Stang. First published at ZipcodeZoo.com, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=61002968',
+        'https://en.wikipedia.org/wiki/Euonymus_atropurpureus',
+        -90
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Black Huckleberry',
+        'Gaylussacia Baccata',
+        'Gaylussacia baccata, resembling native blueberry plants, stands out due to its resin dots on leaf undersides that sparkle when backlit. This shrub grows up to 150 cm, forming colonies, with bell-shaped orange or red flowers in groups of 3–7. Its berries, either dark blue or rarely white, are sweet and edible. They are consumed raw or used in various culinary creations, including jellies, pancakes, and muffins.',
+        false,
+        true,
+        'Yellow to Green',
+        'fruitImages/Gaylussacia_baccata.jpg',
+        'leafImages/Gaylussacia_baccata_flower.jpg',
+        'By Rob Routledge, Sault College, Bugwood.org - http://www.forestryimages.org/search/action.cfm?q=Gaylussacia%20baccata, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=31003854',
+        'By Mason Brock (Masebrock) - Sky Bridge trail, Red River Gorge, Kentucky, Public Domain, https://commons.wikimedia.org/w/index.php?curid=10291655',
+        'https://en.wikipedia.org/wiki/Gaylussacia_baccata',
+        -91
+    );
+
+    INSERT INTO
+    plant (
+        common_Name,
+        scientific_Name,
+        description,
+        is_Invasive,
+        is_Native,
+        color,
+        image_FruitURL,
+        image_LeafURL,
+        image_Fruit_Source,
+        image_Leaf_Source,
+        wiki_Link,
+        plantID
+    )
+VALUES
+    (
+        'Black Huckleberry',
+        'Gaylussacia Baccata',
+        'Gaylussacia baccata, resembling native blueberry plants, stands out due to its resin dots on leaf undersides that sparkle when backlit. This shrub grows up to 150 cm, forming colonies, with bell-shaped orange or red flowers in groups of 3–7. Its berries, either dark blue or rarely white, are sweet and edible. They are consumed raw or used in various culinary creations, including jellies, pancakes, and muffins.',
+        false,
+        true,
+        'Yellow to Green',
+        'fruitImages/Gaylussacia_baccata.jpg',
+        'leafImages/Gaylussacia_baccata_flower.jpg',
+        'By Rob Routledge, Sault College, Bugwood.org - http://www.forestryimages.org/search/action.cfm?q=Gaylussacia%20baccata, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=31003854',
+        'By Mason Brock (Masebrock) - Sky Bridge trail, Red River Gorge, Kentucky, Public Domain, https://commons.wikimedia.org/w/index.php?curid=10291655',
+        'https://en.wikipedia.org/wiki/Gaylussacia_baccata',
+        -91
     );

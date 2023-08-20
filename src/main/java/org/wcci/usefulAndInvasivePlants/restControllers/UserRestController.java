@@ -50,13 +50,8 @@ public class UserRestController {
 
     @DeleteMapping("/api/users/{user_id}")
     public ResponseEntity deleteById(@PathVariable long user_id) {
-        try{
             plantService.deleteUserByID(user_id);
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body("");
-        }catch(Exception e){
-            throw new UipException(HttpStatus.BAD_REQUEST.value(), e.getMessage());
-        }
-        
     }
 
     @PostMapping("/api/users")

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import org.wcci.usefulAndInvasivePlants.entities.Plant;
 import org.wcci.usefulAndInvasivePlants.entities.User;
+import org.wcci.usefulAndInvasivePlants.exception.UipException;
 import org.wcci.usefulAndInvasivePlants.repositories.PlantRepo;
 import org.wcci.usefulAndInvasivePlants.repositories.UserRepo;
 
@@ -70,10 +71,14 @@ public class PlantService {
     }
 
     public void deleteUserByID(final long user_id) {
-        if (!userRepo.findById(user_id).isPresent())
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found " + user_id);
+        try {
+            if (!userRepo.findById(user_id).isPresent())
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found " + user_id);
+            userRepo.deleteById(user_id);
+        } catch (Exception e) {
+            throw new UipException(HttpStatus.BAD_REQUEST.value(), e.getMessage());
+        }
 
-        userRepo.deleteById(user_id);
     }
 
     public Plant updatePlant(Plant plant, long plant_id) {

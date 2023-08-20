@@ -145,12 +145,12 @@ public class UserRestControllerTest extends HateoasHelper {
                                 .perform(MockMvcRequestBuilders.delete("/api/users/" + userResultObject.getUserID())
                                                 .accept(MediaTypes.HAL_JSON)
                                                 .contentType(MediaType.APPLICATION_JSON))
-                                .andExpect(status().isOk());
+                                .andExpect(status().isNoContent());
                 
         }
 
         @Test
-        public void deleteUserfailsWrongIdTest()throws Exception{
+        public void deleteUserFailsWrongIdTest()throws Exception{
                 this.mvc
                                 .perform(MockMvcRequestBuilders.delete("/api/users/" + 111)
                                                 .accept(MediaTypes.HAL_JSON)

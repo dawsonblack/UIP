@@ -121,4 +121,30 @@ public class UserRestControllerTest extends HateoasHelper {
 
                 assertEquals(2, createdUser2.getSavedPlants().size());
         }
+
+        @Test
+        public void deleteUserSuccessTest(){
+                User user = new User((long) 102, "email@email", "Michael", "MScott", "paper");
+
+                final MvcResult userPostResult = this.mvc
+                                .perform(MockMvcRequestBuilders.post("/api/users")
+                                                .accept(MediaTypes.HAL_JSON)
+                                                .contentType(MediaType.APPLICATION_JSON)
+                                                .content(new ObjectMapper().writeValueAsString(user)))
+                                .andExpect(status().isOk())
+                                .andExpect(content().contentTypeCompatibleWith(MediaTypes.HAL_JSON))
+                                .andExpect(jsonPath("$._links", hasKey("self")))
+                                .andExpect(jsonPath("$._links", hasKey(UserRestController.LIST_ALL_USERS)))
+                                .andReturn();
+
+                final User userResultObject = this.extractObject(User.class, userPostResult);
+
+
+                                this.mvc
+                                .perform(MockMvcRequestBuilders.delete("/api/users/" + userResultObject.getUserID)
+                                                .accept(MediaTypes.HAL_JSON)
+                                                .contentType(MediaType.APPLICATION_JSON))
+                                .andExpect(status().NO_CONTENT());
+                
+        }
 }

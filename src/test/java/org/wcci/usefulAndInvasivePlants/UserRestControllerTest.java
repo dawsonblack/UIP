@@ -149,7 +149,7 @@ public class UserRestControllerTest extends HateoasHelper {
                 
         }
 
-        @test
+        @Test
         public void deleteUserfailsWrongIdTest()throws Exception{
                 this.mvc
                                 .perform(MockMvcRequestBuilders.delete("/api/users/" + 111)

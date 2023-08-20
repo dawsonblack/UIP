@@ -11,6 +11,7 @@ import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -56,4 +57,27 @@ public class UserRestController {
                 linkTo(methodOn(UserRestController.class).getUsers()).withRel(LIST_ALL_USERS));
     }
 
+    @PutMapping("/api/users/{user_id}")
+    public EntityModel<User> updateUser(
+            @PathVariable final long user_id,
+            @RequestBody final User user) {
+        // Update the plant if that is the right thing to do
+        final User databaseUser = plantService.updateUser(user, user_id);
+
+        // Return the modified database plant
+        return EntityModel.of(databaseUser,
+                linkTo(methodOn(UserRestController.class).getUser(user.getUserID())).withSelfRel());
+    }
+
+    @PutMapping("/api/users/{user_id}/plants")
+    public EntityModel<User> updateUserPlants(
+            @PathVariable final long user_id,
+            @RequestBody final List<String> plants) {
+        // Update the plant if that is the right thing to do
+        final User databaseUser = plantService.updateUserPlants(plants, user_id);
+
+        // Return the modified database plant
+        return EntityModel.of(databaseUser,
+                linkTo(methodOn(UserRestController.class).getUser(databaseUser.getUserID())).withSelfRel());
+    }
 }

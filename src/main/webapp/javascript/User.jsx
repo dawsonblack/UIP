@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from "react"; 
+import React, {useState, useEffect} from "react";
 
 export default function User() {
   const [username, setUsername] = useState('');
   const [plantId, setPlantId] = useState('');
   const [savedPlants, setSavedPlants] = useState([]);
+  const [name, setName] = useState(localStorage.getItem("loggedInName") || "")
 
   const handleSavePlant = () => {
     if (username && plantId) {
@@ -32,6 +33,7 @@ export default function User() {
       <button onClick={handleSavePlant}>Save Plant</button>
 
       <h2>Saved Plants</h2>
+      <h2>Welcome, {name}!</h2>
       <ul>
         {savedPlants.map((plant) => (
           <li key={plant.id}>

@@ -7,10 +7,25 @@ import BackgroundVideo from "./BackgroundVideo";
 import "../css/style.css";
 
 import Home from "./Home.jsx";
-import Test from "./Test.jsx";
 import Search from "./Search.jsx";
 import User from "./User.jsx";
-import CreateUser from "./CreateUser";
+import Register from "./Register";
+import Login from "./Login";
+
+export async function sha256(message) {
+  // encode as UTF-8
+  const msgBuffer = new TextEncoder().encode(message);                    
+
+  // hash the message
+  const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+
+  // convert ArrayBuffer to Array
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+
+  // convert bytes to hex string                  
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  return hashHex;
+}
 
 function Layout() {
   useEffect(() => {
@@ -22,10 +37,9 @@ function Layout() {
     <>
       <nav>
         <Link to="/">Home</Link>
-        {/* <Link to="Test">Test</Link> */}
         <Link to="Search">Search</Link>
         {/* <Link to="User">User</Link> */}
-        <Link to="CreateAccount">Create Account</Link>
+        <Link to="Login">Log In</Link>
       </nav>
       <Outlet />
       <div className="App">
@@ -48,10 +62,11 @@ function Main() {
             element={<Layout />}
           >
             <Route index element={<Home />} />
-            <Route path="Test" element={<Test />} />
             <Route path="Search" element={<Search />} />
             <Route path="User" element={<User />} />
-            <Route path="CreateAccount" element={<CreateUser />} />
+            <Route path="Register" element={<Register />} />
+            <Route path="Login" element={<Login />} />
+            <Route path="User" element={<User />} />
           </Route>
         </Routes>
       </BrowserRouter>

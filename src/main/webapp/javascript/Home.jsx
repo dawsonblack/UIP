@@ -1,26 +1,18 @@
 import React, { useState, useEffect } from "react";
 
 export default function Home() {
-  const [showAbout, setShowAbout] = useState(false);
-  const [handleHooverAbout] = () => {setShowAbout(true);}
-  const [handleAbout] = () => {setShowAbout(false);} // do we even need this if state is normally false? 
 
   return (
     <div>
       <h1>Useful and Invasive Plants</h1>
-      <section
-        id="about"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        className={showAbout ? 'visible' : ''}
-      >
+      <section id="about">
         <h3>About</h3>
         <p>
           {/* UIP is an informational application that shows you common
           helpful as well as invasive species of plants in Central Ohio.
           Search for a plant, it displays images and some information and
           links to an external source.*/}
-          Welcome to "Useful and Invasive Plants," your virtual gateway to
+          Welcome to your virtual gateway to
           the mesmerizing world of plants! Immerse yourself in the
           captivating beauty of nature as you explore our extensive
           collection of plant images and detailed descriptions. Beginning
@@ -37,13 +29,14 @@ export default function Home() {
           delight you seek.
         </p>
       </section>
+      <button className="button">Let's Get Started!</button>
       <section id="creators">
         <h3 id="meet-us">Meet The Creators:</h3>
         <div id="team-members">
           <div className="team-member">
+          <h4>Abdikarim Farah</h4>
             <img src="images/abdi-headshot.jpg" className="headshot" />
             <div className="info-box">
-              <h4>Abdikarim Farah</h4>
               <a href="https://Abdikarimfarah.github.io">
                 <img className="social-link" src="images/github-mark.png" />
               </a>
@@ -56,12 +49,13 @@ export default function Home() {
               <a href="https://www.linkedin.com/in/abdikarim-farah-37a5b0274/">
                 <img className="social-link" src="images\In-Blue-128.png" />
               </a>
+              <p className ="position-description">Short description about Abdikarim.</p>
             </div>
           </div>
           <div className="team-member">
+          <h4>Dawson Black</h4>
             <img src="images/Dawson_headshot.jpg" className="headshot" />
             <div className="info-box">
-              <h4>Dawson Black</h4>
               <a href="https://dawsonblack.github.io/">
                 <img className="social-link" src="images/github-mark.png" />
               </a>
@@ -74,12 +68,13 @@ export default function Home() {
               <a href="https://www.linkedin.com/in/ddablack/">
                 <img className="social-link" src="images\In-Blue-128.png" />
               </a>
+              <p className ="position-description">Short description about Dawson.</p>
             </div>
           </div>
           <div className="team-member">
+          <h4>Robert Johnson</h4>
             <img src="images/Robert_headshot.jpg" className="headshot" />
             <div className="info-box">
-              <h4>Robert Johnson</h4>
               <a href="https://Johnsonroberte.github.io">
                 <img className="social-link" src="images/github-mark.png" />
               </a>
@@ -92,12 +87,13 @@ export default function Home() {
               <a href="https://www.linkedin.com/in/robert-johnson-2489551a4">
                 <img className="social-link" src="images\In-Blue-128.png" />
               </a>
+              <p className ="position-description">Short description about Robert.</p>
             </div>
           </div>
           <div className="team-member">
+          <h4>Siman Farah</h4>
             <img src="images/Siman_headshot.jpg" className="headshot" />
             <div className="info-box">
-              <h4>Siman Farah</h4>
               <a href="https://Siman-1.github.io">
                 <img className="social-link" src="images/github-mark.png" />
               </a>
@@ -110,6 +106,7 @@ export default function Home() {
               <a href="https://www.linkedin.com/in/siman-farah-101682282/">
                 <img className="social-link" src="images\In-Blue-128.png" />
               </a>
+              <p className ="position-description">Short description about Siman.</p>
             </div>
           </div>
         </div>

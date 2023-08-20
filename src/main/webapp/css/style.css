@@ -35,22 +35,16 @@ section {
   align-items: center;
   flex-direction: column;
   margin-bottom: 50px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s;
-}
-
-section.visible {
   opacity: 1;
-  visibility: visible;
 }
 
-section:hover #about p {
-  opacity: 1;
-  cursor: pointer;
-  transition: opacity 0.3s, visibility 0.3s; 
-
+#about:hover h3 {
+  visibility:visible;
 }
+.position-description{
+  justify-content: center;
+}
+
 #about p {
   box-sizing: border-box;
   background-color: darkgray;
@@ -58,17 +52,35 @@ section:hover #about p {
   left: 0;
   right: 0;
   padding: 20px;
+  visibility:hidden;
 }
 
+#about:hover p{
+  visibility: visible; 
+}
+
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 15px 30px; 
+  font-size: 18px; 
+  font-weight: bold;
+}
+
+
 #meet-us {
-  background-color: black;
+  background-color: whitesmoke;
+  color:black; 
+  background-blend-mode:color;
   text-align: center;
   padding: 5px 0;
   width: min(1500px, 100%);
 }
 
 #team-members {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: center;
   flex-wrap: wrap;
   padding: 30px 0;
@@ -82,6 +94,7 @@ section:hover #about p {
   align-items: center;
   margin: 15px;
   transition: transform 0.3s;
+  background-color: cadetblue;
 }
 
 .team-member:hover {
@@ -89,21 +102,25 @@ section:hover #about p {
 }
 
 .headshot {
-  width: 120px;
+  width: 120px; /* work on sizes */
   height: 150px;
   margin-bottom: 10px;
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: darkgray;
 }
 
 .info-box {
+  bottom: -100%;
+  left: 50%;
   text-align: center;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, bottom 0.3s;;
 }
 
 .team-member:hover .info-box {
   opacity: 1;
+  bottom: 0; /*Slide on hover */
 }
 
 .info-box h4 {

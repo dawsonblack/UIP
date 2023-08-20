@@ -10,6 +10,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.annotations.TimeZoneStorage;
 import org.junit.jupiter.api.Test;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
@@ -146,5 +147,14 @@ public class UserRestControllerTest extends HateoasHelper {
                                                 .contentType(MediaType.APPLICATION_JSON))
                                 .andExpect(status().isOk());
                 
+        }
+
+        @test
+        public void deleteUserfailsWrongIdTest()throws Exception{
+                this.mvc
+                                .perform(MockMvcRequestBuilders.delete("/api/users/" + 111)
+                                                .accept(MediaTypes.HAL_JSON)
+                                                .contentType(MediaType.APPLICATION_JSON))
+                                .andExpect(status().isNotFound());
         }
 }

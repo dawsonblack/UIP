@@ -123,7 +123,7 @@ public class UserRestControllerTest extends HateoasHelper {
         }
 
         @Test
-        public void deleteUserSuccessTest(){
+        public void deleteUserSuccessTest()throws Exception{
                 User user = new User((long) 102, "email@email", "Michael", "MScott", "paper");
 
                 final MvcResult userPostResult = this.mvc
@@ -141,10 +141,10 @@ public class UserRestControllerTest extends HateoasHelper {
 
 
                                 this.mvc
-                                .perform(MockMvcRequestBuilders.delete("/api/users/" + userResultObject.getUserID)
+                                .perform(MockMvcRequestBuilders.delete("/api/users/" + userResultObject.getUserID())
                                                 .accept(MediaTypes.HAL_JSON)
                                                 .contentType(MediaType.APPLICATION_JSON))
-                                .andExpect(status().NO_CONTENT());
+                                .andExpect(status().isOk());
                 
         }
 }

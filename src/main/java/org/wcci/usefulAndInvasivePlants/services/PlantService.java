@@ -71,12 +71,13 @@ public class PlantService {
     }
 
     public void deleteUserByID(final long user_id) {
-        try {
-            if (!userRepo.findById(user_id).isPresent())
+            if (!userRepo.findById(user_id).isPresent()) {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found " + user_id);
+            }
+        try {
             userRepo.deleteById(user_id);
         } catch (Exception e) {
-            throw new UipException(HttpStatus.BAD_REQUEST.value(), e.getMessage());
+            throw new UipException(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getMessage());
         }
 
     }

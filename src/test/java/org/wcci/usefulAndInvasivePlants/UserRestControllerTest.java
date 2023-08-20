@@ -1,7 +1,7 @@
 package org.wcci.usefulAndInvasivePlants;
 
 import static org.hamcrest.Matchers.hasKey;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -10,7 +10,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.annotations.TimeZoneStorage;
 import org.junit.jupiter.api.Test;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
@@ -24,9 +23,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.transaction.annotation.Transactional;
-
 import org.wcci.usefulAndInvasivePlants.entities.User;
 import org.wcci.usefulAndInvasivePlants.restControllers.UserRestController;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 //import com.jayway.jsonpath.JsonPath;
 
@@ -156,5 +155,14 @@ public class UserRestControllerTest extends HateoasHelper {
                                                 .accept(MediaTypes.HAL_JSON)
                                                 .contentType(MediaType.APPLICATION_JSON))
                                 .andExpect(status().isNotFound());
+        }
+
+        @Test
+        public void deleteUserFailsBadRequestTest()throws Exception{
+                this.mvc
+                                .perform(MockMvcRequestBuilders.delete("/api/users/shfkdsj")
+                                                .accept(MediaTypes.HAL_JSON)
+                                                .contentType(MediaType.APPLICATION_JSON))
+                                .andExpect(status().isBadRequest());
         }
 }

@@ -169,7 +169,7 @@ export default function Register() {
           Create Account
         </button>
       </div>
-      <p>Already have an account? <Link to="/Login">Sign in</Link></p>
+      <p className="link">Already have an account? <Link to="/Login">Sign in</Link></p>
     </div>
   );
 }

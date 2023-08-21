@@ -29,20 +29,27 @@ export async function sha256(message) {
 }
 
 function Layout() {
-  const { name } = useAuth();
+  const { user } = useAuth();
 
   useEffect(() => {
     let video = document.querySelector("video");
     video.playbackRate = 0.5;
   }, []);
 
+  const isUserLoggedIn = Object.keys(user).length !== 0;
+
   return (
     <>
       <nav>
         <Link to="/">Home</Link>
         <Link to="Search">Search</Link>
-        {name == "" && <Link to="Login">Log In</Link>}
-        {name !== "" && <Link to="User">My Profile</Link>}
+        {isUserLoggedIn ? (
+          <Link to="User">My Profile</Link>
+        ) : (
+          <Link to="Login">Log In</Link>
+        )}
+        {console.log("user is " + user)}
+        {console.log("user name is " + user.firstName)}
       </nav>
       <Outlet />
       <div className="App">

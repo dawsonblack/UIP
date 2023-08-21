@@ -9,12 +9,15 @@ NOTES FROM DAWSON:
 -make the search page look nice on mobile
 -why are username and password stored in the database in camelCase?
 -turn off autofill in inputs
--get rid of invalid email/too short password messages whenever there is nothing in the textbox
 -check whether email or username is being used already
 -there's a problem with pressing enter
 -add a message for successfully creating an account
 -add a captcha to registration
 -add a confirm email feature
+-add search by description
+-sort search results alphabetically
+-click here to log in/register is not readable depending on the background video
+-links in the nav bar are not readable unless hovered over
 
 NOTES FROM ABDI:
 

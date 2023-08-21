@@ -1,7 +1,7 @@
 nav {
   display: flex;
   justify-content: space-around;
-  background-color: cadetblue;
+  background-color: #35495e;
   margin-bottom: 2%;
   padding: 0.75em;
   width: 100%;
@@ -14,7 +14,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #ff8c00;
+  color: #ff7e67;
 }
 
 body {
@@ -47,25 +47,11 @@ section {
 
 #about p {
   box-sizing: border-box;
-  background-color: darkgray;
+  background-color: #7dd87d;
   max-width: min(700px, 90%);
   left: 0;
   right: 0;
   padding: 20px;
-  visibility:hidden;
-}
-
-#about:hover p{
-  visibility: visible; 
-}
-
-
-button {
-  display: block;
-  margin: 0 auto;
-  padding: 15px 30px; 
-  font-size: 18px; 
-  font-weight: bold;
 }
 
 
@@ -76,6 +62,7 @@ button {
   text-align: center;
   padding: 5px 0;
   width: min(1500px, 100%);
+  border-radius: 25px;
 }
 
 #team-members {
@@ -85,7 +72,8 @@ button {
   flex-wrap: wrap;
   padding: 30px 0;
   width: min(700px, 90%);
-  background-color: darkgray;
+  background-color: #7dd87d;
+  border-radius: 25px;
 }
 
 .team-member {
@@ -219,9 +207,11 @@ button {
   padding: 10px;
   margin-top: 10px;
   border-radius: 5px;
-  background-color: rgba(150, 150, 150, 0.8);
+  background-color: #7dd87d;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, border-color 0.3s ease;
+  color: black;
+  border-radius: 25px;
 }
 
 .plant-container:hover {

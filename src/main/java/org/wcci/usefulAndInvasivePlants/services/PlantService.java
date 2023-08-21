@@ -12,8 +12,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import org.wcci.usefulAndInvasivePlants.entities.Plant;
+import org.wcci.usefulAndInvasivePlants.entities.Submission;
 import org.wcci.usefulAndInvasivePlants.entities.User;
 import org.wcci.usefulAndInvasivePlants.repositories.PlantRepo;
+import org.wcci.usefulAndInvasivePlants.repositories.SubmissionRepo;
 import org.wcci.usefulAndInvasivePlants.repositories.UserRepo;
 
 @Service
@@ -25,10 +27,13 @@ public class PlantService {
     final private static Logger logger = LoggerFactory.getLogger(PlantService.class);
     final private PlantRepo plantRepo;
     final private UserRepo userRepo;
+    final private SubmissionRepo submissionRepo;
 
-    public PlantService(@Autowired final PlantRepo plantRepo, @Autowired final UserRepo userRepo) {
+    public PlantService(@Autowired final PlantRepo plantRepo, @Autowired final UserRepo userRepo,
+            @Autowired final SubmissionRepo submissionRepo) {
         this.plantRepo = plantRepo;
         this.userRepo = userRepo;
+        this.submissionRepo = submissionRepo;
     }
 
     public Stream<Plant> plantStream() {
@@ -44,6 +49,14 @@ public class PlantService {
         // Standard conversion from iterator to stream.
         return StreamSupport.stream(users.spliterator(), false);
     }
+
+    public Stream<Submission> submissionStream() {
+        final Iterable<Submission> submissions = this.submissionRepo.findAll();
+
+        // Standard conversion from iterator to stream.
+        return StreamSupport.stream(submissions.spliterator(), false);
+    }
+
 
     public Plant findPlant(final long plant_id) {
         final Optional<Plant> possiblyAPlant = plantRepo.findById(plant_id);

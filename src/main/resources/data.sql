@@ -1993,7 +1993,7 @@ VALUES
         -65
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2024,7 +2024,7 @@ VALUES
         -66
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2055,7 +2055,7 @@ VALUES
         -67
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2086,7 +2086,7 @@ VALUES
         -68
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2117,7 +2117,7 @@ VALUES
         -69
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2148,7 +2148,7 @@ VALUES
         -70
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2179,7 +2179,7 @@ VALUES
         -71
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2210,7 +2210,7 @@ VALUES
         -72
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2227,7 +2227,7 @@ VALUES
     )
 VALUES
     (
-        'fringed Loosestrife',
+        'Fringed Loosestrife',
         'Lysimachia Ciliata',
         'Lysimachia ciliata, known as fringed loosestrife, is a tall herbaceous perennial with simple leaves and smooth green stems. Native to North America, it produces star-shaped yellow flowers in midsummer. Unique among Lysimachia species, it offers oil instead of nectar to pollinators, attracting the specialist oil bee Macropis nuda. This relationship is vital for the bees survival. It is also cultivated as an ornamental plant, but its growth can be managed by removing new suckers. Notable cultivars include: [cutoff]',
         false,
@@ -2241,7 +2241,7 @@ VALUES
         -73
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2272,7 +2272,7 @@ VALUES
         -74
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2303,7 +2303,7 @@ VALUES
         -75
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2334,7 +2334,7 @@ VALUES
         -76
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2365,7 +2365,7 @@ VALUES
         -77
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2396,7 +2396,7 @@ VALUES
         -78
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2427,7 +2427,7 @@ VALUES
         -79
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2458,7 +2458,7 @@ VALUES
         -80
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2489,7 +2489,7 @@ VALUES
         -81
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2520,7 +2520,7 @@ VALUES
         -82
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2551,7 +2551,7 @@ VALUES
         -83
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2582,7 +2582,7 @@ VALUES
         -84
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2613,7 +2613,7 @@ VALUES
         -85
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2644,7 +2644,7 @@ VALUES
         -86
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2675,7 +2675,7 @@ VALUES
         -87
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2706,7 +2706,7 @@ VALUES
         -88
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2729,7 +2729,7 @@ VALUES
         false,
         true,
         'Green to Orange-Red',
-        'fruitImages/Euonymus_americanus_fruit.jpgg',
+        'fruitImages/Euonymus_americanus_fruit.jpg',
         'leafImages/Euonymus_americanus_.jpg',
         'By Wasrts - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=95447111',
         'By Fritzflohrreynolds - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=31358231',
@@ -2737,7 +2737,7 @@ VALUES
         -89
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2768,7 +2768,7 @@ VALUES
         -90
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2799,7 +2799,7 @@ VALUES
         -91
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2830,7 +2830,7 @@ VALUES
         -92
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2861,7 +2861,7 @@ VALUES
         -93
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2892,7 +2892,7 @@ VALUES
         -94
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,

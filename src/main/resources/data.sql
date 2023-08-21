@@ -1675,9 +1675,9 @@ VALUES
         true,
         false,
         'Light Green',
-        '',
+        'fruitImages/water-lettuce.jpg',
         'leafImages/water-lettuce.jpg',
-        '',
+        'Photo by Allison Fox, 1998',
         'Troy Evans, Great Smoky Mountains National Park, Bugwood.org',
         'https://en.wikipedia.org/wiki/Pistia',
         -55
@@ -1706,9 +1706,9 @@ VALUES
         true,
         false,
         'Green to Brown',
-        '',
+        'fruitImages/curly-leaf-pondweed.jpg',
         'leafImages/curly-leaf-pondweed.jpg',
-        '',
+        'CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=183504',
         'Chris Evans, University of Illinois, Bugwood.org',
         'https://en.wikipedia.org/wiki/Potamogeton_crispus',
         -56
@@ -1737,10 +1737,10 @@ VALUES
         true,
         false,
         'Pink to Purple',
-        '',
         'leafImages/Pueraria_montana_var._lobata.jpg',
-        '',
+        'fruitImages/Pueraria_montana_var._lobata.jpg',
         'By Forest & Kim Starr, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=6120749',
+        ' Leaf and vine CameliaTWU CC BY-NC-ND 4.0 ',
         'https://en.wikipedia.org/wiki/Pueraria_montana_var._lobata',
         -57
     );
@@ -1892,10 +1892,10 @@ VALUES
         true,
         false,
         'Green',
-        '',
         'leafImages/Salix_fragilis_001.jpg',
-        '',
+        'fruitImages/Salix_fragilis_001.jpg',
         'By Willow - Own work, CC BY 2.5, https://commons.wikimedia.org/w/index.php?curid=2653825',
+        'By Willow - Own work, CC BY 2.5, https://commons.wikimedia.org/w/index.php?curid=2653834',
         'https://en.wikipedia.org/wiki/Salix_%C3%97_fragilis',
         -62
     );
@@ -1923,9 +1923,9 @@ VALUES
         true,
         false,
         'Bright Green to Brown',
-        '',
+        'fruitImages/salvinia minima.jpg',
         'leafImages/salvinia minima.jpg',
-        '',
+        'By Forest & Kim Starr, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=6116584',
         'Barry Rice, sarracenia.com, Bugwood.org',
         'https://en.wikipedia.org/wiki/Salvinia_minima#References',
         -63

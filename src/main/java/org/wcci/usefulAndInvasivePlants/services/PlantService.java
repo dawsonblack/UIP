@@ -57,7 +57,6 @@ public class PlantService {
         return StreamSupport.stream(submissions.spliterator(), false);
     }
 
-
     public Plant findPlant(final long plant_id) {
         final Optional<Plant> possiblyAPlant = plantRepo.findById(plant_id);
         if (!possiblyAPlant.isPresent()) {
@@ -154,4 +153,22 @@ public class PlantService {
         return databaseUser;
     }
 
+    public Submission findSubmission(final Long plant_id) {
+        final Optional<Submission> dataSubmission = submissionRepo.findById(plant_id);
+        if (!dataSubmission.isPresent()) {
+            logger.info("Submission not found: " + plant_id);
+        }
+        return dataSubmission.get();
+    }
+
+    public Iterable<Submission> getSubmissions() {
+
+        return submissionRepo.findAll();
+    }
+
+    public Submission addNewSubmission(final Submission submission) {
+        return submissionRepo.save(submission);
+    }
+
+    
 }

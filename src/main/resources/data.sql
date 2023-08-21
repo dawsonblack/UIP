@@ -1954,9 +1954,9 @@ VALUES
         true,
         false,
         'Green to Gold to Brown',
-        '',
+        'fruitImages/Salvinia_molesta.jpg',
         'leafImages/Salvinia_molesta.jpg',
-        '',
+        'commons- http://commons.wikimedia.org/wiki/File:Salvina_molesta_(Habitus)_1.jgp#mediaviewer/File:Salvinia_molesta_(Habitus)_1.jpg',
         'By No machine-readable author provided. Marshman~commonswiki assumed (based on copyright claims). - No machine-readable source provided. Own work assumed (based on copyright claims)., CC BY 2.5, https://commons.wikimedia.org/w/index.php?curid=332981',
         'https://en.wikipedia.org/wiki/Salvinia_molesta',
         -64
@@ -2016,10 +2016,10 @@ VALUES
         true,
         false,
         'White and Green',
-        '',
         'leafImages/Stratiotes_aloides.jpg',
-        '',
+        'fruitImages/Stratiotes_aloides.jpg',
         'By Jörg Hempel, CC BY-SA 3.0 de, https://commons.wikimedia.org/w/index.php?curid=19179398',
+        'https://www.rhs.org.uk/plants/17806/stratiotes-aloides-water-soldier-crab-s-claw/details',
         'https://en.wikipedia.org/wiki/Stratiotes_aloides',
         -66
     );
@@ -2109,9 +2109,9 @@ VALUES
         true,
         false,
         'Green and Brown',
-        '',
+        'fruitImages/Typha_×_glauca.jpg',
         'leafImages/Typha_×_glauca.jpg',
-        '',
+        'https://sewisc.org/invasives/invasive-plants/597-cattail-hybrid',
         'By Bobby McCabe - https://www.inaturalist.org/photos/9844478, CC BY 4.0, https://commons.wikimedia.org/w/index.php?curid=115155337',
         'https://en.wikipedia.org/wiki/Typha_%C3%97_glauca',
         -69
@@ -2234,9 +2234,9 @@ VALUES
         true,
         'Yellow',
         'fruitImages/Lysimachia_ciliata_Prague_2013_2.jpg',
-        '',
+        'leafImages/Lysimachia_ciliata_Prague_2013_2.jpg',
         'By Karelj - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=27668526',
-        '',
+        ' Lysimachia ciliata Photo by Lindsey CC BY-NC-ND 2.0 ',
         'https://en.wikipedia.org/wiki/Lysimachia_ciliata',
         -73
     );
@@ -2543,9 +2543,9 @@ VALUES
         false,
         true,
         'Green to Brown',
-        '',
+        'fruitImages/Chasmanthium_latifolium.jpg',
         'leafImages/Chasmanthium_latifolium.jpg',
-        '',
+        'By Bcbaker2390 - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=7897314',
         'By Eric in SF - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=15705972',
         'https://en.wikipedia.org/wiki/Chasmanthium_latifolium',
         -83
@@ -2574,10 +2574,10 @@ VALUES
         false,
         true,
         'Green',
-        '',
         'leafImages/Elymus_villosus.jpg',
-        '',
+        'fruitImages/Elymus_villosus.jpg',
         'Public Domain, https://commons.wikimedia.org/w/index.php?curid=807654',
+        'http://illinoiswildflowers.info/grasses/plants/silky_rye.htm',
         'https://en.wikipedia.org/wiki/Elymus_villosus',
         -84
     );
@@ -2605,10 +2605,10 @@ VALUES
         false,
         true,
         'Green to Silver Blue',
-        '',
         'leafImages/-Elymus_virginicus_.jpg',
-        '',
+        'fruitImages/-Elymus_virginicus_.jpg',
         'By Matt Lavin from Bozeman, Montana, USA - Elymus virginicus, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=44493189',
+        'Daderot CC0 1.0',
         'https://en.wikipedia.org/wiki/Elymus_virginicus',
         -85
     );
@@ -2884,9 +2884,9 @@ VALUES
         false,
         true,
         'Yellow to Brown',
-        '',
+        'fruitImages/Hypericum_hypericoides_Arkansas.jpg',
         'leafImages/Hypericum_hypericoides_Arkansas.jpg',
-        '',
+        'By Bob Peterson from North Palm Beach, Florida, Planet Earth! - St. Andrew&#039;s-cross (Hypericum hypericoides)Uploaded by Jacopo Werther, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=24649873',
         'By Eric Hunt - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=80374873',
         'https://en.wikipedia.org/wiki/Hypericum_hypericoides',
         -94

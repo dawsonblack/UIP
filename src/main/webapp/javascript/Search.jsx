@@ -120,6 +120,7 @@ export default function TestingFetches() {
             Search!
           </button>
         </div>
+
         <label htmlFor="search-by">Search By:</label>
         <div className="search-dropdown">
           <select
@@ -128,10 +129,31 @@ export default function TestingFetches() {
             onKeyDown={handleKeyPress}
           >
             <option value="commonName">Plant Name</option>
-            <option value="isNative">Is the Plant Native?</option>
             <option value="color">Plant Color</option>
           </select>
           <div className="dropdown-arrow">&#9662;</div>
+        </div>
+        <div>
+          <label for="native">Native</label>
+          <input
+            type="checkbox"
+            id="native"
+            value={searchKeywords}
+            onChange={(e) => {
+              setSearchKeywords("true");
+              setSearchBy("isNative");
+            }}
+          />
+          <label for="native">Invasive</label>
+          <input
+            type="checkbox"
+            id="invasive"
+            value={searchKeywords}
+            onChange={(e) => {
+              setSearchKeywords("false");
+              setSearchBy("isNative");
+            }}
+          />
         </div>
 
         <div id="search-results">

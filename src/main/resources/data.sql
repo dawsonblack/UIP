@@ -1520,10 +1520,10 @@ VALUES
         true,
         false,
         'White to Yellow',
-        '',
         'leafImages/Ottelia_alismoides_.jpg',
-        '',
+        'fruitImages/Ottelia_alismoides_.jpg',
         'By Fan Wen - Own work http://www.flowersview.com/Ottelia-alismoides/IMG_8623.jpg.html, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=44116644',
+        'Ottelia alismoides W IMG 0775" by J.M.Garg - Own work. Licensed under Creative Commons Attribution 3.0 via Wikimedia Commons - http://commons.wikimedia.org/wiki/File:Ottelia_alismoides_W_IMG_0775.jpg#mediaviewer/File:Ottelia_alismoides_W_IMG_0775.jpg',
         'https://en.wikipedia.org/wiki/Nymphoides_peltata',
         -50
     );

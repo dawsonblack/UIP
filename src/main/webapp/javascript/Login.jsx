@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { sha256 } from "./Main";
+import { useAuth } from "./AuthContext";
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
-  const [invalidLogin, setInvalidLogin] = useState();
+  const [invalidLogin, setInvalidLogin] = useState(null);
+  const { setName } = useAuth();
 
   useEffect(() => {
     setIsButtonDisabled(username === "" || password === "");
@@ -41,18 +43,16 @@ export default function Login() {
     fetch(`/api/users`, { method: "GET", cache: "default" })
     .then((response) => response.json())
     .then((responseBody) => {
+        setInvalidLogin(true);
         for (let i = 0; i < responseBody["_embedded"]["userList"].length; i++) {
             if (username == responseBody["_embedded"]["userList"][i].userName) {
                 if (hashedPassword == responseBody["_embedded"]["userList"][i].passWord) {
-                    localStorage.setItem("loggedInName", responseBody["_embedded"]["userList"][i].firstName);
+                    setName(responseBody["_embedded"]["userList"][i].firstName);
                     console.log(password + " hashed is " + hashedPassword + ", which is a match with the stored password");
                     setInvalidLogin(false);
                 }
                 break;
             }
-        }
-        if (invalidLogin == null) {
-            setInvalidLogin(true);
         }
     });
 

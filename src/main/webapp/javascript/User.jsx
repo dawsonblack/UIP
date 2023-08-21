@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from "react";
 import { Navigate } from "react-router-dom";
+import { useAuth } from './AuthContext';
 
 export default function User() {
   const [username, setUsername] = useState('');
   const [plantId, setPlantId] = useState('');
   const [savedPlants, setSavedPlants] = useState([]);
-  const [name, setName] = useState(localStorage.getItem("loggedInName") || "");
+  const { name, setName } = useAuth();
 
   const handleSavePlant = () => {
     if (username && plantId) {
@@ -17,11 +18,11 @@ export default function User() {
 
   function logOut() {
     setName("");
-    localStorage.setItem("loggedInName", "");
+    localStorage.setItem("loggedInName", "")
   }
 
   if (name == "") {
-    return <Navigate to="/" />;
+    return <Navigate to="/Login" />;
   }
 
   return (

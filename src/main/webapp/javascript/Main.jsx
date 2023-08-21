@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, Outlet, Link } from "react-router-dom";
+import { AuthProvider, useAuth } from './AuthContext';
 import BackgroundVideo from "./BackgroundVideo";
 
 import "../css/style.css";
@@ -28,7 +29,7 @@ export async function sha256(message) {
 }
 
 function Layout() {
-  const [name, setName] = useState(localStorage.getItem("loggedInName") || "");
+  const { name } = useAuth();
 
   useEffect(() => {
     let video = document.querySelector("video");
@@ -40,8 +41,8 @@ function Layout() {
       <nav>
         <Link to="/">Home</Link>
         <Link to="Search">Search</Link>
-        {localStorage.getItem("loggedInName") == "" && <Link to="Login">Log In</Link>}
-        {localStorage.getItem("loggedInName") !== "" && <Link to="User">My Profile</Link>}
+        {name == "" && <Link to="Login">Log In</Link>}
+        {name !== "" && <Link to="User">My Profile</Link>}
       </nav>
       <Outlet />
       <div className="App">
@@ -58,18 +59,20 @@ function Main() {
   return (
     <React.StrictMode>
       <BrowserRouter>
-        <Routes>
-          <Route
-            path="/app4?/src?/main?/resources?/static?/index.html?"
-            element={<Layout />}
-          >
-            <Route index element={<Home />} />
-            <Route path="Search" element={<Search />} />
-            <Route path="User" element={<User />} />
-            <Route path="Register" element={<Register />} />
-            <Route path="Login" element={<Login />} />
-          </Route>
-        </Routes>
+        <AuthProvider> {/* Wrap your routes with AuthProvider */}
+          <Routes>
+            <Route
+              path="/app4?/src?/main?/resources?/static?/index.html?"
+              element={<Layout />}
+            >
+              <Route index element={<Home />} />
+              <Route path="Search" element={<Search />} />
+              <Route path="User" element={<User />} />
+              <Route path="Register" element={<Register />} />
+              <Route path="Login" element={<Login />} />
+            </Route>
+          </Routes>
+          </AuthProvider>
       </BrowserRouter>
     </React.StrictMode>
   );

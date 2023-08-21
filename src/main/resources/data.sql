@@ -1954,9 +1954,9 @@ VALUES
         true,
         false,
         'Green to Gold to Brown',
-        '',
+        'fruitImages/Salvinia_molesta.jpg',
         'leafImages/Salvinia_molesta.jpg',
-        '',
+        'commons- http://commons.wikimedia.org/wiki/File:Salvina_molesta_(Habitus)_1.jgp#mediaviewer/File:Salvinia_molesta_(Habitus)_1.jpg',
         'By No machine-readable author provided. Marshman~commonswiki assumed (based on copyright claims). - No machine-readable source provided. Own work assumed (based on copyright claims)., CC BY 2.5, https://commons.wikimedia.org/w/index.php?curid=332981',
         'https://en.wikipedia.org/wiki/Salvinia_molesta',
         -64
@@ -1993,7 +1993,7 @@ VALUES
         -65
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2016,15 +2016,15 @@ VALUES
         true,
         false,
         'White and Green',
-        '',
         'leafImages/Stratiotes_aloides.jpg',
-        '',
+        'fruitImages/Stratiotes_aloides.jpg',
         'By Jörg Hempel, CC BY-SA 3.0 de, https://commons.wikimedia.org/w/index.php?curid=19179398',
+        'https://www.rhs.org.uk/plants/17806/stratiotes-aloides-water-soldier-crab-s-claw/details',
         'https://en.wikipedia.org/wiki/Stratiotes_aloides',
         -66
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2055,7 +2055,7 @@ VALUES
         -67
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2086,7 +2086,7 @@ VALUES
         -68
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2109,15 +2109,15 @@ VALUES
         true,
         false,
         'Green and Brown',
-        '',
+        'fruitImages/Typha_×_glauca.jpg',
         'leafImages/Typha_×_glauca.jpg',
-        '',
+        'https://sewisc.org/invasives/invasive-plants/597-cattail-hybrid',
         'By Bobby McCabe - https://www.inaturalist.org/photos/9844478, CC BY 4.0, https://commons.wikimedia.org/w/index.php?curid=115155337',
         'https://en.wikipedia.org/wiki/Typha_%C3%97_glauca',
         -69
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2148,7 +2148,7 @@ VALUES
         -70
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2179,7 +2179,7 @@ VALUES
         -71
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2210,7 +2210,7 @@ VALUES
         -72
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2227,21 +2227,21 @@ VALUES
     )
 VALUES
     (
-        'fringed Loosestrife',
+        'Fringed Loosestrife',
         'Lysimachia Ciliata',
         'Lysimachia ciliata, known as fringed loosestrife, is a tall herbaceous perennial with simple leaves and smooth green stems. Native to North America, it produces star-shaped yellow flowers in midsummer. Unique among Lysimachia species, it offers oil instead of nectar to pollinators, attracting the specialist oil bee Macropis nuda. This relationship is vital for the bees survival. It is also cultivated as an ornamental plant, but its growth can be managed by removing new suckers. Notable cultivars include: [cutoff]',
         false,
         true,
         'Yellow',
         'fruitImages/Lysimachia_ciliata_Prague_2013_2.jpg',
-        '',
+        'leafImages/Lysimachia_ciliata_Prague_2013_2.jpg',
         'By Karelj - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=27668526',
-        '',
+        ' Lysimachia ciliata Photo by Lindsey CC BY-NC-ND 2.0 ',
         'https://en.wikipedia.org/wiki/Lysimachia_ciliata',
         -73
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2272,7 +2272,7 @@ VALUES
         -74
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2303,7 +2303,7 @@ VALUES
         -75
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2334,7 +2334,7 @@ VALUES
         -76
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2365,7 +2365,7 @@ VALUES
         -77
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2396,7 +2396,7 @@ VALUES
         -78
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2427,7 +2427,7 @@ VALUES
         -79
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2458,7 +2458,7 @@ VALUES
         -80
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2489,7 +2489,7 @@ VALUES
         -81
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2520,7 +2520,7 @@ VALUES
         -82
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2543,15 +2543,15 @@ VALUES
         false,
         true,
         'Green to Brown',
-        '',
+        'fruitImages/Chasmanthium_latifolium.jpg',
         'leafImages/Chasmanthium_latifolium.jpg',
-        '',
+        'By Bcbaker2390 - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=7897314',
         'By Eric in SF - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=15705972',
         'https://en.wikipedia.org/wiki/Chasmanthium_latifolium',
         -83
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2574,15 +2574,15 @@ VALUES
         false,
         true,
         'Green',
-        '',
         'leafImages/Elymus_villosus.jpg',
-        '',
+        'fruitImages/Elymus_villosus.jpg',
         'Public Domain, https://commons.wikimedia.org/w/index.php?curid=807654',
+        'http://illinoiswildflowers.info/grasses/plants/silky_rye.htm',
         'https://en.wikipedia.org/wiki/Elymus_villosus',
         -84
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2605,15 +2605,15 @@ VALUES
         false,
         true,
         'Green to Silver Blue',
-        '',
         'leafImages/-Elymus_virginicus_.jpg',
-        '',
+        'fruitImages/-Elymus_virginicus_.jpg',
         'By Matt Lavin from Bozeman, Montana, USA - Elymus virginicus, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=44493189',
+        'Daderot CC0 1.0',
         'https://en.wikipedia.org/wiki/Elymus_virginicus',
         -85
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2644,7 +2644,7 @@ VALUES
         -86
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2675,7 +2675,7 @@ VALUES
         -87
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2706,7 +2706,7 @@ VALUES
         -88
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2729,7 +2729,7 @@ VALUES
         false,
         true,
         'Green to Orange-Red',
-        'fruitImages/Euonymus_americanus_fruit.jpgg',
+        'fruitImages/Euonymus_americanus_fruit.jpg',
         'leafImages/Euonymus_americanus_.jpg',
         'By Wasrts - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=95447111',
         'By Fritzflohrreynolds - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=31358231',
@@ -2737,7 +2737,7 @@ VALUES
         -89
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2768,7 +2768,7 @@ VALUES
         -90
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2799,7 +2799,7 @@ VALUES
         -91
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2830,7 +2830,7 @@ VALUES
         -92
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2861,7 +2861,7 @@ VALUES
         -93
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,
@@ -2884,15 +2884,15 @@ VALUES
         false,
         true,
         'Yellow to Brown',
-        '',
+        'fruitImages/Hypericum_hypericoides_Arkansas.jpg',
         'leafImages/Hypericum_hypericoides_Arkansas.jpg',
-        '',
+        'By Bob Peterson from North Palm Beach, Florida, Planet Earth! - St. Andrew&#039;s-cross (Hypericum hypericoides)Uploaded by Jacopo Werther, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=24649873',
         'By Eric Hunt - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=80374873',
         'https://en.wikipedia.org/wiki/Hypericum_hypericoides',
         -94
     );
 
-    INSERT INTO
+INSERT INTO
     plant (
         common_Name,
         scientific_Name,

@@ -104,6 +104,8 @@ export default function TestingFetches() {
         });
     }
 
+    useEffect(() => getPlants(), [searchKeywords]);
+
     console.log("search results: " + searchResults);
     return (
       <div id="search-container">

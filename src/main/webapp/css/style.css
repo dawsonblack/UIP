@@ -113,11 +113,23 @@ section {
 }
 
 /*Error.jsx*/
-.error-container {
+.error-page {
+  display: flex;
+  justify-content: center;
   font-family: Arial, sans-serif;
   text-align: center;
+}
+
+.error-container {
   padding: 50px;
   background-color: #f5f5f5;
+  max-width: 800px;
+}
+
+#title {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .error-container h1 {
@@ -125,14 +137,22 @@ section {
   color: #e74c3c;
 }
 
+.error-container img {
+  max-width: 100px;
+  height: auto;
+}
+
 .error-container p {
   font-size: 18px;
   color: #333;
 }
 
-.error-container img {
-  max-width: 100%;
-  height: auto;
+.error-container a {
+  color: rgb(0, 153, 255);
+  text-decoration: none;
+}
+.error-container a:hover {
+  text-decoration: underline;
 }
 
 /*Search.jsx*/

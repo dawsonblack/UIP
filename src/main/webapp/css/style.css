@@ -210,8 +210,8 @@ section {
 .plant-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  border: 1px solid #ccc;
+  justify-content: space-evenly;
+  border: 4px solid #35495e;
   padding: 10px;
   margin-top: 10px;
   border-radius: 5px;
@@ -220,10 +220,10 @@ section {
   transition: background-color 0.3s ease, border-color 0.3s ease;
   color: black;
   border-radius: 25px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .plant-container:hover {
-  border-color: black;
   background-color: rgba(100, 100, 100, 0.8);
 }
 
@@ -250,13 +250,13 @@ section {
 }
 
 .plant-container img {
-  max-width: 200px;
-  max-height: 200px;
-  padding-left: 20px;
-  padding-right: 20px;
-
-  padding: 10px;
+  max-width: 20rem;
+  max-height: 20rem;
+  margin-left: 10px;
+  margin-right: 10px;
   transition: width 0.3s ease, height 0.3s ease;
+  border: 4px solid #35495e;
+  border-radius: 25px;
 }
 
 .plant-container img:hover {

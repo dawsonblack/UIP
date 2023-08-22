@@ -125,10 +125,17 @@ export default function Submissions() {
     fetch("/api/submissions", { method: "GET", cache: "default" })
       .then((response) => response.json())
       .then((responseBody) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        console.log("Got Plants successfully!");
+        console.log(commonName,
+          scientificName,
+          description,
+          isInvasive,
+          isNative,
+          color,
+          imageFruitURL,
+          imageLeafURL,
+          imageFruitSource,
+          imageLeafSource,
+          wikiLink)
       });
     setCommonName("");
     setScientificName("");

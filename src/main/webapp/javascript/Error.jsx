@@ -7,8 +7,9 @@ export default function Error() {
             <div className="error-container">
                 <div id="title">
                     <h1>Error 404 - Page Not Found</h1>
-                    <img src="images/404_plant.PNG" alt="404 Image" />
+                    <img src="images/crying_plant.PNG" alt=""/>
                 </div>
+
                 <p>Oops! It seems like the page you're looking for is as elusive as a rare blossom.</p>
                 <p>But don't worry! You can continue your botanical exploration by using our powerful search bar to discover other captivating plants.</p>
                 <p>

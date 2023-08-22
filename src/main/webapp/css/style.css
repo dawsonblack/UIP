@@ -1,3 +1,4 @@
+/*Main.jsx and Home.jsx*/
 nav {
   display: flex;
   justify-content: space-around;
@@ -9,7 +10,7 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: black;
+  color: #f5f5f5;
   transition: color 0.2s;
 }
 
@@ -28,7 +29,6 @@ body {
 h1 {
   text-align: center;
 }
-
 section {
   display: flex;
   justify-content: center;
@@ -110,6 +110,49 @@ section {
 
 .social-link:hover {
   transform: scale(1.2);
+}
+
+/*Error.jsx*/
+.error-page {
+  display: flex;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.error-container {
+  padding: 50px;
+  background-color: #f5f5f5;
+  max-width: 800px;
+}
+
+#title {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.error-container h1 {
+  font-size: 48px;
+  color: #e74c3c;
+}
+
+.error-container img {
+  max-width: 100px;
+  height: auto;
+}
+
+.error-container p {
+  font-size: 18px;
+  color: #333;
+}
+
+.error-container a {
+  color: rgb(0, 153, 255);
+  text-decoration: none;
+}
+.error-container a:hover {
+  text-decoration: underline;
 }
 
 /*Search.jsx*/
@@ -273,7 +316,7 @@ section {
   opacity: 0.95;
 }
 
-/*CreateUser.jsx*/
+/*login and register pages*/
 .register-login-container {
   display: flex;
   flex-direction: column;
@@ -293,6 +336,7 @@ section {
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f8f8f8;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .register-login-form label {
@@ -300,8 +344,8 @@ section {
 }
 
 .register-login-form input {
-  padding: 5px;
-  margin-bottom: 5px;
+  padding: 7px;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
@@ -309,11 +353,11 @@ section {
 .form-info-error-message {
   color: red;
   font-size: 12px;
-  margin: 0;
+  margin-top: -5px;
 }
 
 .register-login-button {
-  margin-top: 5px;
+  margin-top: 15px;
   padding: 10px 20px;
   background-color: #007bff;
   color: #fff;
@@ -321,6 +365,7 @@ section {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.2s;
 }
 
 .register-login-button:hover {
@@ -328,21 +373,23 @@ section {
 }
 
 .register-login-button:disabled {
-  background-color: #a8d2ff; /* Light gray background for disabled state */
+  background-color: #a8d2ff;
   cursor: not-allowed;
   opacity: 0.7;
 }
 
-#searchParameters {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin: 5px;
+/*.link {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  padding: 5px;
+}*/
+
+.link a {
+  color: rgb(0, 153, 255);
+  text-decoration: none;
+}
+.link a:hover {
+  text-decoration: underline;
 }
 
-#searchCheckbox {
-  display: flex;
-  flex-direction: column;
-  padding-left: 25px;
-  padding-right: 25px;
-}
+/* User.jsx */

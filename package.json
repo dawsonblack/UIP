@@ -8,8 +8,8 @@
   },
   "scripts": {
     "build": "slidev build",
-    "slides": "slidev --open README.md",
-    "exportPDF": "slidev export README.md"
+    "slides": "slidev",
+    "exportPDF": "slidev export"
   },
   "dependencies": {
     "@babel/core": "^7.21.0",

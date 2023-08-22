@@ -197,7 +197,9 @@ INSERT INTO
         is_Native,
         color,
         image_FruitURL,
+        image_LeafURL,
         image_Fruit_Source,
+        image_Leaf_Source,
         wiki_Link,
         plantID
     )
@@ -210,6 +212,8 @@ VALUES
         false,
         'White',
         'fruitImages/Garlic-Mustard(F).jpg',
+        'leafImages/Garlic-Mustard(L).jpg',
+        'By O. Pichard - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=6156271',
         'By O. Pichard - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=6156271',
         'https://en.wikipedia.org/wiki/Alliaria_petiolata',
         -7
@@ -254,7 +258,9 @@ INSERT INTO
         is_Invasive,
         is_Native,
         color,
+        image_FruitURL,
         image_LeafURL,
+        image_Fruit_Source,
         image_Leaf_Source,
         wiki_Link,
         plantID
@@ -267,7 +273,9 @@ VALUES
         true,
         false,
         'Green, blue-green, or dark red',
+        'fruitImages/Mosquito-fern(F).jpg',
         'leafImages/Mosquito-fern(L).jpg',
+        'Photo by Collette Jacono, 2016 Univerity of Florda',
         'By Tpa2067 - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=11994712',
         'https://en.wikipedia.org/wiki/Azolla_pinnata',
         -9
@@ -344,7 +352,9 @@ INSERT INTO
         is_Native,
         color,
         image_FruitURL,
+        image_LeafURL,
         image_Fruit_Source,
+        image_Leaf_Source,
         wiki_Link,
         plantID
     )
@@ -357,7 +367,9 @@ VALUES
         false,
         'Red',
         'fruitImages/Oriental-Bittersweet(F).jpg',
+        'leafImages/Oriental-Bittersweet(L).jpg',
         'Public Domain, https://commons.wikimedia.org/w/index.php?curid=586390',
+        'Photo Credit: Dave Jackson',
         'https://en.wikipedia.org/wiki/Celastrus_orbiculatus',
         -12
     );
@@ -433,7 +445,9 @@ INSERT INTO
         is_Native,
         color,
         image_FruitURL,
+        image_LeafURL,
         image_Fruit_Source,
+        image_Leaf_Source,
         wiki_Link,
         plantID
     )
@@ -446,7 +460,9 @@ VALUES
         false,
         'White',
         'fruitImages/Cutleaf-Teasel(F).jpg',
+        'leafImages/Cutleaf-Teasel(F).jpg',
         'By Simon Eugster -- Simon / ?! 07:03, 9 September 2007 (UTC) - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2707701',
+        'By Helge Klaus Rieder - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=93311458',
         'https://en.wikipedia.org/wiki/Dipsacus_laciniatus',
         -15
     );
@@ -491,7 +507,9 @@ INSERT INTO
         is_Native,
         color,
         image_FruitURL,
+        image_LeafURL,
         image_Fruit_Source,
+        image_Leaf_Source,
         wiki_Link,
         plantID
     )
@@ -504,7 +522,9 @@ VALUES
         false,
         'White outer flower with reddish center',
         'fruitImages/Anchored-Water-Hyacinth(F).jpg',
+        'leafImages/Anchored-Water-Hyacinth(F).jpg',
         'By I, KENPEI, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=4456920',
+        'Eichhornia azurea (Sw.) Kunth - Specimen D. Sasaki et al. 1495ID:1103207 © RBG Kew https://creativecommons.org/licenses/by/3.0/',
         'https://en.wikipedia.org/wiki/Pontederia_azurea',
         -17
     );
@@ -1241,9 +1261,9 @@ VALUES
         true,
         false,
         'Purple',
-        '',
+        'fruitImages/Lythrum_virgatum_.jpg',
         'leafImages/Lythrum_virgatum_.jpg',
-        '',
+        'By Sandstein - Own work, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=11253687',
         'By Stefan.lefnaer - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=73914930',
         'https://en.wikipedia.org/wiki/Lythrum_virgatum',
         -41
@@ -1272,9 +1292,9 @@ VALUES
         true,
         false,
         'Green',
-        '',
+        'fruitImages/european-water-clover.jpg',
         'leafImages/european-water-clover.jpg',
-        '',
+        'By Hardyplants - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=38454416',
         'Leslie J. Mehrhoff, University of Connecticut, Bugwood.org',
         'https://en.wikipedia.org/wiki/Marsilea_quadrifolia',
         -42
@@ -1303,9 +1323,9 @@ VALUES
         true,
         false,
         'Green',
-        '',
+        'fruitImages/Microstegium_vimineum.JPG',
         'leafImages/Microstegium_vimineum.JPG',
-        '',
+        'By James H. Miller &amp; Ted Bodner, Southern Weed Science Society, Bugwood.org - http://www.weedimages.org/browse/detail.cfm?imgnum=2307199, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=46418180',
         'By Bcbaker2390 - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=7897217',
         'https://en.wikipedia.org/wiki/Microstegium_vimineum',
         -43
@@ -1334,9 +1354,9 @@ VALUES
         true,
         false,
         'Purple',
-        '',
+        'fruitImages/Monochoria_vaginalis_.jpg',
         'leafImages/Monochoria_vaginalis_.jpg',
-        '',
+        'http://wildplantsshimane.jp/Plates/Monochoria_vaginalis_N5.jpg',
         'By © 2010 Jee & Rani Nature Photography (License: CC BY-SA 4.0), CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=30789950',
         'https://en.wikipedia.org/wiki/Pontederia_vaginalis',
         -44
@@ -1396,9 +1416,9 @@ VALUES
         true,
         false,
         'Bluish-Green to Green',
-        '',
+        'fruitImages/Myriophyllum_aquaticum.jpg',
         'leafImages/Myriophyllum_aquaticum.jpg',
-        '',
+        'https://www.gardenia.net/plant/myriophyllum-aquaticum',
         'By André Karwath aka Aka - Own work, CC BY-SA 2.5, https://commons.wikimedia.org/w/index.php?curid=305652',
         'https://en.wikipedia.org/wiki/Myriophyllum_aquaticum',
         -46
@@ -1427,9 +1447,9 @@ VALUES
         true,
         false,
         'Light Green to Yellowish to Reddish',
-        '',
+        'fruitImages/_Myriophyllum_spicatum.jpg',
         'leafImages/_Myriophyllum_spicatum.jpg',
-        '',
+        'Photo by Tim Woolf 2013 ID Department of Agriculture',
         'CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=451399',
         'https://en.wikipedia.org/wiki/Myriophyllum_spicatum',
         -47
@@ -1458,9 +1478,9 @@ VALUES
         true,
         false,
         'Green to Greenish Brown',
-        '',
+        'fruitImages/Najas-minor.jpg',
         'leafImages/Najas-minor.jpg',
-        '',
+        'By Robert H. Molenbrock - http://plants.usda.gov/java/profile?symbol=NAMI. Robert H. Mohlenbrock. USDA NRCS. 1995. Northeast wetland flora: Field office guide to plant species. Northeast National Technical Center, Chester. Courtesy of USDA NRCS Wetland Science Institute., Public Domain, https://commons.wikimedia.org/w/index.php?curid=2741130',
         'Leslie J. Mehrhoff, University of Connecticut, Bugwood.org',
         'https://en.wikipedia.org/wiki/Najas_minor',
         -48
@@ -1489,10 +1509,10 @@ VALUES
         true,
         false,
         'Green to Yellow-Green',
-        '',
+        'fruitImages/NymphoidesPeltata.jpg',
         'leafImages/NymphoidesPeltata.jpg',
-        '',
         'By Challiyil Eswaramangalath Pavithran Vipin - https://www.flickr.com/photos/challiyan/3038172072/, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=107817535',
+        'By TeunSpaans, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=1926871',
         'https://en.wikipedia.org/wiki/Nymphoides_peltata',
         -49
     );
@@ -2076,7 +2096,7 @@ VALUES
         'Typha Angustifolia',
         'The plant features flat, narrow leaves measuring ¼"–½" wide and 3–6 tall when mature. Each vegetative shoot produces 12–16 leaves. The leaves have distinct stalks as tall as the leaves themselves and are crowned with brown, fluffy, sausage-shaped flowering heads. The plant has robust rhizomatous roots that can grow up to 27" in length and ¾"–1½" in diameter.',
         true,
-        true,
+        false,
         'Green and Brown',
         'fruitImages/Typha_angustifolia_nf.jpg',
         'leafImages/Typha_angustifolia_(habitus)_1.jpg',
@@ -2199,7 +2219,7 @@ VALUES
         'Jerusalem Artichoke',
         'Helianthus Tuberosus',
         'Helianthus tuberosus, or Jerusalem artichoke, is a tall perennial plant with rough leaves that change from large and ovoid-acute at the base to smaller and narrower higher up the stem. It produces fragrant yellow flowers in 5-10 cm clusters. The edible tubers, resembling ginger roots, vary in color and offer a crisp texture when raw.',
-        true,
+        false,
         true,
         'Golden Yellow',
         'fruitImages/jerusalem-artichoke-flower.jpg',
@@ -2354,7 +2374,7 @@ VALUES
         'Cutleaf Coneflower',
         'Rudbeckia Laciniata',
         'This robust herbaceous perennial can grow up to 3 meters tall and has broadly ovate, sometimes glaucous leaves that are deeply dissected. The alternate leaves consist of a petiole and a leaf blade, with the blade being simple or one to two-pinnate, often lobed three to eleven times. Leaf margins vary from smooth to roughly serrated. Lower leaves are larger (38 to 127 cm long, 25 to 64 cm wide) compared to the upper leaves (8 to 40 cm long, 3 to 20 cm wide). The plant forms long rhizomes for persistence, with bare stems and fibrous roots.',
-        true,
+        false,
         true,
         'Yellow and Green',
         'fruitImages/Rudbeckia_laciniata_by_SvdW.jpg',
@@ -2757,7 +2777,7 @@ VALUES
         'American Wahoo',
         'Euonymus Atropurpureus',
         'This deciduous shrub can reach up to 8 meters in height, with gray bark and purplish-brown twigs. Its opposite elliptical leaves are green above, paler below, and serrated, turning bright red in autumn. The small bisexual flowers have greenish sepals, brown-purple petals, and are borne in small clusters. The smooth reddish-pink fruit is a four-lobed capsule containing orange seeds with fleshy red arils.',
-        true,
+        false,
         true,
         'Dark Green',
         'fruitImages/Euonymus_europaeus_.jpg',

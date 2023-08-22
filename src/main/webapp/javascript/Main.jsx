@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, Outlet, Link } from "react-router-dom";
+import { AuthProvider, useAuth } from './AuthContext';
 import BackgroundVideo from "./BackgroundVideo";
 
 import "../css/style.css";
 
+import Error from './Error';
 import Home from "./Home.jsx";
 import Search from "./Search.jsx";
 import User from "./User.jsx";
@@ -28,18 +30,27 @@ export async function sha256(message) {
 }
 
 function Layout() {
+  const { user } = useAuth();
+
   useEffect(() => {
     let video = document.querySelector("video");
     video.playbackRate = 0.5;
   }, []);
+
+  const isUserLoggedIn = Object.keys(user).length !== 0;
 
   return (
     <>
       <nav>
         <Link to="/">Home</Link>
         <Link to="Search">Search</Link>
-        {/* <Link to="User">User</Link> */}
-        <Link to="Login">Log In</Link>
+        {isUserLoggedIn ? (
+          <Link to="User">My Profile</Link>
+        ) : (
+          <Link to="Login">Log In</Link>
+        )}
+        {console.log("user is " + user)}
+        {console.log("user name is " + user.firstName)}
       </nav>
       <Outlet />
       <div className="App">
@@ -54,23 +65,23 @@ function Layout() {
 }
 function Main() {
   return (
-    <React.StrictMode>
       <BrowserRouter>
-        <Routes>
-          <Route
-            path="/app4?/src?/main?/resources?/static?/index.html?"
-            element={<Layout />}
-          >
-            <Route index element={<Home />} />
-            <Route path="Search" element={<Search />} />
-            <Route path="User" element={<User />} />
-            <Route path="Register" element={<Register />} />
-            <Route path="Login" element={<Login />} />
-            <Route path="User" element={<User />} />
-          </Route>
-        </Routes>
+        <AuthProvider> {/* Wrap your routes with AuthProvider */}
+          <Routes>
+            <Route
+              path="/app4?/src?/main?/resources?/static?/index.html?"
+              element={<Layout />}
+            >
+              <Route index element={<Home />} />
+              <Route path="Search" element={<Search />} />
+              <Route path="User" element={<User />} />
+              <Route path="Register" element={<Register />} />
+              <Route path="Login" element={<Login />} />
+              <Route path="*" element={<Error />} />
+            </Route>
+          </Routes>
+        </AuthProvider>
       </BrowserRouter>
-    </React.StrictMode>
   );
 }
 createRoot(document.getElementById("react-mountpoint")).render(<Main />);

@@ -1,3 +1,4 @@
+/*Main.jsx and Home.jsx*/
 nav {
   display: flex;
   justify-content: space-around;
@@ -9,7 +10,7 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: black;
+  color: #f5f5f5;
   transition: color 0.2s;
 }
 
@@ -33,7 +34,6 @@ h4 {
   text-shadow: 2px 2px 4px #000000;
   padding: 0%;
 }
-
 section {
   display: flex;
   justify-content: center;
@@ -133,6 +133,49 @@ p {
   width: 100%;
 }
 
+/*Error.jsx*/
+.error-page {
+  display: flex;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.error-container {
+  padding: 50px;
+  background-color: #f5f5f5;
+  max-width: 800px;
+}
+
+#title {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.error-container h1 {
+  font-size: 48px;
+  color: #e74c3c;
+}
+
+.error-container img {
+  max-width: 100px;
+  height: auto;
+}
+
+.error-container p {
+  font-size: 18px;
+  color: #333;
+}
+
+.error-container a {
+  color: rgb(0, 153, 255);
+  text-decoration: none;
+}
+.error-container a:hover {
+  text-decoration: underline;
+}
+
 /*Search.jsx*/
 #search-container {
   display: flex;
@@ -208,8 +251,8 @@ p {
 .plant-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  border: 1px solid #ccc;
+  justify-content: space-evenly;
+  border: 4px solid #35495e;
   padding: 10px;
   margin-top: 10px;
   border-radius: 5px;
@@ -218,10 +261,10 @@ p {
   transition: background-color 0.3s ease, border-color 0.3s ease;
   color: black;
   border-radius: 25px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .plant-container:hover {
-  border-color: black;
   background-color: rgba(100, 100, 100, 0.8);
 }
 
@@ -248,13 +291,13 @@ p {
 }
 
 .plant-container img {
-  max-width: 200px;
-  max-height: 200px;
-  padding-left: 20px;
-  padding-right: 20px;
-
-  padding: 10px;
+  max-width: 20rem;
+  max-height: 20rem;
+  margin-left: 10px;
+  margin-right: 10px;
   transition: width 0.3s ease, height 0.3s ease;
+  border: 4px solid #35495e;
+  border-radius: 25px;
 }
 
 .plant-container img:hover {
@@ -294,7 +337,7 @@ p {
   opacity: 0.95;
 }
 
-/*CreateUser.jsx*/
+/*login and register pages*/
 .register-login-container {
   display: flex;
   flex-direction: column;
@@ -314,6 +357,7 @@ p {
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f8f8f8;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .register-login-form label {
@@ -321,8 +365,8 @@ p {
 }
 
 .register-login-form input {
-  padding: 5px;
-  margin-bottom: 5px;
+  padding: 7px;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
@@ -330,11 +374,11 @@ p {
 .form-info-error-message {
   color: red;
   font-size: 12px;
-  margin: 0;
+  margin-top: -5px;
 }
 
 .register-login-button {
-  margin-top: 5px;
+  margin-top: 15px;
   padding: 10px 20px;
   background-color: #007bff;
   color: #fff;
@@ -342,6 +386,7 @@ p {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.2s;
 }
 
 .register-login-button:hover {
@@ -349,7 +394,23 @@ p {
 }
 
 .register-login-button:disabled {
-  background-color: #a8d2ff; /* Light gray background for disabled state */
+  background-color: #a8d2ff;
   cursor: not-allowed;
   opacity: 0.7;
 }
+
+/*.link {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  padding: 5px;
+}*/
+
+.link a {
+  color: rgb(0, 153, 255);
+  text-decoration: none;
+}
+.link a:hover {
+  text-decoration: underline;
+}
+
+/* User.jsx */

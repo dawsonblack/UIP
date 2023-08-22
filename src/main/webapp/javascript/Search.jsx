@@ -104,6 +104,8 @@ export default function TestingFetches() {
         });
     }
 
+    useEffect(() => getPlants(), [searchKeywords]);
+
     console.log("search results: " + searchResults);
     return (
       <div id="search-container">
@@ -116,44 +118,54 @@ export default function TestingFetches() {
             onChange={(e) => setSearchKeywords(e.target.value)}
             onKeyDown={handleKeyPress}
           />
-          <button id="search-button" onClick={getPlants}>
-            Search!
-          </button>
         </div>
-
-        <label htmlFor="search-by">Search By:</label>
-        <div className="search-dropdown">
-          <select
-            id="search-by"
-            onChange={(e) => setSearchBy(e.target.value)}
-            onKeyDown={handleKeyPress}
-          >
-            <option value="commonName">Plant Name</option>
-            <option value="color">Plant Color</option>
-          </select>
-          <div className="dropdown-arrow">&#9662;</div>
-        </div>
-        <div>
-          <label for="native">Native</label>
-          <input
-            type="checkbox"
-            id="native"
-            value={searchKeywords}
-            onChange={(e) => {
-              setSearchKeywords("true");
-              setSearchBy("isNative");
-            }}
-          />
-          <label for="native">Invasive</label>
-          <input
-            type="checkbox"
-            id="invasive"
-            value={searchKeywords}
-            onChange={(e) => {
-              setSearchKeywords("false");
-              setSearchBy("isNative");
-            }}
-          />
+        <div id="searchParameters">
+          <div id="searchCheckbox">
+            <input
+              type="checkbox"
+              id="commonName"
+              value={searchKeywords}
+              onChange={(e) => {
+                setSearchBy("commonName");
+              }}
+            />
+            <label for="commonName">Common Name</label>
+          </div>
+          <div id="searchCheckbox">
+            <input
+              type="checkbox"
+              id="color"
+              value={searchKeywords}
+              onChange={(e) => {
+                setSearchBy("color");
+              }}
+            />
+            <label for="color">Plant Color</label>
+          </div>
+          <div id="searchCheckbox">
+            <input
+              type="checkbox"
+              id="native"
+              value={searchKeywords}
+              onChange={(e) => {
+                setSearchKeywords("true");
+                setSearchBy("isNative");
+              }}
+            />
+            <label for="native">Native</label>
+          </div>
+          <div id="searchCheckbox">
+            <input
+              type="checkbox"
+              id="invasive"
+              value={searchKeywords}
+              onChange={(e) => {
+                setSearchKeywords("false");
+                setSearchBy("isNative");
+              }}
+            />
+            <label for="native">Invasive</label>
+          </div>
         </div>
 
         <div id="search-results">

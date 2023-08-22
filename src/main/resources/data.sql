@@ -460,7 +460,7 @@ VALUES
         false,
         'White',
         'fruitImages/Cutleaf-Teasel(F).jpg',
-        'leafImages/Cutleaf-Teasel(F).jpg',
+        'leafImages/Cutleaf-Teasel(L).jpg',
         'By Simon Eugster -- Simon / ?! 07:03, 9 September 2007 (UTC) - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2707701',
         'By Helge Klaus Rieder - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=93311458',
         'https://en.wikipedia.org/wiki/Dipsacus_laciniatus',
@@ -522,7 +522,7 @@ VALUES
         false,
         'White outer flower with reddish center',
         'fruitImages/Anchored-Water-Hyacinth(F).jpg',
-        'leafImages/Anchored-Water-Hyacinth(F).jpg',
+        'leafImages/Anchored-Water-Hyacinth(L).jpg',
         'By I, KENPEI, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=4456920',
         'Eichhornia azurea (Sw.) Kunth - Specimen D. Sasaki et al. 1495ID:1103207 © RBG Kew https://creativecommons.org/licenses/by/3.0/',
         'https://en.wikipedia.org/wiki/Pontederia_azurea',
@@ -786,7 +786,9 @@ INSERT INTO
         is_Native,
         color,
         image_FruitURL,
+        image_LeafURL,
         image_Fruit_Source,
+        image_Leaf_Source,
         wiki_Link,
         plantID
     )
@@ -799,7 +801,9 @@ VALUES
         true,
         'Pink',
         'fruitImages/Prairie-Rose(F).jpg',
+        'leafImages/Prairie-Rose(L).jpg',
         'By I, Alexwcovington, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2280101',
+        'https://www.gardenia.net/storage/app/public/uploads/images/detail/CWRUOjbafBp1VinsMoYunhEQPxBD7DFlZzt1k3SP.webp',
         'https://en.wikipedia.org/wiki/Rosa_arkansana',
         -26
     );

@@ -118,9 +118,6 @@ export default function TestingFetches() {
             onChange={(e) => setSearchKeywords(e.target.value)}
             onKeyDown={handleKeyPress}
           />
-          <button id="search-button" onClick={getPlants}>
-            Search!
-          </button>
         </div>
         <div id="searchParameters">
           <div id="searchCheckbox">

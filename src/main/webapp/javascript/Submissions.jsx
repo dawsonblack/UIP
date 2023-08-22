@@ -121,7 +121,7 @@ export default function Submissions() {
     setWikiLink("");
   };
 
-  const getSubmission = () => {
+  const getSubmissions = () => {
     fetch("/api/submissions", { method: "GET", cache: "default" })
       .then((response) => response.json())
       .then((responseBody) => {

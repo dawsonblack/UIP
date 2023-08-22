@@ -1,23 +1,22 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Submissions() {
-    const[commonName, setCommonName] = useState("");
-    const[scientificName, setScientificName] = useState("");
-    const[description, setDescription] = useState("");
-    const[isInvasive, setIsInvasive] = useState(false);
-    const[isNative, setIsNative] = useState(false);
-    const[color, setColor] = useState("");
-    const[imageFruitURL, setImageFruitURL] = useState("");
-    const[imageLeafURL, setImageLeafURL] = useState("");
-    const[imageFruitSource, setImageFruitSource] = useState("");
-    const[imageLeafSource, setImageLeafSource] = useState("");
-    const[wikiLink, setWikiLink] = useState("");
-    
+  const [commonName, setCommonName] = useState("");
+  const [scientificName, setScientificName] = useState("");
+  const [description, setDescription] = useState("");
+  const [isInvasive, setIsInvasive] = useState(false);
+  const [isNative, setIsNative] = useState(false);
+  const [color, setColor] = useState("");
+  const [imageFruitURL, setImageFruitURL] = useState("");
+  const [imageLeafURL, setImageLeafURL] = useState("");
+  const [imageFruitSource, setImageFruitSource] = useState("");
+  const [imageLeafSource, setImageLeafSource] = useState("");
+  const [wikiLink, setWikiLink] = useState("");
 
-const handleCommonNameChange = ({ target }) => {
+  const handleCommonNameChange = ({ target }) => {
     setCommonName(target.value);
   };
-  
+
   const handleScientificNameChange = ({ target }) => {
     setScientificName(target.value);
   };
@@ -65,15 +64,13 @@ const handleCommonNameChange = ({ target }) => {
     }
   };
 
-
-const postSubmission = () => {
-    
+  const postSubmission = () => {
     fetch("/api/submissions", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         commonName: commonName,
-        scientificName:scientificName,
+        scientificName: scientificName,
         description: description,
         isInvasive: isInvasive,
         isNative: isNative,
@@ -82,13 +79,13 @@ const postSubmission = () => {
         imageLeafURL: imageLeafURL,
         imageFruitSource: imageFruitURL,
         imageLeafSource: imageLeafSource,
-        wikiLink: wikiLink
+        wikiLink: wikiLink,
       }),
     }).then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-      console.log("User saved successfully!");
+      console.log("Plant saved successfully!");
     });
 
     setCommonName("");
@@ -102,14 +99,13 @@ const postSubmission = () => {
     setImageFruitSource("");
     setImageLeafSource("");
     setWikiLink("");
-    
   };
 
-return(
-<div className="user-submission-container">
-    <div>
+  return (
+    <div className="user-submission-container">
+      <div>
         <form className="user-submission-form">
-        <label htmlFor="commonName">Common Name:</label>
+          <label htmlFor="commonName">Common Name:</label>
           <input
             type="text"
             name="commonName"
@@ -118,7 +114,7 @@ return(
             onKeyDown={handleKeyPress}
           ></input>
 
-<label htmlFor="scientificName">Scientific Name:</label>
+          <label htmlFor="scientificName">Scientific Name:</label>
           <input
             type="text"
             name="scientificName"
@@ -127,7 +123,7 @@ return(
             onKeyDown={handleKeyPress}
           ></input>
 
-<label htmlFor="description">Description:</label>
+          <label htmlFor="description">Description:</label>
           <input
             type="text"
             name="description"
@@ -136,7 +132,7 @@ return(
             onKeyDown={handleKeyPress}
           ></input>
 
-<label htmlFor="color">Color:</label>
+          <label htmlFor="color">Color:</label>
           <input
             type="text"
             name="color"
@@ -145,15 +141,13 @@ return(
             onKeyDown={handleKeyPress}
           ></input>
 
-<label htmlFor="isInvasive">Is Invasive:</label>
-          <p>Is Toggled: {isInvasive ? 'True' : 'False'}</p>
+          <p>Is Invasive: {isInvasive ? "True" : "False"}</p>
           <button onClick={handleIsInvasiveChange}>Toggle</button>
 
-          <label htmlFor="isNative">Is Native:</label>
-          <p>Is Toggled: {isNative ? 'True' : 'False'}</p>
+          <p>Is Native: {isNative ? "True" : "False"}</p>
           <button onClick={handleIsNativeChange}>Toggle</button>
 
-<label htmlFor="wikiLink">Wiki Link:</label>
+          <label htmlFor="wikiLink">Wiki Link:</label>
           <input
             type="text"
             name="wikiLink"
@@ -162,7 +156,7 @@ return(
             onKeyDown={handleKeyPress}
           ></input>
 
-<label htmlFor="imageFruitURL">Fruit URL:</label>
+          <label htmlFor="imageFruitURL">Fruit URL:</label>
           <input
             type="text"
             name="FruitURL"
@@ -171,7 +165,7 @@ return(
             onKeyDown={handleKeyPress}
           ></input>
 
-<label htmlFor="imageLeafURL">Leaf URL:</label>
+          <label htmlFor="imageLeafURL">Leaf URL:</label>
           <input
             type="text"
             name="imageLeafURL"
@@ -180,7 +174,7 @@ return(
             onKeyDown={handleKeyPress}
           ></input>
 
-<label htmlFor="imageFruitSource">Fruit Image Source:</label>
+          <label htmlFor="imageFruitSource">Fruit Image Source:</label>
           <input
             type="text"
             name="imageFruitSource"
@@ -189,7 +183,7 @@ return(
             onKeyDown={handleKeyPress}
           ></input>
 
-<label htmlFor="imageLeafSource">Leaf Image Source:</label>
+          <label htmlFor="imageLeafSource">Leaf Image Source:</label>
           <input
             type="text"
             name="imageLeafSource"
@@ -197,23 +191,10 @@ return(
             onChange={handleImageLSourceChange}
             onKeyDown={handleKeyPress}
           ></input>
-
-<label htmlFor="wikiLink">Wiki Link:</label>
-          <input
-            type="text"
-            name="wikiLink"
-            value={wikiLink}
-            onChange={handleWikiLinkChange}
-            onKeyDown={handleKeyPress}
-          ></input>
         </form>
 
-        <button onClick={postSubmission}>
-            Create Plant
-        </button>
+        <button onClick={postSubmission}>Create Plant</button>
+      </div>
     </div>
-</div>
-
-)
-
+  );
 }

@@ -1,6 +1,6 @@
 package org.wcci.usefulAndInvasivePlants.security;
 
-import org.springframework.beans.factory.annotation.Autowired;
+/*import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -48,4 +48,4 @@ public class SecurityConfig {
                 .rememberMe((rememberMeConfigurer) -> rememberMeConfigurer.alwaysRemember(false))
                 .build();
     }
-}
+}*/

@@ -1,6 +1,6 @@
 package org.wcci.usefulAndInvasivePlants.security;
 
-import java.util.stream.Collectors;
+/*import java.util.stream.Collectors;
 
 import org.h2.schema.UserAggregate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,4 +27,4 @@ public class SecurityUserDetailsService implements UserDetailsService {
                 user.getPassword(),
                 user.getRoles().stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
     }
-}
+}*/

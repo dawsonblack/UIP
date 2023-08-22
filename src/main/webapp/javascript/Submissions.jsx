@@ -12,6 +12,7 @@ export default function Submissions() {
   const [imageFruitSource, setImageFruitSource] = useState("");
   const [imageLeafSource, setImageLeafSource] = useState("");
   const [wikiLink, setWikiLink] = useState("");
+  const [isValidUrl, setIsValidUrl] = useState(true);
 
   const handleCommonNameChange = ({ target }) => {
     setCommonName(target.value);
@@ -37,26 +38,45 @@ export default function Submissions() {
     setColor(target.value);
   };
 
-  const handleImageFURLChange = ({ target }) => {
-    setImageFruitURL(target.value);
+  const handleImageFURLChange = (event) => {
+    const inputValue = event.target.value;
+    setImageFruitURL(inputValue);
+
+    const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+    setIsValidUrl(urlPattern.test(inputValue));
   };
 
-  const handleImageLURLChange = ({ target }) => {
-    setImageLeafURL(target.value);
+  const handleImageLURLChange = (event) => {
+    const inputValue = event.target.value;
+    setImageFruitURL(inputValue);
+
+    const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+    setIsValidUrl(urlPattern.test(inputValue));
   };
 
-  const handleImageFSourceChange = ({ target }) => {
-    setImageFruitSource(target.value);
+  const handleImageFSourceChange = (event) => {
+    const inputValue = event.target.value;
+    setImageFruitURL(inputValue);
+
+    const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+    setIsValidUrl(urlPattern.test(inputValue));
   };
 
-  const handleImageLSourceChange = ({ target }) => {
-    setImageLeafSource(target.value);
+  const handleImageLSourceChange = (event) => {
+    const inputValue = event.target.value;
+    setImageFruitURL(inputValue);
+
+    const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+    setIsValidUrl(urlPattern.test(inputValue));
   };
 
-  const handleWikiLinkChange = ({ target }) => {
-    setWikiLink(target.value);
-  };
+  const handleWikiLinkChange = (event) => {
+    const inputValue = event.target.value;
+    setWikiLink(inputValue);
 
+    const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+    setIsValidUrl(urlPattern.test(inputValue));
+  };
   const handleKeyPress = (event) => {
     if (event.key === "Enter" && !isButtonDisabled) {
       event.preventDefault();
@@ -91,8 +111,30 @@ export default function Submissions() {
     setCommonName("");
     setScientificName("");
     setDescription("");
-    setIsInvasive("");
-    setIsNative("");
+    setIsInvasive(false);
+    setIsNative(false);
+    setColor("");
+    setImageFruitURL("");
+    setImageLeafURL("");
+    setImageFruitSource("");
+    setImageLeafSource("");
+    setWikiLink("");
+  };
+
+  const getSubmission = () => {
+    fetch("/api/submissions", { method: "GET", cache: "default" })
+      .then((response) => response.json())
+      .then((responseBody) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        console.log("Got Plants successfully!");
+      });
+    setCommonName("");
+    setScientificName("");
+    setDescription("");
+    setIsInvasive(false);
+    setIsNative(false);
     setColor("");
     setImageFruitURL("");
     setImageLeafURL("");
@@ -147,15 +189,6 @@ export default function Submissions() {
           <p>Is Native: {isNative ? "True" : "False"}</p>
           <button onClick={handleIsNativeChange}>Toggle</button>
 
-          <label htmlFor="wikiLink">Wiki Link:</label>
-          <input
-            type="text"
-            name="wikiLink"
-            value={wikiLink}
-            onChange={handleWikiLinkChange}
-            onKeyDown={handleKeyPress}
-          ></input>
-
           <label htmlFor="imageFruitURL">Fruit URL:</label>
           <input
             type="text"
@@ -163,6 +196,7 @@ export default function Submissions() {
             value={imageFruitURL}
             onChange={handleImageFURLChange}
             onKeyDown={handleKeyPress}
+            style={{ borderColor: isValidUrl ? "green" : "red" }}
           ></input>
 
           <label htmlFor="imageLeafURL">Leaf URL:</label>
@@ -172,6 +206,7 @@ export default function Submissions() {
             value={imageLeafURL}
             onChange={handleImageLURLChange}
             onKeyDown={handleKeyPress}
+            style={{ borderColor: isValidUrl ? "green" : "red" }}
           ></input>
 
           <label htmlFor="imageFruitSource">Fruit Image Source:</label>
@@ -181,6 +216,7 @@ export default function Submissions() {
             value={imageFruitSource}
             onChange={handleImageFSourceChange}
             onKeyDown={handleKeyPress}
+            style={{ borderColor: isValidUrl ? "green" : "red" }}
           ></input>
 
           <label htmlFor="imageLeafSource">Leaf Image Source:</label>
@@ -190,11 +226,24 @@ export default function Submissions() {
             value={imageLeafSource}
             onChange={handleImageLSourceChange}
             onKeyDown={handleKeyPress}
+            style={{ borderColor: isValidUrl ? "green" : "red" }}
+          ></input>
+
+          <label htmlFor="wikiLink">Wiki Link:</label>
+          <input
+            type="text"
+            name="wikiLink"
+            value={wikiLink}
+            onChange={handleWikiLinkChange}
+            onKeyDown={handleKeyPress}
+            style={{ borderColor: isValidUrl ? "green" : "red" }}
           ></input>
         </form>
 
         <button onClick={postSubmission}>Create Plant</button>
       </div>
+
+      <button onClick={getSubmissions}>Plants Created</button>
     </div>
   );
 }

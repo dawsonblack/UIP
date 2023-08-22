@@ -23,7 +23,7 @@ public class Submission {
     private String imageFruitSource;
     @Column(length = 1000)
     private String imageLeafSource;
-    private String WikiLink;
+    private String wikiLink;
 
     @Id
     @GeneratedValue
@@ -31,9 +31,9 @@ public class Submission {
 
 
     public Submission(String commonName, String scientificName, String description, Boolean isInvasive, Boolean isNative,
-    String color, String FURL,
-    String Fsource,
-    String LURL, String Lsource, String wiki){
+    String color, String imageFruitURL,
+    String imageFruitSource,
+    String imageLeafURL, String imageLeafSource, String wikiLink){
         this.commonName = commonName;
         this.scientificName = scientificName;
         this.description = description;
@@ -44,7 +44,7 @@ public class Submission {
         this.imageLeafURL = imageLeafURL;
         this.imageFruitSource = imageFruitURL;
         this.imageLeafSource = imageLeafSource;
-        this.WikiLink = WikiLink;
+        this.wikiLink = wikiLink;
     }
 
     public Submission(){
@@ -132,11 +132,11 @@ public class Submission {
     }
 
     public String getWikiLink() {
-        return WikiLink;
+        return wikiLink;
     }
 
     public void setWikiLink(String wikiLink) {
-        WikiLink = wikiLink;
+        this.wikiLink = wikiLink;
     }
 
     public long getPlantID() {

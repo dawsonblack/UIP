@@ -12,6 +12,7 @@ import Search from "./Search.jsx";
 import User from "./User.jsx";
 import Register from "./Register";
 import Login from "./Login";
+import Submissions from "./Submissions"
 
 export async function sha256(message) {
   // encode as UTF-8
@@ -41,8 +42,10 @@ function Layout() {
       <nav>
         <Link to="/">Home</Link>
         <Link to="Search">Search</Link>
+        <Link to="Submissions">Plant Submissions</Link>
         {name == "" && <Link to="Login">Log In</Link>}
         {name !== "" && <Link to="User">My Profile</Link>}
+
       </nav>
       <Outlet />
       <div className="App">
@@ -70,6 +73,7 @@ function Main() {
               <Route path="User" element={<User />} />
               <Route path="Register" element={<Register />} />
               <Route path="Login" element={<Login />} />
+              <Route path="Submissions" element={<Submissions />} />
             </Route>
           </Routes>
           </AuthProvider>

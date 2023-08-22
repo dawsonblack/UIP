@@ -79,8 +79,8 @@ export default function Register() {
       body: JSON.stringify({
         email: email,
         firstName: firstName,
-        userName: username,
-        passWord: hashedPassword,
+        username: username,
+        password: hashedPassword,
       }),
     }).then((response) => {
       if (!response.ok) {

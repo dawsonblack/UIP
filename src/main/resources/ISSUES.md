@@ -7,7 +7,6 @@ NOTES FROM DAWSON:
 -the background is distracting and sometimes makes text unreadable
 -on mobile, user should tap once to cause a headshot to move up, then once again to move it back down (or by tapping another headshot)
 -make the search page look nice on mobile
--why are username and password stored in the database in camelCase?
 -turn off autofill in inputs
 -check whether email or username is being used already
 -there's a problem with pressing enter

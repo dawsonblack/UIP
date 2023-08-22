@@ -45,8 +45,8 @@ export default function Login() {
     .then((responseBody) => {
         setInvalidLogin(true);
         for (let i = 0; i < responseBody["_embedded"]["userList"].length; i++) {
-            if (username == responseBody["_embedded"]["userList"][i].userName) {
-                if (hashedPassword == responseBody["_embedded"]["userList"][i].passWord) {
+            if (username == responseBody["_embedded"]["userList"][i].username) {
+                if (hashedPassword == responseBody["_embedded"]["userList"][i].password) {
                     setUser(responseBody["_embedded"]["userList"][i]);
                     setInvalidLogin(false);
                 }

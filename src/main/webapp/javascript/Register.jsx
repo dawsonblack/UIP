@@ -79,8 +79,8 @@ export default function Register() {
       body: JSON.stringify({
         email: email,
         firstName: firstName,
-        userName: username,
-        passWord: hashedPassword,
+        username: username,
+        password: hashedPassword,
       }),
     }).then((response) => {
       if (!response.ok) {
@@ -169,7 +169,7 @@ export default function Register() {
           Create Account
         </button>
       </div>
-      <p>Already have an account? <Link to="/Login">Sign in</Link></p>
+      <p className="link">Already have an account? <Link to="/Login">Sign in</Link></p>
     </div>
   );
 }

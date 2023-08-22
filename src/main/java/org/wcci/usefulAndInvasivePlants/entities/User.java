@@ -19,18 +19,18 @@ public class User {
     private Long userID; /// should I use Int here instead?
     private String email;
     private String firstName;
-    private String userName;
-    private String passWord;
+    private String username;
+    private String password;
     @Convert(converter = StringListConverter.class)
     private List<String> savedPlants;
 
     // is line 12-15 a constructor? if not what is a constructor and where is it
-    public User(Long id, String email, String firstName, String userName, String passWord) {
+    public User(Long id, String email, String firstName, String username, String password) {
         this.userID = id;
         this.email = email;
         this.firstName = firstName;
-        this.userName = userName;
-        this.passWord = passWord;
+        this.username = username;
+        this.password = password;
     }
 
     public User() {
@@ -60,20 +60,20 @@ public class User {
         this.firstName = firstName;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserName(String username) {
+        this.username = username;
     }
 
     public String getPassWord() {
-        return passWord;
+        return password;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setPassWord(String password) {
+        this.password = password;
     }
 
     public List<String> getSavedPlants() {

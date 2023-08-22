@@ -40,7 +40,7 @@ public class UIPApp {
                 .formLogin((formLoginConfigurer) ->
                     formLoginConfigurer
                         .loginPage("/Login")
-                        .loginProcessingUrl("authenticate")
+                        .loginProcessingUrl("/authenticate")
                         .permitAll()
                 )
                 .rememberMe((rememberMeConfigurer) -> rememberMeConfigurer.alwaysRemember(false))

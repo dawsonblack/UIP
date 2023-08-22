@@ -18,6 +18,7 @@ NOTES FROM DAWSON:
 -sort search results alphabetically
 -click here to log in/register is not readable depending on the background video
 -links in the nav bar are not readable unless hovered over
+-add a styling error page
 
 NOTES FROM ABDI:
 

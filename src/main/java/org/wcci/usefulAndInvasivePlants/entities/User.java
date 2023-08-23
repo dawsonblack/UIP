@@ -68,11 +68,11 @@ public class User {
         this.username = username;
     }
 
-    public String getPassWord() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassWord(String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 

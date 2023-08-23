@@ -1,7 +1,7 @@
 package org.wcci.usefulAndInvasivePlants;
 
 import static org.hamcrest.Matchers.hasKey;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -23,9 +23,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.transaction.annotation.Transactional;
-
 import org.wcci.usefulAndInvasivePlants.entities.User;
 import org.wcci.usefulAndInvasivePlants.restControllers.UserRestController;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 //import com.jayway.jsonpath.JsonPath;
 
@@ -120,5 +120,49 @@ public class UserRestControllerTest extends HateoasHelper {
                                 User.class);
 
                 assertEquals(2, createdUser2.getSavedPlants().size());
+        }
+
+        @Test
+        public void deleteUserSuccessTest()throws Exception{
+                User user = new User((long) 102, "email@email", "Michael", "MScott", "paper");
+
+                final MvcResult userPostResult = this.mvc
+                                .perform(MockMvcRequestBuilders.post("/api/users")
+                                                .accept(MediaTypes.HAL_JSON)
+                                                .contentType(MediaType.APPLICATION_JSON)
+                                                .content(new ObjectMapper().writeValueAsString(user)))
+                                .andExpect(status().isOk())
+                                .andExpect(content().contentTypeCompatibleWith(MediaTypes.HAL_JSON))
+                                .andExpect(jsonPath("$._links", hasKey("self")))
+                                .andExpect(jsonPath("$._links", hasKey(UserRestController.LIST_ALL_USERS)))
+                                .andReturn();
+
+                final User userResultObject = this.extractObject(User.class, userPostResult);
+
+
+                                this.mvc
+                                .perform(MockMvcRequestBuilders.delete("/api/users/" + userResultObject.getUserID())
+                                                .accept(MediaTypes.HAL_JSON)
+                                                .contentType(MediaType.APPLICATION_JSON))
+                                .andExpect(status().isNoContent());
+                
+        }
+
+        @Test
+        public void deleteUserFailsWrongIdTest()throws Exception{
+                this.mvc
+                                .perform(MockMvcRequestBuilders.delete("/api/users/" + 111)
+                                                .accept(MediaTypes.HAL_JSON)
+                                                .contentType(MediaType.APPLICATION_JSON))
+                                .andExpect(status().isNotFound());
+        }
+
+        @Test
+        public void deleteUserFailsBadRequestTest()throws Exception{
+                this.mvc
+                                .perform(MockMvcRequestBuilders.delete("/api/users/shfkdsj")
+                                                .accept(MediaTypes.HAL_JSON)
+                                                .contentType(MediaType.APPLICATION_JSON))
+                                .andExpect(status().isBadRequest());
         }
 }

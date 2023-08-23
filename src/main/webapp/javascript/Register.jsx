@@ -16,6 +16,9 @@ export default function Register() {
   const [recaptchaCompleted, setRecaptchaCompleted] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
+  const [reusedEmail, setReusedEmail] = useState(false);
+  const [reusedUsername, setReusedUsername] = useState(false);
+
   /*const [plantToSave, setPlantToSave] = useState("");
   const [user_id, setUser_id] = useState("");*/
 
@@ -72,6 +75,33 @@ export default function Register() {
   const handleUser_idChange = ({ target }) => {
     setUser_id(target.value);
   };*/
+
+  const checkCredentials = () => {
+    console.log("In checkCredentials");
+    fetch('/api/users', { method: "GET", cache: "default" })
+      .then((response) => response.json())
+      .then((responseBody) => {
+        console.log("In user fetch, length of responseBody is " + responseBody.length);
+
+        if (responseBody.length > 0) {
+          console.log("We're gonna check for copies");
+          for (let i = 0; i < responseBody["_embedded"]["userList"].length; i++) {
+            console.log("Checking " + responseBody["_embedded"]["userList"][i].email);
+            console.log("Checking " + responseBody["_embedded"]["userList"][i].username);
+            if (responseBody["_embedded"]["userList"][i].email == email) {
+              console.log("Email is a copy! Aborting now");
+              setReusedEmail(true);
+              return;
+          } else if (responseBody["_embedded"]["userList"][i].username == username) {
+              console.log("Username is a copy! Aborting now");
+              setReusedUsername(true);
+              return;
+            }
+          }
+        }
+        postUser();
+      });
+  }
 
   const postUser = async () => {
     const hashedPassword = await sha256(username + password);
@@ -175,10 +205,13 @@ export default function Register() {
           <ReCAPTCHA sitekey="6LenvssnAAAAAJOhnQQ3FEYuhRgx4kl-RDePeiRY"
             onChange={recaptchaOnChange}
             onExpired={recaptchaOnExpired} />
+
+          {reusedEmail && <p className="form-info-error-message">This email has already been registered</p>}
+          {reusedUsername && <p className="form-info-error-message">This username is already being used</p>}
         </form>
       </div>
       <div>
-        <button className="register-login-button" onClick={postUser} disabled={isButtonDisabled}>
+        <button className="register-login-button" onClick={checkCredentials} disabled={isButtonDisabled}>
           Create Account
         </button>
       </div>

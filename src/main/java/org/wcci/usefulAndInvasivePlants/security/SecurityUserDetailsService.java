@@ -1,8 +1,7 @@
 package org.wcci.usefulAndInvasivePlants.security;
 
-/*import java.util.stream.Collectors;
+import java.util.stream.Collectors;
 
-import org.h2.schema.UserAggregate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,16 +9,15 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 import org.springframework.security.core.userdetails.User;
-import org.wcci.usefulAndInvasivePlants.repositories.UserRepo;
 
 @Component
 public class SecurityUserDetailsService implements UserDetailsService {
     @Autowired
-    private UserRepo userRepo;
+    private UserRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) {
-        UserAggregate user = userRepo.findByUsername(username);
+        DBUser user = userRepository.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException("User not found");
         }
@@ -27,4 +25,8 @@ public class SecurityUserDetailsService implements UserDetailsService {
                 user.getPassword(),
                 user.getRoles().stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
     }
-}*/
+
+    public DBUser save(DBUser dbUser) {
+        return userRepository.save(dbUser);
+    }
+}

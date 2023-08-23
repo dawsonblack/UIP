@@ -9,12 +9,14 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.wcci.usefulAndInvasivePlants.entities.Submission;
@@ -48,9 +50,10 @@ public class UserRestController {
                 linkTo(methodOn(UserRestController.class).getUser(user_id)).withSelfRel());
     }
 
-    @DeleteMapping("/api/users/{id}")
-    public void deleteById(@PathVariable long id) {
-        plantService.deleteUserByID(id);
+    @DeleteMapping("/api/users/{user_id}")
+    public ResponseEntity deleteById(@PathVariable long user_id) {
+            plantService.deleteUserByID(user_id);
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("");
     }
 
     @PostMapping("/api/users")

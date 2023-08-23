@@ -21,6 +21,10 @@ nav a:hover {
 body {
   font-family: "Arial", sans-serif;
   color: white;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
 }
 
 section {

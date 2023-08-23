@@ -23,14 +23,15 @@ body {
   color: white;
 }
 
-h1 {
-  text-align: center;
-  font-weight: bolder;
-  padding-top: 0px;
-  margin-top: 0;
-  font-size: xxx-large;
-  text-shadow: 2px 2px 4px #000000;
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+  opacity: 1;
 }
+
 .logo{
   display: flex;
   /* margin-left: auto; */
@@ -42,17 +43,23 @@ h1 {
   justify-content: center;
 }
 
-h4 {
+#title {
+  text-align: center;
+  font-weight: bolder;
+  padding-top: 0px;
+  margin-top: 0;
+  font-size: xxx-large;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.tagline {
   text-shadow: 2px 2px 4px #000000;
   padding: 0%;
 }
-section {
+
+.home-page-description {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 50px;
-  opacity: 1;
+  width: 100%;
 }
 
 .position-description {
@@ -71,7 +78,7 @@ section {
   font-style: italic;
 }
 
-#creatorName {
+.creatorName {
   background-color: rgba(62, 91, 125, 0.596);
   text-align: center;
   padding: 5px 0;
@@ -140,11 +147,6 @@ section {
   transform: scale(1.2);
 }
 
-p {
-  display: flex;
-  width: 100%;
-}
-
 /*Error.jsx*/
 .error-page {
   display: flex;
@@ -159,7 +161,7 @@ p {
   max-width: 800px;
 }
 
-#title {
+#error-message {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

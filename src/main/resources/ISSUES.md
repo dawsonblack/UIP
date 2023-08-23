@@ -1,5 +1,6 @@
 NOTES FROM DAWSON:
--make the search and user pages look nice on mobile
+-make everything mobile friendly
+-add short descriptions for creators
 -turn off autofill in inputs
 -check whether email or username is being used already
 -add a message for successfully creating an account

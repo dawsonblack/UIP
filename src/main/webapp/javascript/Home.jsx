@@ -6,25 +6,25 @@ export default function Home() {
       <div className="logo">
         <img src="images/logo-image-png.png" />{" "}
       </div>
-      <h1>Useful and Invasive Plants</h1>
+      <h1 id="title">Useful and Invasive Plants</h1>
 
       <section id="about">
-        <h4>UNVEIL!</h4>
+        <h4 className="tagline">UNVEIL!</h4>
 
-        <p>
+        <p className="home-page-description">
           Welcome to your virtual gateway to the mesmerizing world of plants! Useful and Invasive (UIP) is an informational application that shows you common
           helpful as well as invasive species of plants in Central Ohio.
         </p>
-        <h4>INDULGE!</h4>
+        <h4 className="tagline">INDULGE!</h4>
 
-        <p>
+        <p className="home-page-description">
           Immerse yourself in the captivating beauty of nature as you explore our extensive collection of plant images as well as their detailed descriptions.
           UIP is designed to satiate your curiosity and deepen your understanding of the plants around us. If you want to garden cool plants without the risk of
           possibly threatening our entire eco-system, UIP is the application just for that!
         </p>
-        <h4>PRODUCE!</h4>
+        <h4 className="tagline">PRODUCE!</h4>
 
-        <p>
+        <p className="home-page-description">
           Simply type in the name, color or even description of a plant, and watch as a treasure trove of images unfold before your eyes. Whether you're
           searching for the vibrant petals of a rare orchid, the lush foliage of a tropical fern, or the intricate patterns of succulents, our search feature
           will swiftly guide you to the visual and informational delight you seek!
@@ -34,7 +34,7 @@ export default function Home() {
       <section id="creators">
         <div id="team-members">
           <div className="team-member">
-            <h4 id="creatorName">Abdikarim Farah</h4>
+            <h4 className="creatorName">Abdikarim Farah</h4>
             <img src="images/abdi-headshot.jpg" className="headshot" />
             <div className="info-box">
               <a href="https://Abdikarimfarah.github.io">
@@ -50,7 +50,7 @@ export default function Home() {
             </div>
           </div>
           <div className="team-member">
-            <h4 id="creatorName">Dawson Black</h4>
+            <h4 className="creatorName">Dawson Black</h4>
             <img src="images/Dawson_headshot.jpg" className="headshot" />
             <div className="info-box">
               <a href="https://dawsonblack.github.io/">
@@ -66,7 +66,7 @@ export default function Home() {
             </div>
           </div>
           <div className="team-member">
-            <h4 id="creatorName">Robert Johnson</h4>
+            <h4 className="creatorName">Robert Johnson</h4>
             <img src="images/Robert_headshot.jpg" className="headshot" />
             <div className="info-box">
               <a href="https://Johnsonroberte.github.io">
@@ -82,7 +82,7 @@ export default function Home() {
             </div>
           </div>
           <div className="team-member">
-            <h4 id="creatorName">Siman Farah</h4>
+            <h4 className="creatorName">Siman Farah</h4>
             <img src="images/Siman_headshot.jpg" className="headshot" />
             <div className="info-box">
               <a href="https://Siman-1.github.io">

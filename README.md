@@ -63,3 +63,21 @@ VALUES
         -1
     );
 ```
+
+## UIP Data-flow
+
+``` mermaid
+sequenceDiagram
+
+participant React
+participant RestController
+participant data.sql
+participant SpringBoot
+participant Repository
+participant MySQL
+
+note over MySQL: Has a plant, user, and userUpload tables in database
+note over React: Uses npm to manage packages and to display a frontend
+
+react ->> controller: Requesting data
+```

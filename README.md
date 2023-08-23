@@ -80,7 +80,7 @@ participant data.sql
 
 data.sql -->> MySQL: Loads information into database on boot
 note over MySQL: Has a plant, user, and userUpload tables in database
-note over User: Uses npm to manage packages and to display a frontend
+note over React: Uses npm to manage packages and to display a frontend
 
 User -->> React: Search for plants
 React -->> RestController: API request

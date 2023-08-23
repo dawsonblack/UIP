@@ -12,6 +12,11 @@ NOTES FROM DAWSON:
 -links in the nav bar are not readable unless hovered over
 -make the error page adapt to any error code
 -reorganize images and have consistent names
+-add pages to the search results
+-go to either user page or login upon registration
+
+site key: 6LenvssnAAAAAJOhnQQ3FEYuhRgx4kl-RDePeiRY
+secret key: 6LenvssnAAAAAEz8PzEcwBNTExH35bCuZiTywVDE
 
 NOTES FROM ABDI:
 

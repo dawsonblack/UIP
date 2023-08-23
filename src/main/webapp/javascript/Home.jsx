@@ -3,32 +3,33 @@ import React, { useState } from "react";
 export default function Home() {
   return (
     <div>
+      <div className="logo">
+        <img src="images/logo-image-png.png" />{" "}
+      </div>
       <h1>Useful and Invasive Plants</h1>
 
       <section id="about">
-          <h4>UNVEIL!</h4>
+        <h4>UNVEIL!</h4>
 
-          <p>
-            Welcome to your virtual gateway to the mesmerizing world of plants! Useful and Invasive (UIP) is an informational application that shows you common
-            helpful as well as invasive species of plants in Central Ohio.
-          </p>
-          <h4>INDULGE!</h4>
+        <p>
+          Welcome to your virtual gateway to the mesmerizing world of plants! Useful and Invasive (UIP) is an informational application that shows you common
+          helpful as well as invasive species of plants in Central Ohio.
+        </p>
+        <h4>INDULGE!</h4>
 
-          <p>
-            Immerse yourself in the captivating beauty of nature as you explore our extensive collection of plant images as well as their detailed descriptions.
-            UIP is designed to satiate your curiosity and deepen your understanding of the plants around us. If you want to garden cool plants without the risk
-            of possibly threatening our entire eco-system, UIP is the application just for that!
-          </p>
-          <h4>PRODUCE!</h4>
+        <p>
+          Immerse yourself in the captivating beauty of nature as you explore our extensive collection of plant images as well as their detailed descriptions.
+          UIP is designed to satiate your curiosity and deepen your understanding of the plants around us. If you want to garden cool plants without the risk of
+          possibly threatening our entire eco-system, UIP is the application just for that!
+        </p>
+        <h4>PRODUCE!</h4>
 
-          <p>
-            Simply type in the name, color or even description of a plant, and watch as a treasure trove of images unfold before your eyes. Whether you're
-            searching for the vibrant petals of a rare orchid, the lush foliage of a tropical fern, or the intricate patterns of succulents, our search feature
-            will swiftly guide you to the visual and informational delight you seek!
-          </p>
+        <p>
+          Simply type in the name, color or even description of a plant, and watch as a treasure trove of images unfold before your eyes. Whether you're
+          searching for the vibrant petals of a rare orchid, the lush foliage of a tropical fern, or the intricate patterns of succulents, our search feature
+          will swiftly guide you to the visual and informational delight you seek!
+        </p>
       </section>
-
-      
 
       <section id="creators">
         <div id="team-members">

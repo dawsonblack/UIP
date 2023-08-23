@@ -4,7 +4,6 @@ NOTES FROM DAWSON:
 -turn off autofill in inputs
 -check whether email or username is being used already
 -add a message for successfully creating an account
--add a captcha to registration
 -add a confirm email feature
 -add search by description
 -sort search results alphabetically

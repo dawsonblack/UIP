@@ -8,7 +8,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const [invalidLogin, setInvalidLogin] = useState(null);
-  const { setName } = useAuth();
+  const { setUser } = useAuth();
 
   useEffect(() => {
     setIsButtonDisabled(username === "" || password === "");
@@ -45,10 +45,9 @@ export default function Login() {
     .then((responseBody) => {
         setInvalidLogin(true);
         for (let i = 0; i < responseBody["_embedded"]["userList"].length; i++) {
-            if (username == responseBody["_embedded"]["userList"][i].userName) {
-                if (hashedPassword == responseBody["_embedded"]["userList"][i].passWord) {
-                    setName(responseBody["_embedded"]["userList"][i].firstName);
-                    console.log(password + " hashed is " + hashedPassword + ", which is a match with the stored password");
+            if (username == responseBody["_embedded"]["userList"][i].username) {
+                if (hashedPassword == responseBody["_embedded"]["userList"][i].password) {
+                    setUser(responseBody["_embedded"]["userList"][i]);
                     setInvalidLogin(false);
                 }
                 break;
@@ -93,7 +92,7 @@ export default function Login() {
           Sign In
         </button>
       </div>
-      <p>Don't have an account? <Link to="/Register">Click here</Link> to Register</p>
+      <p className="link">Don't have an account? <Link to="/Register">Click here</Link> to Register</p>
     </div>
   );
 }

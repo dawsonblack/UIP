@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import ReCAPTCHA from "react-google-recaptcha";
 import { sha256 } from "./Main";
 
 export default function Register() {
@@ -12,6 +13,7 @@ export default function Register() {
   const [isInvalidEmail, setIsInvalidEmail] = useState(true);
   const [isInvalidPassword, setIsInvalidPassword] = useState(true);
   const [passwordsDoNotMatch, setPasswordsDoNotMatch] = useState(true);
+  const [recaptchaCompleted, setRecaptchaCompleted] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
   /*const [plantToSave, setPlantToSave] = useState("");
@@ -25,9 +27,10 @@ export default function Register() {
       password == "" ||
       isInvalidEmail ||
       isInvalidPassword ||
-      passwordsDoNotMatch
+      passwordsDoNotMatch ||
+      !recaptchaCompleted
     );
-  }, [email, firstName, username, password, confirmPassword]);
+  }, [email, firstName, username, password, confirmPassword, recaptchaCompleted]);
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter" && !isButtonDisabled) {
@@ -79,8 +82,8 @@ export default function Register() {
       body: JSON.stringify({
         email: email,
         firstName: firstName,
-        userName: username,
-        passWord: hashedPassword,
+        username: username,
+        password: hashedPassword,
       }),
     }).then((response) => {
       if (!response.ok) {
@@ -110,6 +113,13 @@ export default function Register() {
       console.log("Plant saved successfully!");
     });
   };*/
+
+  const recaptchaOnChange = () => {
+    setRecaptchaCompleted(true);
+  }
+  const recaptchaOnExpired = () => {
+    setRecaptchaCompleted(false);
+  }
 
   return (
     <div className="register-login-container">
@@ -162,6 +172,9 @@ export default function Register() {
             onKeyDown={handleKeyPress}
           ></input>
           {passwordsDoNotMatch && confirmPassword !=="" && <p className="form-info-error-message">Passwords do not match</p>}
+          <ReCAPTCHA sitekey="6LenvssnAAAAAJOhnQQ3FEYuhRgx4kl-RDePeiRY"
+            onChange={recaptchaOnChange}
+            onExpired={recaptchaOnExpired} />
         </form>
       </div>
       <div>
@@ -169,7 +182,7 @@ export default function Register() {
           Create Account
         </button>
       </div>
-      <p>Already have an account? <Link to="/Login">Sign in</Link></p>
+      <p className="link">Already have an account? <Link to="/Login">Sign in</Link></p>
     </div>
   );
 }

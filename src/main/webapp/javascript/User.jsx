@@ -6,7 +6,26 @@ export default function User() {
   const [username, setUsername] = useState('');
   const [plantId, setPlantId] = useState('');
   const [savedPlants, setSavedPlants] = useState([]);
-  const { name, setName } = useAuth();
+  const { user, setUser } = useAuth();
+
+  const updateUser = () => {
+    fetch(`/api/users/${user.ID}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        console.log("Pet updated successfully!");
+      })
+      .catch((error) => {
+        console.error("Error updating pet:", error);
+      });
+  }
 
   const handleSavePlant = () => {
     if (username && plantId) {
@@ -17,17 +36,17 @@ export default function User() {
   };
 
   function logOut() {
-    setName("");
-    localStorage.setItem("loggedInName", "")
+    setUser({});
+    localStorage.setItem("loggedInUser", {})
   }
 
-  if (name == "") {
+  if (user == {}) {
     return <Navigate to="/Login" />;
   }
 
   return (
     <div>
-      <h1>Plant Saver</h1>
+      <h1>Welcome, {user.firstName}!</h1>
       <input
         type="text"
         placeholder="Enter your username"
@@ -44,7 +63,6 @@ export default function User() {
       <button onClick={handleSavePlant}>Save Plant</button>
 
       <h2>Saved Plants</h2>
-      <h2>Welcome, {name}!</h2>
       <button onClick={logOut}>Log Out</button>
       <ul>
         {savedPlants.map((plant) => (

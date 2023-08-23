@@ -11,6 +11,7 @@ export default function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const [isInvalidEmail, setIsInvalidEmail] = useState(true);
+  const [isInvalidUsername, setIsInvalidUsername] = useState(true);
   const [isInvalidPassword, setIsInvalidPassword] = useState(true);
   const [passwordsDoNotMatch, setPasswordsDoNotMatch] = useState(true);
   const [recaptchaCompleted, setRecaptchaCompleted] = useState(false);
@@ -29,6 +30,7 @@ export default function Register() {
       username == "" ||
       password == "" ||
       isInvalidEmail ||
+      isInvalidUsername ||
       isInvalidPassword ||
       passwordsDoNotMatch ||
       !recaptchaCompleted
@@ -44,7 +46,6 @@ export default function Register() {
 
   const handleEmailChange = ({ target }) => {
     setEmail(target.value);
-
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     setIsInvalidEmail(!emailRegex.test(target.value));
   };
@@ -55,6 +56,7 @@ export default function Register() {
 
   const handleUsernameChange = ({ target }) => {
     setUsername(target.value);
+    setIsInvalidUsername(target.value.includes(" "));
   };
 
   const handlePasswordChange = ({ target }) => {
@@ -81,19 +83,20 @@ export default function Register() {
     fetch('/api/users', { method: "GET", cache: "default" })
       .then((response) => response.json())
       .then((responseBody) => {
-        console.log("In user fetch, length of responseBody is " + responseBody.length);
+        console.log("In user fetch");
 
-        if (responseBody.length > 0) {
+        if (responseBody["_embedded"]["userList"]) {
           console.log("We're gonna check for copies");
           for (let i = 0; i < responseBody["_embedded"]["userList"].length; i++) {
-            console.log("Checking " + responseBody["_embedded"]["userList"][i].email);
-            console.log("Checking " + responseBody["_embedded"]["userList"][i].username);
+            console.log("Checking " + responseBody["_embedded"]["userList"][i].email + " and " + responseBody["_embedded"]["userList"][i].username);
             if (responseBody["_embedded"]["userList"][i].email == email) {
               console.log("Email is a copy! Aborting now");
               setReusedEmail(true);
+              setReusedUsername(false);
               return;
           } else if (responseBody["_embedded"]["userList"][i].username == username) {
               console.log("Username is a copy! Aborting now");
+              setReusedEmail(false);
               setReusedUsername(true);
               return;
             }
@@ -122,6 +125,8 @@ export default function Register() {
       console.log("User saved successfully!");
     });
 
+    setReusedEmail(false);
+    setReusedUsername(false);
     setEmail("");
     setFirstName("");
     setUsername("");
@@ -182,6 +187,7 @@ export default function Register() {
             onChange={handleUsernameChange}
             onKeyDown={handleKeyPress}
           ></input>
+          {isInvalidUsername && username !=="" && <p className="form-info-error-message">Usernames cannot contain spaces</p>}
 
           <label htmlFor="password">Password:</label>
           <input
@@ -207,7 +213,7 @@ export default function Register() {
             onExpired={recaptchaOnExpired} />
 
           {reusedEmail && <p className="form-info-error-message">This email has already been registered</p>}
-          {reusedUsername && <p className="form-info-error-message">This username is already being used</p>}
+          {reusedUsername && <p className="form-info-error-message">This username is already in use</p>}
         </form>
       </div>
       <div>

@@ -362,7 +362,7 @@ VALUES
     (
         'Oriental Bittersweet',
         'Celastrus orbiculatus',
-        'Celastrus orbiculatus\' defining feature is its thin, spindly vines with silver to reddish-brown bark, ranging from 1 to over 10 cm in diameter. These vines can encircle trees up to 40 feet high, leading to strangulation or branch breakage, and the plant bears toxic round leaves, small green flowers, and distinctive red seeds within yellow pods.',
+        'Celastrus orbiculatus defining feature is its thin, spindly vines with silver to reddish-brown bark, ranging from 1 to over 10 cm in diameter. These vines can encircle trees up to 40 feet high, leading to strangulation or branch breakage, and the plant bears toxic round leaves, small green flowers, and distinctive red seeds within yellow pods.',
         true,
         false,
         'Red',
@@ -427,7 +427,7 @@ VALUES
         'The genus name refers to cup-like formations formed by merging sessile leaves at the stem, potentially preventing sap-sucking insects. Teasels are recognized by prickly stems, lanceolate leaves, and an inflorescence of purple to lavender flowers atop the stem. A 2011 study hints at potential carnivorous behavior, but 2019 experiments suggest increased seed production may be due to poor soil conditions rather than true carnivory.',
         true,
         false,
-        "Purple",
+        'Purple',
         'fruitImages/Common-Teasel(F).jpg',
         'leafImages/Common-Teasel(L).jpg',
         'By MPF - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=294179',

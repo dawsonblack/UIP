@@ -19,15 +19,32 @@ nav a:hover {
 }
 
 body {
-  margin: 0px;
   font-family: "Arial", sans-serif;
-  height: 100%;
-  width: 100%;
   color: white;
 }
 
 h1 {
   text-align: center;
+  font-weight: bolder;
+  padding-top: 0px;
+  margin-top: 0;
+  font-size: xxx-large;
+  text-shadow: 2px 2px 4px #000000;
+}
+.logo{
+  display: flex;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  width: 50%;
+  margin-bottom: 0;
+  margin-left: 25%;
+  /* flex-direction: row-reverse; */
+  justify-content: center;
+}
+
+h4 {
+  text-shadow: 2px 2px 4px #000000;
+  padding: 0%;
 }
 section {
   display: flex;
@@ -35,21 +52,27 @@ section {
   align-items: center;
   flex-direction: column;
   margin-bottom: 50px;
+  opacity: 1;
+}
+
+.position-description {
+  justify-content: center;
+  background-color: rgba(62, 91, 125, 0.596);
+  border-radius: 25px;
 }
 
 #about p {
   box-sizing: border-box;
-  background-color: #7dd87d;
+  background-color: rgba(235, 158, 80, 0.751);
   max-width: min(700px, 90%);
-  left: 0;
-  right: 0;
   padding: 20px;
-  color: black;
   border-radius: 25px;
+  justify-content: center;
+  font-style: italic;
 }
 
-#meet-us {
-  background-color: #35495e;
+#creatorName {
+  background-color: rgba(62, 91, 125, 0.596);
   text-align: center;
   padding: 5px 0;
   width: min(1500px, 100%);
@@ -57,12 +80,12 @@ section {
 }
 
 #team-members {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: center;
   flex-wrap: wrap;
   padding: 30px 0;
   width: min(700px, 90%);
-  background-color: #7dd87d;
   border-radius: 25px;
 }
 
@@ -70,8 +93,9 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 15px;
   transition: transform 0.3s;
+  padding: 5px;
+  margin: 5px;
 }
 
 .team-member:hover {
@@ -79,21 +103,25 @@ section {
 }
 
 .headshot {
-  width: 120px;
+  width: 120px; /* work on sizes */
   height: 150px;
   margin-bottom: 10px;
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: darkgray;
 }
 
 .info-box {
+  bottom: -100%;
+  left: 50%;
   text-align: center;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, bottom 0.3s;
 }
 
 .team-member:hover .info-box {
   opacity: 1;
+  bottom: 0; /*Slide on hover */
 }
 
 .info-box h4 {
@@ -110,6 +138,11 @@ section {
 
 .social-link:hover {
   transform: scale(1.2);
+}
+
+p {
+  display: flex;
+  width: 100%;
 }
 
 /*Error.jsx*/

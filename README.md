@@ -69,15 +69,24 @@ VALUES
 ``` mermaid
 sequenceDiagram
 
-participant React
+actor User
 participant RestController
-participant data.sql
 participant SpringBoot
-participant Repository
+participant CrudRepository
+participant data.sql
 participant MySQL
 
+data.sql -->> MySQL: Loads information into database on boot
 note over MySQL: Has a plant, user, and userUpload tables in database
-note over React: Uses npm to manage packages and to display a frontend
+note over User: Uses npm to manage packages and to display a frontend
 
-react ->> controller: Requesting data
+User -->> controller: API request
+RestController -->> SpringBoot: Asks for data from API request
+note over SpringBoot: SpringBoot connects all the separate pieces
+
+SpringBoot -->> CrudRepository: Asks for data from API request
+CrudRepository -->> MySQL: Uses SQL to request the saved data
+
+MySQL -->> CrudRepository: Loads requested data
+
 ```

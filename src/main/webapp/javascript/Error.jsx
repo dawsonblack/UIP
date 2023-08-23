@@ -5,7 +5,7 @@ export default function Error() {
     return (
         <div className="error-page">
             <div className="error-container">
-                <div id="title">
+                <div id="error-message">
                     <h1>Error 404 - Page Not Found</h1>
                     <img src="images/crying_plant.PNG" alt=""/>
                 </div>

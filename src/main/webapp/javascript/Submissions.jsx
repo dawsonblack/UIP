@@ -41,14 +41,11 @@ export default function Submissions() {
   const handleImageFURLChange = (event) => {
     const inputValue = event.target.value;
     setImageFruitURL(inputValue);
-
-    const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
-    setIsValidUrl(urlPattern.test(inputValue));
   };
 
   const handleImageLURLChange = (event) => {
     const inputValue = event.target.value;
-    setImageFruitURL(inputValue);
+    setImageLeafURL(inputValue);
 
     const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
     setIsValidUrl(urlPattern.test(inputValue));
@@ -56,7 +53,7 @@ export default function Submissions() {
 
   const handleImageFSourceChange = (event) => {
     const inputValue = event.target.value;
-    setImageFruitURL(inputValue);
+    setImageFruitSource(inputValue);
 
     const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
     setIsValidUrl(urlPattern.test(inputValue));
@@ -64,7 +61,7 @@ export default function Submissions() {
 
   const handleImageLSourceChange = (event) => {
     const inputValue = event.target.value;
-    setImageFruitURL(inputValue);
+    setImageLeafSource(inputValue);
 
     const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
     setIsValidUrl(urlPattern.test(inputValue));
@@ -106,48 +103,18 @@ export default function Submissions() {
         throw new Error("Network response was not ok");
       }
       console.log("Plant saved successfully!");
+      setCommonName("");
+      setScientificName("");
+      setDescription("");
+      setIsInvasive(false);
+      setIsNative(false);
+      setColor("");
+      setImageFruitURL("");
+      setImageLeafURL("");
+      setImageFruitSource("");
+      setImageLeafSource("");
+      setWikiLink("");
     });
-
-    setCommonName("");
-    setScientificName("");
-    setDescription("");
-    setIsInvasive(false);
-    setIsNative(false);
-    setColor("");
-    setImageFruitURL("");
-    setImageLeafURL("");
-    setImageFruitSource("");
-    setImageLeafSource("");
-    setWikiLink("");
-  };
-
-  const getSubmissions = () => {
-    fetch("/api/submissions", { method: "GET", cache: "default" })
-      .then((response) => response.json())
-      .then((responseBody) => {
-        console.log(commonName,
-          scientificName,
-          description,
-          isInvasive,
-          isNative,
-          color,
-          imageFruitURL,
-          imageLeafURL,
-          imageFruitSource,
-          imageLeafSource,
-          wikiLink)
-      });
-    setCommonName("");
-    setScientificName("");
-    setDescription("");
-    setIsInvasive(false);
-    setIsNative(false);
-    setColor("");
-    setImageFruitURL("");
-    setImageLeafURL("");
-    setImageFruitSource("");
-    setImageLeafSource("");
-    setWikiLink("");
   };
 
   return (
@@ -196,61 +163,104 @@ export default function Submissions() {
           <p>Is Native: {isNative ? "True" : "False"}</p>
           <button onClick={handleIsNativeChange}>Toggle</button>
 
-          <label htmlFor="imageFruitURL">Fruit URL:</label>
-          <input
-            type="text"
-            name="FruitURL"
-            value={imageFruitURL}
-            onChange={handleImageFURLChange}
-            onKeyDown={handleKeyPress}
-            style={{ borderColor: isValidUrl ? "green" : "red" }}
-          ></input>
+          <div>
+            <label htmlFor="imageFruitURL">Fruit URL:</label>
+            <input
+              type="text"
+              name="FruitURL"
+              value={imageFruitURL}
+              onChange={handleImageFURLChange}
+              onKeyDown={handleKeyPress}
+              style={{ borderColor: isValidUrl ? "green" : "red" }}
+            ></input>
+            {!isValidUrl && <p>Please enter a valid URL or link.</p>}
+          </div>
 
-          <label htmlFor="imageLeafURL">Leaf URL:</label>
-          <input
-            type="text"
-            name="imageLeafURL"
-            value={imageLeafURL}
-            onChange={handleImageLURLChange}
-            onKeyDown={handleKeyPress}
-            style={{ borderColor: isValidUrl ? "green" : "red" }}
-          ></input>
+          <div>
+            <label htmlFor="imageLeafURL">Leaf URL:</label>
+            <input
+              type="text"
+              name="imageLeafURL"
+              value={imageLeafURL}
+              onChange={handleImageLURLChange}
+              onKeyDown={handleKeyPress}
+              style={{ borderColor: isValidUrl ? "green" : "red" }}
+            ></input>
+          </div>
 
-          <label htmlFor="imageFruitSource">Fruit Image Source:</label>
-          <input
-            type="text"
-            name="imageFruitSource"
-            value={imageFruitSource}
-            onChange={handleImageFSourceChange}
-            onKeyDown={handleKeyPress}
-            style={{ borderColor: isValidUrl ? "green" : "red" }}
-          ></input>
+          <div>
+            <label htmlFor="imageFruitSource">Fruit Image Source:</label>
+            <input
+              type="text"
+              name="imageFruitSource"
+              value={imageFruitSource}
+              onChange={handleImageFSourceChange}
+              onKeyDown={handleKeyPress}
+              style={{ borderColor: isValidUrl ? "green" : "red" }}
+            ></input>
+          </div>
 
-          <label htmlFor="imageLeafSource">Leaf Image Source:</label>
-          <input
-            type="text"
-            name="imageLeafSource"
-            value={imageLeafSource}
-            onChange={handleImageLSourceChange}
-            onKeyDown={handleKeyPress}
-            style={{ borderColor: isValidUrl ? "green" : "red" }}
-          ></input>
+          <div>
+            <label htmlFor="imageLeafSource">Leaf Image Source:</label>
+            <input
+              type="text"
+              name="imageLeafSource"
+              value={imageLeafSource}
+              onChange={handleImageLSourceChange}
+              onKeyDown={handleKeyPress}
+              style={{ borderColor: isValidUrl ? "green" : "red" }}
+            ></input>
+          </div>
 
-          <label htmlFor="wikiLink">Wiki Link:</label>
-          <input
-            type="text"
-            name="wikiLink"
-            value={wikiLink}
-            onChange={handleWikiLinkChange}
-            onKeyDown={handleKeyPress}
-            style={{ borderColor: isValidUrl ? "green" : "red" }}
-          ></input>
+          <div>
+            <label htmlFor="wikiLink">Wiki Link:</label>
+            <input
+              type="text"
+              name="wikiLink"
+              value={wikiLink}
+              onChange={handleWikiLinkChange}
+              onKeyDown={handleKeyPress}
+              style={{ borderColor: isValidUrl ? "green" : "red" }}
+            ></input>
+          </div>
         </form>
 
         <button onClick={postSubmission}>Create Plant</button>
+        <SubmissionLister />
       </div>
-
-      <button onClick={getSubmissions}>Plants Created</button>
     </div>
+  );
+}
+
+function SubmissionLister() {
+  const [plants, setPlants] = useState([]);
+
+  useEffect(() => {
+    fetch(`/api/submissions`, { method: "GET", cache: "default" })
+      .then((response) => response.json())
+      .then((response) => setPlants(response["_embedded"]["submissionList"]));
+    console.log(plants);
+    return () => {};
+  }, []);
+
+  return (
+    <div>
+      <ul className="item-list">
+        {plants.map((oneSubmission) => (
+          <Submission key={oneSubmission.plant_id} submission={oneSubmission} />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function Submission({ submission }) {
+  return (
+    <li key={submission.plant_id}>
+      <ul>
+        <li>Common Name: {submission.commonName}cm</li>
+        <li>Scientific Name: {submission.scientificName}kg</li>
+      </ul>
+    </li>
   );
 }

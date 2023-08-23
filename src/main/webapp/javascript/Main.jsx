@@ -45,6 +45,7 @@ function Layout() {
       <nav>
         <Link to="/">Home</Link>
         <Link to="Search">Search</Link>
+        <Link to="Submissions">Add Plants</Link>
         {isUserLoggedIn ? (
           <Link to="User">My Profile</Link>
         ) : (

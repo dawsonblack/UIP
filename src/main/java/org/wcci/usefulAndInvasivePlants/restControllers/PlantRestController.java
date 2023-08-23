@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +24,7 @@ import org.wcci.usefulAndInvasivePlants.entities.Plant;
 import org.wcci.usefulAndInvasivePlants.services.PlantService;
 
 @RestController
+@CrossOrigin
 public class PlantRestController {
     public static final String LIST_ALL_PLANTS = "listAllPlants";
 

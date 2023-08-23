@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -21,6 +22,7 @@ import org.wcci.usefulAndInvasivePlants.entities.User;
 import org.wcci.usefulAndInvasivePlants.services.PlantService;
 
 @RestController
+@CrossOrigin
 public class UserRestController {
     public static final String LIST_ALL_USERS = "listAllUsers";
     public static final String LIST_ALL_SUBMITTIONS = "listAllSubmissions";

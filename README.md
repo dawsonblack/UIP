@@ -72,7 +72,7 @@ sequenceDiagram
 actor User
 participant React
 participant RestController
-participant SpringBoot
+participant Service
 participant CrudRepository
 participant MySQL
 participant data.sql
@@ -84,17 +84,17 @@ note over React: Uses npm to manage packages and to display a frontend
 
 User -->> React: Search for plants
 React -->> RestController: API request
-RestController -->> SpringBoot: Asks for data from API request
-note over SpringBoot: SpringBoot connects all the separate pieces
+RestController -->> Service: Asks for data from API request
+note over Service: Service connects all the separate pieces
 
-SpringBoot -->> CrudRepository: Asks for data from API request
+Service -->> CrudRepository: Asks for data from API request
 CrudRepository -->> MySQL: Uses SQL to request the saved data
 
 MySQL -->> CrudRepository: Loads requested data
 note over CrudRepository: Data is transformed into an object
-CrudRepository -->> SpringBoot: Object received with JPA
+CrudRepository -->> Service: Object received with JPA
 
-SpringBoot -->> RestController: Sends requested object to API endpoint
+Service -->> RestController: Sends requested object to API endpoint
 RestController -->> React: Takes the object opens it
 React -->> User: Displays requested data
 

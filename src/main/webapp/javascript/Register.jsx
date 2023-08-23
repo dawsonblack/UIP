@@ -81,14 +81,22 @@ export default function Register() {
     fetch('/api/users', { method: "GET", cache: "default" })
       .then((response) => response.json())
       .then((responseBody) => {
-        console.log(responseBody);
-        for (let i = 0; i < responseBody["_embedded"]["userList"].length; i++) {
-          if (responseBody["_embedded"]["userList"][i].email == email) {
+        console.log("In user fetch, length of responseBody is " + responseBody.length);
+
+        if (responseBody.length > 0) {
+          console.log("We're gonna check for copies");
+          for (let i = 0; i < responseBody["_embedded"]["userList"].length; i++) {
+            console.log("Checking " + responseBody["_embedded"]["userList"][i].email);
+            console.log("Checking " + responseBody["_embedded"]["userList"][i].username);
+            if (responseBody["_embedded"]["userList"][i].email == email) {
+              console.log("Email is a copy! Aborting now");
               setReusedEmail(true);
               return;
           } else if (responseBody["_embedded"]["userList"][i].username == username) {
+              console.log("Username is a copy! Aborting now");
               setReusedUsername(true);
               return;
+            }
           }
         }
         postUser();

@@ -35,8 +35,8 @@ public class SecurityConfig {
                         (authoritzationManager) -> authoritzationManager
                                 .requestMatchers(HttpMethod.POST, "api/register").permitAll()
                                 .requestMatchers(HttpMethod.GET, "api/double/*").permitAll()
-                                .requestMatchers("api/**").hasAuthority("USER")
-                                .anyRequest().authenticated())
+                                //.requestMatchers("api/users").hasAuthority("USER")
+                                .anyRequest().permitAll())
                 .csrf((csrf) -> csrf.disable())
                 .formLogin((formLoginConfigurer) -> formLoginConfigurer.permitAll())
                 .rememberMe((rememberMeConfigurer) -> rememberMeConfigurer.alwaysRemember(false))

@@ -10,7 +10,13 @@ NOTES FROM DAWSON:
 -sort search results alphabetically
 -click here to log in/register is not readable depending on the background video
 -links in the nav bar are not readable unless hovered over
--add a custom error page
+-make the error page adapt to any error code
+-reorganize images and have consistent names
+-add pages to the search results
+-go to either user page or login upon registration
+
+site key: 6LenvssnAAAAAJOhnQQ3FEYuhRgx4kl-RDePeiRY
+secret key: 6LenvssnAAAAAEz8PzEcwBNTExH35bCuZiTywVDE
 
 NOTES FROM ABDI:
 

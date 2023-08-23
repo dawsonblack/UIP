@@ -74,8 +74,9 @@ participant React
 participant RestController
 participant SpringBoot
 participant CrudRepository
-participant data.sql
 participant MySQL
+participant data.sql
+
 
 data.sql -->> MySQL: Loads information into database on boot
 note over MySQL: Has a plant, user, and userUpload tables in database
@@ -90,5 +91,11 @@ SpringBoot -->> CrudRepository: Asks for data from API request
 CrudRepository -->> MySQL: Uses SQL to request the saved data
 
 MySQL -->> CrudRepository: Loads requested data
+note over CrudRepository: Data is transformed into an object
+CrudRepository -->> SpringBoot: Object received with JPA
+
+SpringBoot -->> RestController: Sends requested object to API endpoint
+RestController -->> React: Takes the object opens it
+React -->> User: Displays requested data
 
 ```

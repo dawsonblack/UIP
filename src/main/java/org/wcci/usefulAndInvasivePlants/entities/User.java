@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 // should we add age as a field??? 
@@ -15,7 +16,7 @@ import jakarta.persistence.Id;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long userID; /// should I use Int here instead?
     private String email;
     private String firstName;
@@ -24,9 +25,7 @@ public class User {
     @Convert(converter = StringListConverter.class)
     private List<String> savedPlants;
 
-    // is line 12-15 a constructor? if not what is a constructor and where is it
-    public User(Long id, String email, String firstName, String username, String password) {
-        this.userID = id;
+    public User(String email, String firstName, String username, String password) {
         this.email = email;
         this.firstName = firstName;
         this.username = username;

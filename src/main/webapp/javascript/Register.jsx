@@ -158,7 +158,7 @@ export default function Register() {
 
   return (
     <div className="register-login-container">
-      <form>
+      <form action="/Register" method="post">
         <div className="register-login-form">
           <label htmlFor="email">Email:</label>
           <input
@@ -216,7 +216,7 @@ export default function Register() {
           {reusedUsername && <p className="form-error-message">This username is already in use</p>}
         </div>
         <div className="button-container">
-          <button onClick={checkCredentials} disabled={isButtonDisabled}>Create Account</button>
+          <button type="submit" disabled={isButtonDisabled}>Create Account</button>
         </div>
       </form>
       <p className="link">Already have an account? <Link to="/Login">Sign in</Link></p>

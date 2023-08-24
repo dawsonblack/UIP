@@ -2,7 +2,7 @@
 nav {
   display: flex;
   justify-content: space-around;
-  background-color: #35495e;
+  background-color: #556b2f;
   margin-bottom: 2%;
   padding: 0.75em;
   width: 100%;
@@ -10,12 +10,12 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: #f5f5f5;
+  color: #f5deb3;
   transition: color 0.2s;
 }
 
 nav a:hover {
-  color: #ff7e67;
+  color: rgb(166, 123, 91);
 }
 
 body {
@@ -34,7 +34,7 @@ section {
   opacity: 1;
 }
 
-.logo{
+.logo {
   display: flex;
   /* margin-left: auto; */
   /* margin-right: auto; */
@@ -66,22 +66,22 @@ section {
 
 .position-description {
   justify-content: center;
-  background-color: rgba(62, 91, 125, 0.596);
+  background-color: rgba(85, 107, 47, 0.596);
   border-radius: 25px;
+  padding: 5px;
 }
 
 #about p {
   box-sizing: border-box;
-  background-color: rgba(235, 158, 80, 0.751);
+  background-color: rgba(166, 123, 91, 0.8);
   max-width: min(700px, 90%);
   padding: 20px;
   border-radius: 25px;
   justify-content: center;
-  font-style: italic;
 }
 
 .creatorName {
-  background-color: rgba(62, 91, 125, 0.596);
+  background-color: rgba(85, 107, 47, 0.596);
   text-align: center;
   padding: 5px 0;
   width: min(1500px, 100%);
@@ -125,7 +125,9 @@ section {
   left: 50%;
   text-align: center;
   opacity: 0;
-  transition: opacity 0.3s, bottom 0.3s;
+  transition:
+    opacity 0.3s,
+    bottom 0.3s;
 }
 
 .team-member:hover .info-box {
@@ -268,20 +270,22 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  border: 4px solid #35495e;
+  border: 4px solid #556b2f;
   padding: 10px;
   margin-top: 10px;
   border-radius: 5px;
-  background-color: #7dd87d;
+  background-color: #f5deb3;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
   color: black;
   border-radius: 25px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .plant-container:hover {
-  background-color: rgba(100, 100, 100, 0.8);
+  background-color: rgba(222, 184, 135, 0.8);
 }
 
 .plant-container ul {
@@ -300,10 +304,10 @@ section {
 }
 
 .invasive {
-  color: rgb(255, 68, 68);
+  color: #800000;
 }
 .non-invasive {
-  color: rgb(1, 219, 1);
+  color: #006400;
 }
 
 .plant-container img {
@@ -311,8 +315,10 @@ section {
   max-height: 20rem;
   margin-left: 10px;
   margin-right: 10px;
-  transition: width 0.3s ease, height 0.3s ease;
-  border: 4px solid #35495e;
+  transition:
+    width 0.3s ease,
+    height 0.3s ease;
+  border: 4px solid #556b2f;
   border-radius: 25px;
 }
 
@@ -321,7 +327,9 @@ section {
   max-height: none;
   width: 750px;
   height: 750px;
-  transition: width 0.3s ease, height 0.3s ease;
+  transition:
+    width 0.3s ease,
+    height 0.3s ease;
 }
 .plant-container p {
   max-width: 300px;
@@ -430,3 +438,114 @@ section {
 }
 
 /* User.jsx */
+/* .user-submission-container {
+  height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    ;
+} */
+
+.user-submission-container {
+  width: 400px;
+  margin: 20px auto; /* Center horizontally */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  background-color: #7dd87d;
+}
+
+.user-submission-form {
+  display: flex;
+  flex-direction: column;
+}
+/* Style for the input */
+.user-submission-container-box {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+.submission-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border: 4px solid #35495e;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #7dd87d;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+  color: black;
+  border-radius: 25px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submission-container:hover {
+  background-color: rgba(100, 100, 100, 0.8);
+}
+
+.submission-container ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  list-style: none;
+  margin-right: 10px;
+  padding: 0;
+  flex: 1;
+}
+
+.submission-container ul li {
+  margin-bottom: 5px;
+}
+
+.invasive {
+  color: rgb(255, 68, 68);
+}
+.non-invasive {
+  color: rgb(1, 219, 1);
+}
+
+.submission-container img {
+  max-width: 20rem;
+  max-height: 20rem;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition:
+    width 0.3s ease,
+    height 0.3s ease;
+  border: 4px solid #35495e;
+  border-radius: 25px;
+}
+
+.submission-container img:hover {
+  max-width: none;
+  max-height: none;
+  width: 750px;
+  height: 750px;
+  transition:
+    width 0.3s ease,
+    height 0.3s ease;
+}
+.submission-container p {
+  max-width: 300px;
+  padding-left: 20px;
+}
+
+.submission-container a {
+  text-decoration: none;
+}
+
+.submission-container a:hover {
+  text-decoration: underline;
+}

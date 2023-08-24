@@ -2,10 +2,10 @@
 
 ## Instructions for Application Setup
 
-- Using Chocolaty within a PowerShell type `choco install mysql`
-- Type `mysql -u root -e "CREATE DATABASE uip"` into gitBash
+- Using Chocolaty within PowerShell type `choco install mysql`
+- Type `mysql -u root -e "CREATE DATABASE uip"` into GitBash
 - Boot UIP for <http://localhost:8080/>
-- `cd UsefulandInvasivePlants` and type `npm start` into Terminal to boot slides at <http://localhost:3000/>
+- `cd UsefulandInvasivePlants` and type `npm start` into GitBash to boot slides at <http://localhost:3000/>
 
 ## Functionality
 
@@ -16,7 +16,8 @@ Useful and Invasive Plants is a plant identification tool to assist in identifyi
 - Every invasive plant listed by the Ohio Department of Agriculture is cataloged
 - Native plants from multiple lists on <https://www.ohionativeplantmonth.org/native-plant-list> are cataloged
 - Ability for registered users to upload new plants to be added to the database pending review by curators
-- Plant ID's start at -1 and descend
+- The sources for images can be gotten from curling that plant_id
+- Plant_id's start at -1 and descend
 
 ## Endpoints
 
@@ -28,6 +29,8 @@ Request body example -- `-d {"commonName":"test","scientificName":"scientific te
 - GET SINGLE PLANT -- `curl -X GET http://localhost:8080/api/plants/{plant_id} -H 'Content-Type: application/json`
 
 ### User Endpoints
+
+Request body example -- `-d {"userID":1,"email":"myEmail@email.com","firstName":"Robert","username":"Robert","password":"3e6f99a88fcb3d1f9c3e7ecbd50bae727b5addbcf418bd3019964c4ab4ebb555","savedPlants":[]}`
 
 ## Catalog Formatting
 
@@ -58,7 +61,7 @@ VALUES
         'fruitImages/Raspberries(F).jpg',
         'leafImages/Raspberries(L).jpg',
         'By Ivar Leidus - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=96641162',
-        'By Tomwsulcer - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=19087683',
+        'By Tom Sulcer - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=19087683',
         'https://en.wikipedia.org/wiki/Rubus_idaeus',
         -1
     );

@@ -2,7 +2,7 @@
 nav {
   display: flex;
   justify-content: space-around;
-  background-color: #35495e;
+  background-color: #556b2f;
   margin-bottom: 2%;
   padding: 0.75em;
   width: 100%;
@@ -10,12 +10,12 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: #f5f5f5;
+  color: #f5deb3;
   transition: color 0.2s;
 }
 
 nav a:hover {
-  color: #ff7e67;
+  color: rgb(166, 123, 91);
 }
 
 body {
@@ -68,22 +68,22 @@ section {
 
 .position-description {
   justify-content: center;
-  background-color: rgba(62, 91, 125, 0.596);
+  background-color: rgba(85, 107, 47, 0.596);
   border-radius: 25px;
+  padding: 5px;
 }
 
 #about p {
   box-sizing: border-box;
-  background-color: rgba(235, 158, 80, 0.751);
+  background-color: rgba(166, 123, 91, 0.8);
   max-width: min(700px, 90%);
   padding: 20px;
   border-radius: 25px;
   justify-content: center;
-  font-style: italic;
 }
 
 .creatorName {
-  background-color: rgba(62, 91, 125, 0.596);
+  background-color: rgba(85, 107, 47, 0.596);
   text-align: center;
   padding: 5px 0;
   width: min(1500px, 100%);
@@ -272,11 +272,11 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  border: 4px solid #35495e;
+  border: 4px solid #556b2f;
   padding: 10px;
   margin-top: 10px;
   border-radius: 5px;
-  background-color: #7dd87d;
+  background-color: #f5deb3;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition:
     background-color 0.3s ease,
@@ -287,7 +287,7 @@ section {
 }
 
 .plant-container:hover {
-  background-color: rgba(100, 100, 100, 0.8);
+  background-color: rgba(222, 184, 135, 0.8);
 }
 
 .plant-container ul {
@@ -306,10 +306,10 @@ section {
 }
 
 .invasive {
-  color: rgb(255, 68, 68);
+  color: #800000;
 }
 .non-invasive {
-  color: rgb(1, 219, 1);
+  color: #006400;
 }
 
 .plant-container img {
@@ -320,7 +320,7 @@ section {
   transition:
     width 0.3s ease,
     height 0.3s ease;
-  border: 4px solid #35495e;
+  border: 4px solid #556b2f;
   border-radius: 25px;
 }
 

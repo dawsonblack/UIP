@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.Link;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,11 +18,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import org.wcci.usefulAndInvasivePlants.entities.Plant;
 import org.wcci.usefulAndInvasivePlants.services.PlantService;
+import java.util.stream.Stream;
 
 @RestController
 @CrossOrigin
@@ -30,24 +33,34 @@ public class PlantRestController {
 
     final private PlantService plantService;
 
-    //contructor injection through contructor @Autowired
+    // contructor injection through contructor @Autowired
     public PlantRestController(@Autowired PlantService plantService) {
         this.plantService = plantService;
     }
 
     @GetMapping("/api/plants")
-    public CollectionModel<EntityModel<Plant>> getPlants() {
-        List<EntityModel<Plant>> plants = this.plantService.plantStream()
-                .map(plant -> EntityModel.of(plant))
+    public CollectionModel<EntityModel<Plant>> getPlants(@RequestParam(value = "page", defaultValue = "1") int page) {
+        int pageSize = 10; // Number of plants per page
+        int offset = (page - 1) * pageSize;
+
+        Stream<Plant> allPlantsStream = this.plantService.plantStream();
+
+        List<EntityModel<Plant>> plants = allPlantsStream
+                .skip(offset)
+                .limit(pageSize)
+                .map(plant -> EntityModel.of(plant,
+                        linkTo(methodOn(PlantRestController.class).getPlant(plant.getPlantID())).withSelfRel()))
                 .collect(Collectors.toList());
-        return CollectionModel.of(plants);
+
+        Link selfLink = linkTo(methodOn(PlantRestController.class).getPlants(page)).withSelfRel();
+        return CollectionModel.of(plants, selfLink);
     }
 
     @GetMapping("/api/plants/{plant_id}")
     public EntityModel<Plant> getPlant(@PathVariable final Long plant_id) {
         final Plant plant = plantService.findPlant(plant_id);
         return EntityModel.of(plant,
-                linkTo(methodOn(PlantRestController.class).getPlants()).withRel(LIST_ALL_PLANTS),
+                linkTo(methodOn(PlantRestController.class).getPlants(1)).withRel(LIST_ALL_PLANTS),
                 linkTo(methodOn(PlantRestController.class).getPlant(plant_id)).withSelfRel());
     }
 
@@ -55,7 +68,7 @@ public class PlantRestController {
     public EntityModel<Plant> newPlant(@RequestBody final Plant plant) {
         return EntityModel.of(plantService.writeToDatabase(plant),
                 linkTo(methodOn(PlantRestController.class).getPlant(plant.getPlantID())).withSelfRel(),
-                linkTo(methodOn(PlantRestController.class).getPlants()).withRel(LIST_ALL_PLANTS));
+                linkTo(methodOn(PlantRestController.class).getPlants(1)).withRel(LIST_ALL_PLANTS));
     }
 
     @DeleteMapping("/api/plants/{plant_id}")
@@ -72,8 +85,8 @@ public class PlantRestController {
     @PutMapping("/api/plants/{plant_id}")
     public EntityModel<Plant> updatePlant(
             @PathVariable final long plant_id, // the name of the parameter (plant_id) must match
-                                                    // "{plant_id}" in
-                                                    // the line above
+                                               // "{plant_id}" in
+                                               // the line above
             @RequestBody final Plant plant) {
         // Update the plant if that is the right thing to do
         final Plant databasePlant = plantService.updatePlant(plant, plant_id);

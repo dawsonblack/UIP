@@ -37,8 +37,12 @@ public class SecurityConfig {
                                 //.requestMatchers(HttpMethod.GET, "api/double/*").permitAll()
                                 //.requestMatchers("api/users").hasAuthority("USER")
                                 .requestMatchers("/User").authenticated()
-                                .requestMatchers("/api/users").hasAuthority("ADMIN")
+                                .requestMatchers("/api/users").authenticated()//hasAuthority("ADMIN")
                                 .anyRequest().permitAll())
+                .formLogin(
+                        (formLogin) -> formLogin
+                                .loginPage("/Login")
+                                .permitAll())
                 .csrf((csrf) -> csrf.disable())
                 .cors((cors) -> cors.disable())
                 .formLogin((formLoginConfigurer) -> formLoginConfigurer.permitAll())

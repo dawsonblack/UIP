@@ -66,7 +66,7 @@ export default function Login() {
   return (
     <div className="register-login-container">
       <div>
-        <form className="register-login-form">
+        <form className="register-login-form" action="@{/login}" method="post">
           <label htmlFor="username">Username:</label>
           <input
             type="text"
@@ -84,6 +84,7 @@ export default function Login() {
             onChange={handlePasswordChange}
             onKeyDown={handleKeyPress}
           ></input>
+          <button className="register-login-button" type="submit" disabled={isButtonDisabled}>Temporary submit button</button>
           {invalidLogin && <p className="form-info-error-message">Your username or password was incorrect</p>}
         </form>
       </div>

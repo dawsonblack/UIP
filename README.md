@@ -30,6 +30,8 @@ Request body example -- `-d {"commonName":"test","scientificName":"scientific te
 
 ### User Endpoints
 
+Request body example -- `-d {"userID":1,"email":"myEmail@email.com","firstName":"Robert","username":"Robert","password":"3e6f99a88fcb3d1f9c3e7ecbd50bae727b5addbcf418bd3019964c4ab4ebb555","savedPlants":[]}`
+
 ## Catalog Formatting
 
 ``` sql

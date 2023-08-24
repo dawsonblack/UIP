@@ -21,18 +21,6 @@ public class Endpoint {
         this.userService = userService;
     }
 
-    // Note that `curl -i http://localhost:8080/api/triple/3` redirects to "/login".
-    @GetMapping("/api/triple/{val}")
-    public int tripleNumber(@PathVariable final int val) {
-        return val * 3;
-    }
-
-    // Note that `curl -i http://localhost:8080/api/double/999` returns 1998
-    @GetMapping("/api/double/{val}")
-    public int doubleNumber(@PathVariable final int val) {
-        return val * 2;
-    }
-
     // curl -iX POST http://localhost:8080/api/register -d '{"username":"marshall", "password":"gene"}' -H "Content-Type: application/json"
     @PostMapping("/api/register")
     public DBUser register(@RequestBody DBUser nameAndPassword) {

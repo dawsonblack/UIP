@@ -141,4 +141,8 @@ public class PlantService {
         return databaseUser;
     }
 
+    public long getTotalPlantCount() {
+        return plantRepo.count();
+    }
+
 }

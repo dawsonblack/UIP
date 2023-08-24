@@ -72,32 +72,15 @@ export default function TestingFetches() {
           if (searchKeywords == "") {
             setSearchResults(responseBody["_embedded"]["plantList"]);
           } else {
-            const filteredResults = responseBody["_embedded"][
-              "plantList"
-            ].filter((item) => {
-              console.log(
-                "The " +
-                  searchBy +
-                  " is " +
-                  item[searchBy] +
-                  ", and its type is " +
-                  typeof item[searchBy]
-              );
+            const filteredResults = responseBody["_embedded"]["plantList"].filter((item) => {
+              console.log("The " + searchBy + " is " + item[searchBy] + ", and its type is " + typeof item[searchBy]);
               return (
                 item[searchBy].toString() == searchKeywords.toLowerCase() ||
-                (typeof item[searchBy] !== "boolean" &&
-                  item[searchBy]
-                    .toLowerCase()
-                    .includes(searchKeywords.toLowerCase())) ||
-                (searchBy == "commonName" &&
-                  item["scientificName"]
-                    .toLowerCase()
-                    .includes(searchKeywords.toLowerCase()))
+                (typeof item[searchBy] !== "boolean" && item[searchBy].toLowerCase().includes(searchKeywords.toLowerCase())) ||
+                (searchBy == "commonName" && item["scientificName"].toLowerCase().includes(searchKeywords.toLowerCase()))
               );
             });
-            console.log(
-              "Here are the filtered search results: " + filteredResults
-            );
+            console.log("Here are the filtered search results: " + filteredResults);
             setSearchResults(filteredResults);
             setSearchWasRun(true);
           }
@@ -107,6 +90,19 @@ export default function TestingFetches() {
     useEffect(() => getPlants(), [searchKeywords]);
 
     console.log("search results: " + searchResults);
+
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const nextPageButton = () => {
+      setCurrentPage(currentPage + 1);
+    };
+
+    const previousPageButton = () => {
+      if (currentPage > 1) {
+        setCurrentPage(currentPage - 1);
+      }
+    };
+
     return (
       <div id="search-container">
         <div>
@@ -170,20 +166,22 @@ export default function TestingFetches() {
 
         <div id="search-results">
           {searchResults.length > 0
-            ? searchResults.map((oneResult) => (
-                <DisplaySearchResult
-                  key={oneResult.plantID}
-                  plant={oneResult}
-                />
-              ))
+            ? searchResults.map((oneResult) => <DisplaySearchResult key={oneResult.plantID} plant={oneResult} />)
             : searchWasRun && (
                 <div id="no-results-message">
-                  <p id="no-results-message">
-                    Oops! We couldn't find any matching plants.
-                  </p>
+                  <p id="no-results-message">Oops! We couldn't find any matching plants.</p>
                   <img src="images/dead-plant.PNG" />
                 </div>
               )}
+        </div>
+        <div>
+          {" "}
+          <button id="previousPageButton" onClick={previousPageButton}>
+            Previous page
+          </button>
+          <button id="nextPageButton" onClick={nextPageButton}>
+            Next page
+          </button>
         </div>
       </div>
     );
@@ -196,9 +194,7 @@ export default function TestingFetches() {
         <ul>
           <li>Common Name: {plant.commonName}</li>
           <li>Scientific Name: {plant.scientificName}</li>
-          <li className={plant.isInvasive ? "invasive" : "non-invasive"}>
-            {plant.isInvasive ? "Invasive" : "Non-invasive"}
-          </li>
+          <li className={plant.isInvasive ? "invasive" : "non-invasive"}>{plant.isInvasive ? "Invasive" : "Non-invasive"}</li>
           <li>{plant.isNative ? "Native" : "Foreign"}</li>
           <li>Color: {plant.color}</li>
         </ul>

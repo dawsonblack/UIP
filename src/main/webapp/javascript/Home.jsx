@@ -100,7 +100,8 @@ export default function Home() {
                 <img className="social-link" src="images\In-Blue-128.png" />
               </a>
               <p className="position-description">
-                Short description about Robert.
+                Dedicated and adaptable Army veteran turned Software Engineer
+                based in Columbus, Ohio.
               </p>
             </div>
           </div>

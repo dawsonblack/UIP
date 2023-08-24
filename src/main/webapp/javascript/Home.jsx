@@ -9,25 +9,33 @@ export default function Home() {
       <h1 id="title">Useful and Invasive Plants</h1>
 
       <section id="about">
-        <h4 className="tagline">UNVEIL!</h4>
+        <h4 className="tagline">UNCOVER!</h4>
 
         <p className="home-page-description">
-          Welcome to your virtual gateway to the mesmerizing world of plants! Useful and Invasive (UIP) is an informational application that shows you common
-          helpful as well as invasive species of plants in Central Ohio.
+          Welcome to your virtual gateway to the mesmerizing world of plants!
+          Useful and Invasive (UIP) is an informational application that shows
+          you common helpful as well as invasive species of plants in Central
+          Ohio.
         </p>
-        <h4 className="tagline">INDULGE!</h4>
+        <h4 className="tagline">INTERACT!</h4>
 
         <p className="home-page-description">
-          Immerse yourself in the captivating beauty of nature as you explore our extensive collection of plant images as well as their detailed descriptions.
-          UIP is designed to satiate your curiosity and deepen your understanding of the plants around us. If you want to garden cool plants without the risk of
-          possibly threatening our entire eco-system, UIP is the application just for that!
+          Immerse yourself in the captivating beauty of nature as you explore
+          our extensive collection of plant images as well as their detailed
+          descriptions. UIP is designed to satiate your curiosity and deepen
+          your understanding of the plants around us. If you want to garden cool
+          plants without the risk of possibly threatening our entire eco-system,
+          UIP is the application just for that!
         </p>
-        <h4 className="tagline">PRODUCE!</h4>
+        <h4 className="tagline">PINPOINT!</h4>
 
         <p className="home-page-description">
-          Simply type in the name, color or even description of a plant, and watch as a treasure trove of images unfold before your eyes. Whether you're
-          searching for the vibrant petals of a rare orchid, the lush foliage of a tropical fern, or the intricate patterns of succulents, our search feature
-          will swiftly guide you to the visual and informational delight you seek!
+          Simply type in the name, color or even description of a plant, and
+          watch as a treasure trove of images unfold before your eyes. Whether
+          you're searching for the vibrant petals of a prairie flower, the lush
+          foliage of a native shrubbery, or the intricate colors of native
+          fruit, our search feature will swiftly guide you to the visual and
+          informational delight you seek!
         </p>
       </section>
 
@@ -41,12 +49,17 @@ export default function Home() {
                 <img className="social-link" src="images/github-mark.png" />
               </a>
               <a href="mailto:abdikarimfarah12@gmail.com">
-                <img className="social-link" src="images\Gmail-Email-PNG-Pic.png" />
+                <img
+                  className="social-link"
+                  src="images\Gmail-Email-PNG-Pic.png"
+                />
               </a>
               <a href="https://www.linkedin.com/in/abdikarim-farah-37a5b0274/">
                 <img className="social-link" src="images\In-Blue-128.png" />
               </a>
-              <p className="position-description">Short description about Abdikarim.</p>
+              <p className="position-description">
+                Short description about Abdikarim.
+              </p>
             </div>
           </div>
           <div className="team-member">
@@ -57,12 +70,17 @@ export default function Home() {
                 <img className="social-link" src="images/github-mark.png" />
               </a>
               <a href="mailto:dawsonblack0816@gmail.com">
-                <img className="social-link" src="images\Gmail-Email-PNG-Pic.png" />
+                <img
+                  className="social-link"
+                  src="images\Gmail-Email-PNG-Pic.png"
+                />
               </a>
               <a href="https://www.linkedin.com/in/ddablack/">
                 <img className="social-link" src="images\In-Blue-128.png" />
               </a>
-              <p className="position-description">Short description about Dawson.</p>
+              <p className="position-description">
+                Short description about Dawson.
+              </p>
             </div>
           </div>
           <div className="team-member">
@@ -73,12 +91,17 @@ export default function Home() {
                 <img className="social-link" src="images/github-mark.png" />
               </a>
               <a href="mailto:JohnsonRobertE809@gmail.com">
-                <img className="social-link" src="images\Gmail-Email-PNG-Pic.png" />
+                <img
+                  className="social-link"
+                  src="images\Gmail-Email-PNG-Pic.png"
+                />
               </a>
               <a href="https://www.linkedin.com/in/robert-johnson-2489551a4">
                 <img className="social-link" src="images\In-Blue-128.png" />
               </a>
-              <p className="position-description">Short description about Robert.</p>
+              <p className="position-description">
+                Short description about Robert.
+              </p>
             </div>
           </div>
           <div className="team-member">
@@ -89,12 +112,17 @@ export default function Home() {
                 <img className="social-link" src="images/github-mark.png" />
               </a>
               <a href="mailto:simanfaraa.h@gmail.com">
-                <img className="social-link" src="images\Gmail-Email-PNG-Pic.png" />
+                <img
+                  className="social-link"
+                  src="images\Gmail-Email-PNG-Pic.png"
+                />
               </a>
               <a href="https://www.linkedin.com/in/siman-farah-101682282/">
                 <img className="social-link" src="images\In-Blue-128.png" />
               </a>
-              <p className="position-description">Short description about Siman.</p>
+              <p className="position-description">
+                Short description about Siman.
+              </p>
             </div>
           </div>
         </div>

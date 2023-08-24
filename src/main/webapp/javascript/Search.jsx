@@ -66,7 +66,7 @@ export default function TestingFetches() {
     const [searchBy, setSearchBy] = useState("commonName");
 
     function getPlants() {
-      fetch(`/api/plants`, { method: "GET", cache: "default" })
+      fetch(`/api/plants?page=${currentPage}`, { method: "GET", cache: "default" })
         .then((response) => response.json())
         .then((responseBody) => {
           if (searchKeywords == "") {
@@ -87,7 +87,7 @@ export default function TestingFetches() {
         });
     }
 
-    useEffect(() => getPlants(), [searchKeywords]);
+    useEffect(() => getPlants(), [searchKeywords, currentPage]);
 
     console.log("search results: " + searchResults);
 

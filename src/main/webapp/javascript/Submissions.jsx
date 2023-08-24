@@ -288,9 +288,11 @@ function SubmissionLister() {
       .then((response) => setPlants(response["_embedded"]["submissionList"]));
     console.log(plants);
     return () => {};
+  }
 
   return (
     <div>
+    <button onClick={getPlants}>See Plants Created</button>
       <ul className="item-list">
         {plants.map((oneSubmission) => (
           <Submission key={oneSubmission.plantID} submission={oneSubmission} />

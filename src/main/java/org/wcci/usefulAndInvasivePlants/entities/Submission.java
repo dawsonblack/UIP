@@ -24,6 +24,9 @@ public class Submission {
     @Column(length = 1000)
     private String imageLeafSource;
     private String wikiLink;
+    private String email;
+
+    
 
     @Id
     @GeneratedValue
@@ -33,7 +36,7 @@ public class Submission {
     public Submission(String commonName, String scientificName, String description, Boolean isInvasive, Boolean isNative,
     String color, String imageFruitURL,
     String imageFruitSource,
-    String imageLeafURL, String imageLeafSource, String wikiLink){
+    String imageLeafURL, String imageLeafSource, String wikiLink, String email){
         this.commonName = commonName;
         this.scientificName = scientificName;
         this.description = description;
@@ -45,6 +48,7 @@ public class Submission {
         this.imageFruitSource = imageFruitURL;
         this.imageLeafSource = imageLeafSource;
         this.wikiLink = wikiLink;
+        this.email = email;
     }
 
     public Submission(){
@@ -147,4 +151,11 @@ public class Submission {
         this.plantID = ID;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

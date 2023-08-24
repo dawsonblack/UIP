@@ -21,8 +21,8 @@ public class User {
     private String firstName;
     private String username;
     private String password;
-    @Convert(converter = StringListConverter.class)
-    private List<String> savedPlants;
+    @Convert(converter = LongListConverter.class)
+    private List<Long> savedPlants;
 
     // is line 12-15 a constructor? if not what is a constructor and where is it
     public User(Long id, String email, String firstName, String username, String password) {
@@ -76,14 +76,14 @@ public class User {
         this.password = password;
     }
 
-    public List<String> getSavedPlants() {
+    public List<Long> getSavedPlants() {
         if (savedPlants == null) {
-            return new ArrayList<String>();
+            return new ArrayList<Long>();
         }
         return savedPlants;
     }
 
-    public void setSavedPlants(List<String> savedPlants) {
+    public void setSavedPlants(List<Long> savedPlants) {
         this.savedPlants = savedPlants;
     }
 

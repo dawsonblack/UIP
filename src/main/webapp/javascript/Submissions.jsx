@@ -13,6 +13,8 @@ export default function Submissions() {
   const [imageLeafSource, setImageLeafSource] = useState("");
   const [wikiLink, setWikiLink] = useState("");
   const [isValidUrl, setIsValidUrl] = useState(true);
+  const [email, setEmail] = useState("");
+  const [isInvalidEmail, setIsInvalidEmail] = useState(true);
 
   const handleCommonNameChange = ({ target }) => {
     setCommonName(target.value);
@@ -26,21 +28,23 @@ export default function Submissions() {
     setDescription(target.value);
   };
 
-  const handleIsInvasiveChange = () => {
-    setIsInvasive(!isInvasive);
-  };
-
-  const handleIsNativeChange = () => {
-    setIsNative(!isNative);
-  };
-
   const handleColorChange = ({ target }) => {
     setColor(target.value);
+  };
+
+  const handleEmailChange = ({ target }) => {
+    setEmail(target.value);
+
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    setIsInvalidEmail(!emailRegex.test(target.value));
   };
 
   const handleImageFURLChange = (event) => {
     const inputValue = event.target.value;
     setImageFruitURL(inputValue);
+
+    const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+    setIsValidUrl(urlPattern.test(inputValue));
   };
 
   const handleImageLURLChange = (event) => {
@@ -97,6 +101,7 @@ export default function Submissions() {
         imageFruitSource: imageFruitURL,
         imageLeafSource: imageLeafSource,
         wikiLink: wikiLink,
+        email: email,
       }),
     }).then((response) => {
       if (!response.ok) {
@@ -114,12 +119,37 @@ export default function Submissions() {
       setImageFruitSource("");
       setImageLeafSource("");
       setWikiLink("");
+      setEmail("");
     });
   };
 
-  return (
-    <div className="user-submission-container">
+  const handleDropdownSelect = (id, value) => {
+    if (id === "isInvasive") {
+      setIsInvasive(value);
+    } else if (id === "isNative") {
+      setIsNative(value);
+    }
+  };
+
+  const TrueFalseDropdown = ({ id, label, value, onSelect }) => {
+    const handleSelectChange = (event) => {
+      onSelect(id, event.target.value);
+    };
+
+    return (
       <div>
+        <label htmlFor={id}>{label}:</label>
+        <select id={id} onChange={handleSelectChange} value={value}>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+      </div>
+    );
+  };
+
+  return (
+    <div>
+      <div className="user-submission-container">
         <form className="user-submission-form">
           <label htmlFor="commonName">Common Name:</label>
           <input
@@ -157,12 +187,30 @@ export default function Submissions() {
             onKeyDown={handleKeyPress}
           ></input>
 
-          <p>Is Invasive: {isInvasive ? "True" : "False"}</p>
-          <button onClick={handleIsInvasiveChange}>Toggle</button>
+          <label htmlFor="email">Email:</label>
+          <input
+            type="text"
+            name="email"
+            value={email}
+            onChange={handleEmailChange}
+            onKeyDown={handleKeyPress}
+          ></input>
+          {isInvalidEmail && email !== "" && (
+            <p className="form-info-error-message">Invalid email</p>
+          )}
 
-          <p>Is Native: {isNative ? "True" : "False"}</p>
-          <button onClick={handleIsNativeChange}>Toggle</button>
-
+          <TrueFalseDropdown
+            id="isInvasive"
+            label="isInvasive"
+            value={isInvasive}
+            onSelect={handleDropdownSelect}
+          />
+          <TrueFalseDropdown
+            id="isNative"
+            label="isNative"
+            value={isNative}
+            onSelect={handleDropdownSelect}
+          />
           <div>
             <label htmlFor="imageFruitURL">Fruit URL:</label>
             <input
@@ -173,7 +221,6 @@ export default function Submissions() {
               onKeyDown={handleKeyPress}
               style={{ borderColor: isValidUrl ? "green" : "red" }}
             ></input>
-            {!isValidUrl && <p>Please enter a valid URL or link.</p>}
           </div>
 
           <div>
@@ -224,10 +271,10 @@ export default function Submissions() {
             ></input>
           </div>
         </form>
-
+        {!isValidUrl && <p>Please enter a valid URL or link.</p>}
         <button onClick={postSubmission}>Create Plant</button>
-        <SubmissionLister />
       </div>
+      <SubmissionLister />
     </div>
   );
 }
@@ -235,19 +282,18 @@ export default function Submissions() {
 function SubmissionLister() {
   const [plants, setPlants] = useState([]);
 
-  useEffect(() => {
+  const getPlants = () => {
     fetch(`/api/submissions`, { method: "GET", cache: "default" })
       .then((response) => response.json())
       .then((response) => setPlants(response["_embedded"]["submissionList"]));
     console.log(plants);
     return () => {};
-  }, []);
 
   return (
     <div>
       <ul className="item-list">
         {plants.map((oneSubmission) => (
-          <Submission key={oneSubmission.plant_id} submission={oneSubmission} />
+          <Submission key={oneSubmission.plantID} submission={oneSubmission} />
         ))}
       </ul>
     </div>
@@ -256,11 +302,27 @@ function SubmissionLister() {
 
 function Submission({ submission }) {
   return (
-    <li key={submission.plant_id}>
-      <ul>
-        <li>Common Name: {submission.commonName}cm</li>
-        <li>Scientific Name: {submission.scientificName}kg</li>
-      </ul>
-    </li>
+    <>
+      <div
+        id={`plant-number${submission.plantID}`}
+        className="submission-container"
+      >
+        <ul>
+          <li>Common Name: {submission.commonName}</li>
+          <li>Scientific Name: {submission.scientificName}</li>
+          <li className={submission.isInvasive ? "invasive" : "non-invasive"}>
+            {submission.isInvasive ? "Invasive" : "Non-invasive"}
+          </li>
+          <li>{submission.isNative ? "Native" : "Foreign"}</li>
+          <li>Color: {submission.color}</li>
+          <li>Email: {submission.email}</li>
+        </ul>
+        <img src={submission.imageFruitURL} />
+        <img src={submission.imageLeafURL} />
+        <p>
+          {submission.description} <a href={submission.wikiLink}>Learn More</a>
+        </p>
+      </div>
+    </>
   );
 }

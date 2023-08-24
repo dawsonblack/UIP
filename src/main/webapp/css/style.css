@@ -432,3 +432,37 @@ section {
 }
 
 /* User.jsx */
+/* .user-submission-container {
+  height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    ;
+} */
+
+.user-submission-container {
+  width: 400px;
+  margin: 20px auto; /* Center horizontally */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  background-color: #7dd87d;
+
+}
+
+.user-submission-form{
+display: flex;
+flex-direction: column;
+}
+/* Style for the input */
+.user-submission-container-box {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}

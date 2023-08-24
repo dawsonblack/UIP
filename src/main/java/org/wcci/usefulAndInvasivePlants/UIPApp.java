@@ -1,6 +1,5 @@
 package org.wcci.usefulAndInvasivePlants;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -19,11 +18,11 @@ public class UIPApp {
         return new BCryptPasswordEncoder();
     }
 
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-            .withUser("username")
-            .password("{noop}password") // Use {noop} to indicate no password encoder for simplicity
-            .roles("USER");
-    }
-}
+//     @Autowired
+//     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+//         auth.inMemoryAuthentication()
+//             .withUser("username")
+//             .password("{noop}password") // Use {noop} to indicate no password encoder for simplicity
+//             .roles("USER");
+//     }
+// }

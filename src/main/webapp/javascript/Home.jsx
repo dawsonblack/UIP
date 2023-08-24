@@ -13,15 +13,15 @@ export default function Home() {
 
         <p className="home-page-description">
           Welcome to your virtual gateway to the mesmerizing world of plants!
-          Useful and Invasive (UIP) is an informational application that shows
-          you common helpful as well as invasive species of plants in Central
-          Ohio.
+          Useful and Invasive Plants (UIP) is an informational application that
+          shows you common helpful as well as invasive species of plants in
+          Central Ohio.
         </p>
         <h4 className="tagline">INTERACT!</h4>
 
         <p className="home-page-description">
           Immerse yourself in the captivating beauty of nature as you explore
-          our extensive collection of plant images as well as their detailed
+          our extensive collection of plants as well as their detailed
           descriptions. UIP is designed to satiate your curiosity and deepen
           your understanding of the plants around us. If you want to garden cool
           plants without the risk of possibly threatening our entire eco-system,

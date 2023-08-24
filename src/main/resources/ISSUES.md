@@ -14,6 +14,7 @@ NOTES FROM DAWSON:
 -add an enlarge button rather than automatically enlarging images on search page
 -styling and logic of search feature needs work
 -nav bar is too wide
+-if there is time, add forgot password feature
 
 site key: 6LenvssnAAAAAJOhnQQ3FEYuhRgx4kl-RDePeiRY
 secret key: 6LenvssnAAAAAEz8PzEcwBNTExH35bCuZiTywVDE

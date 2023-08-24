@@ -33,11 +33,14 @@ public class SecurityConfig {
         return http
                 .authorizeHttpRequests(
                         (authoritzationManager) -> authoritzationManager
-                                .requestMatchers(HttpMethod.POST, "api/register").permitAll()
-                                .requestMatchers(HttpMethod.GET, "api/double/*").permitAll()
+                                //.requestMatchers(HttpMethod.POST, "api/register").permitAll()
+                                //.requestMatchers(HttpMethod.GET, "api/double/*").permitAll()
                                 //.requestMatchers("api/users").hasAuthority("USER")
                                 .anyRequest().permitAll())
+                                //.requestMatchers("api/User").authenticated()
+                                //.requestMatchers("api/users").hasAuthority("ADMIN"))
                 .csrf((csrf) -> csrf.disable())
+                .cors((cors) -> cors.disable())
                 .formLogin((formLoginConfigurer) -> formLoginConfigurer.permitAll())
                 .rememberMe((rememberMeConfigurer) -> rememberMeConfigurer.alwaysRemember(false))
                 .build();

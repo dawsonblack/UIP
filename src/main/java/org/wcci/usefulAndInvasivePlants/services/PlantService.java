@@ -70,13 +70,12 @@ public class PlantService {
     }
 
     public void deleteUserByID(final long user_id) {
-            if (!userRepo.findById(user_id).isPresent()) {
-                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found " + user_id);
-            }
-            userRepo.deleteById(user_id);
+        if (!userRepo.findById(user_id).isPresent()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found " + user_id);
         }
+        userRepo.deleteById(user_id);
+    }
 
-    
     public Plant updatePlant(Plant plant, long plant_id) {
         final Plant databasePlant = findPlant(plant_id);
 
@@ -126,9 +125,9 @@ public class PlantService {
         return databaseUser;
     }
 
-    public User updateUserPlants(List<String> plants, long user_id) {
+    public User updateUserPlants(List<Long> plants, long user_id) {
         final User databaseUser = findUser(user_id);
-        final List<String> updatedPlants = databaseUser.getSavedPlants();
+        final List<Long> updatedPlants = databaseUser.getSavedPlants();
         updatedPlants.addAll(plants);
         if (user_id != databaseUser.getUserID())
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,

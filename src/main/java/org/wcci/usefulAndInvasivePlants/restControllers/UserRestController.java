@@ -48,8 +48,8 @@ public class UserRestController {
 
     @DeleteMapping("/api/users/{user_id}")
     public ResponseEntity deleteById(@PathVariable long user_id) {
-            plantService.deleteUserByID(user_id);
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("");
+        plantService.deleteUserByID(user_id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body("");
     }
 
     @PostMapping("/api/users")
@@ -75,7 +75,7 @@ public class UserRestController {
     @PutMapping("/api/users/{user_id}/plants")
     public EntityModel<User> updateUserPlants(
             @PathVariable final long user_id,
-            @RequestBody final List<String> plants) {
+            @RequestBody final List<Long> plants) {
         // Update the plant if that is the right thing to do
         final User databaseUser = plantService.updateUserPlants(plants, user_id);
 

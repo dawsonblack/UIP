@@ -9,12 +9,12 @@ export default function User() {
   const { user, setUser } = useAuth();
 
   const updateUser = () => {
-    fetch(`/api/users/${user.ID}`, {
+    fetch(`/api/users/${user.userID}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(user),
+      body: JSON.stringify({ ...user, savedPlants: savedPlants }),
     })
       .then((response) => {
         if (!response.ok) {
@@ -29,9 +29,9 @@ export default function User() {
 
   const handleSavePlant = () => {
     if (username && plantId) {
-      const newPlant = { id: plantId, username };
-      setSavedPlants([...savedPlants, newPlant]);
+      setSavedPlants([...savedPlants, plantId]);
       setPlantId("");
+      updateUser();
     }
   };
 
@@ -58,7 +58,7 @@ export default function User() {
         />
         <br />
         <input
-          type="text"
+          type="number"
           placeholder="Enter plant ID"
           value={plantId}
           onChange={(e) => setPlantId(e.target.value)}
@@ -69,6 +69,7 @@ export default function User() {
         <button onClick={logOut}>Log Out</button>
       </div>
       <div>
+        <h2>{JSON.stringify(savedPlants)}</h2>
         <h2>Saved Plants</h2>
       </div>
       <div>
@@ -82,4 +83,26 @@ export default function User() {
       </div>
     </div>
   );
+
+  function DisplaySearchResult({ plant }) {
+    console.log(plant);
+    return (
+      <div id={`plant-number${plant.plantID}`} className="plant-container">
+        <ul>
+          <li>Common Name: {plant.commonName}</li>
+          <li>Scientific Name: {plant.scientificName}</li>
+          <li className={plant.isInvasive ? "invasive" : "non-invasive"}>
+            {plant.isInvasive ? "Invasive" : "Non-invasive"}
+          </li>
+          <li>{plant.isNative ? "Native" : "Foreign"}</li>
+          <li>Color: {plant.color}</li>
+        </ul>
+        <img src={plant.imageFruitURL} />
+        <img src={plant.imageLeafURL} />
+        <p>
+          {plant.description} <a href={plant.wikiLink}>Learn More</a>
+        </p>
+      </div>
+    );
+  }
 }

@@ -21,7 +21,7 @@ public class User {
     private String firstName;
     private String username;
     private String password;
-    @Convert(converter = StringListConverter.class)
+    @Convert(converter = LongListConverter.class)
     private List<Long> savedPlants;
 
     // is line 12-15 a constructor? if not what is a constructor and where is it

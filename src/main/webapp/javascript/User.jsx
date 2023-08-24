@@ -8,7 +8,7 @@ export default function User() {
   const [savedPlants, setSavedPlants] = useState([]);
   const { user, setUser } = useAuth();
 
-  const updateUser = () => {
+  useEffect(() => {
     fetch(`/api/users/${user.userID}`, {
       method: "PUT",
       headers: {
@@ -25,13 +25,12 @@ export default function User() {
       .catch((error) => {
         console.error("Error updating pet:", error);
       });
-  };
+  }, [savedPlants]);
 
   const handleSavePlant = () => {
     if (username && plantId) {
       setSavedPlants([...savedPlants, plantId]);
       setPlantId("");
-      updateUser();
     }
   };
 

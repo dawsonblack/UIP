@@ -12,8 +12,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import org.wcci.usefulAndInvasivePlants.entities.Plant;
+import org.wcci.usefulAndInvasivePlants.entities.Submission;
 import org.wcci.usefulAndInvasivePlants.entities.User;
 import org.wcci.usefulAndInvasivePlants.repositories.PlantRepo;
+import org.wcci.usefulAndInvasivePlants.repositories.SubmissionRepo;
 import org.wcci.usefulAndInvasivePlants.repositories.UserRepo;
 
 @Service
@@ -25,10 +27,13 @@ public class PlantService {
     final private static Logger logger = LoggerFactory.getLogger(PlantService.class);
     final private PlantRepo plantRepo;
     final private UserRepo userRepo;
+    final private SubmissionRepo submissionRepo;
 
-    public PlantService(@Autowired final PlantRepo plantRepo, @Autowired final UserRepo userRepo) {
+    public PlantService(@Autowired final PlantRepo plantRepo, @Autowired final UserRepo userRepo,
+            @Autowired final SubmissionRepo submissionRepo) {
         this.plantRepo = plantRepo;
         this.userRepo = userRepo;
+        this.submissionRepo = submissionRepo;
     }
 
     public Stream<Plant> plantStream() {
@@ -43,6 +48,13 @@ public class PlantService {
 
         // Standard conversion from iterator to stream.
         return StreamSupport.stream(users.spliterator(), false);
+    }
+
+    public Stream<Submission> submissionStream() {
+        final Iterable<Submission> submissions = this.submissionRepo.findAll();
+
+        // Standard conversion from iterator to stream.
+        return StreamSupport.stream(submissions.spliterator(), false);
     }
 
     public Plant findPlant(final long plant_id) {
@@ -141,4 +153,33 @@ public class PlantService {
         return databaseUser;
     }
 
+    public Submission findSubmission(final Long plant_id) {
+        final Optional<Submission> dataSubmission = submissionRepo.findById(plant_id);
+        if (!dataSubmission.isPresent()) {
+            logger.info("Submission not found: " + plant_id);
+        }
+        return dataSubmission.get();
+    }
+
+    public Iterable<Submission> getSubmissions() {
+
+        return submissionRepo.findAll();
+    }
+
+    public Submission addNewSubmission(final Submission submission) {
+
+        return submissionRepo.save(submission);
+    }
+
+    // public Submission addSubmissionToUser(final Submission submission){
+    //     final Long user_id;
+    //     final Long plant_id;
+    //     final Optional<User> datbaseUser = userRepo.findById(user_id);
+    //     if (!datbaseUser.isPresent()) {
+    //          throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+    //                 "Sorry, you must log in to add plants");
+    //     }
+    //     return submissionRepo.save(submission);
+    // }
+    
 }

@@ -24,7 +24,7 @@ public class DBUser {
     private String password;
     private String roles;
     @Convert(converter = StringListConverter.class)
-    private List<String> savedPlants;
+    private List<Long> savedPlants;
 
     public DBUser(String username, String password, String roles) {
         this.username = username;
@@ -75,14 +75,14 @@ public class DBUser {
         this.password = password;
     }
 
-    public List<String> getSavedPlants() {
+    public List<Long> getSavedPlants() {
         if (savedPlants == null) {
-            return new ArrayList<String>();
+            return new ArrayList<Long>();
         }
         return savedPlants;
     }
 
-    public void setSavedPlants(List<String> savedPlants) {
+    public void setSavedPlants(List<Long> savedPlants) {
         this.savedPlants = savedPlants;
     }
 

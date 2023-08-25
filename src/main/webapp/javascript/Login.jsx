@@ -23,12 +23,14 @@ export default function Login() {
   const queryParams = new URLSearchParams(location.search);
   const errorMessage = queryParams.get('error');
   const logoutMessage = queryParams.get('logout');
+  const registerMessage = queryParams.get('registered');
   
   return (
     <div className="register-login-container">
       <form action="/Login" method="post">
         <div className="register-login-form">
           {logoutMessage && <p className="form-success-message">You have been successfully logged out</p>}
+          {registerMessage && <p className="form-success-message">Account successfully created</p>}
           <label htmlFor="username">Username:</label>
           <input
             type="text"

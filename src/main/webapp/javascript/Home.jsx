@@ -40,6 +40,7 @@ export default function Home() {
       </section>
 
       <section id="creators">
+        <h2 className="tagline">Meet the Creators</h2>
         <div id="team-members">
           <div className="team-member">
             <h4 className="creatorName">Abdikarim Farah</h4>
@@ -58,7 +59,8 @@ export default function Home() {
                 <img className="social-link" src="images\In-Blue-128.png" />
               </a>
               <p className="position-description">
-                Short description about Abdikarim.
+                Software developer with a passion for creating efficient and
+                innovative solutions through code.
               </p>
             </div>
           </div>
@@ -79,7 +81,8 @@ export default function Home() {
                 <img className="social-link" src="images\In-Blue-128.png" />
               </a>
               <p className="position-description">
-                Short description about Dawson.
+                Java software engineer with a background in physics and
+                mathematics.
               </p>
             </div>
           </div>
@@ -122,7 +125,8 @@ export default function Home() {
                 <img className="social-link" src="images\In-Blue-128.png" />
               </a>
               <p className="position-description">
-                Short description about Siman.
+                Node.js Ninja with a passion for stashing. Based in Columbus OH,
+                yet a digital transplant.
               </p>
             </div>
           </div>

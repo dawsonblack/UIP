@@ -171,15 +171,15 @@ export default function TestingFetches() {
             <label for="native">Invasive</label>
           </div>
         </div>
-        <div>
+        <div id="pageButtons">
         {" "}
         {priorPage && (
-          <button id="priorPageButton" onClick={priorPageButton}>
+          <button id="pageButton" onClick={priorPageButton}>
           Previous Page
           </button>
         )}
         {nextPage && (
-          <button id="nextPageButton" onClick={nextPageButton}>
+          <button id="pageButton" onClick={nextPageButton}>
           Next Page
           </button>
         )}

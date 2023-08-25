@@ -55,10 +55,17 @@ export default function TestingFetches() {
     const [searchWasRun, setSearchWasRun] = useState(false);
     const [searchKeywords, setSearchKeywords] = useState("");
     const [searchBy, setSearchBy] = useState("commonName");
+    const [currentPage, setCurrentPage] = useState("/api/plants");
+    const [nextPage, setNextPage] = useState(true);
+    const [priorPage, setPriorPage] = useState(true);
+    
     function getPlants() {
-      fetch(`/api/plants`, { method: "GET", cache: "default" })
+      fetch(`${currentPage}`, { method: "GET", cache: "default" })
         .then((response) => response.json())
         .then((responseBody) => {
+          setPriorPage(responseBody["_links"]?.prevPage?.href);
+          setNextPage(responseBody["_links"]?.nextPage?.href);
+        
           if (searchKeywords == "") {
             setSearchResults(responseBody["_embedded"]["plantList"]);
           } else {
@@ -93,8 +100,17 @@ export default function TestingFetches() {
           }
         });
     }
-    useEffect(() => getPlants(), [searchKeywords]);
+    useEffect(() => getPlants(), [searchKeywords, currentPage]);
     console.log("search results: " + searchResults);
+
+    const nextPageButton = () => {
+      setCurrentPage(nextPage);
+    };
+
+    const priorPageButton = () => {
+      setCurrentPage(priorPage);
+    };
+  
     return (
       <div id="search-container">
         <div>
@@ -155,6 +171,19 @@ export default function TestingFetches() {
             <label for="native">Invasive</label>
           </div>
         </div>
+        <div>
+        {" "}
+        {priorPage && (
+          <button id="priorPageButton" onClick={priorPageButton}>
+          Previous Page
+          </button>
+        )}
+        {nextPage && (
+          <button id="nextPageButton" onClick={nextPageButton}>
+          Next Page
+          </button>
+        )}
+      </div>
         <div id="search-results">
           {searchResults.length > 0
             ? searchResults.map((oneResult) => (

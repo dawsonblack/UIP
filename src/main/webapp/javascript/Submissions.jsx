@@ -150,7 +150,7 @@ export default function Submissions() {
   return (
     <div id="plants">
       <div className="user-submission-container">
-      <h2 id="add">Add Plants Here!</h2>
+        <h2 id="add">Add Plants Here!</h2>
         <form className="user-submission-form">
           <label htmlFor="commonName">Common Name:</label>
           <input
@@ -220,7 +220,7 @@ export default function Submissions() {
               value={imageFruitURL}
               onChange={handleImageFURLChange}
               onKeyDown={handleKeyPress}
-              style={{ borderColor: isValidUrl ? "green" : "red" }}
+              className={isValidUrl ? "goodURL" : "badURL"}
             ></input>
           </div>
 
@@ -232,7 +232,7 @@ export default function Submissions() {
               value={imageLeafURL}
               onChange={handleImageLURLChange}
               onKeyDown={handleKeyPress}
-              style={{ borderColor: isValidUrl ? "green" : "red" }}
+              className={isValidUrl ? "goodURL" : "badURL"}
             ></input>
           </div>
 
@@ -244,7 +244,7 @@ export default function Submissions() {
               value={imageFruitSource}
               onChange={handleImageFSourceChange}
               onKeyDown={handleKeyPress}
-              style={{ borderColor: isValidUrl ? "green" : "red" }}
+              className={isValidUrl ? "goodURL" : "badURL"}
             ></input>
           </div>
 
@@ -256,7 +256,7 @@ export default function Submissions() {
               value={imageLeafSource}
               onChange={handleImageLSourceChange}
               onKeyDown={handleKeyPress}
-              style={{ borderColor: isValidUrl ? "green" : "red" }}
+              className={isValidUrl ? "goodURL" : "badURL"}
             ></input>
           </div>
 
@@ -268,12 +268,14 @@ export default function Submissions() {
               value={wikiLink}
               onChange={handleWikiLinkChange}
               onKeyDown={handleKeyPress}
-              style={{ borderColor: isValidUrl ? "green" : "red" }}
+              className={isValidUrl ? "goodURL" : "badURL"}
             ></input>
           </div>
         </form>
         {!isValidUrl && <p>Please enter a valid URL or link.</p>}
-        <button onClick={postSubmission}>Create Plant</button>
+        <button id="submitPlant" onClick={postSubmission}>
+          Create Plant
+        </button>
       </div>
       <SubmissionLister />
     </div>
@@ -292,25 +294,23 @@ function SubmissionLister() {
   };
 
   return (
-    <><button id="get-plants" onClick={getPlants}>
-      See Plants Created
-    </button>
-    <div id="search-results">
+    <>
+      <button id="get-plants" onClick={getPlants}>
+        See Plants Created
+      </button>
+      <div id="search-results">
         {plants.map((oneSubmission) => (
           <Submission key={oneSubmission.plantID} submission={oneSubmission} />
         ))}
-
-      </div></>
+      </div>
+    </>
   );
 }
 
 function Submission({ submission }) {
   return (
     <>
-      <div
-        id={`plant-number${submission.plantID}`}
-        className="plant-container"
-      >
+      <div id={`plant-number${submission.plantID}`} className="plant-container">
         <ul>
           <li>Common Name: {submission.commonName}</li>
           <li>Scientific Name: {submission.scientificName}</li>
@@ -324,8 +324,14 @@ function Submission({ submission }) {
         <img src={submission.imageFruitURL} />
         <img src={submission.imageLeafURL} />
         <p>
-          {submission.description} <a href={submission.wikiLink} target="_blank"
-              rel="noopener noreferrer">Learn More</a>
+          {submission.description}{" "}
+          <a
+            href={submission.wikiLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn More
+          </a>
         </p>
       </div>
     </>

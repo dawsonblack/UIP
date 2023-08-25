@@ -137,9 +137,9 @@ public class PlantService {
         return databaseUser;
     }
 
-    public DBUser updateUserPlants(List<String> plants, long user_id) {
+    public DBUser updateUserPlants(List<Long> plants, long user_id) {
         final DBUser databaseUser = findUser(user_id);
-        final List<String> updatedPlants = databaseUser.getSavedPlants();
+        final List<Long> updatedPlants = databaseUser.getSavedPlants();
         updatedPlants.addAll(plants);
         if (user_id != databaseUser.getUserID())
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,

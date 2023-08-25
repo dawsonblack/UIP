@@ -117,6 +117,7 @@ export default function Register() {
         firstName: firstName,
         username: username,
         password: password,
+        roles: "USER",
       }),
     }).then((response) => {
       if (!response.ok) {

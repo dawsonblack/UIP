@@ -23,7 +23,7 @@ public class DBUser {
     private String username;
     private String password;
     private String roles;
-    @Convert(converter = StringListConverter.class)
+    @Convert(converter = LongListConverter.class)
     private List<Long> savedPlants;
 
     public DBUser(String username, String password, String roles) {

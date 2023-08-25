@@ -12,7 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 // should we add age as a field??? 
-@Entity
+@Entity(name = "users")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DBUser {
     @Id

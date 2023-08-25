@@ -2,22 +2,22 @@ DELETE FROM PLANT
 WHERE
     plantID < 0;
 
-/*DELETE FROM DBUSER
+DELETE FROM USER
 WHERE
-    id > 0;
+    userID > 0;
 
 INSERT INTO
-    DBUser (
+    user (
         username,
         password,
-        id
+        userID
     )
 VALUES
     (
         'username',
         '$2a$12$ZYfU1MPVGZs7DL.XGpx2yeKUnOzQTGeqIxciKo37PGLiNoG9MRqki',
         69
-    );*/
+    );
 
 INSERT INTO
     plant (

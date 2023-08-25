@@ -107,7 +107,7 @@ export default function Register() {
   }
 
   const postUser = async () => {
-    const hashedPassword = await sha256(username + password);
+    //const hashedPassword = await sha256(username + password);
     
     fetch("/api/users", {
       method: "POST",
@@ -116,7 +116,7 @@ export default function Register() {
         email: email,
         firstName: firstName,
         username: username,
-        password: hashedPassword,
+        password: password,
       }),
     }).then((response) => {
       if (!response.ok) {
@@ -156,9 +156,58 @@ export default function Register() {
     setRecaptchaCompleted(false);
   }
 
+
+
+
+
+
+
+
+
+
+
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const userData = {
+      email,
+      firstName,
+      username,
+      password
+    };
+
+    try {
+      const response = await fetch('/Register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+      });
+
+      if (response.ok) {
+        // Registration successful, you might want to redirect or show a success message
+      } else {
+        // Registration failed, handle the error
+      }
+    } catch (error) {
+      // Handle network error or other exceptions
+    }
+  };
+
+
+
+
+
+
+
+
+
+
   return (
     <div className="register-login-container">
-      <form action="/Register" method="post">
+      <form onSubmit={handleSubmit}>
         <div className="register-login-form">
           <label htmlFor="email">Email:</label>
           <input
@@ -219,6 +268,7 @@ export default function Register() {
           <button type="submit" disabled={isButtonDisabled}>Create Account</button>
         </div>
       </form>
+      <button onClick={postUser}>CLick here</button>
       <p className="link">Already have an account? <Link to="/Login">Sign in</Link></p>
     </div>
   );

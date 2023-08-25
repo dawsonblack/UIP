@@ -26,9 +26,12 @@ public class Endpoint {
     }
 
     // curl -iX POST http://localhost:8080/api/register -d '{"username":"marshall", "password":"gene"}' -H "Content-Type: application/json"
-    /*@PostMapping("/Register")
+    @PostMapping("/Register")
     public DBUser register(@RequestBody DBUser registeredUser) {
-        return userService.save(new DBUser(registeredUser.getEmail(), registeredUser.getFirstName(),
-                                registeredUser.getUsername(), passwordEncoder.encode(registeredUser.getPassword())));
-    }*/
+        DBUser newUser = new DBUser(registeredUser.getUsername(), passwordEncoder.encode(registeredUser.getPassword()), "USER");
+        newUser.setEmail(registeredUser.getEmail());
+        newUser.setFirstName(registeredUser.getFirstName());
+        return userService.save(newUser);
+        //return userService.save(new DBUser(registeredUser.getUsername(), passwordEncoder.encode(registeredUser.getPassword()), "USER"));
+    }
 }

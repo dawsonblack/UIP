@@ -2,6 +2,23 @@ DELETE FROM PLANT
 WHERE
     plantID < 0;
 
+DELETE FROM USER
+WHERE
+    userID > 0;
+
+INSERT INTO
+    user (
+        username,
+        password,
+        userID
+    )
+VALUES
+    (
+        'username',
+        '$2a$12$ZYfU1MPVGZs7DL.XGpx2yeKUnOzQTGeqIxciKo37PGLiNoG9MRqki',
+        69
+    );
+
 INSERT INTO
     plant (
         common_Name,

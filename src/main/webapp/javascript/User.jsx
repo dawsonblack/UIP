@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Navigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 
 export default function User() {
@@ -35,12 +34,7 @@ export default function User() {
   };
 
   function logOut() {
-    setUser({});
-    localStorage.setItem("loggedInUser", {});
-  }
-
-  if (user == {}) {
-    return <Navigate to="/Login" />;
+    window.location.href = '/logout';
   }
 
   return (

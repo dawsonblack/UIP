@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.wcci.usefulAndInvasivePlants.entities.Submission;
-import org.wcci.usefulAndInvasivePlants.entities.User;
+import org.wcci.usefulAndInvasivePlants.entities.DBUser;
 import org.wcci.usefulAndInvasivePlants.services.PlantService;
 
 @RestController
@@ -35,16 +35,16 @@ public class UserRestController {
     }
 
     @GetMapping("/api/users")
-    public CollectionModel<EntityModel<User>> getUsers() {
-        List<EntityModel<User>> users = this.plantService.userStream()
+    public CollectionModel<EntityModel<DBUser>> getUsers() {
+        List<EntityModel<DBUser>> users = this.plantService.userStream()
                 .map(user -> EntityModel.of(user))
                 .collect(Collectors.toList());
         return CollectionModel.of(users);
     }
 
     @GetMapping("/api/users/{user_id}")
-    public EntityModel<User> getUser(@PathVariable final Long user_id) {
-        final User user = plantService.findUser(user_id);
+    public EntityModel<DBUser> getUser(@PathVariable final Long user_id) {
+        final DBUser user = plantService.findUser(user_id);
         return EntityModel.of(user,
                 linkTo(methodOn(UserRestController.class).getUsers()).withRel(LIST_ALL_USERS),
                 linkTo(methodOn(UserRestController.class).getUser(user_id)).withSelfRel());
@@ -57,19 +57,19 @@ public class UserRestController {
     }
 
     @PostMapping("/api/users")
-    public EntityModel<User> newUser(@RequestBody User user) {
-        User newUser = plantService.addNewUser(user);
+    public EntityModel<DBUser> newUser(@RequestBody DBUser user) {
+        DBUser newUser = plantService.addNewUser(user);
         return EntityModel.of(newUser,
                 linkTo(methodOn(UserRestController.class).getUser(newUser.getUserID())).withSelfRel(),
                 linkTo(methodOn(UserRestController.class).getUsers()).withRel(LIST_ALL_USERS));
     }
 
     @PutMapping("/api/users/{user_id}")
-    public EntityModel<User> updateUser(
+    public EntityModel<DBUser> updateUser(
             @PathVariable final long user_id,
-            @RequestBody final User user) {
+            @RequestBody final DBUser user) {
         // Update the plant if that is the right thing to do
-        final User databaseUser = plantService.updateUser(user, user_id);
+        final DBUser databaseUser = plantService.updateUser(user, user_id);
 
         // Return the modified database plant
         return EntityModel.of(databaseUser,
@@ -77,11 +77,11 @@ public class UserRestController {
     }
 
     @PutMapping("/api/users/{user_id}/plants")
-    public EntityModel<User> updateUserPlants(
+    public EntityModel<DBUser> updateUserPlants(
             @PathVariable final long user_id,
             @RequestBody final List<Long> plants) {
         // Update the plant if that is the right thing to do
-        final User databaseUser = plantService.updateUserPlants(plants, user_id);
+        final DBUser databaseUser = plantService.updateUserPlants(plants, user_id);
 
         // Return the modified database plant
         return EntityModel.of(databaseUser,

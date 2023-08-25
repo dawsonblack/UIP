@@ -11,6 +11,7 @@ export default function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const [isInvalidEmail, setIsInvalidEmail] = useState(true);
+  const [isInvalidUsername, setIsInvalidUsername] = useState(true);
   const [isInvalidPassword, setIsInvalidPassword] = useState(true);
   const [passwordsDoNotMatch, setPasswordsDoNotMatch] = useState(true);
   const [recaptchaCompleted, setRecaptchaCompleted] = useState(false);
@@ -29,6 +30,7 @@ export default function Register() {
       username == "" ||
       password == "" ||
       isInvalidEmail ||
+      isInvalidUsername ||
       isInvalidPassword ||
       passwordsDoNotMatch ||
       !recaptchaCompleted
@@ -44,7 +46,6 @@ export default function Register() {
 
   const handleEmailChange = ({ target }) => {
     setEmail(target.value);
-
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     setIsInvalidEmail(!emailRegex.test(target.value));
   };
@@ -55,6 +56,7 @@ export default function Register() {
 
   const handleUsernameChange = ({ target }) => {
     setUsername(target.value);
+    setIsInvalidUsername(target.value.includes(" "));
   };
 
   const handlePasswordChange = ({ target }) => {
@@ -81,19 +83,20 @@ export default function Register() {
     fetch('/api/users', { method: "GET", cache: "default" })
       .then((response) => response.json())
       .then((responseBody) => {
-        console.log("In user fetch, length of responseBody is " + responseBody.length);
+        console.log("In user fetch");
 
-        if (responseBody.length > 0) {
+        if (responseBody["_embedded"]["userList"]) {
           console.log("We're gonna check for copies");
           for (let i = 0; i < responseBody["_embedded"]["userList"].length; i++) {
-            console.log("Checking " + responseBody["_embedded"]["userList"][i].email);
-            console.log("Checking " + responseBody["_embedded"]["userList"][i].username);
+            console.log("Checking " + responseBody["_embedded"]["userList"][i].email + " and " + responseBody["_embedded"]["userList"][i].username);
             if (responseBody["_embedded"]["userList"][i].email == email) {
               console.log("Email is a copy! Aborting now");
               setReusedEmail(true);
+              setReusedUsername(false);
               return;
           } else if (responseBody["_embedded"]["userList"][i].username == username) {
               console.log("Username is a copy! Aborting now");
+              setReusedEmail(false);
               setReusedUsername(true);
               return;
             }
@@ -104,7 +107,7 @@ export default function Register() {
   }
 
   const postUser = async () => {
-    const hashedPassword = await sha256(username + password);
+    //const hashedPassword = await sha256(username + password);
     
     fetch("/api/users", {
       method: "POST",
@@ -113,7 +116,8 @@ export default function Register() {
         email: email,
         firstName: firstName,
         username: username,
-        password: hashedPassword,
+        password: password,
+        roles: "USER",
       }),
     }).then((response) => {
       if (!response.ok) {
@@ -122,6 +126,8 @@ export default function Register() {
       console.log("User saved successfully!");
     });
 
+    setReusedEmail(false);
+    setReusedUsername(false);
     setEmail("");
     setFirstName("");
     setUsername("");
@@ -151,10 +157,59 @@ export default function Register() {
     setRecaptchaCompleted(false);
   }
 
+
+
+
+
+
+
+
+
+
+
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const userData = {
+      email,
+      firstName,
+      username,
+      password
+    };
+
+    try {
+      const response = await fetch('/Register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+      });
+
+      if (response.ok) {
+        // Registration successful, you might want to redirect or show a success message
+      } else {
+        // Registration failed, handle the error
+      }
+    } catch (error) {
+      // Handle network error or other exceptions
+    }
+  };
+
+
+
+
+
+
+
+
+
+
   return (
     <div className="register-login-container">
-      <div>
-        <form className="register-login-form">
+      <form onSubmit={handleSubmit}>
+        <div className="register-login-form">
           <label htmlFor="email">Email:</label>
           <input
             type="text"
@@ -163,7 +218,7 @@ export default function Register() {
             onChange={handleEmailChange}
             onKeyDown={handleKeyPress}
           ></input>
-          {isInvalidEmail && email !=="" && <p className="form-info-error-message">Invalid email</p>}
+          {isInvalidEmail && email !=="" && <p className="form-error-message">Invalid email</p>}
 
           <label htmlFor="firstName">First Name:</label>
           <input
@@ -182,6 +237,7 @@ export default function Register() {
             onChange={handleUsernameChange}
             onKeyDown={handleKeyPress}
           ></input>
+          {isInvalidUsername && username !=="" && <p className="form-error-message">Usernames cannot contain spaces</p>}
 
           <label htmlFor="password">Password:</label>
           <input
@@ -191,7 +247,7 @@ export default function Register() {
             onChange={handlePasswordChange}
             onKeyDown={handleKeyPress}
           ></input>
-          {isInvalidPassword && password !=="" && <p className="form-info-error-message">Your password must be at least 8 characters long</p>}
+          {isInvalidPassword && password !=="" && <p className="form-error-message">Your password must be at least 8 characters long</p>}
 
           <label htmlFor="confirm-password">Confirm Password:</label>
           <input
@@ -201,20 +257,19 @@ export default function Register() {
             onChange={handleConfirmPasswordChange}
             onKeyDown={handleKeyPress}
           ></input>
-          {passwordsDoNotMatch && confirmPassword !=="" && <p className="form-info-error-message">Passwords do not match</p>}
+          {passwordsDoNotMatch && confirmPassword !=="" && <p className="form-error-message">Passwords do not match</p>}
           <ReCAPTCHA sitekey="6LenvssnAAAAAJOhnQQ3FEYuhRgx4kl-RDePeiRY"
             onChange={recaptchaOnChange}
             onExpired={recaptchaOnExpired} />
 
-          {reusedEmail && <p className="form-info-error-message">This email has already been registered</p>}
-          {reusedUsername && <p className="form-info-error-message">This username is already being used</p>}
-        </form>
-      </div>
-      <div>
-        <button className="register-login-button" onClick={checkCredentials} disabled={isButtonDisabled}>
-          Create Account
-        </button>
-      </div>
+          {reusedEmail && <p className="form-error-message">This email has already been registered</p>}
+          {reusedUsername && <p className="form-error-message">This username is already in use</p>}
+        </div>
+        <div className="button-container">
+          <button type="submit" disabled={isButtonDisabled}>Create Account</button>
+        </div>
+      </form>
+      <button onClick={postUser}>CLick here</button>
       <p className="link">Already have an account? <Link to="/Login">Sign in</Link></p>
     </div>
   );

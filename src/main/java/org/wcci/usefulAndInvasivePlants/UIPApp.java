@@ -18,12 +18,4 @@ public class UIPApp {
     public PasswordEncoder getPasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-            .withUser("username")
-            .password("{noop}password") // Use {noop} to indicate no password encoder for simplicity
-            .roles("USER");
-    }
 }

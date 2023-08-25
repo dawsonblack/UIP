@@ -33,12 +33,22 @@ public class SecurityConfig {
         return http
                 .authorizeHttpRequests(
                         (authoritzationManager) -> authoritzationManager
-                                .requestMatchers(HttpMethod.POST, "api/register").permitAll()
-                                .requestMatchers(HttpMethod.GET, "api/double/*").permitAll()
-                                //.requestMatchers("api/users").hasAuthority("USER")
+                                .requestMatchers("/User").authenticated()
+                                //.requestMatchers("/api/users").hasAuthority("ADMIN")
                                 .anyRequest().permitAll())
+                .formLogin(
+                        (formLogin) -> formLogin
+                                .loginPage("/Login")
+                                .failureUrl("/Login?error=true")
+                                .permitAll())
+                .logout(
+                        (logout) -> logout
+                                .logoutUrl("/logout")
+                                .logoutSuccessUrl("/Login?logout=true")
+                                .invalidateHttpSession(true))
                 .csrf((csrf) -> csrf.disable())
-                .formLogin((formLoginConfigurer) -> formLoginConfigurer.permitAll())
+                .cors((cors) -> cors.disable())
+                //.formLogin((formLoginConfigurer) -> formLoginConfigurer.permitAll())
                 .rememberMe((rememberMeConfigurer) -> rememberMeConfigurer.alwaysRemember(false))
                 .build();
     }

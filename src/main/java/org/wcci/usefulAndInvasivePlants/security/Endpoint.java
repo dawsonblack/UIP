@@ -1,6 +1,7 @@
 package org.wcci.usefulAndInvasivePlants.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.wcci.usefulAndInvasivePlants.entities.DBUser;
+import org.wcci.usefulAndInvasivePlants.repositories.UserRepo;
+import org.wcci.usefulAndInvasivePlants.restControllers.UserRestController;
 
 @RestController
 @CrossOrigin
@@ -21,22 +25,13 @@ public class Endpoint {
         this.userService = userService;
     }
 
-    // Note that `curl -i http://localhost:8080/api/triple/3` redirects to "/login".
-    @GetMapping("/api/triple/{val}")
-    public int tripleNumber(@PathVariable final int val) {
-        return val * 3;
-    }
-
-    // Note that `curl -i http://localhost:8080/api/double/999` returns 1998
-    @GetMapping("/api/double/{val}")
-    public int doubleNumber(@PathVariable final int val) {
-        return val * 2;
-    }
-
     // curl -iX POST http://localhost:8080/api/register -d '{"username":"marshall", "password":"gene"}' -H "Content-Type: application/json"
-    @PostMapping("/api/register")
-    public DBUser register(@RequestBody DBUser nameAndPassword) {
-        return userService.save(new DBUser(nameAndPassword.getUsername(),
-                passwordEncoder.encode(nameAndPassword.getPassword()), "USER"));
+    @PostMapping("/Register")
+    public DBUser register(@RequestBody DBUser registeredUser) {
+        DBUser newUser = new DBUser(registeredUser.getUsername(), passwordEncoder.encode(registeredUser.getPassword()), "USER");
+        newUser.setEmail(registeredUser.getEmail());
+        newUser.setFirstName(registeredUser.getFirstName());
+        return userService.save(newUser);
+        //return userService.save(new DBUser(registeredUser.getUsername(), passwordEncoder.encode(registeredUser.getPassword()), "USER"));
     }
 }

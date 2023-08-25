@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,8 +19,12 @@ public class DBUser {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long userID; /// should I use Int here instead?
+
+    @Column(nullable = false, unique = true)
     private String email;
     private String firstName;
+
+    @Column(nullable = false, unique = true)
     private String username;
     private String password;
     private String roles;

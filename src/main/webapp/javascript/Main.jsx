@@ -40,7 +40,8 @@ function Layout() {
     video.playbackRate = 0.5;
   }, []);
 
-  const isUserLoggedIn = Object.keys(user) === undefined && Object.keys(user).length !== 0;
+  const isUserLoggedIn =
+    Object.keys(user) === undefined && Object.keys(user).length !== 0;
 
   return (
     <>

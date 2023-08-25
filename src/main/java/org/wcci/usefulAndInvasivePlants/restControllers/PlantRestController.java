@@ -3,6 +3,7 @@ package org.wcci.usefulAndInvasivePlants.restControllers;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -42,6 +43,8 @@ public class PlantRestController {
     public CollectionModel<EntityModel<Plant>> getPlants(@RequestParam(value = "page", defaultValue = "1") int page) {
         int pageSize = 10; // Number of plants per page
         int offset = (page - 1) * pageSize;
+        long totalPlants = this.plantService.getTotalPlantCount();
+        long totalPages = (totalPlants / pageSize);
 
         Stream<Plant> allPlantsStream = this.plantService.plantStream();
 
@@ -52,8 +55,17 @@ public class PlantRestController {
                         linkTo(methodOn(PlantRestController.class).getPlant(plant.getPlantID())).withSelfRel()))
                 .collect(Collectors.toList());
 
-        Link selfLink = linkTo(methodOn(PlantRestController.class).getPlants(page)).withSelfRel();
-        return CollectionModel.of(plants, selfLink);
+        List<Link> links = new ArrayList<>();
+        links.add(linkTo(methodOn(PlantRestController.class).getPlants(page)).withSelfRel());
+
+        if (page < totalPages) {
+            links.add(linkTo(methodOn(PlantRestController.class).getPlants(page + 1)).withRel("nextPage"));
+        }
+
+        if (page > 1) {
+            links.add(linkTo(methodOn(PlantRestController.class).getPlants(page - 1)).withRel("prevPage"));
+        }
+        return CollectionModel.of(plants, links);
     }
 
     @GetMapping("/api/plants/{plant_id}")

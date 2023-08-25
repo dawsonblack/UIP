@@ -269,6 +269,24 @@ section {
   pointer-events: none;
 }
 
+#pageButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#pageButton {
+  border: 2px solid #556b2f;
+  width: auto;
+  background-color: #f5deb3;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .plant-container {
   display: flex;
   flex-direction: row;
@@ -468,10 +486,12 @@ section {
   flex-direction: column;
   width: 400px;
   margin: 20px auto;
+  margin: 20px auto;
   padding: 20px;
   /* border: 4px solid #556b2f; */
   border-radius: 25px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  background-color: rgba(166, 123, 91, 0.8);
   background-color: rgba(166, 123, 91, 0.8);
 }
 

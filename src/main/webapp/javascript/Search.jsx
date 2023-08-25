@@ -191,24 +191,27 @@ export default function TestingFetches() {
   );
 }
 
-function DisplaySearchResult({ plant }) {
-  console.log(plant);
-  return (
-    <div id={`plant-number${plant.plantID}`} className="plant-container">
-      <ul>
-        <li>Common Name: {plant.commonName}</li>
-        <li>Scientific Name: {plant.scientificName}</li>
-        <li className={plant.isInvasive ? "invasive" : "non-invasive"}>{plant.isInvasive ? "Invasive" : "Non-invasive"}</li>
-        <li>{plant.isNative ? "Native" : "Foreign"}</li>
-        <li>Color: {plant.color}</li>
-      </ul>
-      <img src={plant.imageFruitURL} />
-      <img src={plant.imageLeafURL} />
-      <p>
-        {plant.description} <a href={plant.wikiLink}>Learn More</a>
-      </p>
-    </div>
-  );
+  function DisplaySearchResult({ plant }) {
+    console.log(plant);
+    return (
+      <div id={`plant-number${plant.plantID}`} className="plant-container">
+        <ul>
+          <li>Common Name: {plant.commonName}</li>
+          <li>Scientific Name: {plant.scientificName}</li>
+          <li className={plant.isInvasive ? "invasive" : "non-invasive"}>
+            {plant.isInvasive ? "Invasive" : "Non-invasive"}
+          </li>
+          <li>{plant.isNative ? "Native" : "Foreign"}</li>
+          <li>Color: {plant.color}</li>
+        </ul>
+        <img src={plant.imageFruitURL} />
+        <img src={plant.imageLeafURL} />
+        <p>
+          {plant.description} <a href={plant.wikiLink} target="_blank"
+              rel="noopener noreferrer">Learn More</a>
+        </p>
+      </div>
+    );
   }
 
 return (

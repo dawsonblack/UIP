@@ -148,7 +148,7 @@ export default function Submissions() {
   };
 
   return (
-    <div>
+    <div >
       <div className="user-submission-container">
         <form className="user-submission-form">
           <label htmlFor="commonName">Common Name:</label>
@@ -288,16 +288,17 @@ function SubmissionLister() {
       .then((response) => setPlants(response["_embedded"]["submissionList"]));
     console.log(plants);
     return () => {};
-  }
+  };
 
   return (
-    <div>
-    <button onClick={getPlants}>See Plants Created</button>
-      <ul className="item-list">
+    <div className="plants-created">
+      <button id="get-plants" onClick={getPlants}>
+        See Plants Created
+      </button>
         {plants.map((oneSubmission) => (
           <Submission key={oneSubmission.plantID} submission={oneSubmission} />
         ))}
-      </ul>
+      
     </div>
   );
 }
@@ -322,7 +323,8 @@ function Submission({ submission }) {
         <img src={submission.imageFruitURL} />
         <img src={submission.imageLeafURL} />
         <p>
-          {submission.description} <a href={submission.wikiLink}>Learn More</a>
+          {submission.description} <a href={submission.wikiLink} target="_blank"
+              rel="noopener noreferrer">Learn More</a>
         </p>
       </div>
     </>

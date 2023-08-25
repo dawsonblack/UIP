@@ -148,8 +148,9 @@ export default function Submissions() {
   };
 
   return (
-    <div >
+    <div id="plants">
       <div className="user-submission-container">
+      <h2 id="add">Add Plants Here!</h2>
         <form className="user-submission-form">
           <label htmlFor="commonName">Common Name:</label>
           <input
@@ -291,15 +292,15 @@ function SubmissionLister() {
   };
 
   return (
-    <div className="plants-created">
-      <button id="get-plants" onClick={getPlants}>
-        See Plants Created
-      </button>
+    <><button id="get-plants" onClick={getPlants}>
+      See Plants Created
+    </button>
+    <div id="search-results">
         {plants.map((oneSubmission) => (
           <Submission key={oneSubmission.plantID} submission={oneSubmission} />
         ))}
-      
-    </div>
+
+      </div></>
   );
 }
 
@@ -308,7 +309,7 @@ function Submission({ submission }) {
     <>
       <div
         id={`plant-number${submission.plantID}`}
-        className="submission-container"
+        className="plant-container"
       >
         <ul>
           <li>Common Name: {submission.commonName}</li>

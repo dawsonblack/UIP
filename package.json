@@ -7,7 +7,7 @@
     ]
   },
   "scripts": {
-    "build": "slidev build",
+    "build": "slidev build --base=''",
     "slides": "slidev",
     "exportPDF": "slidev export"
   },

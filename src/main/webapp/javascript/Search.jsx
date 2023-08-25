@@ -1,22 +1,18 @@
 import React, { useState, useEffect } from "react";
-
 export default function TestingFetches() {
   function getPlant() {
     const ID = IDToFetch;
-
     fetch(`/api/plants/${ID}`, { method: "GET", cache: "default" })
       .then((response) => response.json())
       .then((responseBody) => console.log(responseBody));
     return () => {};
   }
-
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
       getPlants();
     }
   };
-
   function newPlant() {
     const info = {
       name: newPlantName,
@@ -24,7 +20,6 @@ export default function TestingFetches() {
       isNative: newPlantIsNative,
       color: newPlantColor,
     };
-
     fetch("/api/plants", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -40,10 +35,8 @@ export default function TestingFetches() {
         console.error("Error saving dog:", error);
       });
   }
-
   const deletePlant = () => {
     const ID = IDToFetch;
-
     fetch(`/api/plants/${ID}`, {
       method: "DELETE",
     })
@@ -57,18 +50,22 @@ export default function TestingFetches() {
         console.error("Error deleting plant:", error);
       });
   };
-
   function SearchData() {
     const [searchResults, setSearchResults] = useState([]);
     const [searchWasRun, setSearchWasRun] = useState(false);
-
     const [searchKeywords, setSearchKeywords] = useState("");
     const [searchBy, setSearchBy] = useState("commonName");
-
+    const [currentPage, setCurrentPage] = useState("/api/plants");
+    const [nextPage, setNextPage] = useState(true);
+    const [priorPage, setPriorPage] = useState(true);
+    
     function getPlants() {
-      fetch(`/api/plants`, { method: "GET", cache: "default" })
+      fetch(`${currentPage}`, { method: "GET", cache: "default" })
         .then((response) => response.json())
         .then((responseBody) => {
+          setPriorPage(responseBody["_links"]?.prevPage?.href);
+          setNextPage(responseBody["_links"]?.nextPage?.href);
+        
           if (searchKeywords == "") {
             setSearchResults(responseBody["_embedded"]["plantList"]);
           } else {
@@ -103,10 +100,17 @@ export default function TestingFetches() {
           }
         });
     }
-
-    useEffect(() => getPlants(), [searchKeywords]);
-
+    useEffect(() => getPlants(), [searchKeywords, currentPage]);
     console.log("search results: " + searchResults);
+
+    const nextPageButton = () => {
+      setCurrentPage(nextPage);
+    };
+
+    const priorPageButton = () => {
+      setCurrentPage(priorPage);
+    };
+  
     return (
       <div id="search-container">
         <div>
@@ -167,7 +171,19 @@ export default function TestingFetches() {
             <label for="native">Invasive</label>
           </div>
         </div>
-
+        <div id="pageButtons">
+        {" "}
+        {priorPage && (
+          <button id="pageButton" onClick={priorPageButton}>
+          Previous Page
+          </button>
+        )}
+        {nextPage && (
+          <button id="pageButton" onClick={nextPageButton}>
+          Next Page
+          </button>
+        )}
+      </div>
         <div id="search-results">
           {searchResults.length > 0
             ? searchResults.map((oneResult) => (
@@ -188,7 +204,6 @@ export default function TestingFetches() {
       </div>
     );
   }
-
   function DisplaySearchResult({ plant }) {
     console.log(plant);
     return (
@@ -211,7 +226,6 @@ export default function TestingFetches() {
       </div>
     );
   }
-
   return (
     <div>
       <SearchData />

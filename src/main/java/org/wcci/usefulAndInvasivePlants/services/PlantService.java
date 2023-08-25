@@ -153,6 +153,10 @@ public class PlantService {
         return databaseUser;
     }
 
+    public long getTotalPlantCount() {
+        return plantRepo.count();
+    }
+
     public Submission findSubmission(final Long plant_id) {
         final Optional<Submission> dataSubmission = submissionRepo.findById(plant_id);
         if (!dataSubmission.isPresent()) {

@@ -39,7 +39,7 @@ function Layout() {
   }, []);
 
   const isUserLoggedIn = Object.keys(user).length !== 0;
-
+  console.log(`User is ${JSON.stringify(user)}`)
   return (
     <>
       <nav>
@@ -51,8 +51,6 @@ function Layout() {
         ) : (
           <Link to="Login">Log In</Link>
         )}
-        {console.log("user is " + user)}
-        {console.log("user name is " + user.firstName)}
       </nav>
       <Outlet />
       <div className="App">

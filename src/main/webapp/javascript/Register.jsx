@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
-import { sha256 } from "./Main";
+import { useLocation } from 'react-router-dom';
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -201,7 +201,9 @@ export default function Register() {
 
 
 
-
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const errorMessage = queryParams.get('error');
 
 
 
@@ -264,12 +266,12 @@ export default function Register() {
 
           {reusedEmail && <p className="form-error-message">This email has already been registered</p>}
           {reusedUsername && <p className="form-error-message">This username is already in use</p>}
+          {errorMessage && <p className="form-error-message">An error occurred</p>}
         </div>
         <div className="button-container">
           <button type="submit" disabled={isButtonDisabled}>Create Account</button>
         </div>
       </form>
-      <button onClick={postUser}>CLick here</button>
       <p className="link">Already have an account? <Link to="/Login">Sign in</Link></p>
     </div>
   );

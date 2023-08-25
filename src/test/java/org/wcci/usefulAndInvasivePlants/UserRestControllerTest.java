@@ -23,7 +23,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.transaction.annotation.Transactional;
-import org.wcci.usefulAndInvasivePlants.entities.User;
+import org.wcci.usefulAndInvasivePlants.entities.DBUser;
 import org.wcci.usefulAndInvasivePlants.restControllers.UserRestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -40,8 +40,12 @@ public class UserRestControllerTest extends HateoasHelper {
         private MockMvc mvc;
 
         @Test
-        public void testUpdateUser() throws Exception {
-                User user = new User((long) 102, "email@email", "Michael", "MScott", "paper");
+        public void testUpdateDBUser() throws Exception {
+                DBUser user = new DBUser("MScott", "paper", "USER");
+                user.setUserID((long) 102);
+                user.setEmail("email@email");
+                user.setFirstName("Michael");
+
 
                 final MvcResult userPostResult = this.mvc
                                 .perform(MockMvcRequestBuilders.post("/api/users")
@@ -54,9 +58,9 @@ public class UserRestControllerTest extends HateoasHelper {
                                 .andExpect(jsonPath("$._links", hasKey(UserRestController.LIST_ALL_USERS)))
                                 .andReturn();
 
-                final User userResultObject = this.extractObject(User.class, userPostResult);
+                final DBUser userResultObject = this.extractObject(DBUser.class, userPostResult);
 
-                final MvcResult getAllUsersResult = this.mvc.perform(
+                final MvcResult getAllDBUsersResult = this.mvc.perform(
                                 MockMvcRequestBuilders
                                                 .get(extractLink(userPostResult,
                                                                 UserRestController.LIST_ALL_USERS))
@@ -67,10 +71,10 @@ public class UserRestControllerTest extends HateoasHelper {
                                 .andExpect(status().isOk())
                                 .andReturn();
 
-                final List<User> allUsers = extractEmbeddedList(getAllUsersResult, USER_LIST, User.class);
+                final List<DBUser> allDBUsers = extractEmbeddedList(getAllDBUsersResult, USER_LIST, DBUser.class);
                 final List<String> plants = new ArrayList<>();
                 plants.add("-1");
-                assertEquals(1, allUsers.size());
+                assertEquals(1, allDBUsers.size());
 
                 this.mvc.perform(
                                 MockMvcRequestBuilders
@@ -89,12 +93,12 @@ public class UserRestControllerTest extends HateoasHelper {
                                 .andExpect(status().isOk())
                                 .andReturn();
 
-                final User createdUser = new ObjectMapper().readValue(
+                final DBUser createdDBUser = new ObjectMapper().readValue(
                                 withPlants.getResponse().getContentAsString(),
-                                User.class);
+                                DBUser.class);
 
-                assertEquals(1, createdUser.getUserID());
-                assertEquals(1, createdUser.getSavedPlants().size());
+                assertEquals(1, createdDBUser.getUserID());
+                assertEquals(1, createdDBUser.getSavedPlants().size());
 
                 plants.remove(0);
                 plants.add("-14");
@@ -115,16 +119,19 @@ public class UserRestControllerTest extends HateoasHelper {
                                 .andExpect(status().isOk())
                                 .andReturn();
 
-                final User createdUser2 = new ObjectMapper().readValue(
+                final DBUser createdDBUser2 = new ObjectMapper().readValue(
                                 withTwoPlants.getResponse().getContentAsString(),
-                                User.class);
+                                DBUser.class);
 
-                assertEquals(2, createdUser2.getSavedPlants().size());
+                assertEquals(2, createdDBUser2.getSavedPlants().size());
         }
 
         @Test
-        public void deleteUserSuccessTest()throws Exception{
-                User user = new User((long) 102, "email@email", "Michael", "MScott", "paper");
+        public void deleteDBUserSuccessTest()throws Exception{
+                DBUser user = new DBUser("MScott", "paper", "USER");
+                user.setUserID((long) 102);
+                user.setEmail("email@email");
+                user.setFirstName("Michael");
 
                 final MvcResult userPostResult = this.mvc
                                 .perform(MockMvcRequestBuilders.post("/api/users")
@@ -137,7 +144,7 @@ public class UserRestControllerTest extends HateoasHelper {
                                 .andExpect(jsonPath("$._links", hasKey(UserRestController.LIST_ALL_USERS)))
                                 .andReturn();
 
-                final User userResultObject = this.extractObject(User.class, userPostResult);
+                final DBUser userResultObject = this.extractObject(DBUser.class, userPostResult);
 
 
                                 this.mvc
@@ -149,7 +156,7 @@ public class UserRestControllerTest extends HateoasHelper {
         }
 
         @Test
-        public void deleteUserFailsWrongIdTest()throws Exception{
+        public void deleteDBUserFailsWrongIdTest()throws Exception{
                 this.mvc
                                 .perform(MockMvcRequestBuilders.delete("/api/users/" + 111)
                                                 .accept(MediaTypes.HAL_JSON)
@@ -158,7 +165,7 @@ public class UserRestControllerTest extends HateoasHelper {
         }
 
         @Test
-        public void deleteUserFailsBadRequestTest()throws Exception{
+        public void deleteDBUserFailsBadRequestTest()throws Exception{
                 this.mvc
                                 .perform(MockMvcRequestBuilders.delete("/api/users/shfkdsj")
                                                 .accept(MediaTypes.HAL_JSON)

@@ -2,7 +2,7 @@ DELETE FROM PLANT
 WHERE
     plantID < 0;
 
-DELETE FROM DBUSER
+/*DELETE FROM DBUSER
 WHERE
     id > 0;
 
@@ -17,7 +17,7 @@ VALUES
         'username',
         '$2a$12$ZYfU1MPVGZs7DL.XGpx2yeKUnOzQTGeqIxciKo37PGLiNoG9MRqki',
         69
-    );
+    );*/
 
 INSERT INTO
     plant (

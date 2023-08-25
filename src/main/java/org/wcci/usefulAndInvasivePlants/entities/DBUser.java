@@ -14,7 +14,7 @@ import jakarta.persistence.Id;
 // should we add age as a field??? 
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class User {
+public class DBUser {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long userID; /// should I use Int here instead?
@@ -22,17 +22,17 @@ public class User {
     private String firstName;
     private String username;
     private String password;
+    private String roles;
     @Convert(converter = StringListConverter.class)
     private List<String> savedPlants;
 
-    public User(String email, String firstName, String username, String password) {
-        this.email = email;
-        this.firstName = firstName;
+    public DBUser(String username, String password, String roles) {
         this.username = username;
         this.password = password;
+        this.roles = roles;
     }
 
-    public User() {
+    public DBUser() {
     }
 
     public Long getUserID() {
@@ -84,6 +84,16 @@ public class User {
 
     public void setSavedPlants(List<String> savedPlants) {
         this.savedPlants = savedPlants;
+    }
+
+    public void setRoles(String roles) {
+        this.roles = roles;
+    }
+
+    public List<String> getRoles() {
+        if (this.roles == null)
+            return List.of();
+        return List.of(this.roles.split(","));
     }
 
 }

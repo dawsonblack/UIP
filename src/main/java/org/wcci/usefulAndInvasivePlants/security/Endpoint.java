@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.wcci.usefulAndInvasivePlants.entities.User;
+import org.wcci.usefulAndInvasivePlants.entities.DBUser;
+import org.wcci.usefulAndInvasivePlants.repositories.UserRepo;
 import org.wcci.usefulAndInvasivePlants.restControllers.UserRestController;
 
 @RestController
@@ -25,9 +26,9 @@ public class Endpoint {
     }
 
     // curl -iX POST http://localhost:8080/api/register -d '{"username":"marshall", "password":"gene"}' -H "Content-Type: application/json"
-    @PostMapping("/Register")
-    public DBUser register(@RequestBody DBUser nameAndPassword) {
-        return userService.save(new DBUser(nameAndPassword.getUsername(),
-                passwordEncoder.encode(nameAndPassword.getPassword()), "USER"));
-    }
+    /*@PostMapping("/Register")
+    public DBUser register(@RequestBody DBUser registeredUser) {
+        return userService.save(new DBUser(registeredUser.getEmail(), registeredUser.getFirstName(),
+                                registeredUser.getUsername(), passwordEncoder.encode(registeredUser.getPassword())));
+    }*/
 }

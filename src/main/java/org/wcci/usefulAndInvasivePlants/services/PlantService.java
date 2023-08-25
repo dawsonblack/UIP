@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import org.wcci.usefulAndInvasivePlants.entities.Plant;
 import org.wcci.usefulAndInvasivePlants.entities.Submission;
-import org.wcci.usefulAndInvasivePlants.entities.User;
+import org.wcci.usefulAndInvasivePlants.entities.DBUser;
 import org.wcci.usefulAndInvasivePlants.repositories.PlantRepo;
 import org.wcci.usefulAndInvasivePlants.repositories.SubmissionRepo;
 import org.wcci.usefulAndInvasivePlants.repositories.UserRepo;
@@ -43,8 +43,8 @@ public class PlantService {
         return StreamSupport.stream(plants.spliterator(), false);
     }
 
-    public Stream<User> userStream() {
-        final Iterable<User> users = this.userRepo.findAll();
+    public Stream<DBUser> userStream() {
+        final Iterable<DBUser> users = this.userRepo.findAll();
 
         // Standard conversion from iterator to stream.
         return StreamSupport.stream(users.spliterator(), false);
@@ -70,7 +70,7 @@ public class PlantService {
         return plantRepo.save(plant);
     }
 
-    public User addNewUser(final User user) {
+    public DBUser addNewUser(final DBUser user) {
         return userRepo.save(user);
     }
 
@@ -106,8 +106,8 @@ public class PlantService {
         return databasePlant;
     }
 
-    public User findUser(final long user_id) {
-        final Optional<User> possiblyAUser = userRepo.findById(user_id);
+    public DBUser findUser(final long user_id) {
+        final Optional<DBUser> possiblyAUser = userRepo.findById(user_id);
         if (!possiblyAUser.isPresent()) {
             logger.info("User not found: " + user_id);
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found " + user_id);
@@ -115,14 +115,14 @@ public class PlantService {
         return possiblyAUser.get();
     }
 
-    public Iterable<User> getUsers() {
+    public Iterable<DBUser> getUsers() {
 
         return userRepo.findAll();
 
     }
 
-    public User updateUser(User user, long user_id) {
-        final User databaseUser = findUser(user_id);
+    public DBUser updateUser(DBUser user, long user_id) {
+        final DBUser databaseUser = findUser(user_id);
 
         if (user_id != databaseUser.getUserID())
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
@@ -137,8 +137,8 @@ public class PlantService {
         return databaseUser;
     }
 
-    public User updateUserPlants(List<String> plants, long user_id) {
-        final User databaseUser = findUser(user_id);
+    public DBUser updateUserPlants(List<String> plants, long user_id) {
+        final DBUser databaseUser = findUser(user_id);
         final List<String> updatedPlants = databaseUser.getSavedPlants();
         updatedPlants.addAll(plants);
         if (user_id != databaseUser.getUserID())

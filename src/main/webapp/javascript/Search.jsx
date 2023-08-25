@@ -205,7 +205,8 @@ export default function TestingFetches() {
         <img src={plant.imageFruitURL} />
         <img src={plant.imageLeafURL} />
         <p>
-          {plant.description} <a href={plant.wikiLink}>Learn More</a>
+          {plant.description} <a href={plant.wikiLink} target="_blank"
+              rel="noopener noreferrer">Learn More</a>
         </p>
       </div>
     );

@@ -292,15 +292,15 @@ function SubmissionLister() {
   };
 
   return (
+    <><button id="get-plants" onClick={getPlants}>
+      See Plants Created
+    </button>
     <div id="search-results">
-      <button id="get-plants" onClick={getPlants}>
-        See Plants Created
-      </button>
         {plants.map((oneSubmission) => (
           <Submission key={oneSubmission.plantID} submission={oneSubmission} />
         ))}
-      
-    </div>
+
+      </div></>
   );
 }
 

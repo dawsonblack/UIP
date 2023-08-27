@@ -15,6 +15,7 @@ NOTES FROM DAWSON:
 -styling and logic of search feature needs work
 -nav bar is too wide
 -if there is time, add forgot password feature
+-common name should be checked by default in search
 
 site key: 6LenvssnAAAAAJOhnQQ3FEYuhRgx4kl-RDePeiRY
 secret key: 6LenvssnAAAAAEz8PzEcwBNTExH35bCuZiTywVDE

@@ -1,5 +1,8 @@
 package org.wcci.usefulAndInvasivePlants.security;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.wcci.usefulAndInvasivePlants.entities.DBUser;
+
 public class IncomingUserData {
     private String email;
     private String firstName;
@@ -54,5 +57,12 @@ public class IncomingUserData {
 
     public void setReCaptcha(boolean reCaptcha) {
         this.reCaptcha = reCaptcha;
+    }
+
+    public DBUser toDBUser(PasswordEncoder passwordEncoder) {
+        DBUser user = new DBUser(this.username, passwordEncoder.encode(this.password), "USER");
+        user.setEmail(this.email);
+        user.setFirstName(this.firstName);
+        return user;
     }
 }

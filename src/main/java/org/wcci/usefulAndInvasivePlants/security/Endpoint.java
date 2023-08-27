@@ -24,16 +24,6 @@ public class Endpoint {
         this.userService = userService;
     }
 
-    // curl -iX POST http://localhost:8080/api/register -d '{"username":"marshall", "password":"gene"}' -H "Content-Type: application/json"
-    /*@PostMapping("/Register")
-    public DBUser register(@RequestBody DBUser registeredUser) {
-        DBUser newUser = new DBUser(registeredUser.getUsername(), passwordEncoder.encode(registeredUser.getPassword()), "USER");
-        newUser.setEmail(registeredUser.getEmail());
-        newUser.setFirstName(registeredUser.getFirstName());
-        
-        return userService.save(newUser);
-    }*/
-
     @PostMapping("/Register")
     public ResponseEntity<String> register(@RequestBody IncomingUserData registeredUser) {
         if (registeredUser.getEmail() == "" || registeredUser.getEmail() == null) {
@@ -61,10 +51,6 @@ public class Endpoint {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("usernameTooLong=true");
         }
 
-        if (userService.emailInUse(registeredUser.getEmail())) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("emailUsed=true");
-        }
-
         if (registeredUser.getPassword() == null || registeredUser.getPassword() == "") {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("emptyPassword=true");
         }
@@ -73,15 +59,23 @@ public class Endpoint {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("invalidPassword=true");
         }
 
+        if (registeredUser.getConfirmPassword() == "" || registeredUser.getConfirmPassword() == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("emptyConfirmPassword=true");
+        }
+
+        if (!registeredUser.getConfirmPassword().equals(registeredUser.getPassword())) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("nonMatchingPasswords=true");
+        }
+
+        if (userService.emailInUse(registeredUser.getEmail())) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("emailUsed=true");
+        }
+
         if (userService.usernameInUse(registeredUser.getUsername())) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("usernameUsed=true");
         }
-        // Register the user
-        DBUser newUser = new DBUser(registeredUser.getUsername(), passwordEncoder.encode(registeredUser.getPassword()), "USER");
-        newUser.setEmail(registeredUser.getEmail());
-        newUser.setFirstName(registeredUser.getFirstName());
-        userService.save(newUser);
-
+        // If data is good, register the user
+        userService.save(registeredUser.toDBUser(passwordEncoder));
         return ResponseEntity.ok("success=true");
     }
 }

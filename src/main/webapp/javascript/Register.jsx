@@ -10,8 +10,8 @@ export default function Register() {
   const [email, setEmail] = useState(queryParams.get('email') || '');
   const [firstName, setFirstName] = useState(queryParams.get('firstName') || '');
   const [username, setUsername] = useState(queryParams.get('username') || '');
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [password, setPassword] = useState(sessionStorage.getItem('password') || '');
+  const [confirmPassword, setConfirmPassword] = useState(sessionStorage.getItem('confirmPassword') || '');
 
   const [isInvalidEmail, setIsInvalidEmail] = useState(queryParams.get('invalidEmail') || null);
 
@@ -22,7 +22,7 @@ export default function Register() {
 
   const [invalidPassword, setInvalidPassword] = useState(queryParams.get('invalidPassword') || null);
 
-  const [passwordsDoNotMatch, setPasswordsDoNotMatch] = useState(true);
+  const [passwordsDoNotMatch, setPasswordsDoNotMatch] = useState(queryParams.get('nonMatchingPasswords') || null);
   const [recaptchaCompleted, setRecaptchaCompleted] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
@@ -90,7 +90,8 @@ export default function Register() {
       email,
       firstName,
       username,
-      password
+      password,
+      confirmPassword
     };
 
     try {
@@ -101,14 +102,22 @@ export default function Register() {
         },
         body: JSON.stringify(userData)
       });
-      const responseUrl = await response.text();
-      const textFields = new URLSearchParams();
-      textFields.set('email', email);
-      textFields.set('firstName', firstName);
-      textFields.set('username', username);
+      if (response.ok) {
+          sessionStorage.setItem('password', '');
+          sessionStorage.setItem('confirmPassword', '');
+          window.location.href = '/Register?success=true';
+      } else {
+          sessionStorage.setItem('password', password);
+          sessionStorage.setItem('confirmPassword', confirmPassword);
 
-      window.location.href = `/Register?${responseUrl}&${textFields.toString()}`;
-    
+          const textFields = new URLSearchParams();
+          email !== "" && textFields.set('email', email);
+          firstName !== "" && textFields.set('firstName', firstName);
+          username !== "" && textFields.set('username', username);
+
+          const responseUrl = await response.text();
+          window.location.href = `/Register?${responseUrl}&${textFields.toString()}`;
+      }
     } catch (error) {
       // Handle network error or other exceptions
     }
@@ -171,6 +180,7 @@ export default function Register() {
             onChange={handleConfirmPasswordChange}
             onKeyDown={handleKeyPress}
           ></input>
+          {queryParams.get('emptyConfirmPassword') && <p className="form-error-message">This field is required</p>}
           {passwordsDoNotMatch && confirmPassword !=="" && <p className="form-error-message">Passwords do not match</p>}
           <ReCAPTCHA sitekey="6LenvssnAAAAAJOhnQQ3FEYuhRgx4kl-RDePeiRY"
             onChange={recaptchaOnChange}

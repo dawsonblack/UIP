@@ -28,6 +28,16 @@ public class SecurityUserDetailsService implements UserDetailsService {
                 user.getRoles().stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
     }
 
+    public boolean emailInUse(String email) {
+        DBUser user = userRepo.findByEmail(email);
+        return user != null;
+    }
+
+    public boolean usernameInUse(String username) {
+        DBUser user = userRepo.findByUsername(username);
+        return user != null;
+    }
+
     public DBUser save(DBUser dbUser) {
         return userRepo.save(dbUser);
     }

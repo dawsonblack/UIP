@@ -5,4 +5,5 @@ import org.wcci.usefulAndInvasivePlants.entities.DBUser;
 
 public interface UserRepo extends CrudRepository<DBUser, Long> {
     DBUser findByUsername(String username);
+    DBUser findByEmail(String email);
 }

@@ -30,10 +30,10 @@ public class Endpoint {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("emptyEmail=true");
         }
 
-        /*String pattern = "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{1,63}$";
-        if (Pattern.matches(pattern, registeredUser.getEmail())) {
+        String pattern = "^(\\w|-|\\.)+@(\\w|-|\\.)+\\.\\w{1,63}$";
+        if (!Pattern.matches(pattern, registeredUser.getEmail())) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("invalidEmail=true");
-        }*/
+        }
 
         if (registeredUser.getFirstName().length() > 256) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("nameTooLong=true");
@@ -65,6 +65,10 @@ public class Endpoint {
 
         if (!registeredUser.getConfirmPassword().equals(registeredUser.getPassword())) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("nonMatchingPasswords=true");
+        }
+
+        if (!registeredUser.getReCaptchaCompleted()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("badRecaptcha=true");
         }
 
         if (userService.emailInUse(registeredUser.getEmail())) {

@@ -5,6 +5,7 @@ NOTES FROM DAWSON:
             -sort search results alphabetically
             -make the error page adapt to any error code
             -it's trivially easy to break through the registration page
+            -add little red asterisks next to required fields in register form
     Things you need to add:
         -make everything mobile friendly
         -add search by description
@@ -12,10 +13,12 @@ NOTES FROM DAWSON:
         -add an enlarge button rather than automatically enlarging images on search page
         -finish the user page
     Bugs you need to fix and things to smooth out:
+        -REMEMBER TO DISABLE BUTTON BEFORE DEMO
         -when searching something specific, all pages should have 10 search results except maybe the last one
         -reorganize images and have consistent names
         -common name should be checked by default in search
-        -make sure you can detect an invalid email on the backend
+        -get recaptcha to check properly in the backend
+        -confirm password and password shouldn't show up on new register page
 
 site key: 6LenvssnAAAAAJOhnQQ3FEYuhRgx4kl-RDePeiRY
 secret key: 6LenvssnAAAAAEz8PzEcwBNTExH35bCuZiTywVDE

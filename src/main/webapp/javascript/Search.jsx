@@ -201,6 +201,19 @@ export default function TestingFetches() {
                 </div>
               )}
         </div>
+        <div id="pageButtons">
+        {" "}
+        {priorPage && (
+          <button id="pageButton" onClick={priorPageButton}>
+          Previous Page
+          </button>
+        )}
+        {nextPage && (
+          <button id="pageButton" onClick={nextPageButton}>
+          Next Page
+          </button>
+        )}
+      </div>
       </div>
     );
   }

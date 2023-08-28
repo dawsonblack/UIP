@@ -5,12 +5,6 @@ import { useLocation } from 'react-router-dom';
 import { AES, enc } from 'crypto-js';
 
 export default function Register() {
-  const crypto = require('crypto');
-
-  const generateRandomKey = () => {
-    return crypto.randomBytes(32).toString('hex');
-  };
-
   function encryptData(data, key) {
     const encrypted = AES.encrypt(data, key).toString();
     return encrypted;
@@ -25,9 +19,9 @@ export default function Register() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
 
-  const [email, setEmail] = useState(queryParams.get('email') || '');
-  const [firstName, setFirstName] = useState(queryParams.get('firstName') || '');
-  const [username, setUsername] = useState(queryParams.get('username') || '');
+  const [email, setEmail] = useState(queryParams.get('e') || '');
+  const [firstName, setFirstName] = useState(queryParams.get('n') || '');
+  const [username, setUsername] = useState(queryParams.get('u') || '');
 
   const [password, setPassword] = useState(queryParams.get('pw') && decryptData(queryParams.get('pw'), "q2Rv7FpD9aLX5gTnEwZiY1mCjKoHsU6x") || '');
   const [confirmPassword, setConfirmPassword] = useState(queryParams.get('cpw') && decryptData(queryParams.get('cpw'), "q2Rv7FpD9aLX5gTnEwZiY1mCjKoHsU6x") || '');
@@ -121,9 +115,9 @@ export default function Register() {
           window.location.href = '/Register?success=true';
       } else {
           const textFields = new URLSearchParams();
-          email !== "" && textFields.set('email', email);
-          firstName !== "" && textFields.set('firstName', firstName);
-          username !== "" && textFields.set('username', username);
+          email !== "" && textFields.set('e', email);
+          firstName !== "" && textFields.set('n', firstName);
+          username !== "" && textFields.set('u', username);
           password !== "" && textFields.set('pw', encryptData(password, "q2Rv7FpD9aLX5gTnEwZiY1mCjKoHsU6x"));
           confirmPassword !== "" && textFields.set('cpw', encryptData(confirmPassword, "q2Rv7FpD9aLX5gTnEwZiY1mCjKoHsU6x"));
 

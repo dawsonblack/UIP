@@ -1,14 +1,32 @@
 import React, { useState, useEffect } from "react";
-import { useAuth } from "./AuthContext";
 
 export default function User() {
   const [username, setUsername] = useState("");
   const [plantId, setPlantId] = useState("");
   const [savedPlants, setSavedPlants] = useState([]);
-  const { user, setUser } = useAuth();
+  const [user, setUser] = useState();
+
+  function getUser() {
+    fetch('/api/users', { method: "GET", cache: "default" })
+      .then((response) => response.json())
+      .then((responseBody) => {
+        const foundUser = responseBody["_embedded"]["dBUserList"].find(
+          (user) => user.username === localStorage.getItem("loggedInUsername")
+        );
+        
+        if (foundUser) {
+        console.log(foundUser);
+        setUser(foundUser);
+        }
+      });
+  }
 
   useEffect(() => {
-    fetch(`/api/users/${user.userID}`, {
+    getUser();
+  }, [])
+
+  useEffect(() => {
+    user && fetch(`/api/users/${user.userID}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -19,15 +37,15 @@ export default function User() {
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        console.log("Pet updated successfully!");
+        console.log("Plants updated successfully!");
       })
       .catch((error) => {
-        console.error("Error updating pet:", error);
+        console.error("Error updating plants:", error);
       });
   }, [savedPlants]);
 
   const handleSavePlant = () => {
-    if (username && plantId) {
+    if (plantId) {
       setSavedPlants([...savedPlants, plantId]);
       setPlantId("");
     }
@@ -40,7 +58,7 @@ export default function User() {
   return (
     <div id="search-container">
       <div>
-        <h1 id="title">Welcome, {user.firstName}!</h1>
+        <h1 id="title">Welcome{user && user.firstName && `, ${user.firstName}`}!</h1>
       </div>
       <div>
         <input
@@ -62,7 +80,7 @@ export default function User() {
         <button onClick={logOut}>Log Out</button>
       </div>
       <div>
-        <h2>{JSON.stringify(savedPlants)}</h2>
+        <h2>{user && user.savedPlants && `[${user.savedPlants}]`}</h2>
         <h2>Saved Plants</h2>
       </div>
       <div>

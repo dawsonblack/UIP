@@ -5,8 +5,11 @@ import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,11 +17,11 @@ import org.wcci.usefulAndInvasivePlants.entities.DBUser;
 
 @RestController
 @CrossOrigin
-public class Endpoint {
+public class SecurityController {
     final private PasswordEncoder passwordEncoder;
     final private SecurityUserDetailsService userService;
 
-    public Endpoint(@Autowired final PasswordEncoder passwordEncoder,
+    public SecurityController(@Autowired final PasswordEncoder passwordEncoder,
             @Autowired final SecurityUserDetailsService userService) {
         this.passwordEncoder = passwordEncoder;
         this.userService = userService;
@@ -67,9 +70,9 @@ public class Endpoint {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("nonMatchingPasswords=true");
         }
 
-        if (!registeredUser.getReCaptchaCompleted()) {
+        /*if (!registeredUser.getReCaptchaCompleted()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("badRecaptcha=true");
-        }
+        }*/
 
         if (userService.emailInUse(registeredUser.getEmail())) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("emailUsed=true");
@@ -81,5 +84,14 @@ public class Endpoint {
         // If data is good, register the user
         userService.save(registeredUser.toDBUser(passwordEncoder));
         return ResponseEntity.ok("success=true");
+    }
+
+    @GetMapping("/api/auth-status")
+    public ResponseEntity<?> getAuthStatus(Authentication authentication) {
+        if (authentication != null && authentication.isAuthenticated()) {
+            return ResponseEntity.ok("{\"authenticated\": true}");
+        } else {
+            return ResponseEntity.ok("{\"authenticated\": false}");
+        }
     }
 }

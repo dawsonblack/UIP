@@ -6,6 +6,22 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const [userIsLoggedIn, setUserIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    fetch('/api/auth-status')
+      .then(response => response.json())
+      .then(data => {
+        setUserIsLoggedIn(data.authenticated);
+      })
+    .catch(error => {
+      console.error('Error checking authentication status:', error);
+    });
+
+    if (userIsLoggedIn) {
+      window.location.href = '/User';
+    }
+  }, []);
 
   useEffect(() => {
     setIsButtonDisabled(username === "" || password === "");
@@ -23,10 +39,14 @@ export default function Login() {
   const queryParams = new URLSearchParams(location.search);
   const errorMessage = queryParams.get('error');
   const logoutMessage = queryParams.get('logout');
+
+  const saveInfo = () => {
+    localStorage.setItem("loggedInUsername", username);
+  }
   
   return (
     <div className="register-login-container">
-      <form action="/Login" method="post">
+      <form onSubmit={saveInfo} action="/Login" method="post">
         <div className="register-login-form">
           {logoutMessage && <p className="form-success-message">You have been successfully logged out</p>}
           <label htmlFor="username">Username:</label>

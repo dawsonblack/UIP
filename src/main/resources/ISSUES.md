@@ -6,6 +6,7 @@ NOTES FROM DAWSON:
             -make the error page adapt to any error code
             -it's trivially easy to break through the registration page
             -add little red asterisks next to required fields in register form
+            -you shouldn't be able to go to the login page unless you're not logged in
     Things you need to add:
         -make everything mobile friendly
         -add search by description

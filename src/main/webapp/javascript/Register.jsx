@@ -4,38 +4,42 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { useLocation } from 'react-router-dom';
 
 export default function Register() {
-  const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
 
-  const [isInvalidEmail, setIsInvalidEmail] = useState(true);
-  const [isInvalidUsername, setIsInvalidUsername] = useState(true);
-  const [isInvalidPassword, setIsInvalidPassword] = useState(true);
-  const [passwordsDoNotMatch, setPasswordsDoNotMatch] = useState(true);
+  const [email, setEmail] = useState(queryParams.get('email') || '');
+  const [firstName, setFirstName] = useState(queryParams.get('firstName') || '');
+  const [username, setUsername] = useState(queryParams.get('username') || '');
+  const [password, setPassword] = useState(sessionStorage.getItem('password') || '');
+  const [confirmPassword, setConfirmPassword] = useState(sessionStorage.getItem('confirmPassword') || '');
+
+  const [isInvalidEmail, setIsInvalidEmail] = useState(queryParams.get('invalidEmail') || null);
+
+  const [firstNameTooLong, setFirstNameTooLong] = useState(queryParams.get('nameTooLong') || null);
+
+  const [usernameHasSpace, setUsernameHasSpace] = useState(queryParams.get('usernameSpace') || null);
+  const [usernameTooLong, setUsernameTooLong] = useState(queryParams.get('usernameTooLong') || null);
+
+  const [invalidPassword, setInvalidPassword] = useState(queryParams.get('invalidPassword') || null);
+
+  const [passwordsDoNotMatch, setPasswordsDoNotMatch] = useState(queryParams.get('nonMatchingPasswords') || null);
   const [recaptchaCompleted, setRecaptchaCompleted] = useState(false);
-  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
-  const [reusedEmail, setReusedEmail] = useState(false);
-  const [reusedUsername, setReusedUsername] = useState(false);
-
-  /*const [plantToSave, setPlantToSave] = useState("");
-  const [user_id, setUser_id] = useState("");*/
-
-  useEffect(() => {
+  /*useEffect(() => {
     setIsButtonDisabled(
       email == "" ||
-      firstName == "" ||
       username == "" ||
       password == "" ||
       isInvalidEmail ||
-      isInvalidUsername ||
-      isInvalidPassword ||
+      firstNameTooLong ||
+      usernameHasSpace ||
+      usernameTooLong ||
+      invalidPassword ||
       passwordsDoNotMatch ||
       !recaptchaCompleted
     );
-  }, [email, firstName, username, password, confirmPassword, recaptchaCompleted]);
+  }, [email, firstName, username, password, confirmPassword, recaptchaCompleted]);*/
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter" && !isButtonDisabled) {
@@ -46,22 +50,24 @@ export default function Register() {
 
   const handleEmailChange = ({ target }) => {
     setEmail(target.value);
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{1,63}$/;
     setIsInvalidEmail(!emailRegex.test(target.value));
   };
 
   const handleFirstNameChange = ({ target }) => {
     setFirstName(target.value);
+    setFirstNameTooLong(target.value.length > 256);
   };
 
   const handleUsernameChange = ({ target }) => {
     setUsername(target.value);
-    setIsInvalidUsername(target.value.includes(" "));
+    setUsernameHasSpace(target.value.includes(" "));
+    setUsernameTooLong(target.value.length > 50);
   };
 
   const handlePasswordChange = ({ target }) => {
     setPassword(target.value);
-    setIsInvalidPassword(target.value.length < 8);
+    setInvalidPassword(target.value.length < 8 || target.value.length > 256);
     setPasswordsDoNotMatch(target.value !== confirmPassword);
   };
 
@@ -70,103 +76,12 @@ export default function Register() {
     setPasswordsDoNotMatch(target.value !== password);
   };
 
-  /*const handlePlantToSaveChange = ({ target }) => {
-    setPlantToSave(target.value);
-  };
-
-  const handleUser_idChange = ({ target }) => {
-    setUser_id(target.value);
-  };*/
-
-  const checkCredentials = () => {
-    console.log("In checkCredentials");
-    fetch('/api/users', { method: "GET", cache: "default" })
-      .then((response) => response.json())
-      .then((responseBody) => {
-        console.log("In user fetch");
-
-        if (responseBody["_embedded"]["userList"]) {
-          console.log("We're gonna check for copies");
-          for (let i = 0; i < responseBody["_embedded"]["userList"].length; i++) {
-            console.log("Checking " + responseBody["_embedded"]["userList"][i].email + " and " + responseBody["_embedded"]["userList"][i].username);
-            if (responseBody["_embedded"]["userList"][i].email == email) {
-              console.log("Email is a copy! Aborting now");
-              setReusedEmail(true);
-              setReusedUsername(false);
-              return;
-          } else if (responseBody["_embedded"]["userList"][i].username == username) {
-              console.log("Username is a copy! Aborting now");
-              setReusedEmail(false);
-              setReusedUsername(true);
-              return;
-            }
-          }
-        }
-        postUser();
-      });
-  }
-
-  const postUser = async () => {
-    //const hashedPassword = await sha256(username + password);
-    
-    fetch("/api/users", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: email,
-        firstName: firstName,
-        username: username,
-        password: password,
-        roles: "USER",
-      }),
-    }).then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      console.log("User saved successfully!");
-    });
-
-    setReusedEmail(false);
-    setReusedUsername(false);
-    setEmail("");
-    setFirstName("");
-    setUsername("");
-    setPassword("");
-    setConfirmPassword("");
-  };
-
-  /*const updateSavedPlants = () => {
-    fetch(`/api/users/${user_id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(plantToSave),
-    }).then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      console.log("Plant saved successfully!");
-    });
-  };*/
-
   const recaptchaOnChange = () => {
     setRecaptchaCompleted(true);
   }
   const recaptchaOnExpired = () => {
     setRecaptchaCompleted(false);
   }
-
-
-
-
-
-
-
-
-
-
-
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -175,7 +90,8 @@ export default function Register() {
       email,
       firstName,
       username,
-      password
+      password,
+      confirmPassword
     };
 
     try {
@@ -186,32 +102,32 @@ export default function Register() {
         },
         body: JSON.stringify(userData)
       });
-
       if (response.ok) {
-        // Registration successful, you might want to redirect or show a success message
+          sessionStorage.setItem('password', '');
+          sessionStorage.setItem('confirmPassword', '');
+          window.location.href = '/Register?success=true';
       } else {
-        // Registration failed, handle the error
+          sessionStorage.setItem('password', password);
+          sessionStorage.setItem('confirmPassword', confirmPassword);
+
+          const textFields = new URLSearchParams();
+          email !== "" && textFields.set('email', email);
+          firstName !== "" && textFields.set('firstName', firstName);
+          username !== "" && textFields.set('username', username);
+
+          const responseUrl = await response.text();
+          window.location.href = `/Register?${responseUrl}&${textFields.toString()}`;
       }
     } catch (error) {
       // Handle network error or other exceptions
     }
   };
 
-
-
-
-
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const errorMessage = queryParams.get('error');
-
-
-
-
   return (
     <div className="register-login-container">
       <form onSubmit={handleSubmit}>
         <div className="register-login-form">
+          {queryParams.get('success') && <p className="form-success-message">Account successfully created</p>}
           <label htmlFor="email">Email:</label>
           <input
             type="text"
@@ -221,6 +137,7 @@ export default function Register() {
             onKeyDown={handleKeyPress}
           ></input>
           {isInvalidEmail && email !=="" && <p className="form-error-message">Invalid email</p>}
+          {queryParams.get('emptyEmail') && <p className="form-error-message">This field is required</p>}
 
           <label htmlFor="firstName">First Name:</label>
           <input
@@ -230,6 +147,7 @@ export default function Register() {
             onChange={handleFirstNameChange}
             onKeyDown={handleKeyPress}
           ></input>
+          {firstNameTooLong && <p className="form-error-message">This field cannot be greater than 256 characters</p>}
 
           <label htmlFor="username">Username:</label>
           <input
@@ -239,7 +157,9 @@ export default function Register() {
             onChange={handleUsernameChange}
             onKeyDown={handleKeyPress}
           ></input>
-          {isInvalidUsername && username !=="" && <p className="form-error-message">Usernames cannot contain spaces</p>}
+          {queryParams.get('emptyUsername') && <p className="form-error-message">This field is required</p>}
+          {usernameHasSpace && username !=="" && <p className="form-error-message">Usernames cannot contain spaces</p>}
+          {usernameTooLong && username !=="" && <p className="form-error-message">Usernames cannot be greater than 50 characters</p>}
 
           <label htmlFor="password">Password:</label>
           <input
@@ -249,7 +169,8 @@ export default function Register() {
             onChange={handlePasswordChange}
             onKeyDown={handleKeyPress}
           ></input>
-          {isInvalidPassword && password !=="" && <p className="form-error-message">Your password must be at least 8 characters long</p>}
+          {queryParams.get('emptyPassword') && <p className="form-error-message">This field is required</p>}
+          {invalidPassword && password !=="" && <p className="form-error-message">Your password must contain at least 8 characters, but no more than 256 characters</p>}
 
           <label htmlFor="confirm-password">Confirm Password:</label>
           <input
@@ -259,14 +180,14 @@ export default function Register() {
             onChange={handleConfirmPasswordChange}
             onKeyDown={handleKeyPress}
           ></input>
+          {queryParams.get('emptyConfirmPassword') && <p className="form-error-message">This field is required</p>}
           {passwordsDoNotMatch && confirmPassword !=="" && <p className="form-error-message">Passwords do not match</p>}
           <ReCAPTCHA sitekey="6LenvssnAAAAAJOhnQQ3FEYuhRgx4kl-RDePeiRY"
             onChange={recaptchaOnChange}
             onExpired={recaptchaOnExpired} />
 
-          {reusedEmail && <p className="form-error-message">This email has already been registered</p>}
-          {reusedUsername && <p className="form-error-message">This username is already in use</p>}
-          {errorMessage && <p className="form-error-message">An error occurred</p>}
+          {queryParams.get('emailUsed') && <p className="form-error-message">This email has already been registered</p>}
+          {queryParams.get('usernameUsed') && <p className="form-error-message">This username is already in use</p>}
         </div>
         <div className="button-container">
           <button type="submit" disabled={isButtonDisabled}>Create Account</button>

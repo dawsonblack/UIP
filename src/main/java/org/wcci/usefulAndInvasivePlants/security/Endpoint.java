@@ -1,6 +1,10 @@
 package org.wcci.usefulAndInvasivePlants.security;
 
+import java.util.regex.Pattern;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,13 +24,58 @@ public class Endpoint {
         this.userService = userService;
     }
 
-    // curl -iX POST http://localhost:8080/api/register -d '{"username":"marshall", "password":"gene"}' -H "Content-Type: application/json"
     @PostMapping("/Register")
-    public DBUser register(@RequestBody DBUser registeredUser) {
-        DBUser newUser = new DBUser(registeredUser.getUsername(), passwordEncoder.encode(registeredUser.getPassword()), "USER");
-        newUser.setEmail(registeredUser.getEmail());
-        newUser.setFirstName(registeredUser.getFirstName());
+    public ResponseEntity<String> register(@RequestBody IncomingUserData registeredUser) {
+        if (registeredUser.getEmail() == "" || registeredUser.getEmail() == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("emptyEmail=true");
+        }
+
+        /*String pattern = "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{1,63}$";
+        if (Pattern.matches(pattern, registeredUser.getEmail())) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("invalidEmail=true");
+        }*/
+
+        if (registeredUser.getFirstName().length() > 256) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("nameTooLong=true");
+        }
+
+        if (registeredUser.getUsername() == "" || registeredUser.getUsername() == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("emptyUsername=true");
+        }
+
+        if (registeredUser.getUsername().contains(" ")) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("usernameSpace=true");
+        }
+
+        if (registeredUser.getUsername().length() > 50) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("usernameTooLong=true");
+        }
+
+        if (registeredUser.getPassword() == null || registeredUser.getPassword() == "") {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("emptyPassword=true");
+        }
         
-        return userService.save(newUser);
+        if (registeredUser.getPassword().length() < 8 || registeredUser.getPassword().length() > 256) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("invalidPassword=true");
+        }
+
+        if (registeredUser.getConfirmPassword() == "" || registeredUser.getConfirmPassword() == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("emptyConfirmPassword=true");
+        }
+
+        if (!registeredUser.getConfirmPassword().equals(registeredUser.getPassword())) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("nonMatchingPasswords=true");
+        }
+
+        if (userService.emailInUse(registeredUser.getEmail())) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("emailUsed=true");
+        }
+
+        if (userService.usernameInUse(registeredUser.getUsername())) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("usernameUsed=true");
+        }
+        // If data is good, register the user
+        userService.save(registeredUser.toDBUser(passwordEncoder));
+        return ResponseEntity.ok("success=true");
     }
 }

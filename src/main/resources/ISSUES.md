@@ -19,6 +19,7 @@ NOTES FROM DAWSON:
         -reorganize images and have consistent names
         -common name should be checked by default in search
         -get recaptcha to check properly in the backend
+        -delete nothing.java
 
 site key: 6LenvssnAAAAAJOhnQQ3FEYuhRgx4kl-RDePeiRY
 secret key: 6LenvssnAAAAAEz8PzEcwBNTExH35bCuZiTywVDE

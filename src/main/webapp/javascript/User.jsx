@@ -50,6 +50,7 @@ export default function User() {
         savedPlants: [...user.savedPlants, plantId],
       };
       setUser(updatedUser);
+      setPlantId("");
     }
   };
 
@@ -58,30 +59,26 @@ export default function User() {
   }
 
   return (
-    <div id="search-container">
-      <header>
-        <h1 id="title">Welcome{user && user.firstName && `, ${user.firstName}`}!</h1>
-        <button onClick={logOut}>Log Out</button>
+    <div id="user-container">
+      <header id="user-welcome">
+        <h1 id="welcome">Welcome{user && user.firstName && `, ${user.firstName}`}!</h1>
+        <button id="logout-button" onClick={logOut}>Log Out</button>
       </header>
-      <div>
+      <div id="input-container">
         <input
           type="number"
           placeholder="Enter plant ID"
           value={plantId}
           onChange={(e) => setPlantId(e.target.value)}
         />
+        <button id="save-button" onClick={handleSavePlant}>Save Plant</button>
       </div>
-      <div>
-        <button onClick={handleSavePlant}>Save Plant</button>
-      </div>
-      <div>
+      <div id="saved-plants-container">
         <h2>{user && user.savedPlants && `[${user.savedPlants}]`}</h2>
         <h2>Saved Plants</h2>
-      </div>
-      <div>
-        <ul>
+        <ul id="saved-plants">
           {savedPlants.map((plant) => (
-            <li key={plant.id}>
+            <li id="saved-plant" key={plant.id}>
               Plant ID: {plant.id}, Saved by: {plant.username}
             </li>
           ))}

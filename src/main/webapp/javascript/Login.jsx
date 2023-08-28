@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom';
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const [userIsLoggedIn, setUserIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -22,10 +21,6 @@ export default function Login() {
       window.location.href = '/User';
     }
   }, []);
-
-  useEffect(() => {
-    setIsButtonDisabled(username === "" || password === "");
-  }, [username, password]);
 
   const handleUsernameChange = ({ target }) => {
     setUsername(target.value);
@@ -67,7 +62,7 @@ export default function Login() {
           {errorMessage && <p className="form-error-message">Your username or password was incorrect</p>}
         </div>
         <div className="button-container">
-          <button type="submit" disabled={isButtonDisabled}>Sign In</button>
+          <button type="submit">Sign In</button>
         </div>
       </form>
       <p className="link">Don't have an account? <Link to="/Register">Click here</Link> to Register</p>

@@ -40,7 +40,7 @@ export default function Register() {
   const [recaptchaCompleted, setRecaptchaCompleted] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
-  /*useEffect(() => {
+  useEffect(() => {
     setIsButtonDisabled(
       email == "" ||
       username == "" ||
@@ -53,7 +53,7 @@ export default function Register() {
       passwordsDoNotMatch ||
       !recaptchaCompleted
     );
-  }, [email, firstName, username, password, confirmPassword, recaptchaCompleted]);*/
+  }, [email, firstName, username, password, confirmPassword, recaptchaCompleted]);
 
   const handleEmailChange = ({ target }) => {
     setEmail(target.value);

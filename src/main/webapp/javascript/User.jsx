@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 export default function User() {
-  const [username, setUsername] = useState("");
   const [plantId, setPlantId] = useState("");
   const [savedPlants, setSavedPlants] = useState([]);
   const [user, setUser] = useState();
@@ -26,12 +25,12 @@ export default function User() {
   }, [])
 
   useEffect(() => {
-    user && fetch(`/api/users/${user.userID}`, {
+    user && fetch(`/api/users/902`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ ...user, savedPlants: savedPlants }),
+      body: user,
     })
       .then((response) => {
         if (!response.ok) {
@@ -42,12 +41,15 @@ export default function User() {
       .catch((error) => {
         console.error("Error updating plants:", error);
       });
-  }, [savedPlants]);
+  }, [user]);
 
   const handleSavePlant = () => {
     if (plantId) {
-      setSavedPlants([...savedPlants, plantId]);
-      setPlantId("");
+      const updatedUser = {
+        ...user,
+        savedPlants: [...user.savedPlants, plantId],
+      };
+      setUser(updatedUser);
     }
   };
 
@@ -57,17 +59,11 @@ export default function User() {
 
   return (
     <div id="search-container">
-      <div>
+      <header>
         <h1 id="title">Welcome{user && user.firstName && `, ${user.firstName}`}!</h1>
-      </div>
+        <button onClick={logOut}>Log Out</button>
+      </header>
       <div>
-        <input
-          type="text"
-          placeholder="Enter your username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <br />
         <input
           type="number"
           placeholder="Enter plant ID"
@@ -77,7 +73,6 @@ export default function User() {
       </div>
       <div>
         <button onClick={handleSavePlant}>Save Plant</button>
-        <button onClick={logOut}>Log Out</button>
       </div>
       <div>
         <h2>{user && user.savedPlants && `[${user.savedPlants}]`}</h2>

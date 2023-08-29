@@ -4,9 +4,7 @@ NOTES FROM DAWSON:
         -add forgot password feature
         -sort search results alphabetically
         -make the error page adapt to any error code
-        -add little red asterisks next to required fields in register form
         -add see password feature
-        -you shouldn't be able to go to the login page unless you're not logged in
         -make everything mobile friendly
         -add search by description
         -add a next/previous page to the bottom of the search results as well
@@ -19,9 +17,11 @@ NOTES FROM DAWSON:
         -reorganize images and have consistent names
         -common name should be checked by default in search
         -get recaptcha to check properly in the backend
+        -it seems like you could inject a true value for the recaptcha
         -delete nothing.java
         -meet the creators looks weird on mobile
         -clean out unneeded console logs and comments
+        -there's something wrong with PUT requests
 
 site key: 6LenvssnAAAAAJOhnQQ3FEYuhRgx4kl-RDePeiRY
 secret key: 6LenvssnAAAAAEz8PzEcwBNTExH35bCuZiTywVDE

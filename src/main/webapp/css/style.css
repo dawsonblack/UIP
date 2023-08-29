@@ -406,6 +406,12 @@ section {
   font-weight: bold;
 }
 
+.required-field::after {
+  content: "*";
+  color: red;
+  margin-left: 3px;
+}
+
 .register-login-form input {
   padding: 7px;
   margin-bottom: 10px;

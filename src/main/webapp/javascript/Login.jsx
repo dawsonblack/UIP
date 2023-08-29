@@ -18,6 +18,7 @@ export default function Login() {
     });
 
     if (userIsLoggedIn) {
+      console.log("User is logged in, why are we here?");
       window.location.href = '/User';
     }
   }, []);

@@ -134,7 +134,7 @@ export default function Register() {
       <form onSubmit={handleSubmit}>
         <div className="register-login-form">
           {queryParams.get('success') && <p className="form-success-message">Account successfully created</p>}
-          <label htmlFor="email">Email:</label>
+          <label className="required-field" htmlFor="email">Email:</label>
           <input
             type="text"
             name="email"
@@ -153,7 +153,7 @@ export default function Register() {
           ></input>
           {firstNameTooLong && <p className="form-error-message">This field cannot be greater than 256 characters</p>}
 
-          <label htmlFor="username">Username:</label>
+          <label className="required-field" htmlFor="username">Username:</label>
           <input
             type="text"
             name="username"
@@ -164,7 +164,7 @@ export default function Register() {
           {usernameHasSpace && username !=="" && <p className="form-error-message">Usernames cannot contain spaces</p>}
           {usernameTooLong && username !=="" && <p className="form-error-message">Usernames cannot be greater than 50 characters</p>}
 
-          <label htmlFor="password">Password:</label>
+          <label className="required-field" htmlFor="password">Password:</label>
           <input
             type="password"
             name="password"
@@ -174,7 +174,7 @@ export default function Register() {
           {queryParams.get('emptyPassword') && <p className="form-error-message">This field is required</p>}
           {invalidPassword && password !=="" && <p className="form-error-message">Your password must contain at least 8 characters, but no more than 256 characters</p>}
 
-          <label htmlFor="confirm-password">Confirm Password:</label>
+          <label className="required-field" htmlFor="confirm-password">Confirm Password:</label>
           <input
             type="password"
             name="confirm-password"

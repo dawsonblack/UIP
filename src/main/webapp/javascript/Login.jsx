@@ -5,22 +5,18 @@ import { useLocation } from 'react-router-dom';
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [userIsLoggedIn, setUserIsLoggedIn] = useState(false);
 
   useEffect(() => {
     fetch('/api/auth-status')
       .then(response => response.json())
       .then(data => {
-        setUserIsLoggedIn(data.authenticated);
+        if (data.authenticated) {
+          window.location.href = '/User';
+        }
       })
     .catch(error => {
       console.error('Error checking authentication status:', error);
     });
-
-    if (userIsLoggedIn) {
-      console.log("User is logged in, why are we here?");
-      window.location.href = '/User';
-    }
   }, []);
 
   const handleUsernameChange = ({ target }) => {

@@ -1,34 +1,55 @@
 import React, { useState, useEffect } from "react";
-import { useAuth } from "./AuthContext";
 
 export default function User() {
-  const [username, setUsername] = useState("");
   const [plantId, setPlantId] = useState("");
   const [savedPlants, setSavedPlants] = useState([]);
-  const { user, setUser } = useAuth();
+  const [user, setUser] = useState();
+
+  function getUser() {
+    fetch('/api/users', { method: "GET", cache: "default" })
+      .then((response) => response.json())
+      .then((responseBody) => {
+        const foundUser = responseBody["_embedded"]["dBUserList"].find(
+          (user) => user.username === localStorage.getItem("loggedInUsername")
+        );
+        
+        if (foundUser) {
+        console.log(foundUser);
+        setUser(foundUser);
+        }
+      });
+  }
 
   useEffect(() => {
-    fetch(`/api/users/${user.userID}`, {
+    getUser();
+  }, [])
+
+  useEffect(() => {
+    user && fetch(`/api/users/902`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ ...user, savedPlants: savedPlants }),
+      body: user,
     })
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        console.log("Pet updated successfully!");
+        console.log("Plants updated successfully!");
       })
       .catch((error) => {
-        console.error("Error updating pet:", error);
+        console.error("Error updating plants:", error);
       });
-  }, [savedPlants]);
+  }, [user]);
 
   const handleSavePlant = () => {
-    if (username && plantId) {
-      setSavedPlants([...savedPlants, plantId]);
+    if (plantId) {
+      const updatedUser = {
+        ...user,
+        savedPlants: [...user.savedPlants, plantId],
+      };
+      setUser(updatedUser);
       setPlantId("");
     }
   };
@@ -38,37 +59,26 @@ export default function User() {
   }
 
   return (
-    <div id="search-container">
-      <div>
-        <h1 id="title">Welcome, {user.firstName}!</h1>
-      </div>
-      <div>
-        <input
-          type="text"
-          placeholder="Enter your username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <br />
+    <div id="user-container">
+      <header id="user-welcome">
+        <h1 id="welcome">Welcome{user && user.firstName && `, ${user.firstName}`}!</h1>
+        <button id="logout-button" onClick={logOut}>Log Out</button>
+      </header>
+      <div id="input-container">
         <input
           type="number"
           placeholder="Enter plant ID"
           value={plantId}
           onChange={(e) => setPlantId(e.target.value)}
         />
+        <button id="save-button" onClick={handleSavePlant}>Save Plant</button>
       </div>
-      <div>
-        <button onClick={handleSavePlant}>Save Plant</button>
-        <button onClick={logOut}>Log Out</button>
-      </div>
-      <div>
-        <h2>{JSON.stringify(savedPlants)}</h2>
+      <div id="saved-plants-container">
+        <h2>{user && user.savedPlants && `[${user.savedPlants}]`}</h2>
         <h2>Saved Plants</h2>
-      </div>
-      <div>
-        <ul>
+        <ul id="saved-plants">
           {savedPlants.map((plant) => (
-            <li key={plant.id}>
+            <li id="saved-plant" key={plant.id}>
               Plant ID: {plant.id}, Saved by: {plant.username}
             </li>
           ))}

@@ -9,7 +9,7 @@ public class IncomingUserData {
     private String username;
     private String password;
     private String confirmPassword;
-    private boolean reCaptcha;
+    private boolean reCaptchaCompleted;
 
     public String getEmail() {
         return email;
@@ -51,12 +51,12 @@ public class IncomingUserData {
         this.confirmPassword = confirmPassword;
     }
 
-    public boolean getReCaptcha() {
-        return reCaptcha;
+    public boolean getReCaptchaCompleted() {
+        return reCaptchaCompleted;
     }
 
-    public void setReCaptcha(boolean reCaptcha) {
-        this.reCaptcha = reCaptcha;
+    public void setReCaptchaCompleted(boolean reCaptchaCompleted) {
+        this.reCaptchaCompleted = reCaptchaCompleted;
     }
 
     public DBUser toDBUser(PasswordEncoder passwordEncoder) {

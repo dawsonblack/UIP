@@ -5,11 +5,19 @@ import { useLocation } from 'react-router-dom';
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
   useEffect(() => {
-    setIsButtonDisabled(username === "" || password === "");
-  }, [username, password]);
+    fetch('/api/auth-status')
+      .then(response => response.json())
+      .then(data => {
+        if (data.authenticated) {
+          window.location.href = '/User';
+        }
+      })
+    .catch(error => {
+      console.error('Error checking authentication status:', error);
+    });
+  }, []);
 
   const handleUsernameChange = ({ target }) => {
     setUsername(target.value);
@@ -23,10 +31,14 @@ export default function Login() {
   const queryParams = new URLSearchParams(location.search);
   const errorMessage = queryParams.get('error');
   const logoutMessage = queryParams.get('logout');
+
+  const saveInfo = () => {
+    localStorage.setItem("loggedInUsername", username);
+  }
   
   return (
     <div className="register-login-container">
-      <form action="/Login" method="post">
+      <form onSubmit={saveInfo} action="/Login" method="post">
         <div className="register-login-form">
           {logoutMessage && <p className="form-success-message">You have been successfully logged out</p>}
           <label htmlFor="username">Username:</label>
@@ -47,7 +59,7 @@ export default function Login() {
           {errorMessage && <p className="form-error-message">Your username or password was incorrect</p>}
         </div>
         <div className="button-container">
-          <button type="submit" disabled={isButtonDisabled}>Sign In</button>
+          <button type="submit">Sign In</button>
         </div>
       </form>
       <p className="link">Don't have an account? <Link to="/Register">Click here</Link> to Register</p>

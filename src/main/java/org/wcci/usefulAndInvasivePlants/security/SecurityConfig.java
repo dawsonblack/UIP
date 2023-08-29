@@ -33,7 +33,6 @@ public class SecurityConfig {
                 .authorizeHttpRequests(
                         (authoritzationManager) -> authoritzationManager
                                 .requestMatchers("/User").authenticated()
-                                //.requestMatchers("/api/users").hasAuthority("ADMIN")
                                 .anyRequest().permitAll())
                 .formLogin(
                         (formLogin) -> formLogin
@@ -48,7 +47,6 @@ public class SecurityConfig {
                                 .invalidateHttpSession(true))
                 .csrf((csrf) -> csrf.disable())
                 .cors((cors) -> cors.disable())
-                //.formLogin((formLoginConfigurer) -> formLoginConfigurer.permitAll())
                 .rememberMe((rememberMeConfigurer) -> rememberMeConfigurer.alwaysRemember(false))
                 .build();
     }

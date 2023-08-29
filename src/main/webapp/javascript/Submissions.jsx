@@ -35,7 +35,7 @@ export default function Submissions() {
   const handleEmailChange = ({ target }) => {
     setEmail(target.value);
 
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{1,63}$/;
     setIsInvalidEmail(!emailRegex.test(target.value));
   };
 

@@ -39,12 +39,9 @@ section {
 
 .logo {
   display: flex;
-  /* margin-left: auto; */
-  /* margin-right: auto; */
   width: 50%;
   margin-bottom: 0;
   margin-left: 25%;
-  /* flex-direction: row-reverse; */
   justify-content: center;
 }
 
@@ -409,6 +406,12 @@ section {
   font-weight: bold;
 }
 
+.required-field::after {
+  content: "*";
+  color: red;
+  margin-left: 3px;
+}
+
 .register-login-form input {
   padding: 7px;
   margin-bottom: 10px;
@@ -471,15 +474,83 @@ section {
 }
 
 /* User.jsx */
-/* .user-submission-container {
-  height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    ;
-} */
+
+#user-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  color: rgb(166, 123, 91)
+}
+
+#user-welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#welcome {
+  font-size: 24px;
+}
+
+#logout-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#logout-button:hover {
+  background-color: #d32f2f;
+}
+
+#input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#input-container input[type="number"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#save-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-left: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#save-button:hover {
+  background-color: #45a049;
+}
+
+#saved-plants-container {
+  margin-top: 20px;
+}
+
+#saved-plants {
+  list-style-type: none;
+  padding: 0;
+}
+
+#saved-plant {
+  margin-bottom: 5px;
+}
+
+/*Submissions.jsx*/
 
 .user-submission-container {
   display: flex;

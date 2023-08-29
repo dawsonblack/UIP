@@ -2,16 +2,30 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useLocation } from 'react-router-dom';
+import { AES, enc } from 'crypto-js';
 
 export default function Register() {
+  function encryptData(data, key) {
+    const encrypted = AES.encrypt(data, key).toString();
+    return encrypted;
+  }
+  
+  // Function to decrypt data using AES
+  function decryptData(encryptedData, key) {
+    const decrypted = AES.decrypt(encryptedData, key).toString(enc.Utf8);
+    return decrypted;
+  }
+
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
 
-  const [email, setEmail] = useState(queryParams.get('email') || '');
-  const [firstName, setFirstName] = useState(queryParams.get('firstName') || '');
-  const [username, setUsername] = useState(queryParams.get('username') || '');
-  const [password, setPassword] = useState(sessionStorage.getItem('password') || '');
-  const [confirmPassword, setConfirmPassword] = useState(sessionStorage.getItem('confirmPassword') || '');
+  const [email, setEmail] = useState(queryParams.get('e') || '');
+  const [firstName, setFirstName] = useState(queryParams.get('n') || '');
+  const [username, setUsername] = useState(queryParams.get('u') || '');
+
+  const [password, setPassword] = useState(queryParams.get('pw') && decryptData(queryParams.get('pw'), "q2Rv7FpD9aLX5gTnEwZiY1mCjKoHsU6x") || '');
+  const [confirmPassword, setConfirmPassword] = useState(queryParams.get('cpw') && decryptData(queryParams.get('cpw'), "q2Rv7FpD9aLX5gTnEwZiY1mCjKoHsU6x") || '');
+
 
   const [isInvalidEmail, setIsInvalidEmail] = useState(queryParams.get('invalidEmail') || null);
 
@@ -26,7 +40,7 @@ export default function Register() {
   const [recaptchaCompleted, setRecaptchaCompleted] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
-  /*useEffect(() => {
+  useEffect(() => {
     setIsButtonDisabled(
       email == "" ||
       username == "" ||
@@ -39,14 +53,7 @@ export default function Register() {
       passwordsDoNotMatch ||
       !recaptchaCompleted
     );
-  }, [email, firstName, username, password, confirmPassword, recaptchaCompleted]);*/
-
-  const handleKeyPress = (event) => {
-    if (event.key === "Enter" && !isButtonDisabled) {
-      event.preventDefault();
-      postUser();
-    }
-  };
+  }, [email, firstName, username, password, confirmPassword, recaptchaCompleted]);
 
   const handleEmailChange = ({ target }) => {
     setEmail(target.value);
@@ -85,13 +92,15 @@ export default function Register() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log("recaptcha completion: " + recaptchaCompleted);
 
     const userData = {
       email,
       firstName,
       username,
       password,
-      confirmPassword
+      confirmPassword,
+      recaptchaCompleted
     };
 
     try {
@@ -103,17 +112,14 @@ export default function Register() {
         body: JSON.stringify(userData)
       });
       if (response.ok) {
-          sessionStorage.setItem('password', '');
-          sessionStorage.setItem('confirmPassword', '');
           window.location.href = '/Register?success=true';
       } else {
-          sessionStorage.setItem('password', password);
-          sessionStorage.setItem('confirmPassword', confirmPassword);
-
           const textFields = new URLSearchParams();
-          email !== "" && textFields.set('email', email);
-          firstName !== "" && textFields.set('firstName', firstName);
-          username !== "" && textFields.set('username', username);
+          email !== "" && textFields.set('e', email);
+          firstName !== "" && textFields.set('n', firstName);
+          username !== "" && textFields.set('u', username);
+          password !== "" && textFields.set('pw', encryptData(password, "q2Rv7FpD9aLX5gTnEwZiY1mCjKoHsU6x"));
+          confirmPassword !== "" && textFields.set('cpw', encryptData(confirmPassword, "q2Rv7FpD9aLX5gTnEwZiY1mCjKoHsU6x"));
 
           const responseUrl = await response.text();
           window.location.href = `/Register?${responseUrl}&${textFields.toString()}`;
@@ -128,13 +134,12 @@ export default function Register() {
       <form onSubmit={handleSubmit}>
         <div className="register-login-form">
           {queryParams.get('success') && <p className="form-success-message">Account successfully created</p>}
-          <label htmlFor="email">Email:</label>
+          <label className="required-field" htmlFor="email">Email:</label>
           <input
             type="text"
             name="email"
             value={email}
             onChange={handleEmailChange}
-            onKeyDown={handleKeyPress}
           ></input>
           {isInvalidEmail && email !=="" && <p className="form-error-message">Invalid email</p>}
           {queryParams.get('emptyEmail') && <p className="form-error-message">This field is required</p>}
@@ -145,40 +150,36 @@ export default function Register() {
             name="firstName"
             value={firstName}
             onChange={handleFirstNameChange}
-            onKeyDown={handleKeyPress}
           ></input>
           {firstNameTooLong && <p className="form-error-message">This field cannot be greater than 256 characters</p>}
 
-          <label htmlFor="username">Username:</label>
+          <label className="required-field" htmlFor="username">Username:</label>
           <input
             type="text"
             name="username"
             value={username}
             onChange={handleUsernameChange}
-            onKeyDown={handleKeyPress}
           ></input>
           {queryParams.get('emptyUsername') && <p className="form-error-message">This field is required</p>}
           {usernameHasSpace && username !=="" && <p className="form-error-message">Usernames cannot contain spaces</p>}
           {usernameTooLong && username !=="" && <p className="form-error-message">Usernames cannot be greater than 50 characters</p>}
 
-          <label htmlFor="password">Password:</label>
+          <label className="required-field" htmlFor="password">Password:</label>
           <input
             type="password"
             name="password"
             value={password}
             onChange={handlePasswordChange}
-            onKeyDown={handleKeyPress}
           ></input>
           {queryParams.get('emptyPassword') && <p className="form-error-message">This field is required</p>}
           {invalidPassword && password !=="" && <p className="form-error-message">Your password must contain at least 8 characters, but no more than 256 characters</p>}
 
-          <label htmlFor="confirm-password">Confirm Password:</label>
+          <label className="required-field" htmlFor="confirm-password">Confirm Password:</label>
           <input
             type="password"
             name="confirm-password"
             value={confirmPassword}
             onChange={handleConfirmPasswordChange}
-            onKeyDown={handleKeyPress}
           ></input>
           {queryParams.get('emptyConfirmPassword') && <p className="form-error-message">This field is required</p>}
           {passwordsDoNotMatch && confirmPassword !=="" && <p className="form-error-message">Passwords do not match</p>}
@@ -186,6 +187,7 @@ export default function Register() {
             onChange={recaptchaOnChange}
             onExpired={recaptchaOnExpired} />
 
+          {queryParams.get('badRecaptcha') && <p className="form-error-message">This field is required</p>}
           {queryParams.get('emailUsed') && <p className="form-error-message">This email has already been registered</p>}
           {queryParams.get('usernameUsed') && <p className="form-error-message">This username is already in use</p>}
         </div>

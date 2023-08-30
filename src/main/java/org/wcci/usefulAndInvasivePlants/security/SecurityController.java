@@ -70,9 +70,9 @@ public class SecurityController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("nonMatchingPasswords=true");
         }
 
-        /*if (!registeredUser.getReCaptchaCompleted()) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("badRecaptcha=true");
-        }*/
+        if (!registeredUser.getReCaptchaCompleted()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("badReCaptcha=true");
+        }
 
         if (userService.emailInUse(registeredUser.getEmail())) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("emailUsed=true");

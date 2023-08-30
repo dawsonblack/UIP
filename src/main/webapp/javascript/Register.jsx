@@ -37,7 +37,7 @@ export default function Register() {
   const [invalidPassword, setInvalidPassword] = useState(queryParams.get('invalidPassword') || null);
 
   const [passwordsDoNotMatch, setPasswordsDoNotMatch] = useState(queryParams.get('nonMatchingPasswords') || null);
-  const [recaptchaCompleted, setRecaptchaCompleted] = useState(false);
+  const [reCaptchaCompleted, setReCaptchaCompleted] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   useEffect(() => {
@@ -51,9 +51,9 @@ export default function Register() {
       usernameTooLong ||
       invalidPassword ||
       passwordsDoNotMatch ||
-      !recaptchaCompleted
+      !reCaptchaCompleted
     );
-  }, [email, firstName, username, password, confirmPassword, recaptchaCompleted]);
+  }, [email, firstName, username, password, confirmPassword, reCaptchaCompleted]);
 
   const handleEmailChange = ({ target }) => {
     setEmail(target.value);
@@ -83,16 +83,16 @@ export default function Register() {
     setPasswordsDoNotMatch(target.value !== password);
   };
 
-  const recaptchaOnChange = () => {
-    setRecaptchaCompleted(true);
+  const reCaptchaOnChange = () => {
+    setReCaptchaCompleted(true);
   }
-  const recaptchaOnExpired = () => {
-    setRecaptchaCompleted(false);
+  const reCaptchaOnExpired = () => {
+    setReCaptchaCompleted(false);
   }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("recaptcha completion: " + recaptchaCompleted);
+    console.log("reCaptcha completion: " + reCaptchaCompleted);
 
     const userData = {
       email,
@@ -100,7 +100,7 @@ export default function Register() {
       username,
       password,
       confirmPassword,
-      recaptchaCompleted
+      reCaptchaCompleted
     };
 
     try {
@@ -184,10 +184,10 @@ export default function Register() {
           {queryParams.get('emptyConfirmPassword') && <p className="form-error-message">This field is required</p>}
           {passwordsDoNotMatch && confirmPassword !=="" && <p className="form-error-message">Passwords do not match</p>}
           <ReCAPTCHA sitekey="6LenvssnAAAAAJOhnQQ3FEYuhRgx4kl-RDePeiRY"
-            onChange={recaptchaOnChange}
-            onExpired={recaptchaOnExpired} />
+            onChange={reCaptchaOnChange}
+            onExpired={reCaptchaOnExpired} />
 
-          {queryParams.get('badRecaptcha') && <p className="form-error-message">This field is required</p>}
+          {queryParams.get('badReCaptcha') && <p className="form-error-message">This field is required</p>}
           {queryParams.get('emailUsed') && <p className="form-error-message">This email has already been registered</p>}
           {queryParams.get('usernameUsed') && <p className="form-error-message">This username is already in use</p>}
         </div>
